@@ -30,9 +30,26 @@
     media.style.backgroundImage = imgInner ? getComputedStyle(imgInner).backgroundImage : '';
   }
 
+  function pinScroll(lscroll) {
+    if (!lscroll.scroll || !lscroll.scroll.instance) return;
+    var current = lscroll.scroll.instance.scroll;
+    lscroll.setScroll(current.x, current.y);
+  }
+
   function lockScroll() {
     var lscroll = window.__lscroll;
-    if (lscroll) lscroll.stop();
+    if (!lscroll) return;
+    lscroll.stop();
+    pinScroll(lscroll);
+
+    var frames = 0;
+    var holdFrame = function () {
+      if (frames >= 20 || !modal.classList.contains('is-open')) return;
+      frames += 1;
+      pinScroll(lscroll);
+      requestAnimationFrame(holdFrame);
+    };
+    requestAnimationFrame(holdFrame);
   }
 
   function unlockScroll() {
