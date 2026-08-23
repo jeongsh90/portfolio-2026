@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.vscode/
+_workspace_*/
+_workspace/_prev_multiview/
+HorizontalSmoothScrollLayout-main/
+HorizontalSmoothScrollLayout-main.zip
+.playwright-mcp/
