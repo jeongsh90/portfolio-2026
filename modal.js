@@ -92,7 +92,7 @@
         0
       );
       tl.to(closeBtn, { opacity: 1, duration: 0.4 }, 0.2);
-      tl.to(body, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 0.3);
+      tl.to(body, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 0.7);
     });
 
     closeBtn.focus();
