@@ -116,12 +116,12 @@ html.is-dragging {
 }
 
 .gallery__item-link {
-	grid-area: gallery-link;
-	align-self: end;
-	font-size: 1.5rem;
+	grid-column: 2;
+	grid-row: 1 / 4;
+	justify-self: center;
+	align-self: center;
 	background: var(--color-gallery-link-bg);
 	color: var(--color-gallery-link);
-	text-decoration: underline;
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
@@ -130,13 +130,43 @@ html.is-dragging {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s ease;
 }
 
-.gallery__item-link:focus,
-.gallery__item-link:hover {
-	background: var(--color-gallery-link-bg-hover);
-	color: var(--color-gallery-link-hover);
-	text-decoration: none;
+.gallery__item:hover .gallery__item-link {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.gallery__item-link svg path {
+	stroke-dashoffset: 16;
+	transition: stroke-dashoffset 0.35s ease;
+}
+
+.gallery__item-link svg path:last-child {
+	transition-delay: 0.2s;
+}
+
+.gallery__item:hover .gallery__item-link svg path {
+	stroke-dashoffset: 0;
+}
+
+.gallery__item-link:focus {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+@media (hover: none) {
+	.gallery__item-link {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.gallery__item-link svg path {
+		stroke-dashoffset: 0;
+	}
 }
 
 .gallery__item-tags {
@@ -163,4 +193,48 @@ html.is-dragging {
 
 .gallery__text-inner {
 	display: block;
+}
+
+@media screen and (max-width: 700px) {
+	.gallery {
+		margin-left: 8vw;
+		padding-right: 20vw;
+	}
+
+	.gallery__item {
+		margin: 0 8vw;
+		grid-template-columns: 3rem calc(50vh * 0.68);
+		grid-template-rows: 3rem 50vh 3rem;
+	}
+
+	.gallery__item-caption {
+		grid-template-columns: 3rem auto;
+		grid-template-rows: 3rem auto 3rem;
+	}
+
+	.gallery__item-imginner {
+		width: calc(100% + 16vw);
+		margin-left: -8vw;
+	}
+
+	.gallery__item-number {
+		padding-right: 1rem;
+	}
+
+	.gallery__item-link {
+		width: 88px;
+		height: 88px;
+	}
+
+	.gallery__item-tags {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		max-width: calc(50vh * 0.68);
+		font-size: 1.1rem;
+	}
+
+	.gallery__text {
+		margin: 0 6vw;
+	}
 }
