@@ -5,6 +5,7 @@ node_modules/
 .vscode/
 _workspace_*/
 _workspace/_prev_multiview/
+_workspace/_prev_gsap_rebuild/
 HorizontalSmoothScrollLayout-main/
 HorizontalSmoothScrollLayout-main.zip
 .playwright-mcp/

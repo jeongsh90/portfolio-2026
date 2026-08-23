@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="16 대 9 이미지 자리표시자">
-  <rect width="1600" height="900" fill="#171716" />
-  <rect x="0.5" y="0.5" width="1599" height="899" fill="none" stroke="#3a3733" />
-  <line x1="0" y1="0" x2="1600" y2="900" stroke="#3a3733" />
-  <line x1="1600" y1="0" x2="0" y2="900" stroke="#3a3733" />
-  <text x="800" y="470" font-size="120" text-anchor="middle" fill="#4a4742" font-family="Georgia, 'Times New Roman', serif" font-style="italic">IMAGE</text>
-  <text x="40" y="860" font-size="34" fill="#4a4742" font-family="ui-monospace, Menlo, Consolas, monospace" letter-spacing="4">16 : 9</text>
-</svg>
