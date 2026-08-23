@@ -2,6 +2,8 @@
   var modal = document.getElementById('modal');
   if (!modal) return;
 
+  var scrollWrap = modal.querySelector('.modal__scroll');
+  var scrollInner = modal.querySelector('.modal__scroll-inner');
   var backdrop = modal.querySelector('.modal__backdrop');
   var media = modal.querySelector('.modal__media');
   var body = modal.querySelector('.modal__body');
@@ -29,6 +31,90 @@
     });
     media.style.backgroundImage = imgInner ? getComputedStyle(imgInner).backgroundImage : '';
   }
+
+  var smoothScroll = (function () {
+    var current = 0;
+    var target = 0;
+    var max = 0;
+    var raf = null;
+    var lerp = 0.1;
+
+    function apply() {
+      scrollInner.style.transform = 'translateY(' + -current + 'px)';
+    }
+
+    function loop() {
+      current += (target - current) * lerp;
+      if (Math.abs(target - current) < 0.5) {
+        current = target;
+        apply();
+        raf = null;
+        return;
+      }
+      apply();
+      raf = requestAnimationFrame(loop);
+    }
+
+    function ensureLoop() {
+      if (!raf) raf = requestAnimationFrame(loop);
+    }
+
+    function recalc() {
+      max = Math.max(0, scrollInner.scrollHeight - scrollWrap.clientHeight);
+      target = Math.min(target, max);
+      current = Math.min(current, max);
+    }
+
+    function moveBy(delta) {
+      target = Math.max(0, Math.min(target + delta, max));
+      ensureLoop();
+    }
+
+    function reset() {
+      current = 0;
+      target = 0;
+      max = 0;
+      apply();
+    }
+
+    function onWheel(e) {
+      e.preventDefault();
+      moveBy(e.deltaY);
+    }
+
+    var touchStartY = 0;
+    var touchStartTarget = 0;
+
+    function onTouchStart(e) {
+      touchStartY = e.touches[0].clientY;
+      touchStartTarget = target;
+    }
+
+    function onTouchMove(e) {
+      var dy = touchStartY - e.touches[0].clientY;
+      target = Math.max(0, Math.min(touchStartTarget + dy, max));
+      ensureLoop();
+    }
+
+    function handleKeydown(e) {
+      var page = scrollWrap.clientHeight * 0.9;
+      if (e.key === 'ArrowDown') moveBy(80);
+      else if (e.key === 'ArrowUp') moveBy(-80);
+      else if (e.key === 'PageDown') moveBy(page);
+      else if (e.key === 'PageUp') moveBy(-page);
+      else if (e.key === 'Home') moveBy(-max);
+      else if (e.key === 'End') moveBy(max);
+      else return false;
+      e.preventDefault();
+      return true;
+    }
+
+    scrollWrap.addEventListener('wheel', onWheel, { passive: false });
+    scrollWrap.addEventListener('touchstart', onTouchStart, { passive: true });
+    scrollWrap.addEventListener('touchmove', onTouchMove, { passive: true });
+
+    return { recalc: recalc, reset: reset, handleKeydown: handleKeydown };
+  })();
 
   function pinScroll(lscroll) {
     if (!lscroll.scroll || !lscroll.scroll.instance) return;
@@ -58,7 +144,11 @@
   }
 
   function onKeydown(e) {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') {
+      closeModal();
+      return;
+    }
+    smoothScroll.handleKeydown(e);
   }
 
   function openModal(item) {
@@ -74,7 +164,7 @@
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.documentElement.classList.add('modal-open');
-    modal.scrollTop = 0;
+    smoothScroll.reset();
 
     gsap.set(backdrop, { opacity: 0 });
     gsap.set(closeBtn, { opacity: 0 });
@@ -82,6 +172,7 @@
     gsap.set(media, { opacity: 1, clearProps: 'position,top,left,width,height,margin' });
 
     requestAnimationFrame(function () {
+      smoothScroll.recalc();
       var endRect = media.getBoundingClientRect();
       gsap.set(media, {
         position: 'fixed',
@@ -129,7 +220,7 @@
         gsap.set(body, { clearProps: 'all' });
         gsap.set(backdrop, { clearProps: 'all' });
         gsap.set(closeBtn, { clearProps: 'all' });
-        modal.scrollTop = 0;
+        smoothScroll.reset();
         unlockScroll();
         if (lastTrigger && lastTrigger.focus) lastTrigger.focus();
         startRect = null;

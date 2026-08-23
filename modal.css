@@ -3,7 +3,6 @@
 	inset: 0;
 	z-index: 900;
 	display: none;
-	overflow-y: auto;
 }
 
 .modal.is-open {
@@ -17,6 +16,17 @@
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 	opacity: 0;
+}
+
+.modal__scroll {
+	position: fixed;
+	inset: 0;
+	overflow: hidden;
+	outline: none;
+}
+
+.modal__scroll-inner {
+	will-change: transform;
 }
 
 .modal__close {
