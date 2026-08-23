@@ -57,6 +57,7 @@
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.documentElement.classList.add('modal-open');
+    modal.scrollTop = 0;
 
     gsap.set(backdrop, { opacity: 0 });
     gsap.set(closeBtn, { opacity: 0 });
@@ -100,17 +101,7 @@
   }
 
   function closeModal() {
-    if (!modal.classList.contains('is-open') || !startRect) return;
-
-    var currentRect = media.getBoundingClientRect();
-    gsap.set(media, {
-      position: 'fixed',
-      top: currentRect.top,
-      left: currentRect.left,
-      width: currentRect.width,
-      height: currentRect.height,
-      margin: 0
-    });
+    if (!modal.classList.contains('is-open')) return;
 
     var tl = gsap.timeline({
       onComplete: function () {
@@ -121,26 +112,16 @@
         gsap.set(body, { clearProps: 'all' });
         gsap.set(backdrop, { clearProps: 'all' });
         gsap.set(closeBtn, { clearProps: 'all' });
+        modal.scrollTop = 0;
         unlockScroll();
         if (lastTrigger && lastTrigger.focus) lastTrigger.focus();
         startRect = null;
       }
     });
-    tl.to(body, { opacity: 0, x: 24, duration: 0.25, ease: 'power1.in' }, 0);
+    tl.to(body, { opacity: 0, y: -12, duration: 0.3, ease: 'power1.in' }, 0);
+    tl.to(media, { opacity: 0, scale: 0.96, duration: 0.35, ease: 'power1.in' }, 0);
     tl.to(closeBtn, { opacity: 0, duration: 0.2 }, 0);
-    tl.to(
-      media,
-      {
-        top: startRect.top,
-        left: startRect.left,
-        width: startRect.width,
-        height: startRect.height,
-        duration: 0.6,
-        ease: 'power3.inOut'
-      },
-      0.05
-    );
-    tl.to(backdrop, { opacity: 0, duration: 0.3 }, 0.25);
+    tl.to(backdrop, { opacity: 0, duration: 0.35 }, 0.1);
 
     document.removeEventListener('keydown', onKeydown);
   }
