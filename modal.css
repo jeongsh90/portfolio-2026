@@ -114,6 +114,18 @@
 	text-underline-offset: 0.2em;
 }
 
+.modal__section {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top: 1px solid rgba(217, 208, 190, 0.12);
+	font-family: 'Rix Yeoljeongdo', moret, serif;
+	font-style: italic;
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	color: var(--color-gallery-title);
+}
+
 @media (max-width: 900px) {
 	.modal__stage {
 		grid-template-columns: 1fr;
