@@ -30,8 +30,8 @@ body {
 	grid-template-areas: '... ...' 
 						 '... gallery-image'
 						 '... ...' ;
-	grid-template-columns: 8rem 21vmax;
-	grid-template-rows: 8rem 28vmax 3rem;
+	grid-template-columns: 8rem calc(66vh * 0.75);
+	grid-template-rows: 8rem 66vh 3rem;
 }
 
 .gallery__item-img {
@@ -137,13 +137,4 @@ body {
 
 .gallery__text-inner {
 	display: block;
-}
-
-@media screen and (min-width: 53em) {
-	.frame {
-		grid-template-areas: 'title demos demos links';
-	}
-	.frame__info {
-		justify-self: end;
-	}
 }
