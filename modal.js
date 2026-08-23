@@ -2,11 +2,11 @@
   var modal = document.getElementById('modal');
   if (!modal) return;
 
-  var scrollWrap = modal.querySelector('.modal__scroll');
-  var scrollInner = modal.querySelector('.modal__scroll-inner');
+  var viewport = modal.querySelector('.modal__viewport');
+  var scrollEl = modal.querySelector('.modal__scroll');
   var backdrop = modal.querySelector('.modal__backdrop');
   var media = modal.querySelector('.modal__media');
-  var body = modal.querySelector('.modal__body');
+  var info = modal.querySelector('.modal__info');
   var closeBtn = modal.querySelector('.modal__close');
   var numberEl = modal.querySelector('.modal__number');
   var titleEl = modal.querySelector('.modal__title');
@@ -40,7 +40,7 @@
     var lerp = 0.1;
 
     function apply() {
-      scrollInner.style.transform = 'translateY(' + -current + 'px)';
+      scrollEl.style.transform = 'translateY(' + -current + 'px)';
     }
 
     function loop() {
@@ -60,7 +60,7 @@
     }
 
     function recalc() {
-      max = Math.max(0, scrollInner.scrollHeight - scrollWrap.clientHeight);
+      max = Math.max(0, scrollEl.scrollHeight - viewport.clientHeight);
       target = Math.min(target, max);
       current = Math.min(current, max);
     }
@@ -97,7 +97,7 @@
     }
 
     function handleKeydown(e) {
-      var page = scrollWrap.clientHeight * 0.9;
+      var page = viewport.clientHeight * 0.9;
       if (e.key === 'ArrowDown') moveBy(80);
       else if (e.key === 'ArrowUp') moveBy(-80);
       else if (e.key === 'PageDown') moveBy(page);
@@ -109,9 +109,9 @@
       return true;
     }
 
-    scrollWrap.addEventListener('wheel', onWheel, { passive: false });
-    scrollWrap.addEventListener('touchstart', onTouchStart, { passive: true });
-    scrollWrap.addEventListener('touchmove', onTouchMove, { passive: true });
+    viewport.addEventListener('wheel', onWheel, { passive: false });
+    viewport.addEventListener('touchstart', onTouchStart, { passive: true });
+    viewport.addEventListener('touchmove', onTouchMove, { passive: true });
 
     return { recalc: recalc, reset: reset, handleKeydown: handleKeydown };
   })();
@@ -168,7 +168,7 @@
 
     gsap.set(backdrop, { opacity: 0 });
     gsap.set(closeBtn, { opacity: 0 });
-    gsap.set(body, { opacity: 0, x: 24 });
+    gsap.set(info, { opacity: 0, x: 24 });
     gsap.set(media, { opacity: 1, clearProps: 'position,top,left,width,height,margin' });
 
     requestAnimationFrame(function () {
@@ -201,7 +201,7 @@
         0
       );
       tl.to(closeBtn, { opacity: 1, duration: 0.4 }, 0.2);
-      tl.to(body, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 0.7);
+      tl.to(info, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 0.7);
     });
 
     closeBtn.focus();
@@ -217,7 +217,7 @@
         modal.setAttribute('aria-hidden', 'true');
         document.documentElement.classList.remove('modal-open');
         gsap.set(media, { clearProps: 'all' });
-        gsap.set(body, { clearProps: 'all' });
+        gsap.set(info, { clearProps: 'all' });
         gsap.set(backdrop, { clearProps: 'all' });
         gsap.set(closeBtn, { clearProps: 'all' });
         smoothScroll.reset();
@@ -226,7 +226,7 @@
         startRect = null;
       }
     });
-    tl.to(body, { opacity: 0, y: -12, duration: 0.3, ease: 'power1.in' }, 0);
+    tl.to(info, { opacity: 0, y: -12, duration: 0.3, ease: 'power1.in' }, 0);
     tl.to(media, { opacity: 0, scale: 0.96, duration: 0.35, ease: 'power1.in' }, 0);
     tl.to(closeBtn, { opacity: 0, duration: 0.2 }, 0);
     tl.to(backdrop, { opacity: 0, duration: 0.35 }, 0.1);
