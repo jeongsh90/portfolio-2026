@@ -43,14 +43,16 @@
 .modal__stage {
 	position: relative;
 	height: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: 34vw 1fr;
 	align-items: center;
 	gap: 6vw;
 	padding: 0 8vw;
 }
 
 .modal__media {
-	flex: 0 0 auto;
+	grid-column: 1;
+	grid-row: 1;
 	width: 34vw;
 	height: 74vh;
 	background-size: cover;
@@ -59,7 +61,8 @@
 }
 
 .modal__body {
-	flex: 1 1 auto;
+	grid-column: 2;
+	grid-row: 1;
 	max-width: 32rem;
 	opacity: 0;
 }
@@ -109,18 +112,23 @@
 
 @media (max-width: 900px) {
 	.modal__stage {
-		flex-direction: column;
+		grid-template-columns: 1fr;
+		grid-template-rows: 42vh auto;
 		justify-content: center;
 		gap: 2rem;
 		padding: 6rem 8vw 3rem;
 	}
 
 	.modal__media {
+		grid-column: 1;
+		grid-row: 1;
 		width: 100%;
 		height: 42vh;
 	}
 
 	.modal__body {
+		grid-column: 1;
+		grid-row: 2;
 		max-width: none;
 	}
 }
