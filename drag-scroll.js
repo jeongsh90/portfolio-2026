@@ -3,8 +3,12 @@
   if (!container) return;
 
   var dragging = false;
+  var captured = false;
+  var activePointerId = null;
   var lastX = 0;
   var multiplier = 3;
+  var totalMove = 0;
+  var dragThreshold = 6;
 
   function pushDelta(dx) {
     var lscroll = window.__lscroll;
@@ -13,28 +17,48 @@
     if (!lscroll.scroll.isScrolling) lscroll.scroll.startScrolling();
   }
 
+  function suppressNextClick(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    document.removeEventListener('click', suppressNextClick, true);
+  }
+
   function onPointerDown(e) {
     if (e.pointerType === 'touch') return;
     dragging = true;
+    captured = false;
+    activePointerId = e.pointerId;
+    totalMove = 0;
     lastX = e.clientX;
-    document.documentElement.classList.add('is-dragging');
-    container.setPointerCapture(e.pointerId);
   }
 
   function onPointerMove(e) {
-    if (!dragging) return;
+    if (!dragging || e.pointerId !== activePointerId) return;
     var dx = e.clientX - lastX;
     lastX = e.clientX;
-    pushDelta(dx);
+    totalMove += Math.abs(dx);
+
+    if (!captured && totalMove > dragThreshold) {
+      captured = true;
+      document.documentElement.classList.add('is-dragging');
+      container.setPointerCapture(activePointerId);
+    }
+
+    if (captured) pushDelta(dx);
   }
 
   function onPointerUp(e) {
-    if (!dragging) return;
+    if (!dragging || e.pointerId !== activePointerId) return;
     dragging = false;
     document.documentElement.classList.remove('is-dragging');
-    if (container.hasPointerCapture(e.pointerId)) {
-      container.releasePointerCapture(e.pointerId);
+    if (captured && container.hasPointerCapture(activePointerId)) {
+      container.releasePointerCapture(activePointerId);
     }
+    if (captured) {
+      document.addEventListener('click', suppressNextClick, true);
+    }
+    captured = false;
+    activePointerId = null;
   }
 
   container.addEventListener('pointerdown', onPointerDown);

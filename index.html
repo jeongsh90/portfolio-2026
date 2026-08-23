@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="https://use.typekit.net/vxy2fer.css">
 		<link rel="stylesheet" type="text/css" href="base.98fd6c19.css">
 		<link rel="stylesheet" type="text/css" href="demo2.06b37b5f.css">
+		<link rel="stylesheet" type="text/css" href="modal.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 		<script>document.documentElement.className = "js";
 
@@ -190,10 +191,28 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 				</div>
 			</main>
 		</div>
+		<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+			<div class="modal__backdrop" data-modal-close></div>
+			<button class="modal__close" type="button" aria-label="닫기" data-modal-close>
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></g></svg>
+			</button>
+			<div class="modal__stage">
+				<div class="modal__media"></div>
+				<div class="modal__body">
+					<span class="modal__number"></span>
+					<h2 class="modal__title" id="modalTitle"></h2>
+					<ul class="modal__tags"></ul>
+					<p class="modal__desc">[프로젝트 설명이 여기에 들어갑니다 — 무엇을 만들었고 어떤 문제를 해결했는지에 대한 짧은 소개.]</p>
+					<a class="modal__link" href="#">사이트 보기</a>
+				</div>
+			</div>
+		</div>
 		<svg class="cursor" width="20" height="20" viewBox="0 0 20 20">
 			<circle class="cursor__inner" cx="10" cy="10" r="5"></circle>
 		</svg>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 		<script src="demo2.44794d1a.js"></script>
 		<script src="drag-scroll.js"></script>
+		<script src="modal.js"></script>
 	</body>
 </html>
