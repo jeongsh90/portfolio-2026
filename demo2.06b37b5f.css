@@ -86,8 +86,7 @@ html.is-dragging {
 
 .gallery__item-number {
 	grid-area: gallery-number;
-	font-size: 6rem;
-	font-size: clamp(2.5rem,9vw,6.5rem);
+	font-size: clamp(2rem,5vw,4rem);
 	justify-self: end;
 	padding-right: 2rem;
 	color: var(--color-gallery-number);
@@ -101,11 +100,17 @@ html.is-dragging {
 	color: var(--color-gallery-title);
 }
 
-.gallery__item-number,
-.gallery__item-title,
 .gallery__text {
 	font-family: moret, serif;
 	font-weight: 800;
+	font-style: italic;
+	align-self: center;
+}
+
+.gallery__item-number,
+.gallery__item-title {
+	font-family: 'Rix Yeoljeongdo', moret, serif;
+	font-weight: 400;
 	font-style: italic;
 	align-self: center;
 }
