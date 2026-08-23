@@ -45,7 +45,13 @@
 	justify-content: center;
 	cursor: pointer;
 	opacity: 0;
+	outline: none;
 	transition: background 0.2s ease;
+}
+
+.modal__close:focus-visible {
+	outline: 2px solid var(--color-gallery-title);
+	outline-offset: 2px;
 }
 
 .modal__close:hover,
@@ -78,7 +84,8 @@
 	grid-column: 2;
 	grid-row: 1;
 	align-self: center;
-	max-width: 32rem;
+	/* max-width: 32rem; */
+	width:100%;
 	opacity: 0;
 }
 
