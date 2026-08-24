@@ -3,10 +3,9 @@ Thumbs.db
 node_modules/
 *.log
 .vscode/
-_workspace/
+_workspace/_prev_multiview/
+_workspace/_prev_gsap_rebuild/
 _workspace_*/
 HorizontalSmoothScrollLayout-main/
 HorizontalSmoothScrollLayout-main.zip
 .playwright-mcp/
-.claude/
-CLAUDE.md
