@@ -35,7 +35,7 @@ body {
 	transform: rotate(-4deg);
 }
 
-[data-scroll-container] { /* cursor: grab; */ }
+[data-scroll-container] {}
 
 html.is-dragging,
 html.is-dragging [data-scroll-container] {

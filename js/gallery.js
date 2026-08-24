@@ -1,35 +1,17 @@
-// modules are defined as an array
-// [ module function, map of requires ]
-//
-// map of requires is short require name -> numeric require
-//
-// anything defined in a previous bundle is accessed via the
-// orig method which is the require for previous bundles
 parcelRequire = (function (modules, cache, entry, globalName) {
-  // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
   var nodeRequire = typeof require === 'function' && require;
 
   function newRequire(name, jumped) {
     if (!cache[name]) {
       if (!modules[name]) {
-        // if we cannot find the module within our internal map or
-        // cache jump to the current global require ie. the last bundle
-        // that was added to the page.
         var currentRequire = typeof parcelRequire === 'function' && parcelRequire;
         if (!jumped && currentRequire) {
           return currentRequire(name, true);
         }
-
-        // If there are other bundles on this page the require from the
-        // previous one is saved to 'previousRequire'. Repeat this as
-        // many times as there are bundles until the module is found or
-        // we exhaust the require chain.
         if (previousRequire) {
           return previousRequire(name, true);
         }
-
-        // Try the node require function if it exists.
         if (nodeRequire && typeof name === 'string') {
           return nodeRequire(name);
         }
@@ -80,7 +62,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     try {
       newRequire(entry[i]);
     } catch (e) {
-      // Save first error but execute all entries
       if (!error) {
         error = e;
       }
@@ -88,8 +69,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   if (entry.length) {
-    // Expose entry point to Node, AMD or browser globals
-    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
     var mainExports = newRequire(entry[entry.length - 1]);
 
     // CommonJS

@@ -11,7 +11,12 @@
   var numberEl = modal.querySelector('.modal__number');
   var titleEl = modal.querySelector('.modal__title');
   var tagsEl = modal.querySelector('.modal__tags');
-  var galleryImages = modal.querySelectorAll('.modal__gallery-image');
+
+  var linksSection = modal.querySelector('.modal__section--links');
+  var linksTitle = linksSection ? linksSection.querySelector('.modal__group-title') : null;
+  var linksItems = linksSection ? linksSection.querySelectorAll('.modal__component-list li') : [];
+  var gallerySection = modal.querySelector('.modal__section--gallery');
+  var galleryImages = gallerySection ? gallerySection.querySelectorAll('.modal__gallery-image') : [];
 
   var startRect = null;
   var lastTrigger = null;
@@ -114,18 +119,68 @@
     viewport.addEventListener('touchstart', onTouchStart, { passive: true });
     viewport.addEventListener('touchmove', onTouchMove, { passive: true });
 
+    window.addEventListener('resize', recalc);
+
     return { recalc: recalc, reset: reset, handleKeydown: handleKeydown };
   })();
 
-  // 섹션 3의 갤러리 이미지(item1-1/item1-2)는 모달 최초 오픈 시점엔 아직 디코드되지
-  // 않아 실제 높이를 모른다 — 로드가 끝나 레이아웃이 늘어나면 스크롤 최대치를 다시
-  // 계산해, 늘어난 만큼 끝까지 스크롤되지 않는 문제를 막는다.
-  galleryImages.forEach(function (img) {
-    if (img.complete) return;
-    img.addEventListener('load', function () {
-      if (modal.classList.contains('is-open')) smoothScroll.recalc();
+  if (typeof ResizeObserver !== 'undefined') {
+    var scrollResizeObserver = new ResizeObserver(function () {
+      smoothScroll.recalc();
     });
-  });
+    scrollResizeObserver.observe(scrollEl);
+  }
+
+  function hideSectionReveals() {
+    if (linksTitle) gsap.set(linksTitle, { opacity: 0, y: 28 });
+    if (linksItems.length) gsap.set(linksItems, { opacity: 0, y: 20 });
+    if (galleryImages.length) gsap.set(galleryImages, { opacity: 0, y: 48 });
+  }
+
+  function revealLinksSection() {
+    var tl = gsap.timeline();
+    if (linksTitle) tl.to(linksTitle, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 0);
+    if (linksItems.length) {
+      tl.to(
+        linksItems,
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.02 },
+        0.15
+      );
+    }
+  }
+
+  function revealGallerySection() {
+    if (!galleryImages.length) return;
+    gsap.to(galleryImages, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.18 });
+  }
+
+  var sectionObserver = null;
+
+  function setupSectionReveals() {
+    hideSectionReveals();
+
+    if (typeof IntersectionObserver === 'undefined') {
+      if (linksTitle) gsap.set(linksTitle, { clearProps: 'all' });
+      if (linksItems.length) gsap.set(linksItems, { clearProps: 'all' });
+      if (galleryImages.length) gsap.set(galleryImages, { clearProps: 'all' });
+      return;
+    }
+
+    if (sectionObserver) sectionObserver.disconnect();
+    sectionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          if (entry.target === linksSection) revealLinksSection();
+          if (entry.target === gallerySection) revealGallerySection();
+          sectionObserver.unobserve(entry.target);
+        });
+      },
+      { root: viewport, threshold: 0.2 }
+    );
+    if (linksSection) sectionObserver.observe(linksSection);
+    if (gallerySection) sectionObserver.observe(gallerySection);
+  }
 
   function pinScroll(lscroll) {
     if (!lscroll.scroll || !lscroll.scroll.instance) return;
@@ -171,6 +226,7 @@
 
     populate(item);
     lockScroll();
+    setupSectionReveals();
 
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');

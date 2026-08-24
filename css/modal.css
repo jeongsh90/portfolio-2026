@@ -34,8 +34,8 @@
 	top: 2rem;
 	right: 2rem;
 	z-index: 920;
-	width: 3rem;
-	height: 3rem;
+	width: 5rem;
+	height: 5rem;
 	border: none;
 	border-radius: 50%;
 	background: transparent;
@@ -49,13 +49,9 @@
 	transition: background 0.2s ease;
 }
 
-.modal__close:focus-visible {
-	outline: 2px solid var(--color-gallery-title);
-	outline-offset: 2px;
-}
 
-.modal__close:hover,
-.modal__close:focus-visible {
+
+.modal__close:hover{
 	background: rgba(217, 208, 190, 0.12);
 }
 
@@ -86,7 +82,6 @@
 	grid-column: 2;
 	grid-row: 1;
 	align-self: center;
-	/* max-width: 32rem; */
 	width:100%;
 	opacity: 0;
 }
@@ -267,10 +262,10 @@
 
 .modal__gallery-images {
 	width: 100%;
-	max-width: 64rem;
+	max-width: 85.25rem;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 4rem;
 }
 
 .modal__gallery-image {

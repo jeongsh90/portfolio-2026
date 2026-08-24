@@ -3,12 +3,12 @@
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext('2d');
 
-  var SPACING = 30; // 점 사이 간격 — 키우면 더 성기게 배치됨
-  var RADIUS = 400; // 포인터 반응 반경 — 키우면 더 넓은 범위의 점이 반응
-  var BASE_A = 0.13; // 평상시 점 투명도
-  var PEAK_A = 1; // 포인터에 닿았을 때 점 투명도
+  var SPACING = 30;
+  var RADIUS = 400;
+  var BASE_A = 0.13;
+  var PEAK_A = 1;
   var REST_RGB = [235, 235, 235];
-  var LIT_RGB = [37, 99, 235];
+  var LIT_RGB = [255, 255, 255];
 
   var mouse = null;
   var dots = [];
