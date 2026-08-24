@@ -13,8 +13,12 @@
   function pushDelta(dx) {
     var lscroll = window.__lscroll;
     if (!lscroll || !lscroll.scroll) return;
-    lscroll.scroll.updateDelta({ deltaX: 0, deltaY: dx * multiplier });
-    if (!lscroll.scroll.isScrolling) lscroll.scroll.startScrolling();
+    if (typeof lscroll.scroll.updateDelta === 'function') {
+      lscroll.scroll.updateDelta({ deltaX: 0, deltaY: dx * multiplier });
+      if (!lscroll.scroll.isScrolling) lscroll.scroll.startScrolling();
+    } else {
+      window.scrollBy(-dx * multiplier, 0);
+    }
   }
 
   function suppressNextClick(e) {

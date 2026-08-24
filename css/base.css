@@ -122,6 +122,10 @@ a:focus {
 
 }
 
+html {
+	overflow-y: hidden;
+}
+
 /*! locomotive-scroll v4.0.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {
 	overflow: hidden; }
