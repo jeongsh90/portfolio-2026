@@ -6,19 +6,28 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'Pretendard';
+	src: url('../fonts/Pretendard-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 body {
-	--color-text: #66665d;
+	--base : #2563EB;
+	--color-text: #ebebeb;
 	--color-bg: #0e0e0d;
-	--color-link: #cc0000;
-	--color-link-hover: #fff;
-	--color-gallery-title: #d9d0be;
-	--color-gallery-number: #494949;
-	--color-gallery-link: #fff;
-	--color-gallery-link-bg: #cc0000;
+	--color-link: var(--base);
+	--color-link-hover: #BFDBFE;
+	--color-gallery-title: #ebebeb;
+	--color-gallery-number: #808080;
+	--color-gallery-link: #ebebeb;
+	--color-gallery-link-bg: var(--base);
 	--color-gallery-link-hover: #0e0e0d;
 	--color-gallery-link-bg-hover: #d9d0be;
 	--cursor-stroke: none;
-	--cursor-fill: #cc0000;
+	--cursor-fill: var(--base);
 	--cursor-stroke-width: 1px;
 }
 
@@ -94,6 +103,7 @@ html.is-dragging {
 	justify-self: end;
 	padding-right: 2rem;
 	color: var(--color-gallery-number);
+	display: none;
 }
 
 .gallery__item-title {
@@ -189,8 +199,8 @@ html.is-dragging {
 	margin: 0 12vw;
 	text-transform: lowercase;
 	color: transparent;
-	-webkit-text-stroke: 1px #645c5b;
-	text-stroke: 1px #645c5b;
+	-webkit-text-stroke: 1px #bebebe;
+	text-stroke: 1px #bebebe;
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
 }

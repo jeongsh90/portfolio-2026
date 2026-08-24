@@ -27,6 +27,7 @@ body {
 	--cursor-stroke-width: 1px;
 	font-family: halyard-display, sans-serif;
 	font-weight: 300;
+	word-break: keep-all;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
