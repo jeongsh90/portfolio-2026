@@ -191,7 +191,7 @@
 	width: .5rem;
 	height: .5rem;
 	flex-shrink: 0;
-	margin-top: .55rem;
+	margin-top: 1rem;
 	border-radius: 999px;
 	background: var(--base);
 }
@@ -262,7 +262,6 @@
 
 .modal__gallery-images {
 	width: 100%;
-	max-width: 85.25rem;
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;

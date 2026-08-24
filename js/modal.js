@@ -111,8 +111,9 @@
       }
     }
 
+    descGroup.style.display = '';
     var description = data.description || '';
-    descEl.textContent = description;
+    descEl.textContent = description || '[프로젝트 설명을 입력하세요]';
     if (data.link) {
       linkEl.href = data.link;
       linkEl.style.display = '';
@@ -120,25 +121,24 @@
       linkEl.removeAttribute('href');
       linkEl.style.display = 'none';
     }
-    descGroup.style.display = description ? '' : 'none';
 
-    var whatidid = Array.isArray(data.whatidid) ? data.whatidid : [];
+    whatididGroup.style.display = '';
+    var whatidid = Array.isArray(data.whatidid) && data.whatidid.length ? data.whatidid : ['[담당 업무를 입력하세요]'];
     whatididListEl.innerHTML = '';
     whatidid.forEach(function (text) {
       var li = document.createElement('li');
       li.textContent = text;
       whatididListEl.appendChild(li);
     });
-    whatididGroup.style.display = whatidid.length ? '' : 'none';
 
-    var skills = Array.isArray(data.skills) ? data.skills : [];
+    skillsGroup.style.display = '';
+    var skills = Array.isArray(data.skills) && data.skills.length ? data.skills : ['[기술 스택을 입력하세요]'];
     skillsListEl.innerHTML = '';
     skills.forEach(function (text) {
       var li = document.createElement('li');
       li.textContent = text;
       skillsListEl.appendChild(li);
     });
-    skillsGroup.style.display = skills.length ? '' : 'none';
 
     sectionReveals = [
       renderSection(section2El, data.section2),
