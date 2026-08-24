@@ -194,13 +194,13 @@ html.is-dragging {
 }
 
 .gallery__text {
-	font-size: 20vw;
+	font-size: 14vw;
 	line-height: 0.8;
 	margin: 0 12vw;
 	text-transform: lowercase;
 	color: transparent;
-	-webkit-text-stroke: 1px #bebebe;
-	text-stroke: 1px #bebebe;
+	-webkit-text-stroke: 1.25px #bebebe;
+	text-stroke: 1.25px #bebebe;
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
 }

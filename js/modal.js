@@ -12,14 +12,78 @@
   var titleEl = modal.querySelector('.modal__title');
   var tagsEl = modal.querySelector('.modal__tags');
 
-  var linksSection = modal.querySelector('.modal__section--links');
-  var linksTitle = linksSection ? linksSection.querySelector('.modal__group-title') : null;
-  var linksItems = linksSection ? linksSection.querySelectorAll('.modal__component-list li') : [];
-  var gallerySection = modal.querySelector('.modal__section--gallery');
-  var galleryImages = gallerySection ? gallerySection.querySelectorAll('.modal__gallery-image') : [];
+  var descGroup = modal.querySelector('.modal__group--description');
+  var descEl = modal.querySelector('.modal__desc');
+  var linkEl = modal.querySelector('.modal__link');
+  var whatididGroup = modal.querySelector('.modal__group--whatidid');
+  var whatididListEl = modal.querySelector('.modal__whatidid-list');
+  var skillsGroup = modal.querySelector('.modal__group--skills');
+  var skillsListEl = modal.querySelector('.modal__skills');
+
+  var section2El = modal.querySelector('#modalSection2');
+  var section3El = modal.querySelector('#modalSection3');
+  var sectionReveals = [];
 
   var startRect = null;
   var lastTrigger = null;
+
+  function renderSection(container, sectionData) {
+    container.innerHTML = '';
+
+    if (!sectionData || !sectionData.type) {
+      container.className = 'modal__section';
+      container.style.display = 'none';
+      return null;
+    }
+
+    container.style.display = '';
+
+    if (sectionData.type === 'links') {
+      container.className = 'modal__section modal__section--links';
+      var linksWrap = document.createElement('div');
+      linksWrap.className = 'modal__component-links';
+      var titleEl2 = document.createElement('h3');
+      titleEl2.className = 'modal__group-title';
+      titleEl2.textContent = sectionData.title || 'Components.';
+      var list = document.createElement('ul');
+      list.className = 'modal__component-list';
+      var items = Array.isArray(sectionData.items) ? sectionData.items : [];
+      items.forEach(function (entry) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = entry.href || '#';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = entry.label || '';
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      linksWrap.appendChild(titleEl2);
+      linksWrap.appendChild(list);
+      container.appendChild(linksWrap);
+      return { el: container, kind: 'links', title: titleEl2, items: list.querySelectorAll('li') };
+    }
+
+    if (sectionData.type === 'images') {
+      container.className = 'modal__section modal__section--gallery';
+      var imagesWrap = document.createElement('div');
+      imagesWrap.className = 'modal__gallery-images';
+      var images = Array.isArray(sectionData.images) ? sectionData.images : [];
+      images.forEach(function (name) {
+        var img = document.createElement('img');
+        img.className = 'modal__gallery-image';
+        img.src = 'images/' + name;
+        img.alt = '';
+        imagesWrap.appendChild(img);
+      });
+      container.appendChild(imagesWrap);
+      return { el: container, kind: 'images', images: imagesWrap.querySelectorAll('.modal__gallery-image') };
+    }
+
+    container.className = 'modal__section';
+    container.style.display = 'none';
+    return null;
+  }
 
   function populate(item) {
     var number = item.querySelector('.gallery__item-number');
@@ -36,6 +100,50 @@
       tagsEl.appendChild(li);
     });
     media.style.backgroundImage = imgInner ? getComputedStyle(imgInner).backgroundImage : '';
+
+    var dataEl = item.querySelector('.gallery__item-data');
+    var data = {};
+    if (dataEl) {
+      try {
+        data = JSON.parse(dataEl.textContent);
+      } catch (e) {
+        data = {};
+      }
+    }
+
+    var description = data.description || '';
+    descEl.textContent = description;
+    if (data.link) {
+      linkEl.href = data.link;
+      linkEl.style.display = '';
+    } else {
+      linkEl.removeAttribute('href');
+      linkEl.style.display = 'none';
+    }
+    descGroup.style.display = description ? '' : 'none';
+
+    var whatidid = Array.isArray(data.whatidid) ? data.whatidid : [];
+    whatididListEl.innerHTML = '';
+    whatidid.forEach(function (text) {
+      var li = document.createElement('li');
+      li.textContent = text;
+      whatididListEl.appendChild(li);
+    });
+    whatididGroup.style.display = whatidid.length ? '' : 'none';
+
+    var skills = Array.isArray(data.skills) ? data.skills : [];
+    skillsListEl.innerHTML = '';
+    skills.forEach(function (text) {
+      var li = document.createElement('li');
+      li.textContent = text;
+      skillsListEl.appendChild(li);
+    });
+    skillsGroup.style.display = skills.length ? '' : 'none';
+
+    sectionReveals = [
+      renderSection(section2El, data.section2),
+      renderSection(section3El, data.section3)
+    ].filter(Boolean);
   }
 
   var smoothScroll = (function () {
@@ -131,38 +239,45 @@
     scrollResizeObserver.observe(scrollEl);
   }
 
-  function hideSectionReveals() {
-    if (linksTitle) gsap.set(linksTitle, { opacity: 0, y: 28 });
-    if (linksItems.length) gsap.set(linksItems, { opacity: 0, y: 20 });
-    if (galleryImages.length) gsap.set(galleryImages, { opacity: 0, y: 48 });
-  }
-
-  function revealLinksSection() {
-    var tl = gsap.timeline();
-    if (linksTitle) tl.to(linksTitle, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 0);
-    if (linksItems.length) {
-      tl.to(
-        linksItems,
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.02 },
-        0.15
-      );
+  // reveal.el(섹션 컨테이너) 전체 면적 기준 threshold로 트리거하면, item2의 12장
+  // 이미지처럼 세로로 아주 길어진 섹션은 전체 면적 대비 20%를 채우기가 사실상
+  // 불가능해 등장 애니메이션이 영영 발동하지 않고 opacity:0에 갇혀버린다(콘텐츠가
+  // 화면에 보이는데도 안 보이는 버그) — 섹션 단위가 아니라 그 안의 각 요소(제목,
+  // 링크 하나하나, 이미지 하나하나)를 개별로 관찰해 뷰포트 하단에 "위치가
+  // 들어오는 순간" 기준으로 트리거하도록 바꿨다. 콘텐츠 길이와 무관하게 항상
+  // 작동하고, 긴 목록은 스크롤에 따라 자연스럽게 하나씩 나타난다.
+  function collectRevealTargets(reveal) {
+    var targets = [];
+    if (reveal.kind === 'links') {
+      if (reveal.title) targets.push(reveal.title);
+      reveal.items.forEach(function (el) {
+        targets.push(el);
+      });
+    } else if (reveal.kind === 'images') {
+      Array.prototype.forEach.call(reveal.images, function (el) {
+        targets.push(el);
+      });
     }
-  }
-
-  function revealGallerySection() {
-    if (!galleryImages.length) return;
-    gsap.to(galleryImages, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.18 });
+    return targets;
   }
 
   var sectionObserver = null;
 
   function setupSectionReveals() {
-    hideSectionReveals();
+    var allTargets = [];
+    sectionReveals.forEach(function (reveal) {
+      var targets = collectRevealTargets(reveal);
+      var offsetY = reveal.kind === 'images' ? 48 : 20;
+      targets.forEach(function (el) {
+        gsap.set(el, { opacity: 0, y: offsetY });
+      });
+      allTargets = allTargets.concat(targets);
+    });
 
     if (typeof IntersectionObserver === 'undefined') {
-      if (linksTitle) gsap.set(linksTitle, { clearProps: 'all' });
-      if (linksItems.length) gsap.set(linksItems, { clearProps: 'all' });
-      if (galleryImages.length) gsap.set(galleryImages, { clearProps: 'all' });
+      allTargets.forEach(function (el) {
+        gsap.set(el, { clearProps: 'all' });
+      });
       return;
     }
 
@@ -171,15 +286,15 @@
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          if (entry.target === linksSection) revealLinksSection();
-          if (entry.target === gallerySection) revealGallerySection();
+          gsap.to(entry.target, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
           sectionObserver.unobserve(entry.target);
         });
       },
-      { root: viewport, threshold: 0.2 }
+      { root: viewport, threshold: 0, rootMargin: '0px 0px -10% 0px' }
     );
-    if (linksSection) sectionObserver.observe(linksSection);
-    if (gallerySection) sectionObserver.observe(gallerySection);
+    allTargets.forEach(function (el) {
+      sectionObserver.observe(el);
+    });
   }
 
   function pinScroll(lscroll) {
