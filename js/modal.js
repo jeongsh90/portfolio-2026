@@ -112,8 +112,15 @@
     }
 
     descGroup.style.display = '';
-    var description = data.description || '';
-    descEl.textContent = description || '[프로젝트 설명을 입력하세요]';
+    var description = data.description;
+    var paragraphs = Array.isArray(description) ? description.filter(Boolean) : (description ? [description] : []);
+    if (!paragraphs.length) paragraphs = ['[프로젝트 설명을 입력하세요]'];
+    descEl.innerHTML = '';
+    paragraphs.forEach(function (text) {
+      var p = document.createElement('p');
+      p.textContent = text;
+      descEl.appendChild(p);
+    });
     if (data.link) {
       linkEl.href = data.link;
       linkEl.style.display = '';

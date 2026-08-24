@@ -123,7 +123,14 @@
 	font-size: 1.5rem;
 	line-height: 1.7;
 	color: var(--color-text);
+}
+
+.modal__desc p {
 	margin: 0;
+}
+
+.modal__desc p + p {
+	margin-top: 1.25rem;
 }
 
 .modal__link {
