@@ -41,3 +41,19 @@
 
 - 로컬 `git init` 필요(이전 세션에서 초기화되지 않음) — 이 노트 작성 시점 기준 아직 실행 전. 다음 단계(git 연결)에서 `.gitignore` 작성 후 `git init` → 첫 커밋 → `gh repo create portfolio-2026 --public --source=. --remote=origin --push` 순서로 진행 예정.
 - `.gitignore`에 `_workspace_*/`, `node_modules/` 등과 함께 사용자가 참고용으로 넣어둔 `HorizontalSmoothScrollLayout-main*`(원본 데모 zip/폴더, 우리 저장소 콘텐츠 아님)을 제외해야 한다.
+
+## 이미지 파일을 `images/`로 분리 (2026-08-24)
+
+**무엇을** — 프로젝트 루트에 흩어져 있던 이미지 13개(갤러리 `1.b2dd7476.jpg` ~ `12.d01438d5.jpg` 12장 + `favicon.26242483.ico`)를 새로 만든 `images/` 폴더로 옮기고, `index.html`의 참조 경로 13곳을 `images/` 접두사가 붙도록 갱신했다. `fonts/`는 이번 범위 밖이라 손대지 않았다.
+
+**왜** — 앞서 진행한 css/js 폴더 분리(`cd974f2`)와 같은 패턴으로, 루트에 남아 있던 정적 에셋을 종류별 디렉터리로 정리해 루트를 `index.html` + 에셋 폴더(`css/`, `js/`, `fonts/`, `images/`)만 남는 구조로 맞추기 위함. 사용자 요청.
+
+**어떻게 확인** — Playwright(Chromium 1228) + 로컬 정적 서버(:4599)로 실제 페이지를 열어 실측했다.
+- 네트워크: `/images/` 요청 13건 전부 200, 프로젝트 전체에서 4xx/실패 요청 0건, 콘솔 에러 0건.
+- 갤러리: `.gallery__item-imginner` 12개의 computed `background-image`에서 URL을 뽑아 `Image` 객체로 디코드 검증 — 12/12 성공(각 400x600, item4만 480x600).
+- 파비콘: `link[rel*=icon]`의 href가 `/images/favicon.26242483.ico`로 해석되고 fetch 200 / 15086바이트 / `image/x-icon`.
+- 모달: 첫 항목을 클릭해 `modal is-open` 상태 진입 확인, `.modal__media`의 배경이 `/images/1.b2dd7476.jpg`로 잡히고 디코드 성공. 스크린샷으로 갤러리·모달 모두 이미지가 실제 렌더링되는 것까지 눈으로 확인.
+
+**경로 관련 주의점(이번엔 문제 없었던 이유)** — 예전 폰트 경로 이슈처럼 CSS의 `url(...)`은 CSS 파일 자신의 위치 기준 상대경로라 함정이 되지만, 이번 이미지 참조는 전부 `index.html`의 인라인 `style="background-image: url(...)"`에 있어 문서 기준 상대경로다. 따라서 `images/` 접두사만 붙이면 되고 `../` 보정이 필요 없다. `css/*.css` 안에는 이미지 `url()`이 하나도 없고(`gallery.css`의 `url()`은 `../fonts/...` 폰트뿐), `js/*.js`에도 하드코딩된 이미지 경로가 없다 — `modal.js`는 `getComputedStyle(imgInner).backgroundImage`로 이미 절대 URL로 해석된 값을 복사하고, `gallery.js`의 imagesLoaded도 computed style을 읽으므로 둘 다 경로 변경에 영향받지 않는다.
+
+**git** — 13개 파일 모두 `git mv`로 옮겨 `git diff --cached -M`에서 `R100`(내용 동일 rename)으로 잡히는 것을 확인했다. 커밋 시점에 작업 트리에 이번 작업과 무관한 사용자 편집(`.gallery__text` 첫 span의 "Verjuice" → "2026")이 남아 있어, 이 줄은 스테이징에서 제외하고 이미지 경로 변경만 커밋했다(해당 편집은 커밋되지 않은 채 작업 트리에 그대로 유지). push는 사용자 요청 전까지 하지 않음 — 로컬 커밋까지만.
