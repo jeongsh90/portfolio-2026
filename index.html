@@ -7,7 +7,7 @@
 		<meta name="description" content="A horizontal smooth scroll layout powered by Locomotive Scroll">
 		<meta name="keywords" content="locomotive scroll, smooth scroll, horizontal, layout, web design, javascript, css">
 		<meta name="author" content="Codrops">
-		<link rel="shortcut icon" href="images/favicon.26242483.ico">
+		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="https://use.typekit.net/vxy2fer.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/gallery.css">
@@ -24,6 +24,7 @@ var supportsCssVars = function supportsCssVars() {
 supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	</head>
 	<body class="demo-2 loading">
+		<canvas id="dotGrid" class="dot-grid-bg" aria-hidden="true"></canvas>
 		<div class="rotate">
 			<main data-scroll-container="">
 				<div class="content">
@@ -208,7 +209,7 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 					<div class="modal__group modal__group--description">
 						<h3 class="modal__group-title">Description.</h3>
 						<p class="modal__desc">버튼, 인풋, 모달 등 화면마다 반복되던 UI 요소를 재사용 가능한 컴포넌트로 체계화하기 위해 Tailwind CSS 기반의 디자인 시스템을 구축했습니다. shadcn/ui의 구조를 참고하여 확장성 있는 컴포넌트를 설계하고, 컬러, 타이포그래피, 스페이싱을 디자인 토큰으로 정의해 디자이너와 개발자가 동일한 기준을 공유할 수 있도록 했습니다. 또한 Enabled, Hover, Focus, Disabled 등의 인터랙션 상태와 라이트·다크 테마를 세밀하게 정의하여 실무 화면에 곧바로 적용할 수 있는 높은 완성도를 갖추었습니다. 그 결과, 프로젝트의 규모가 커져도 디자인 일관성이 안정적으로 유지될 수 있었으며, 새로운 화면을 개발하는 주기를 크게 단축했습니다. 최근에는 Figma MCP 연동을 도입하여 디자인 스펙을 코드로 직접 가져와 구현하는 워크플로우를 확립함으로써, 화면 제작 속도와 협업 효율성을 한 차원 더 끌어올렸습니다.</p>
-						<a class="modal__link" href="#" target="_blank">사이트 보기</a>
+						<a class="modal__link" href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=17009-21016&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank">사이트 보기</a>
 					</div>
 					<div class="modal__group modal__group--whatidid">
 						<h3 class="modal__group-title">What I did.</h3>
@@ -231,9 +232,44 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 					</div>
 				</div>
 			</div>
-			<section class="modal__section">섹션 2</section>
-			<section class="modal__section">섹션 3</section>
-			<section class="modal__section">섹션 4</section>
+			<section class="modal__section modal__section--links">
+				<div class="modal__component-links">
+					<h3 class="modal__group-title">Components.</h3>
+					<ul class="modal__component-list">
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=1-434&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Accordion</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21-322&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Alert</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21226-46123&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Avatar</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=22-307&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Alert Dialog</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21163-31630&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Attachment</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21172-34353&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Badge</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21028-522&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Button</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21219-45827&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Button Group</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=23-1004&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Breadcrumb</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=37-1900&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Calendar</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=46-67&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Checkbox</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=60-437&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Context Menu</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=244-2898&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Date Picker</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=210-2486&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Menubar</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21190-1568&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Radio</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21214-45593&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Pagination</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21101-41237&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Input</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21121-58044&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Select</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21231-46223&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Sidebar</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=118-2756&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Sonner</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=184-890&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Table</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21195-2304&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Tabs</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=177-367&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Textarea</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21135-77198&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Toggle</a></li>
+						<li><a href="https://www.figma.com/design/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=122-10&p=f&t=bJH9eC3nsWOTLSam-0" target="_blank" rel="noopener noreferrer">Tooltip</a></li>
+					</ul>
+				</div>
+			</section>
+			<section class="modal__section modal__section--gallery">
+				<div class="modal__gallery-images">
+					<img class="modal__gallery-image" src="images/item1-1.png" alt="">
+					<img class="modal__gallery-image" src="images/item1-2.png" alt="">
+				</div>
+			</section>
 			</div>
 			</div>
 		</div>
@@ -241,6 +277,7 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 			<circle class="cursor__inner" cx="10" cy="10" r="5"></circle>
 		</svg>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script src="js/dot-grid.js"></script>
 		<script src="js/gallery.js"></script>
 		<script src="js/drag-scroll.js"></script>
 		<script src="js/modal.js"></script>

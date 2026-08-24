@@ -206,11 +206,92 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-top: 1px solid rgba(217, 208, 190, 0.12);
 	font-family: 'Rix Yeoljeongdo', moret, serif;
 	font-style: italic;
 	font-size: clamp(2rem, 5vw, 3.5rem);
 	color: var(--color-gallery-title);
+}
+
+.modal__section--links {
+	padding: 4rem 8vw;
+}
+
+.modal__component-links {
+	width: 100%;
+	max-width: 84rem;
+}
+
+.modal__component-links .modal__group-title {
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+	margin-bottom: 2rem;
+}
+
+.modal__component-list {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2rem 2rem;
+	margin: 0;
+	padding: 0;
+	font-family: 'Pretendard', sans-serif;
+	font-style: normal;
+}
+
+.modal__component-list a {
+	display: inline-block;
+	font-size: 1.5rem;
+	color: var(--color-text);
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 0.25em;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.modal__component-list a:hover,
+.modal__component-list a:focus-visible {
+	color: var(--base);
+	text-decoration-color: currentColor;
+}
+
+@media (max-width: 900px) {
+	.modal__component-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.modal__section--gallery {
+	height: auto;
+	min-height: 100vh;
+	padding: 4rem 8vw;
+}
+
+.modal__gallery-images {
+	width: 100%;
+	max-width: 64rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.modal__gallery-image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+@media (max-width: 560px) {
+	.modal__section--links {
+		padding: 2.5rem 8vw;
+	}
+
+	.modal__component-links .modal__group-title {
+		margin-bottom: 1.25rem;
+	}
+
+	.modal__component-list {
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+	}
 }
 
 @media (max-width: 900px) {

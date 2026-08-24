@@ -11,6 +11,7 @@
   var numberEl = modal.querySelector('.modal__number');
   var titleEl = modal.querySelector('.modal__title');
   var tagsEl = modal.querySelector('.modal__tags');
+  var galleryImages = modal.querySelectorAll('.modal__gallery-image');
 
   var startRect = null;
   var lastTrigger = null;
@@ -115,6 +116,16 @@
 
     return { recalc: recalc, reset: reset, handleKeydown: handleKeydown };
   })();
+
+  // 섹션 3의 갤러리 이미지(item1-1/item1-2)는 모달 최초 오픈 시점엔 아직 디코드되지
+  // 않아 실제 높이를 모른다 — 로드가 끝나 레이아웃이 늘어나면 스크롤 최대치를 다시
+  // 계산해, 늘어난 만큼 끝까지 스크롤되지 않는 문제를 막는다.
+  galleryImages.forEach(function (img) {
+    if (img.complete) return;
+    img.addEventListener('load', function () {
+      if (modal.classList.contains('is-open')) smoothScroll.recalc();
+    });
+  });
 
   function pinScroll(lscroll) {
     if (!lscroll.scroll || !lscroll.scroll.instance) return;
