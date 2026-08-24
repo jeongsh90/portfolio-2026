@@ -57,3 +57,19 @@
 **경로 관련 주의점(이번엔 문제 없었던 이유)** — 예전 폰트 경로 이슈처럼 CSS의 `url(...)`은 CSS 파일 자신의 위치 기준 상대경로라 함정이 되지만, 이번 이미지 참조는 전부 `index.html`의 인라인 `style="background-image: url(...)"`에 있어 문서 기준 상대경로다. 따라서 `images/` 접두사만 붙이면 되고 `../` 보정이 필요 없다. `css/*.css` 안에는 이미지 `url()`이 하나도 없고(`gallery.css`의 `url()`은 `../fonts/...` 폰트뿐), `js/*.js`에도 하드코딩된 이미지 경로가 없다 — `modal.js`는 `getComputedStyle(imgInner).backgroundImage`로 이미 절대 URL로 해석된 값을 복사하고, `gallery.js`의 imagesLoaded도 computed style을 읽으므로 둘 다 경로 변경에 영향받지 않는다.
 
 **git** — 13개 파일 모두 `git mv`로 옮겨 `git diff --cached -M`에서 `R100`(내용 동일 rename)으로 잡히는 것을 확인했다. 커밋 시점에 작업 트리에 이번 작업과 무관한 사용자 편집(`.gallery__text` 첫 span의 "Verjuice" → "2026")이 남아 있어, 이 줄은 스테이징에서 제외하고 이미지 경로 변경만 커밋했다(해당 편집은 커밋되지 않은 채 작업 트리에 그대로 유지). push는 사용자 요청 전까지 하지 않음 — 로컬 커밋까지만.
+
+## 갤러리 이미지를 sample 이미지로 교체 (2026-08-24)
+
+**무엇을** — 사용자가 기존 갤러리 이미지 12장(`1.b2dd7476.jpg` ~ `12.d01438d5.jpg`)을 직접 삭제하고 `images/sample 1.png` ~ `sample 11.png` 11장을 새로 넣어둔 상태에서, `index.html`의 갤러리 항목 12개 `background-image` 참조를 새 파일로 교체했다. 항목1~11은 순서대로 `sample 1`~`sample 11`에 매핑하고, 이미지가 한 장 부족한 항목12는 사용자가 선택한 대로 `sample 1.png`를 재사용한다.
+
+**파일명 공백 처리** — 새 파일명에 공백이 있어(`sample 1.png`) CSS `url()`에 그대로 넣으면 파싱이 깨질 수 있다. 인라인 `style` 속성이 큰따옴표를 쓰고 있으므로 URL은 작은따옴표로 감싸고, 공백은 `%20`으로 퍼센트 인코딩했다 — 최종 형태는 `url('images/sample%201.png')`. 따옴표는 CSS 파서를, 퍼센트 인코딩은 실제 요청 URL을 각각 안전하게 만드는 이중 방어이며, 둘 중 하나만으로도 동작하지만 함께 쓰는 편이 확실하다.
+
+**다른 파일 영향 없음** — 프로젝트 전체를 검색해 기존 jpg 파일명을 하드코딩한 곳은 `index.html` 12줄이 전부였다. `js/modal.js`는 `getComputedStyle(imgInner).backgroundImage`를 복사하고, `js/gallery.js`의 imagesLoaded도 computed style에서 `/url\((['"])?(.*?)\1\)/` 정규식으로 URL을 뽑으므로 — 이 정규식은 따옴표로 감싼 형태를 정상 처리한다 — 양쪽 모두 수정이 필요 없었다.
+
+**어떻게 확인** — Playwright(Chromium 1228) + 로컬 정적 서버(:8899)로 실측했다.
+- 로딩 게이트: `preloadImages('.gallery__item-imginner')` 프로미스가 resolve되어 `body.loading` 클래스가 정상 해제됨 — 이미지 한 장이라도 로드 실패하면 페이지가 loading 상태에 갇히므로 이 자체가 12장 전부 로드됐다는 증거다.
+- 갤러리: 12개 항목의 computed `background-image`가 의도한 매핑과 정확히 일치(1~11 → sample 1~11, 12 → sample 1), 12/12 전부 `Image.decode()` 성공(각 400x600).
+- 네트워크: `/images/` 요청 12건 전부 200(sample 11장 + favicon), 4xx/실패 요청 0건, 콘솔 에러 0건, 페이지 에러 0건.
+- 모달: 항목 5·11·12를 각각 열어 `.modal__media` 배경이 `sample 5.png`(Uroboros) / `sample 11.png`(Eurhythmic) / `sample 1.png`(Dariole)로 잡히고 디코드까지 성공하는 것을 확인. 항목12만 검증하면 sample 1이 "재사용 결과"인지 "직전 모달의 잔상"인지 구분되지 않으므로, 서로 다른 이미지를 쓰는 항목을 섞어 열어 모달이 항목별로 올바른 이미지를 집어오는 것까지 확인했다.
+
+**git** — 이미지 관련 변경분만 선별 스테이징했다. 작업 트리에는 이번 요청과 무관한 사용자의 진행 중 편집이 남아 있었다: `index.html`의 `.gallery__text` 장식 텍스트("Verjuice/Zyrian" → "2026/Portfolio")와 `css/gallery.css`의 `.gallery__item-number { display: none }` 추가 및 text-stroke 색상 `#645c5b` → `#bebebe`. `index.html`은 한 파일 안에 사용자 편집 1줄과 이미지 변경 12줄이 섞여 있어 파일 단위 `git add`로는 분리가 불가능하므로, `git show HEAD:index.html`로 받은 원본에 이미지 치환 12건만 적용한 blob을 `git hash-object -w` → `git update-index --cacheinfo`로 인덱스에 직접 넣었다(작업 트리 파일은 건드리지 않음). 결과적으로 스테이징된 `index.html` diff는 12줄 +/-, 미스테이징으로 남은 diff는 `.gallery__text` 1줄뿐임을 확인했다. push는 하지 않음 — 로컬 커밋까지만.
