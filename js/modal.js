@@ -69,15 +69,29 @@
       var imagesWrap = document.createElement('div');
       imagesWrap.className = 'modal__gallery-images';
       var images = Array.isArray(sectionData.images) ? sectionData.images : [];
-      images.forEach(function (name) {
+      images.forEach(function (entry) {
+        // entry는 이미지 파일명 문자열이거나, { embed: "iframe src URL" } 형태의
+        // 임베드 항목일 수 있다 — Figma 등 외부 미리보기를 갤러리 사이에 끼워넣을 때 사용.
+        if (entry && typeof entry === 'object' && entry.embed) {
+          var embedWrap = document.createElement('div');
+          embedWrap.className = 'modal__gallery-embed';
+          var iframe = document.createElement('iframe');
+          iframe.src = entry.embed;
+          iframe.loading = 'lazy';
+          iframe.allow = 'fullscreen';
+          iframe.allowFullscreen = true;
+          embedWrap.appendChild(iframe);
+          imagesWrap.appendChild(embedWrap);
+          return;
+        }
         var img = document.createElement('img');
         img.className = 'modal__gallery-image';
-        img.src = 'images/' + name;
+        img.src = 'images/' + entry;
         img.alt = '';
         imagesWrap.appendChild(img);
       });
       container.appendChild(imagesWrap);
-      return { el: container, kind: 'images', images: imagesWrap.querySelectorAll('.modal__gallery-image') };
+      return { el: container, kind: 'images', images: imagesWrap.children };
     }
 
     container.className = 'modal__section';
