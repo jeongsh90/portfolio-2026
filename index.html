@@ -289,6 +289,7 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 								<span class="gallery__item-number" data-scroll="" data-scroll-speed="1.5">04</span>
 								<p class="gallery__item-tags">
 									<span>#홈페이지</span>
+									<span>#퍼블리싱</span>
 									<span>#초안</span>
 								</p>
 								<a class="gallery__item-link" aria-label="explore"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></g></svg></a>
@@ -317,9 +318,9 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 							</script>
 						</figure>
 						<figure class="gallery__item">
-							<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url('images/sample%205.png')" data-scroll="" data-scroll-speed="-0.8"></div></div>
+							<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url('images/item5/item5.png')" data-scroll="" data-scroll-speed="-0.8"></div></div>
 							<figcaption class="gallery__item-caption">
-								<h2 class="gallery__item-title" data-scroll="" data-scroll-speed="1">title4</h2>
+								<h2 class="gallery__item-title" data-scroll="" data-scroll-speed="1">서울시 시유재산관리시스템</h2>
 								<span class="gallery__item-number" data-scroll="" data-scroll-speed="1.5">05</span>
 								<p class="gallery__item-tags">
 									<span>#tag1</span>
@@ -329,10 +330,37 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 								<a class="gallery__item-link" aria-label="explore"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></g></svg></a>
 							</figcaption>
 							<script type="application/json" class="gallery__item-data">{
-								"description": "",
-								"link": "",
-								"whatidid": [],
-								"skills": []
+								"description": [
+									"서울시 시유재산관리시스템의 사내 프로젝트로, 기획안을 바탕으로 메인 화면 1안과 서브 화면 1안의 UI 디자인을 진행했습니다.",
+									"별도의 기획·개발 없이 디자인 작업만 담당했으며, Figma를 활용해 화면을 설계했습니다."
+								],
+								"links": [
+									{
+										"href": "https://www.figma.com/proto/4Fyi51LciBymB8oTYy5ZUG/Design-System?node-id=21355-52481&p=f&t=UpiV6jN2zhEEvgT2-0&scaling=min-zoom&content-scaling=fixed&page-id=40%3A155",
+										"label": "Figma 프리뷰 보기"
+									},
+									{
+										"href": "images/item5/서울시_시유재산관리시스템.pdf",
+										"label": "PPT 새창으로 열기"
+									}
+								],
+								"whatidid": [
+									"제공된 기획안을 바탕으로 메인 화면 1안 UI 디자인 진행",
+									"서브 화면 1안 UI 디자인 진행",
+									"Figma를 활용한 화면 설계 및 시안 제작"
+								],
+								"skills": [
+									"Figma",
+									"UI Design"
+								],
+								"section2": {
+									"type": "images",
+									"images": [
+										"item5/item5-2.png",
+										"item5/item5-3.png",
+										"item5/item5-4.png"
+									]
+								}
 							}
 							</script>
 						</figure>
@@ -500,7 +528,7 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 					<div class="modal__group modal__group--description">
 						<h3 class="modal__group-title">Description.</h3>
 						<div class="modal__desc"></div>
-						<a class="modal__link" href="#" target="_blank">사이트 보기</a>
+						<div class="modal__links"></div>
 					</div>
 					<div class="modal__group modal__group--whatidid">
 						<h3 class="modal__group-title">What I did.</h3>
