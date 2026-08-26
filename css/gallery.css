@@ -205,7 +205,26 @@ html.is-dragging {
 }
 
 .gallery__text-inner {
+	position: relative;
 	display: block;
+}
+
+.gallery__text-date {
+	position: absolute;
+	right: 0;
+	top: calc(100% + 1rem);
+	font-family: 'Rix Yeoljeongdo', moret, serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: clamp(2rem, 1.4vw, 1.25rem);
+	line-height: normal;
+	text-transform: none;
+	white-space: nowrap;
+	-webkit-text-stroke: 0;
+	text-stroke: 0;
+	-webkit-text-fill-color: var(--color-text);
+	text-fill-color: var(--color-text);
+	
 }
 
 @media screen and (max-width: 700px) {
@@ -250,4 +269,90 @@ html.is-dragging {
 	.gallery__text {
 		margin: 0 6vw;
 	}
+}
+
+/* .gallery__text와 동일한 아웃라인(투명 채움 + 스트로크) 타이포 처리를
+   그대로 재사용하되, 두 줄로 쌓지 않고 작은 사이즈 한 줄로 화면
+   좌측 상단에 고정한 브랜드 라벨. */
+.site-brand {
+	position: fixed;
+	top: 2rem;
+	left: 2rem;
+	z-index: 500;
+	font-family: moret, serif;
+	font-weight: 800;
+	font-style: italic;
+	font-size: 2rem;
+	line-height: 1;
+	text-transform: lowercase;
+	white-space: nowrap;
+	pointer-events: none;
+	/* 초기 상태는 숨김 — js/site-brand.js가 히어로 타이틀이 화면에서
+	   사라지는 시점에 맞춰 GSAP로 나타나게 한다. JS가 늦게 실행되기
+	   전까지 잠깐이라도 보이는 깜빡임을 막기 위한 기본값. */
+	opacity: 0;
+}
+
+html.modal-open .site-brand {
+	display: none;
+}
+
+@media (max-width: 700px) {
+	.site-brand {
+		top: 1.25rem;
+		left: 1.25rem;
+		font-size: 1.1rem;
+	}
+}
+
+.gallery-nav {
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+	z-index: 500;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+/* 모달이 열려 있는 동안엔 뒤쪽 갤러리 내비게이션이 겹쳐 보이지 않게 숨긴다. */
+html.modal-open .gallery-nav {
+	display: none;
+}
+
+.gallery-nav__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+	height: 5rem;
+	border:0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--color-text);
+	cursor: pointer;
+	transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	outline: none;
+}
+
+.gallery-nav__btn:hover,
+.gallery-nav__btn:focus-visible {
+	background: var(--color-gallery-link-bg);
+	color: var(--color-gallery-link);
+	border-color: transparent;
+	
+}
+
+@media (max-width: 700px) {
+	.gallery-nav {
+		right: 1.25rem;
+		bottom: 1.25rem;
+		gap: 0.5rem;
+	}
+
+	.gallery-nav__btn {
+		width: 3rem;
+		height: 3rem;
+	}
+
 }

@@ -15,6 +15,7 @@
   var descGroup = modal.querySelector('.modal__group--description');
   var descEl = modal.querySelector('.modal__desc');
   var linksEl = modal.querySelector('.modal__links');
+  var fixedLinksEl = modal.querySelector('.modal__fixed-links');
   var whatididGroup = modal.querySelector('.modal__group--whatidid');
   var whatididListEl = modal.querySelector('.modal__whatidid-list');
   var skillsGroup = modal.querySelector('.modal__group--skills');
@@ -88,6 +89,7 @@
         img.className = 'modal__gallery-image';
         img.src = 'images/' + entry;
         img.alt = '';
+        img.loading = 'lazy'; // 모달 스크롤을 내려야 나오는 이미지는 그 시점에 불러오게
         imagesWrap.appendChild(img);
       });
       container.appendChild(imagesWrap);
@@ -97,6 +99,22 @@
     container.className = 'modal__section';
     container.style.display = 'none';
     return null;
+  }
+
+  function renderLinkButtons(container, links) {
+    if (!container) return;
+    container.innerHTML = '';
+    links.forEach(function (entry) {
+      if (!entry || !entry.href) return;
+      var a = document.createElement('a');
+      a.className = 'modal__link';
+      a.href = entry.href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = entry.label || '사이트 보기';
+      container.appendChild(a);
+    });
+    container.style.display = links.length ? '' : 'none';
   }
 
   function populate(item) {
@@ -138,18 +156,12 @@
     var links = Array.isArray(data.links) && data.links.length
       ? data.links
       : (data.link ? [{ href: data.link, label: data.linkLabel || '사이트 보기' }] : []);
-    linksEl.innerHTML = '';
-    links.forEach(function (item) {
-      if (!item || !item.href) return;
-      var a = document.createElement('a');
-      a.className = 'modal__link';
-      a.href = item.href;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.textContent = item.label || '사이트 보기';
-      linksEl.appendChild(a);
-    });
-    linksEl.style.display = links.length ? '' : 'none';
+    renderLinkButtons(linksEl, links);
+    // 화면을 스크롤해도 항상 눈에 띄어야 하는 링크 버튼(피그마/퍼블리싱 파일 보기 등) —
+    // 링크가 있는 항목에서만 표시. .modal__scroll처럼 transform이 걸린 조상 안에 두면
+    // position:fixed가 뷰포트가 아니라 그 조상 기준으로 묶여버리므로, 이 컨테이너는
+    // 마크업상 .modal__viewport/.modal__scroll 바깥(.modal 바로 아래)에 둬야 한다.
+    renderLinkButtons(fixedLinksEl, links);
 
     whatididGroup.style.display = '';
     var whatidid = Array.isArray(data.whatidid) && data.whatidid.length ? data.whatidid : ['[담당 업무를 입력하세요]'];
@@ -379,6 +391,7 @@
 
     gsap.set(backdrop, { opacity: 0 });
     gsap.set(closeBtn, { opacity: 0 });
+    gsap.set(fixedLinksEl, { opacity: 0 });
     gsap.set(info, { opacity: 0, x: 24 });
     gsap.set(media, { opacity: 1, clearProps: 'position,top,left,width,height,margin' });
 
@@ -412,7 +425,20 @@
         0
       );
       tl.to(closeBtn, { opacity: 1, duration: 0.4 }, 0.2);
-      tl.to(info, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 0.7);
+      tl.to(fixedLinksEl, { opacity: 1, duration: 0.4 }, 0.2);
+      tl.to(info, {
+        opacity: 1,
+        x: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        onComplete: function () {
+          // GSAP는 x 트윈이 끝나도 transform 인라인 스타일을 지우지 않고 남겨둔다
+          // (예: translate(0px, 0px)) — transform은 값이 none이 아니면 항등값이어도
+          // 스택킹 컨텍스트를 만들어서, 다른 곳(.modal__fixed-links 버튼)의
+          // backdrop-filter가 배경을 제대로 못 읽는 원인이 될 수 있어 명시적으로 지운다.
+          gsap.set(info, { clearProps: 'transform' });
+        }
+      }, 0.7);
     });
 
     closeBtn.focus();
@@ -431,16 +457,25 @@
         gsap.set(info, { clearProps: 'all' });
         gsap.set(backdrop, { clearProps: 'all' });
         gsap.set(closeBtn, { clearProps: 'all' });
+        gsap.set(fixedLinksEl, { clearProps: 'all' });
+        gsap.set(viewport, { clearProps: 'all' });
         smoothScroll.reset();
         unlockScroll();
         if (lastTrigger && lastTrigger.focus) lastTrigger.focus();
         startRect = null;
       }
     });
-    tl.to(info, { opacity: 0, y: -12, duration: 0.3, ease: 'power1.in' }, 0);
-    tl.to(media, { opacity: 0, scale: 0.96, duration: 0.35, ease: 'power1.in' }, 0);
-    tl.to(closeBtn, { opacity: 0, duration: 0.2 }, 0);
-    tl.to(backdrop, { opacity: 0, duration: 0.35 }, 0.1);
+    // viewport(= .modal__scroll을 담은 스크롤 뷰포트) 전체를 하나로 페이드아웃한다.
+    // 예전엔 info/media/closeBtn만 개별로 페이드시켰는데, 그러면 지금 화면에
+    // 스크롤되어 보이는 컴포넌트 링크·이미지 갤러리(section2/section3) 콘텐츠는
+    // 애니메이션 대상이 아니라서 페이드 없이 뚝 잘려 사라져 "이미지 부분만
+    // 뒤늦게 닫히는" 것처럼 보였다. viewport 하나만 페이드시키면 지금 스크롤
+    // 위치가 어디든(히어로든 갤러리든) 화면에 보이는 모든 콘텐츠가 한 번에
+    // 자연스럽게 사라진다. 지속시간도 짧게 줄여 닫힘 자체가 굼뜨지 않게 함.
+    tl.to(viewport, { opacity: 0, duration: 0.28, ease: 'power1.in' }, 0);
+    tl.to(closeBtn, { opacity: 0, duration: 0.22 }, 0);
+    tl.to(fixedLinksEl, { opacity: 0, duration: 0.22 }, 0);
+    tl.to(backdrop, { opacity: 0, duration: 0.3 }, 0);
 
     document.removeEventListener('keydown', onKeydown);
   }
