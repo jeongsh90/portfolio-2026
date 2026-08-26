@@ -1,0 +1,426 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Button</h1>
+            <p data-slot="desc">사용자 액션을 트리거하는 버튼 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-row">
+                <button type="button" data-slot="button" data-variant="outline">Button</button>
+                <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="Submit">
+                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc"><code>data-size</code> prop으로 버튼 크기를 변경합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-size">
+                <div data-slot="button-size-group">
+                    <button type="button" data-slot="button" data-variant="outline" data-size="xs">Extra Small</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon-xs" aria-label="Submit">
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="button-size-group">
+                    <button type="button" data-slot="button" data-variant="outline" data-size="sm">Small</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon-sm" aria-label="Submit">
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="button-size-group">
+                    <button type="button" data-slot="button" data-variant="outline">Default</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="Submit">
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="button-size-group">
+                    <button type="button" data-slot="button" data-variant="outline" data-size="lg">Large</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon-lg" aria-label="Submit">
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="default">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Default</h2>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button">Button</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="outline">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Outline</h2>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="outline">Outline</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="secondary">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Secondary</h2>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="secondary">Secondary</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="ghost">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Ghost</h2>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="ghost">Ghost</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="destructive">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Destructive</h2>
+            <p data-slot="desc"><code>data-variant="destructive"</code>는 소프트(은은한 배경) 스타일입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="destructive">Destructive</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="link">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Link</h2>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="link">Link</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="contained">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Contained</h2>
+            <p data-slot="desc"><code>data-variant="default"</code>(또는 생략) 솔리드 버튼. <code>data-color</code>로 시스템 색상을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-row">
+                <button type="button" data-slot="button">Default</button>
+                <button type="button" data-slot="button" data-variant="secondary">Secondary</button>
+                <button type="button" data-slot="button" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-color="error">Error</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="outlined">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Outlined</h2>
+            <p data-slot="desc"><code>data-variant="outline"</code>과 <code>data-color</code> 조합입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-row">
+                <button type="button" data-slot="button" data-variant="outline">Default</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="error">Error</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="ghost-colors">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Ghost Color</h2>
+            <p data-slot="desc"><code>data-variant="ghost"</code>과 <code>data-color</code> 조합입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-row">
+                <button type="button" data-slot="button" data-variant="ghost">Default</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="error">Error</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="soft">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Soft</h2>
+            <p data-slot="desc"><code>data-variant="soft"</code> 소프트 버튼과 <code>data-color</code> 조합입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-row">
+                <button type="button" data-slot="button" data-variant="soft">Default</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="error">Error</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="color">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Color</h2>
+            <p data-slot="desc">모든 <code>data-variant</code>와 <code>data-color</code> 조합입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-color-grid">
+                <button type="button" data-slot="button" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="info">Info</button>
+                <button type="button" data-slot="button" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="success">Success</button>
+                <button type="button" data-slot="button" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="warning">Warning</button>
+                <button type="button" data-slot="button" data-color="error">Error</button>
+                <button type="button" data-slot="button" data-variant="outline" data-color="error">Error</button>
+                <button type="button" data-slot="button" data-variant="ghost" data-color="error">Error</button>
+                <button type="button" data-slot="button" data-variant="soft" data-color="error">Error</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Icon</h2>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="outline" data-size="icon">
+                    <i data-lucide="circle-fading-arrow-up" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="with-icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">With Icon</h2>
+            <p data-slot="desc">올바른 간격을 위해 아이콘에 <code>data-icon="inline-start"</code> 또는 <code>data-icon="inline-end"</code>를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button type="button" data-slot="button" data-variant="outline" data-size="sm">
+                    <i data-lucide="git-branch" aria-hidden="true"></i>
+                    New Branch
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="rounded">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Rounded</h2>
+            <p data-slot="desc"><code>data-shape="round"</code>(<code>rounded-full</code>)으로 완전히 둥근 버튼을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-rounded">
+                <button type="button" data-slot="button" data-variant="outline" data-size="icon" data-shape="round">
+                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="spinner">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Spinner</h2>
+            <p data-slot="desc">로딩 상태를 표시하려면 버튼 안에 <code>data-slot="spinner"</code>를 렌더합니다. 간격을 위해 <code>data-icon="inline-start"</code> 또는 <code>data-icon="inline-end"</code>를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-row">
+                <button type="button" data-slot="button" data-variant="outline" disabled>
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Generating
+                </button>
+                <button type="button" data-slot="button" data-variant="secondary" disabled>
+                    Downloading
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="button-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Button Group</h2>
+            <p data-slot="desc">버튼 그룹을 만들려면 <code>data-slot="button-group"</code>을 사용합니다. 자세한 내용은 <strong>Button Group</strong> 문서를 참고하세요.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-group">
+                <div data-slot="button-group">
+                    <div data-slot="button-group" data-button-group-hidden-sm>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="Go Back">
+                            <i data-lucide="arrow-left" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="button-group">
+                        <button type="button" data-slot="button" data-variant="outline">Archive</button>
+                        <button type="button" data-slot="button" data-variant="outline">Report</button>
+                    </div>
+                    <div data-slot="button-group">
+                        <button type="button" data-slot="button" data-variant="outline">Snooze</button>
+                        <div data-slot="dropdown-menu">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-haspopup="menu" aria-expanded="false" aria-label="More Options">
+                                <i data-lucide="more-horizontal" aria-hidden="true"></i>
+                            </button>
+                            <div data-slot="dropdown-menu-content" data-state="closed" role="menu" aria-label="More Options">
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">
+                                    <i data-lucide="mail-check" aria-hidden="true"></i>
+                                    Mark as Read
+                                </button>
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">
+                                    <i data-lucide="archive" aria-hidden="true"></i>
+                                    Archive
+                                </button>
+                                <div data-slot="dropdown-menu-separator"></div>
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">
+                                    <i data-lucide="clock" aria-hidden="true"></i>
+                                    Snooze
+                                </button>
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">
+                                    <i data-lucide="calendar-plus" aria-hidden="true"></i>
+                                    Add to Calendar
+                                </button>
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">
+                                    <i data-lucide="list-filter" aria-hidden="true"></i>
+                                    Add to List
+                                </button>
+                                <div data-slot="dropdown-menu-separator"></div>
+                                <button type="button" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">
+                                    <i data-lucide="trash-2" aria-hidden="true"></i>
+                                    Trash
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="as-child">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">As Child</h2>
+            <p data-slot="desc"><code>asChild</code> prop처럼 다른 요소를 버튼처럼 보이게 하려면 <code>&lt;a&gt;</code>에 <code>data-slot="button"</code>을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <a href="#" data-slot="button">Login</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Button</h3>
+            <p data-slot="desc">다양한 스타일과 기능을 추가하는 <code>button</code> 요소 래퍼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"outline"</code> | <code>"ghost"</code> | <code>"destructive"</code> | <code>"secondary"</code> | <code>"link"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>시각적 스타일 variant.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"xs"</code> | <code>"sm"</code> | <code>"lg"</code> | <code>"icon"</code> | <code>"icon-xs"</code> | <code>"icon-sm"</code> | <code>"icon-lg"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>버튼 크기.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-color</code></td>
+                        <td><code>"info"</code> | <code>"success"</code> | <code>"warning"</code> | <code>"error"</code></td>
+                        <td>—</td>
+                        <td>시스템 색상. default, outline, ghost, destructive variant와 조합합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>asChild</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                        <td>자식 요소에 버튼 스타일을 적용합니다. HTML에서는 <code>&lt;a data-slot="button"&gt;</code>로 대체합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#size">Size</a></li>
+                <li><a href="#default">Default</a></li>
+                <li><a href="#outline">Outline</a></li>
+                <li><a href="#secondary">Secondary</a></li>
+                <li><a href="#ghost">Ghost</a></li>
+                <li><a href="#destructive">Destructive</a></li>
+                <li><a href="#link">Link</a></li>
+                <li><a href="#contained">Contained</a></li>
+                <li><a href="#outlined">Outlined</a></li>
+                <li><a href="#ghost-colors">Ghost Color</a></li>
+                <li><a href="#soft">Soft</a></li>
+                <li><a href="#color">Color</a></li>
+                <li><a href="#icon">Icon</a></li>
+                <li><a href="#with-icon">With Icon</a></li>
+                <li><a href="#rounded">Rounded</a></li>
+                <li><a href="#spinner">Spinner</a></li>
+                <li><a href="#button-group">Button Group</a></li>
+                <li><a href="#as-child">As Child</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,257 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Date Picker</h1>
+            <p data-slot="desc"><code>Popover</code>와 <code>Calendar</code>를 조합해 날짜를 선택하는 컴포넌트입니다. 별도의 Date Picker 루트 컴포넌트 없이 두 컴포넌트를 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-overview">
+                <div data-slot="date-picker" data-mode="single" data-format="long">
+                    <div data-slot="popover">
+                        <button type="button" data-slot="button" data-variant="outline" data-layout="spread" data-empty="true" data-placeholder="Pick a date" aria-expanded="false" aria-haspopup="dialog">
+                            <span data-slot="date-picker-value" data-placeholder="Pick a date" data-empty="true">Pick a date</span>
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div data-slot="popover-content" data-fit="true" data-align="start" data-state="closed">
+                            <div data-slot="calendar" data-mode="single"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">라벨과 함께 사용하는 기본 날짜 선택 필드입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-basic">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="date-picker-basic-trigger">Date</label>
+                    <div data-slot="date-picker" data-mode="single" data-format="long">
+                        <div data-slot="popover">
+                            <button type="button" id="date-picker-basic-trigger" data-slot="button" data-variant="outline" data-empty="true" data-placeholder="Pick a date" aria-expanded="false" aria-haspopup="dialog">
+                                <span data-slot="date-picker-value" data-placeholder="Pick a date" data-empty="true">Pick a date</span>
+                            </button>
+                            <div data-slot="popover-content" data-fit="true" data-align="start" data-state="closed">
+                                <div data-slot="calendar" data-mode="single"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="range-picker">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Range Picker</h2>
+            <p data-slot="desc">날짜 범위를 선택합니다. <code>data-mode="range"</code>, <code>data-months="2"</code>를 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-range">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="date-picker-range-trigger">Date Picker Range</label>
+                    <div data-slot="date-picker" data-mode="range" data-format="medium" data-close-on-select="false">
+                        <div data-slot="popover">
+                            <button type="button" id="date-picker-range-trigger" data-slot="button" data-variant="outline" data-padding="sm" data-empty="false" aria-expanded="false" aria-haspopup="dialog">
+                                <i data-lucide="calendar" aria-hidden="true"></i>
+                                <span data-slot="date-picker-value" data-empty="false">Jan 20, 2026 - Feb 09, 2026</span>
+                            </button>
+                            <div data-slot="popover-content" data-fit="true" data-align="start" data-state="closed">
+                                <div data-slot="calendar" data-mode="range" data-months="2" data-default-month="2026-01" data-range-from="2026-01-20" data-range-to="2026-02-09"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="date-of-birth">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Date of Birth</h2>
+            <p data-slot="desc">생년월일 선택에 적합한 드롭다운 캡션 레이아웃입니다. 날짜 선택 시 팝오버가 닫힙니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-dob">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="date-picker-dob-trigger">Date of birth</label>
+                    <div data-slot="date-picker" data-mode="single" data-format="locale" data-close-on-select="true">
+                        <div data-slot="popover">
+                            <button type="button" id="date-picker-dob-trigger" data-slot="button" data-variant="outline" data-empty="true" data-placeholder="Select date" aria-expanded="false" aria-haspopup="dialog">
+                                <span data-slot="date-picker-value" data-placeholder="Select date" data-empty="true">Select date</span>
+                            </button>
+                            <div data-slot="popover-content" data-fit="true" data-align="start" data-state="closed">
+                                <div data-slot="calendar" data-mode="single" data-caption-layout="dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="input">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Input</h2>
+            <p data-slot="desc">입력 필드와 캘린더 버튼을 함께 사용합니다. <kbd>↓</kbd> 키로 캘린더를 열 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-input">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="date-picker-input-field">Subscription Date</label>
+                    <div data-slot="date-picker" data-mode="single" data-format="input" data-close-on-select="true">
+                        <div data-slot="input-group">
+                            <input type="text" id="date-picker-input-field" data-date-picker-input data-slot="input-group-control" value="June 01, 2025" placeholder="June 01, 2025" autocomplete="off" aria-label="Subscription date">
+                            <div data-slot="input-group-addon" data-align="inline-end">
+                                <div data-slot="popover">
+                                    <button type="button" data-slot="input-group-button" data-variant="ghost" data-size="icon-xs" aria-label="Select date" aria-expanded="false" aria-haspopup="dialog">
+                                        <i data-lucide="calendar" aria-hidden="true"></i>
+                                    </button>
+                                    <div data-slot="popover-content" data-fit="true" data-align="end" data-align-offset="-8" data-side-offset="10" data-state="closed">
+                                        <div data-slot="calendar" data-mode="single" data-selected="2025-06-01" data-default-month="2025-06"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="time-picker">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Time Picker</h2>
+            <p data-slot="desc">날짜 선택과 시간 입력을 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-time">
+                <div data-slot="date-picker" data-mode="single" data-format="long" data-close-on-select="true">
+                    <div data-slot="field-group" data-orientation="horizontal">
+                        <div data-slot="field" role="group" data-width="32">
+                            <label data-slot="field-label" for="date-picker-time-trigger">Date</label>
+                            <div data-slot="popover">
+                                <button type="button" id="date-picker-time-trigger" data-slot="button" data-variant="outline" data-layout="spread" data-trigger-width="32" data-empty="true" data-placeholder="Select date" aria-expanded="false" aria-haspopup="dialog">
+                                    <span data-slot="date-picker-value" data-placeholder="Select date" data-empty="true">Select date</span>
+                                    <i data-lucide="chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div data-slot="popover-content" data-fit="true" data-align="start" data-state="closed">
+                                    <div data-slot="calendar" data-mode="single" data-caption-layout="dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="field" role="group" data-width="32">
+                            <label data-slot="field-label" for="date-picker-time-input">Time</label>
+                            <input type="time" id="date-picker-time-input" data-slot="input" step="1" value="10:30:00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="composition">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Composition</h2>
+            <p data-slot="desc">Date Picker는 아래 슬롯을 조합해 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="date-picker-composition">
+                <pre data-slot="composition-tree"><code>Popover
+├── PopoverTrigger
+└── PopoverContent (data-fit="true")
+    └── Calendar</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Date Picker</h3>
+            <p data-slot="desc"><code>data-slot="date-picker"</code> 래퍼에 아래 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-mode</code></td>
+                        <td><code>"single"</code> | <code>"range"</code></td>
+                        <td><code>"single"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-format</code></td>
+                        <td><code>"long"</code> | <code>"medium"</code> | <code>"input"</code> | <code>"locale"</code></td>
+                        <td><code>"long"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-close-on-select</code></td>
+                        <td>boolean</td>
+                        <td><code>true</code> (range는 <code>false</code> 권장)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 data-slot="typography-h3">PopoverContent</h3>
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-fit="true"</code></td>
+                        <td>캘린더에 맞게 <code>width: auto</code>, <code>padding: 0</code> 적용</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"start"</code> | <code>"end"</code> — 트리거 기준 정렬</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-side-offset</code></td>
+                        <td>트리거와의 수직 간격 (px, 기본 <code>4</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align-offset</code></td>
+                        <td>수평 오프셋 (px)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#range-picker">Range Picker</a></li>
+                <li><a href="#date-of-birth">Date of Birth</a></li>
+                <li><a href="#input">Input</a></li>
+                <li><a href="#time-picker">Time Picker</a></li>
+            </ul>
+        </li>
+        <li><a href="#composition">Composition</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

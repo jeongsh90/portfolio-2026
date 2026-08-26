@@ -1,0 +1,337 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Slider</h1>
+            <p data-slot="desc">범위 내에서 값을 선택하는 슬라이더 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="slider-standard">
+                <div data-slot="slider" data-min="0" data-max="100" data-step="1" data-default-value="75">
+                    <div data-slot="slider-track">
+                        <div data-slot="slider-range"></div>
+                    </div>
+                    <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="range">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Range</h2>
+            <p data-slot="desc">두 값을 지정하는 범위 슬라이더입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="slider-standard">
+                <div data-slot="slider" data-min="0" data-max="100" data-step="5" data-default-value="25|50">
+                    <div data-slot="slider-track">
+                        <div data-slot="slider-range"></div>
+                    </div>
+                    <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25"></span>
+                    <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="multiple">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Multiple Thumbs</h2>
+            <p data-slot="desc">여러 thumb로 복수 값을 선택합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="slider-standard">
+                <div data-slot="slider" data-min="0" data-max="100" data-step="10" data-default-value="10|20|70">
+                    <div data-slot="slider-track">
+                        <div data-slot="slider-range"></div>
+                    </div>
+                    <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10"></span>
+                    <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20"></span>
+                    <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="vertical">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Vertical</h2>
+            <p data-slot="desc"><code>data-orientation="vertical"</code>로 세로 슬라이더를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="slider-vertical">
+                <div class="slider-vertical-group">
+                    <div data-slot="slider" data-orientation="vertical" data-min="0" data-max="100" data-step="1" data-default-value="50">
+                        <div data-slot="slider-track">
+                            <div data-slot="slider-range"></div>
+                        </div>
+                        <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="vertical"></span>
+                    </div>
+                    <div data-slot="slider" data-orientation="vertical" data-min="0" data-max="100" data-step="1" data-default-value="25">
+                        <div data-slot="slider-track">
+                            <div data-slot="slider-range"></div>
+                        </div>
+                        <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-orientation="vertical"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="controlled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Controlled</h2>
+            <p data-slot="desc">값 변경 시 라벨 옆에 현재 값을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="slider-controlled">
+                <div data-slot="field">
+                    <div data-slot="field-row">
+                        <label data-slot="field-label" id="slider-controlled-label" data-slider-label="slider-controlled" for="slider-controlled">Temperature</label>
+                        <span data-slot="slider-value" data-slider-output="slider-controlled">0.3, 0.7</span>
+                    </div>
+                    <div data-slot="slider" id="slider-controlled" data-controlled data-min="0" data-max="1" data-step="0.1" data-default-value="0.3|0.7">
+                        <div data-slot="slider-track">
+                            <div data-slot="slider-range"></div>
+                        </div>
+                        <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0.3" aria-labelledby="slider-controlled-label"></span>
+                        <span data-slot="slider-thumb" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0.7" aria-labelledby="slider-controlled-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>data-disabled="true"</code>로 슬라이더를 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="slider-standard">
+                <div data-slot="slider" data-disabled="true" data-min="0" data-max="100" data-step="1" data-default-value="50">
+                    <div data-slot="slider-track">
+                        <div data-slot="slider-range"></div>
+                    </div>
+                    <span data-slot="slider-thumb" role="slider" tabindex="-1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Slider</h3>
+            <p data-slot="desc">Radix Slider 기반 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-min</code></td>
+                        <td><code>number</code></td>
+                        <td><code>0</code></td>
+                        <td>최솟값.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-max</code></td>
+                        <td><code>number</code></td>
+                        <td><code>100</code></td>
+                        <td>최댓값.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-step</code></td>
+                        <td><code>number</code></td>
+                        <td><code>1</code></td>
+                        <td>증감 단위.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-value</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>초기 값. 복수 thumb는 <code>|</code>로 구분.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>현재 값. JS가 동기화합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"horizontal"</code></td>
+                        <td>슬라이더 방향.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>비활성화 여부.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">SliderTrack</h3>
+            <p data-slot="desc"><code>data-slot="slider-track"</code> 슬라이더 트랙 배경입니다. Track 안에 Range를 중첩합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">SliderRange</h3>
+            <p data-slot="desc"><code>data-slot="slider-range"</code> 선택된 구간을 표시하는 채워진 영역입니다. 위치·크기는 JS가 thumb 값에 맞춰 동기화합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">SliderThumb</h3>
+            <p data-slot="desc"><code>data-slot="slider-thumb"</code> 드래그 가능한 thumb입니다. <code>role="slider"</code>와 ARIA 값 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"slider"</code></td>
+                        <td><code>"slider"</code></td>
+                        <td>접근성 역할. 필수.</td>
+                    </tr>
+                    <tr>
+                        <td><code>tabindex</code></td>
+                        <td><code>0</code> | <code>-1</code></td>
+                        <td><code>0</code></td>
+                        <td>비활성화 시 <code>-1</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-valuemin</code></td>
+                        <td><code>number</code></td>
+                        <td>—</td>
+                        <td>Slider <code>data-min</code>과 동기화.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-valuemax</code></td>
+                        <td><code>number</code></td>
+                        <td>—</td>
+                        <td>Slider <code>data-max</code>와 동기화.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-valuenow</code></td>
+                        <td><code>number</code></td>
+                        <td>—</td>
+                        <td>현재 thumb 값. JS가 갱신.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"horizontal"</code></td>
+                        <td>Slider <code>data-orientation</code>과 동기화.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-labelledby</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>연결된 라벨 id. Controlled 예시 참고.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">SliderValue</h3>
+            <p data-slot="desc"><code>data-slot="slider-value"</code> Controlled 예시에서 현재 값을 표시하는 출력 요소입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slider-output</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>연결할 Slider의 <code>id</code> 값.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#range">Range</a></li>
+                <li><a href="#multiple">Multiple Thumbs</a></li>
+                <li><a href="#vertical">Vertical</a></li>
+                <li><a href="#controlled">Controlled</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

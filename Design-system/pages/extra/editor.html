@@ -1,0 +1,165 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Editor</h1>
+            <p data-slot="desc">Tiptap + shadcn/ui 패턴의 리치 텍스트 에디터입니다. 툴바 포맷팅, 코드 블록을 Vanilla JS <code>contenteditable</code>로 재현합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="editor-demo">
+                <div data-slot="editor" data-full-item="false" data-editor-fullscreen="false">
+                    <div class="editor-full-item-row">
+                        <div data-slot="field" data-orientation="horizontal">
+                            <button type="button" role="switch" data-slot="switch" data-editor-full-item id="editor-full-item" aria-checked="false" data-state="unchecked" aria-label="Full item">
+                                <span data-slot="switch-thumb"></span>
+                            </button>
+                            <label data-slot="field-label" for="editor-full-item">Full item</label>
+                        </div>
+                    </div>
+
+                    <div class="editor-demo-grid">
+                        <div class="editor-panel">
+                            <div class="editor-panel-body">
+                                <div data-slot="editor-toolbar" role="toolbar" aria-label="Formatting">
+                                    <select data-editor-heading aria-label="Text style">
+                                        <option value="p">Paragraph</option>
+                                        <option value="h1">Heading 1</option>
+                                        <option value="h2">Heading 2</option>
+                                        <option value="h3">Heading 3</option>
+                                        <option value="h4" selected>Heading 4</option>
+                                    </select>
+                                    <span data-slot="editor-toolbar-separator" aria-hidden="true"></span>
+                                    <div data-slot="button-group" role="group" aria-label="Style">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="bold" aria-label="Bold"><i data-lucide="bold" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="italic" aria-label="Italic"><i data-lucide="italic" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="underline" aria-label="Underline"><i data-lucide="underline" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="strikeThrough" aria-label="Strikethrough"><i data-lucide="strikethrough" aria-hidden="true"></i></button>
+                                    </div>
+                                    <span data-slot="editor-toolbar-separator" aria-hidden="true"></span>
+                                    <div data-slot="button-group" role="group" aria-label="Lists">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="insertUnorderedList" aria-label="Bullet list"><i data-lucide="list" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="insertOrderedList" aria-label="Numbered list"><i data-lucide="list-ordered" aria-hidden="true"></i></button>
+                                    </div>
+                                    <span data-slot="editor-toolbar-separator" aria-hidden="true"></span>
+                                    <div data-slot="button-group" role="group" aria-label="Alignment">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="justifyLeft" aria-label="Align left"><i data-lucide="align-left" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="justifyCenter" aria-label="Align center"><i data-lucide="align-center" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="justifyRight" aria-label="Align right"><i data-lucide="align-right" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="justifyFull" aria-label="Justify"><i data-lucide="align-justify" aria-hidden="true"></i></button>
+                                    </div>
+                                    <span data-slot="editor-toolbar-separator" aria-hidden="true"></span>
+                                    <div data-slot="button-group" role="group" aria-label="Blocks">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="inlineCode" aria-label="Inline code"><i data-lucide="code" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="codeBlock" aria-label="Code block"><i data-lucide="file-code" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="formatBlock" data-editor-value="blockquote" aria-label="Quote"><i data-lucide="quote" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="insertHorizontalRule" aria-label="Horizontal rule"><i data-lucide="minus" aria-hidden="true"></i></button>
+                                    </div>
+                                    <span data-slot="editor-toolbar-separator" aria-hidden="true"></span>
+                                    <div data-slot="button-group" role="group" aria-label="Links">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="createLink" aria-label="Insert link"><i data-lucide="link" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="unlink" aria-label="Remove link"><i data-lucide="unlink" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="insertImage" aria-label="Insert image"><i data-lucide="image" aria-hidden="true"></i></button>
+                                    </div>
+                                    <span data-slot="editor-toolbar-separator" aria-hidden="true"></span>
+                                    <div data-slot="button-group" role="group" aria-label="History">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="undo" aria-label="Undo"><i data-lucide="undo" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="redo" aria-label="Redo"><i data-lucide="redo" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="removeFormat" aria-label="Clear formatting"><i data-lucide="remove-formatting" aria-hidden="true"></i></button>
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" data-editor-command="fullscreen" aria-label="Fullscreen"><i data-lucide="maximize" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div data-slot="editor-content" contenteditable="true" spellcheck="true" aria-label="Editor content">
+                                    <h4>This is Heading 4</h4>
+                                    <p>Lorem Ipsum is <em>simply</em> <u>dummy</u> text of the printing and typesetting industry. Lorem Ipsum has been the <a href="#">industry's</a> standard dummy text ever since the 1500s,</p>
+                                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the</p>
+                                    <p><code>This is code</code></p>
+                                    <div data-slot="editor-code-block" contenteditable="false">
+                                        <div data-slot="editor-code-block-header" contenteditable="false">
+                                            <select data-editor-code-lang class="editor-code-lang-select" aria-label="Code language">
+                                                <option value="javascript" selected>javascript</option>
+                                                <option value="typescript">typescript</option>
+                                                <option value="html">html</option>
+                                                <option value="css">css</option>
+                                                <option value="json">json</option>
+                                                <option value="bash">bash</option>
+                                            </select>
+                                        </div>
+                                        <pre contenteditable="false"><code class="language-javascript">for (let i = 1; i <= 15; i++) {
+  if (i % 15 === 0) console.log('FizzBuzz');
+  else if (i % 3 === 0) console.log('Fizz');
+  else if (i % 5 === 0) console.log('Buzz');
+  else console.log(i);
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="toolbar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Toolbar</h2>
+            <p data-slot="desc"><code>data-slot="editor-toolbar"</code>에 포맷 버튼 그룹을 배치합니다. <code>data-editor-command</code>으로 <code>document.execCommand</code> 또는 커스텀 동작(코드 블록, 링크, 전체 화면)을 연결합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">명령</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>bold</code>, <code>italic</code>, <code>underline</code>, <code>strikeThrough</code></td><td>텍스트 스타일</td></tr>
+                    <tr><td><code>insertUnorderedList</code>, <code>insertOrderedList</code></td><td>목록</td></tr>
+                    <tr><td><code>justifyLeft</code> … <code>justifyFull</code></td><td>정렬</td></tr>
+                    <tr><td><code>codeBlock</code></td><td>언어 선택이 있는 코드 블록 삽입</td></tr>
+                    <tr><td><code>createLink</code>, <code>unlink</code>, <code>insertImage</code></td><td>링크·이미지</td></tr>
+                    <tr><td><code>fullscreen</code></td><td>에디터 전체 화면 토글</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Editor</h3>
+            <p data-slot="desc"><code>data-slot="editor"</code> 루트입니다. <code>initEditors()</code>(<code>js/extra/editor.js</code>)가 툴바·코드 블록 하이라이트를 처리합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성 / 슬롯</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>editor-toolbar</code></td><td>포맷 버튼·Heading 선택</td></tr>
+                    <tr><td><code>editor-content</code></td><td><code>contenteditable</code> 편집 영역</td></tr>
+                    <tr><td><code>editor-code-block</code></td><td>다크 테마 코드 블록 + 언어 선택</td></tr>
+                    <tr><td><code>data-full-item</code></td><td><code>"true"</code>일 때 그리드 최대 너비 제한 해제</td></tr>
+                    <tr><td><code>data-editor-fullscreen</code></td><td><code>"true"</code>일 때 전체 화면 오버레이</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="페이지 목차">
+    <p data-slot="page-nav-label">On this page</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#toolbar">Toolbar</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

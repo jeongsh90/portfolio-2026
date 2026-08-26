@@ -1,0 +1,226 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Navigation Menu</h1>
+            <p data-slot="desc">사이트 상단 내비게이션에 사용하는 메뉴 컴포넌트입니다. 트리거 클릭·호버로 패널을 열고 공유 뷰포트에 콘텐츠를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="navigation-menu-overview">
+                <div data-slot="navigation-menu">
+                    <div data-slot="navigation-menu-list">
+                        <div data-slot="navigation-menu-item">
+                            <a data-slot="navigation-menu-link" href="#">Home</a>
+                        </div>
+                        <div data-slot="navigation-menu-item" data-value="getting-started">
+                            <button type="button" data-slot="navigation-menu-trigger">Getting started</button>
+                            <div data-slot="navigation-menu-content" data-value="getting-started" data-state="closed">
+                                <ul data-slot="navigation-menu-grid" data-cols="2">
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">shadcn/ui</div>
+                                            <p data-slot="navigation-menu-link-desc">Beautifully designed components built with Tailwind CSS.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Introduction</div>
+                                            <p data-slot="navigation-menu-link-desc">Re-usable components built using Radix UI and Tailwind CSS.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Installation</div>
+                                            <p data-slot="navigation-menu-link-desc">How to install dependencies and structure your app.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Typography</div>
+                                            <p data-slot="navigation-menu-link-desc">Styles for headings, paragraphs, lists...etc</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div data-slot="navigation-menu-item" data-value="components">
+                            <button type="button" data-slot="navigation-menu-trigger">Components</button>
+                            <div data-slot="navigation-menu-content" data-value="components" data-state="closed">
+                                <ul data-slot="navigation-menu-grid" data-cols="2">
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Alert Dialog</div>
+                                            <p data-slot="navigation-menu-link-desc">A modal dialog that interrupts the user with important content and expects a response.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Hover Card</div>
+                                            <p data-slot="navigation-menu-link-desc">For sighted users to preview content available behind a link.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Progress</div>
+                                            <p data-slot="navigation-menu-link-desc">Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Scroll Area</div>
+                                            <p data-slot="navigation-menu-link-desc">Visually or semantically separates content.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Tabs</div>
+                                            <p data-slot="navigation-menu-link-desc">A set of layered sections of content—known as tab panels—that are displayed one at a time.</p>
+                                        </a>
+                                    </li>
+                                    <li data-slot="navigation-menu-grid-item">
+                                        <a data-slot="navigation-menu-link" href="#">
+                                            <div data-slot="navigation-menu-link-title">Tooltip</div>
+                                            <p data-slot="navigation-menu-link-desc">A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div data-slot="navigation-menu-item">
+                            <a data-slot="navigation-menu-link" href="#">Docs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="without-viewport">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Without Viewport</h2>
+            <p data-slot="desc"><code>data-viewport="false"</code>로 공유 뷰포트 없이 각 항목 아래에 패널을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="navigation-menu-without-viewport">
+                <div data-slot="navigation-menu" data-viewport="false">
+                    <div data-slot="navigation-menu-list">
+                        <div data-slot="navigation-menu-item" data-value="list">
+                            <button type="button" data-slot="navigation-menu-trigger">List</button>
+                            <div data-slot="navigation-menu-content" data-value="list" data-state="closed">
+                                <div data-slot="navigation-menu-list-panel">
+                                    <a data-slot="navigation-menu-link" href="#">Components</a>
+                                    <a data-slot="navigation-menu-link" href="#">Documentation</a>
+                                    <a data-slot="navigation-menu-link" href="#">Blocks</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="navigation-menu-item" data-value="simple">
+                            <button type="button" data-slot="navigation-menu-trigger">Simple</button>
+                            <div data-slot="navigation-menu-content" data-value="simple" data-state="closed">
+                                <div data-slot="navigation-menu-list-panel">
+                                    <a data-slot="navigation-menu-link" href="#">Components</a>
+                                    <a data-slot="navigation-menu-link" href="#">Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="navigation-menu-item" data-value="with-icon">
+                            <button type="button" data-slot="navigation-menu-trigger">With Icon</button>
+                            <div data-slot="navigation-menu-content" data-value="with-icon" data-state="closed">
+                                <div data-slot="navigation-menu-list-panel">
+                                    <a data-slot="navigation-menu-link" href="#"><i data-lucide="circle" aria-hidden="true"></i> Backlog</a>
+                                    <a data-slot="navigation-menu-link" href="#"><i data-lucide="circle-dashed" aria-hidden="true"></i> To Do</a>
+                                    <a data-slot="navigation-menu-link" href="#"><i data-lucide="circle-check" aria-hidden="true"></i> Done</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">NavigationMenu</h3>
+            <p data-slot="desc"><code>data-slot="navigation-menu"</code> 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-viewport</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"true"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">NavigationMenuTrigger</h3>
+            <p data-slot="desc"><code>data-slot="navigation-menu-trigger"</code> 패널을 여는 트리거입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"open"</code> | <code>"closed"</code></td>
+                        <td><code>"closed"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">NavigationMenuLink</h3>
+            <p data-slot="desc">최상위 링크 또는 패널 내 링크 카드에 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-active</code></td>
+                        <td><code>"true"</code></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#without-viewport">Without Viewport</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

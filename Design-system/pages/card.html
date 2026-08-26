@@ -1,0 +1,325 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Card</h1>
+            <p data-slot="desc">제목·설명·콘텐츠·액션을 담는 컨테이너입니다. <code>CardHeader</code>, <code>CardContent</code>, <code>CardFooter</code>로 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="card-overview">
+                <div class="card-demo-sm">
+                    <div data-slot="card">
+                        <div data-slot="card-header">
+                            <div data-slot="card-title">Login to your account</div>
+                            <div data-slot="card-description">Enter your email below to login to your account</div>
+                            <div data-slot="card-action">
+                                <button type="button" data-slot="button" data-variant="link">Sign Up</button>
+                            </div>
+                        </div>
+                        <div data-slot="card-content">
+                            <form>
+                                <div class="card-form-fields">
+                                    <div data-slot="field" role="group">
+                                        <label data-slot="field-label" for="card-email">Email</label>
+                                        <input type="email" id="card-email" data-slot="input" placeholder="m@example.com" required>
+                                    </div>
+                                    <div data-slot="field" role="group">
+                                        <div data-slot="field-row">
+                                            <label data-slot="field-label" for="card-password">Password</label>
+                                            <a href="#" class="card-forgot-link">Forgot your password?</a>
+                                        </div>
+                                        <input type="password" id="card-password" data-slot="input" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div data-slot="card-footer" data-orientation="vertical">
+                            <button type="submit" data-slot="button">Login</button>
+                            <button type="button" data-slot="button" data-variant="outline">Login with Google</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc"><code>data-size="sm"</code>으로 더 컴팩트한 간격을 적용합니다. <code>--card-spacing</code> 변수가 함께 줄어듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="card-size">
+                <div class="card-demo-sm">
+                    <div data-slot="card" data-size="sm">
+                        <div data-slot="card-header">
+                            <div data-slot="card-title">Small Card</div>
+                            <div data-slot="card-description">This card uses the small size variant.</div>
+                        </div>
+                        <div data-slot="card-content">
+                            <p>The card component supports a size prop that can be set to "sm" for a more compact appearance.</p>
+                        </div>
+                        <div data-slot="card-footer">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="sm">Action</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="edge-to-edge">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Edge to Edge</h2>
+            <p data-slot="desc">음수 마진으로 콘텐츠를 카드 inset에 맞춰 가장자리까지 확장합니다. 푸터 위 콘텐츠에는 <code>data-edge="full"</code>을 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="card-edge">
+                <div class="card-demo-sm">
+                    <div data-slot="card">
+                        <div data-slot="card-header">
+                            <div data-slot="card-title">Terms of Service</div>
+                            <div data-slot="card-description">Review the terms before accepting the agreement.</div>
+                        </div>
+                        <div data-slot="card-content" data-edge="full">
+                            <div data-slot="card-edge-panel">
+                                <p>These terms govern your use of the workspace, including access to shared documents, project files, and collaboration tools.</p>
+                                <p>You are responsible for the content you upload and for ensuring that your team has the appropriate permissions to view or edit it.</p>
+                                <p>We may update features or limits as the service evolves. When those changes materially affect your workflow, we will notify your workspace administrators.</p>
+                                <p>By continuing, you agree to keep your account credentials secure and to follow your organization's acceptable use policies.</p>
+                            </div>
+                        </div>
+                        <div data-slot="card-footer" data-align="end">
+                            <button type="button" data-slot="button" data-variant="outline">Decline</button>
+                            <button type="button" data-slot="button">Accept</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="image">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Image</h2>
+            <p data-slot="desc">헤더 위에 이미지를 배치해 커버 카드를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="card-image">
+                <div class="card-demo-sm">
+                    <div data-slot="card" data-layout="image">
+                        <div data-slot="card-cover-overlay" aria-hidden="true"></div>
+                        <img src="https://avatar.vercel.sh/shadcn1" alt="Event cover" width="640" height="360">
+                        <div data-slot="card-header">
+                            <div data-slot="card-action">
+                                <span data-slot="badge" data-variant="secondary">Featured</span>
+                            </div>
+                            <div data-slot="card-title">Design systems meetup</div>
+                            <div data-slot="card-description">A practical talk on component APIs, accessibility, and shipping faster.</div>
+                        </div>
+                        <div data-slot="card-footer">
+                            <button type="button" data-slot="button">View Event</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Card</h3>
+            <p data-slot="desc"><code>data-slot="card"</code> 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>패딩·간격(<code>--card-spacing</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-layout</code></td>
+                        <td><code>"image"</code></td>
+                        <td>—</td>
+                        <td>커버 이미지 레이아웃(Image 예시).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CardHeader</h3>
+            <p data-slot="desc"><code>data-slot="card-header"</code> 제목·설명·액션 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CardTitle</h3>
+            <p data-slot="desc"><code>data-slot="card-title"</code> 카드 제목입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CardDescription</h3>
+            <p data-slot="desc"><code>data-slot="card-description"</code> 제목 아래 설명입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CardAction</h3>
+            <p data-slot="desc"><code>data-slot="card-action"</code> 헤더 우측 상단 액션(버튼·배지 등)입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CardContent</h3>
+            <p data-slot="desc"><code>data-slot="card-content"</code> 본문 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-edge</code></td>
+                        <td><code>"full"</code></td>
+                        <td>—</td>
+                        <td>푸터 위 gap 제거(Edge to Edge 예시).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CardFooter</h3>
+            <p data-slot="desc"><code>data-slot="card-footer"</code> 하단 액션 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"vertical"</code></td>
+                        <td>—</td>
+                        <td>세로 버튼 스택(Login 예시).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"end"</code></td>
+                        <td>—</td>
+                        <td>우측 정렬 버튼(Edge to Edge 예시).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#size">Size</a></li>
+                <li><a href="#edge-to-edge">Edge to Edge</a></li>
+                <li><a href="#image">Image</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

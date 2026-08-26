@@ -1,0 +1,417 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Chart</h1>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-overview">
+                <div class="chart-demo-wrap">
+                    <div data-slot="card" data-chart-interactive class="chart-card-interactive">
+                        <div data-slot="card-header" class="chart-card-header">
+                            <div class="chart-card-header-main">
+                                <div data-slot="card-title">Bar Chart - Interactive</div>
+                                <div data-slot="card-description">Showing total visitors for the last 3 months</div>
+                            </div>
+                            <div class="chart-card-tabs">
+                                <button type="button" class="chart-card-tab" data-chart-toggle="desktop" data-active="true">
+                                    <span class="chart-card-tab-label">Desktop</span>
+                                    <span class="chart-card-tab-value">1,234</span>
+                                </button>
+                                <button type="button" class="chart-card-tab" data-chart-toggle="mobile">
+                                    <span class="chart-card-tab-label">Mobile</span>
+                                    <span class="chart-card-tab-value">1,080</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div data-slot="card-content">
+                            <div data-slot="chart"
+                                data-chart-type="bar"
+                                data-chart-dataset="daily"
+                                data-chart-x="date"
+                                data-chart-series="desktop,mobile"
+                                data-chart-active-series="desktop"
+                                data-chart-height="250"
+                                data-chart-legend="false"
+                                aria-label="Interactive bar chart">
+                                <div data-slot="chart-container"></div>
+                                <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="bar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Bar Chart</h2>
+            <p data-slot="desc"><code>data-chart-type="bar"</code>로 그룹형 막대 차트를 렌더링합니다. CartesianGrid·XAxis 스타일의 그리드와 축 레이블을 포함합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-bar">
+                <div class="chart-demo-wrap">
+                    <div data-slot="chart"
+                        data-chart-type="bar"
+                        data-chart-dataset="monthly"
+                        data-chart-x="month"
+                        data-chart-series="desktop,mobile"
+                        data-chart-height="220"
+                        aria-label="Bar chart with desktop and mobile visitors">
+                        <div data-slot="chart-container"></div>
+                        <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                        <div data-slot="chart-legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="line">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Line Chart</h2>
+            <p data-slot="desc">추세를 표시하는 라인 차트입니다. Recharts <code>LineChart</code>와 동일하게 여러 시리즈를 겹쳐 그립니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-line">
+                <div class="chart-demo-wrap">
+                    <div data-slot="chart"
+                        data-chart-type="line"
+                        data-chart-dataset="monthly"
+                        data-chart-x="month"
+                        data-chart-series="desktop,mobile"
+                        data-chart-height="220"
+                        aria-label="Line chart">
+                        <div data-slot="chart-container"></div>
+                        <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                        <div data-slot="chart-legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="area">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Area Chart</h2>
+            <p data-slot="desc"><code>data-chart-type="area"</code>로 선 아래 영역을 채웁니다. <code>data-chart-curve="true"</code>는 Recharts <code>type="monotone"</code>처럼 곡선을, <code>data-chart-gradient="true"</code>는 상단에서 하단으로 페이드되는 그라데이션 fill을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-area">
+                <div class="chart-demo-stack">
+                    <div class="chart-demo-wrap">
+                        <p class="chart-demo-caption">Linear</p>
+                        <div data-slot="chart"
+                            data-chart-type="area"
+                            data-chart-dataset="monthly"
+                            data-chart-x="month"
+                            data-chart-series="desktop"
+                            data-chart-height="200"
+                            aria-label="Linear area chart">
+                            <div data-slot="chart-container"></div>
+                            <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                        </div>
+                    </div>
+                    <div class="chart-demo-wrap">
+                        <p class="chart-demo-caption">Gradient + Curve</p>
+                        <div data-slot="chart"
+                            data-chart-type="area"
+                            data-chart-dataset="monthly"
+                            data-chart-x="month"
+                            data-chart-series="desktop,mobile"
+                            data-chart-curve="true"
+                            data-chart-gradient="true"
+                            data-chart-height="220"
+                            aria-label="Gradient curved area chart">
+                            <div data-slot="chart-container"></div>
+                            <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                            <div data-slot="chart-legend"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="pie">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Pie Chart</h2>
+            <p data-slot="desc">범주별 비율을 표시하는 파이 차트입니다. <code>data-chart-x</code>는 라벨 키, <code>data-chart-value</code>는 값 키입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-pie">
+                <div class="chart-demo-wrap">
+                    <div data-slot="chart"
+                        data-chart-type="pie"
+                        data-chart-dataset="pie"
+                        data-chart-x="browser"
+                        data-chart-value="visitors"
+                        data-chart-height="260"
+                        aria-label="Pie chart by browser">
+                        <div data-slot="chart-container"></div>
+                        <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                        <div data-slot="chart-legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="donut">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Donut Chart</h2>
+            <p data-slot="desc">가운데가 비어 있는 도넛 차트입니다. Recharts <code>PieChart</code> + <code>innerRadius</code> 패턴이며, <code>data-chart-inner-radius</code>로 구멍 크기(0~1)를 조절합니다. 중앙에는 합계가 표시됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-donut">
+                <div class="chart-demo-wrap">
+                    <div data-slot="chart"
+                        data-chart-type="donut"
+                        data-chart-dataset="pie"
+                        data-chart-x="browser"
+                        data-chart-value="visitors"
+                        data-chart-inner-radius="0.58"
+                        data-chart-center-label="Visitors"
+                        data-chart-height="280"
+                        aria-label="Donut chart by browser">
+                        <div data-slot="chart-container"></div>
+                        <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                        <div data-slot="chart-legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="tooltip">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Tooltip</h2>
+            <p data-slot="desc">차트 위에 마우스를 올리면 <code>ChartTooltipContent</code> 스타일의 툴팁이 표시됩니다. <code>data-chart-tooltip="false"</code>로 비활성화할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-tooltip">
+                <div class="chart-demo-wrap">
+                    <div data-slot="chart"
+                        data-chart-type="bar"
+                        data-chart-dataset="monthly"
+                        data-chart-x="month"
+                        data-chart-series="desktop,mobile"
+                        data-chart-height="220"
+                        aria-label="Bar chart with tooltip">
+                        <div data-slot="chart-container"></div>
+                        <div data-slot="chart-tooltip" data-state="closed" hidden></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="theming">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Theming</h2>
+            <p data-slot="desc"><code>ChartConfig</code>의 <code>color</code>는 <code>--color-{key}</code> CSS 변수로 주입됩니다. 기본 팔레트는 <code>--chart-1</code> ~ <code>--chart-5</code> 토큰을 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="chart-theming">
+                <div class="chart-theme-row">
+                    <div class="chart-theme-swatch">
+                        <div class="chart-theme-swatch-box" style="background: var(--chart-1);"></div>
+                        <code>--chart-1</code>
+                    </div>
+                    <div class="chart-theme-swatch">
+                        <div class="chart-theme-swatch-box" style="background: var(--chart-2);"></div>
+                        <code>--chart-2</code>
+                    </div>
+                    <div class="chart-theme-swatch">
+                        <div class="chart-theme-swatch-box" style="background: var(--chart-3);"></div>
+                        <code>--chart-3</code>
+                    </div>
+                    <div class="chart-theme-swatch">
+                        <div class="chart-theme-swatch-box" style="background: var(--chart-4);"></div>
+                        <code>--chart-4</code>
+                    </div>
+                    <div class="chart-theme-swatch">
+                        <div class="chart-theme-swatch-box" style="background: var(--chart-5);"></div>
+                        <code>--chart-5</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Chart</h3>
+            <p data-slot="desc"><code>data-slot="chart"</code> 루트에 아래 속성을 지정합니다. 렌더링은 <code>initCharts()</code> (<code>js/extra/chart.js</code>)가 담당합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-chart-type</code></td>
+                        <td><code>"bar"</code> | <code>"line"</code> | <code>"area"</code> | <code>"pie"</code> | <code>"donut"</code></td>
+                        <td><code>"bar"</code></td>
+                        <td>차트 종류</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-dataset</code></td>
+                        <td><code>"monthly"</code> | <code>"daily"</code> | <code>"pie"</code></td>
+                        <td><code>"monthly"</code></td>
+                        <td>내장 샘플 데이터셋 키</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-data</code></td>
+                        <td>JSON array</td>
+                        <td>—</td>
+                        <td>커스텀 데이터 (dataset보다 우선)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-config</code></td>
+                        <td>JSON object</td>
+                        <td>—</td>
+                        <td>시리즈별 <code>label</code>, <code>color</code> (ChartConfig)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-x</code></td>
+                        <td>string</td>
+                        <td><code>"month"</code></td>
+                        <td>X축·라벨 데이터 키</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-series</code></td>
+                        <td>string</td>
+                        <td><code>"desktop,mobile"</code></td>
+                        <td>쉼표 구분 시리즈 키</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-value</code></td>
+                        <td>string</td>
+                        <td><code>"visitors"</code></td>
+                        <td>파이 차트 값 키</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-height</code></td>
+                        <td>number</td>
+                        <td><code>250</code></td>
+                        <td>차트 높이(px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-grid</code></td>
+                        <td>boolean</td>
+                        <td><code>true</code></td>
+                        <td>CartesianGrid 표시</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-tooltip</code></td>
+                        <td>boolean</td>
+                        <td><code>true</code></td>
+                        <td>호버 툴팁</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-legend</code></td>
+                        <td>boolean</td>
+                        <td><code>true</code></td>
+                        <td>범례 표시</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-curve</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                        <td>Area·Line 곡선 보간 (monotone)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-gradient</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                        <td>Area 그라데이션 fill</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-inner-radius</code></td>
+                        <td>number</td>
+                        <td><code>0.58</code></td>
+                        <td>도넛 내부 반경 비율 (외径 대비)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-center-label</code></td>
+                        <td>string</td>
+                        <td><code>"Total"</code></td>
+                        <td>도넛 중앙 라벨</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-slice-gap</code></td>
+                        <td>number</td>
+                        <td><code>0.02</code> (donut)</td>
+                        <td>슬라이스 간 각도 간격(라디안)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-chart-active-series</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>단일 시리즈만 표시 (인터랙티브 바)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Slots</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>chart-container</code></td>
+                        <td>SVG가 렌더링되는 반응형 래퍼 (<code>min-height</code> 필수)</td>
+                    </tr>
+                    <tr>
+                        <td><code>chart-tooltip</code></td>
+                        <td>ChartTooltipContent 스타일 툴팁</td>
+                    </tr>
+                    <tr>
+                        <td><code>chart-legend</code></td>
+                        <td>시리즈 범례</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#bar">Bar Chart</a></li>
+                <li><a href="#line">Line Chart</a></li>
+                <li><a href="#area">Area Chart</a></li>
+                <li><a href="#pie">Pie Chart</a></li>
+                <li><a href="#donut">Donut Chart</a></li>
+                <li><a href="#tooltip">Tooltip</a></li>
+                <li><a href="#theming">Theming</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

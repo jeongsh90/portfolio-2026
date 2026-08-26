@@ -1,0 +1,418 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Avatar</h1>
+            <p data-slot="desc">사용자 프로필 이미지와 대체 텍스트를 표시하는 컴포넌트입니다. 그룹·뱃지·크기 변형을 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-overview">
+                <span data-slot="avatar" data-size="default">
+                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                    <span data-slot="avatar-fallback">CN</span>
+                </span>
+                <span data-slot="avatar" data-size="default">
+                    <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                    <span data-slot="avatar-fallback">ER</span>
+                    <span data-slot="avatar-badge"></span>
+                </span>
+                <div data-slot="avatar-group">
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                        <span data-slot="avatar-fallback">CN</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/maxleiter.png" alt="@maxleiter" width="32" height="32">
+                        <span data-slot="avatar-fallback">LR</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                        <span data-slot="avatar-fallback">ER</span>
+                    </span>
+                    <div data-slot="avatar-group-count">+3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">이미지와 로드 실패 시 표시할 fallback 텍스트를 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-basic">
+                <span data-slot="avatar" data-size="default">
+                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                    <span data-slot="avatar-fallback">CN</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="badge">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Badge</h2>
+            <p data-slot="desc"><code>AvatarBadge</code>로 아바타 우하단에 상태 뱃지를 표시합니다. 색상·크기는 <code>className</code>으로 커스터마이즈할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-badge">
+                <span data-slot="avatar" data-size="default">
+                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                    <span data-slot="avatar-fallback">CN</span>
+                    <span data-slot="avatar-badge"></span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="badge-with-icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Badge with Icon</h2>
+            <p data-slot="desc">뱃지 안에 아이콘을 넣을 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-badge-icon">
+                <span data-slot="avatar" data-size="default">
+                    <img data-slot="avatar-image" src="https://github.com/pranathip.png" alt="@pranathip" width="32" height="32">
+                    <span data-slot="avatar-fallback">PP</span>
+                    <span data-slot="avatar-badge">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="avatar-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Avatar Group</h2>
+            <p data-slot="desc"><code>AvatarGroup</code>으로 여러 아바타를 겹쳐 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-group">
+                <div data-slot="avatar-group">
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                        <span data-slot="avatar-fallback">CN</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/maxleiter.png" alt="@maxleiter" width="32" height="32">
+                        <span data-slot="avatar-fallback">LR</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                        <span data-slot="avatar-fallback">ER</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="avatar-group-count">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Avatar Group Count</h2>
+            <p data-slot="desc"><code>AvatarGroupCount</code>로 추가 인원 수를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-group-count">
+                <div data-slot="avatar-group">
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                        <span data-slot="avatar-fallback">CN</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/maxleiter.png" alt="@maxleiter" width="32" height="32">
+                        <span data-slot="avatar-fallback">LR</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                        <span data-slot="avatar-fallback">ER</span>
+                    </span>
+                    <div data-slot="avatar-group-count">+3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="avatar-group-count-icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Avatar Group with Icon</h2>
+            <p data-slot="desc">그룹 카운트 안에 아이콘을 넣을 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-group-count-icon">
+                <div data-slot="avatar-group">
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                        <span data-slot="avatar-fallback">CN</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/maxleiter.png" alt="@maxleiter" width="32" height="32">
+                        <span data-slot="avatar-fallback">LR</span>
+                    </span>
+                    <span data-slot="avatar" data-size="default">
+                        <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                        <span data-slot="avatar-fallback">ER</span>
+                    </span>
+                    <div data-slot="avatar-group-count">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sizes</h2>
+            <p data-slot="desc"><code>data-size</code> prop으로 아바타 크기를 변경합니다. <code>sm</code>, <code>default</code>, <code>lg</code>를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-row">
+                <span data-slot="avatar" data-size="sm">
+                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="24" height="24">
+                    <span data-slot="avatar-fallback">CN</span>
+                </span>
+                <span data-slot="avatar" data-size="default">
+                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                    <span data-slot="avatar-fallback">CN</span>
+                </span>
+                <span data-slot="avatar" data-size="lg">
+                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="40" height="40">
+                    <span data-slot="avatar-fallback">CN</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="system-colors">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">System Colors</h2>
+            <p data-slot="desc"><code>AvatarFallback</code>에 <code>data-color</code>로 시스템 색상을 적용합니다. 이미지 로드 실패 시 또는 이미지 없이 fallback만 표시할 때 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="avatar-row">
+                <span data-slot="avatar" data-size="default">
+                    <span data-slot="avatar-fallback" data-color="info">IN</span>
+                </span>
+                <span data-slot="avatar" data-size="default">
+                    <span data-slot="avatar-fallback" data-color="success">OK</span>
+                </span>
+                <span data-slot="avatar" data-size="default">
+                    <span data-slot="avatar-fallback" data-color="warning">WA</span>
+                </span>
+                <span data-slot="avatar" data-size="default">
+                    <span data-slot="avatar-fallback" data-color="error">ER</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Avatar</h3>
+            <p data-slot="desc">아바타 이미지와 fallback을 감싸는 루트 컴포넌트입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code> | <code>"lg"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>아바타 크기.</td>
+                    </tr>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AvatarImage</h3>
+            <p data-slot="desc">아바타 이미지를 표시합니다. Radix Avatar Image props를 모두 지원합니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>src</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>이미지 URL.</td>
+                    </tr>
+                    <tr>
+                        <td><code>alt</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>대체 텍스트.</td>
+                    </tr>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AvatarFallback</h3>
+            <p data-slot="desc">이미지 로드 실패 시 표시되는 대체 콘텐츠입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-color</code></td>
+                        <td><code>"info"</code> | <code>"success"</code> | <code>"warning"</code> | <code>"error"</code></td>
+                        <td>—</td>
+                        <td>시스템 색상을 적용합니다. subtle 배경·텍스트가 함께 지정됩니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AvatarBadge</h3>
+            <p data-slot="desc">아바타 우하단에 표시되는 뱃지입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>색상·크기 등 커스텀 스타일.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AvatarGroup</h3>
+            <p data-slot="desc">겹쳐 표시되는 아바타 그룹 컨테이너입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AvatarGroupCount</h3>
+            <p data-slot="desc">그룹 내 추가 인원 수 또는 아이콘을 표시합니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#badge">Badge</a></li>
+                <li><a href="#badge-with-icon">Badge with Icon</a></li>
+                <li><a href="#avatar-group">Avatar Group</a></li>
+                <li><a href="#avatar-group-count">Avatar Group Count</a></li>
+                <li><a href="#avatar-group-count-icon">Avatar Group with Icon</a></li>
+                <li><a href="#size">Sizes</a></li>
+                <li><a href="#system-colors">System Colors</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

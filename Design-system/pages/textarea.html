@@ -1,0 +1,167 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Textarea</h1>
+            <p data-slot="desc">여러 줄 텍스트를 입력할 수 있는 textarea 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="textarea-field">
+                <textarea data-slot="textarea" placeholder="메시지를 입력하세요."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="field">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Field</h2>
+            <p data-slot="desc"><code>Field</code>, <code>FieldLabel</code>, <code>FieldDescription</code>으로 라벨과 설명이 있는 textarea를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="textarea-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="textarea-message">Message</label>
+                    <p data-slot="field-description">아래에 메시지를 입력하세요.</p>
+                    <textarea id="textarea-message" data-slot="textarea" placeholder="메시지를 입력하세요."></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> 속성으로 textarea를 비활성화합니다. 비활성 스타일을 적용하려면 <code>Field</code>에 <code>data-disabled="true"</code>를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="textarea-field">
+                <div data-slot="field" role="group" data-disabled="true">
+                    <label data-slot="field-label" for="textarea-disabled">Message</label>
+                    <textarea id="textarea-disabled" data-slot="textarea" placeholder="메시지를 입력하세요." disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc"><code>aria-invalid</code> 속성으로 textarea를 유효하지 않음으로 표시합니다. <code>Field</code>에 <code>data-invalid="true"</code>를 추가해 스타일을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="textarea-field">
+                <div data-slot="field" role="group" data-invalid="true">
+                    <label data-slot="field-label" for="textarea-invalid">Message</label>
+                    <textarea id="textarea-invalid" data-slot="textarea" placeholder="메시지를 입력하세요." aria-invalid="true"></textarea>
+                    <p data-slot="field-description">유효한 메시지를 입력하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Button</h2>
+            <p data-slot="desc"><code>Button</code>과 함께 사용해 제출 버튼이 있는 textarea를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="textarea-field">
+                <div data-slot="textarea-form">
+                    <textarea data-slot="textarea" placeholder="메시지를 입력하세요."></textarea>
+                    <button type="button" data-slot="button">메시지 보내기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Textarea</h3>
+            <p data-slot="desc"><code>data-slot="textarea"</code> 요소에 네이티브 textarea 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>placeholder</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>required</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>readOnly</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>rows</code></td>
+                        <td>number</td>
+                        <td>브라우저 기본값</td>
+                    </tr>
+                    <tr>
+                        <td><code>cols</code></td>
+                        <td>number</td>
+                        <td>브라우저 기본값</td>
+                    </tr>
+                    <tr>
+                        <td><code>maxLength</code></td>
+                        <td>number</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>minLength</code></td>
+                        <td>number</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>wrap</code></td>
+                        <td><code>"hard"</code> | <code>"soft"</code></td>
+                        <td><code>"soft"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#field">Field</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+                <li><a href="#button">Button</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,168 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Spinner</h1>
+            <p data-slot="desc">로딩·처리 중 상태를 표시하는 스피너 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <span data-slot="spinner" role="status" aria-label="Loading">
+                    <i data-lucide="loader-2" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc"><code>data-size</code>로 스피너 크기를 변경합니다. 기본값은 <code>default</code>(16px)입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spinner-row">
+                <span data-slot="spinner" data-size="sm" role="status" aria-label="Loading">
+                    <i data-lucide="loader-2" aria-hidden="true"></i>
+                </span>
+                <span data-slot="spinner" role="status" aria-label="Loading">
+                    <i data-lucide="loader-2" aria-hidden="true"></i>
+                </span>
+                <span data-slot="spinner" data-size="md" role="status" aria-label="Loading">
+                    <i data-lucide="loader-2" aria-hidden="true"></i>
+                </span>
+                <span data-slot="spinner" data-size="lg" role="status" aria-label="Loading">
+                    <i data-lucide="loader-2" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Button</h2>
+            <p data-slot="desc">버튼에 스피너를 넣어 로딩 상태를 표시합니다. 레이블 앞은 <code>data-icon="inline-start"</code>, 뒤는 <code>data-icon="inline-end"</code>를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spinner-buttons">
+                <button type="button" data-slot="button" data-size="sm" disabled>
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Loading...
+                </button>
+                <button type="button" data-slot="button" data-variant="outline" data-size="sm" disabled>
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Please wait
+                </button>
+                <button type="button" data-slot="button" data-variant="secondary" data-size="sm" disabled>
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Processing
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="badge">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Badge</h2>
+            <p data-slot="desc">뱃지에 스피너를 넣어 진행 중 상태를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge">
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Syncing
+                </span>
+                <span data-slot="badge" data-variant="secondary">
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Updating
+                </span>
+                <span data-slot="badge" data-variant="outline">
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="Loading">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Processing
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Spinner</h3>
+            <p data-slot="desc">로딩 상태를 나타내는 회전 아이콘입니다. <code>role="status"</code>와 <code>aria-label</code>을 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code> | <code>"md"</code> | <code>"lg"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>스피너 크기. <code>sm</code> 12px, <code>default</code> 16px, <code>md</code> 24px, <code>lg</code> 32px.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-icon</code></td>
+                        <td><code>"inline-start"</code> | <code>"inline-end"</code></td>
+                        <td>—</td>
+                        <td>Button·Badge 내부에서 아이콘 간격 위치.</td>
+                    </tr>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"status"</code></td>
+                        <td>—</td>
+                        <td>접근성용 로딩 상태 역할.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-label</code></td>
+                        <td><code>string</code></td>
+                        <td><code>"Loading"</code></td>
+                        <td>스크린 리더용 로딩 설명.</td>
+                    </tr>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#size">Size</a></li>
+                <li><a href="#button">Button</a></li>
+                <li><a href="#badge">Badge</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

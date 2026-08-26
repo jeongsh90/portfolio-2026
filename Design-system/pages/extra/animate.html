@@ -1,0 +1,357 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Animate</h1>
+            <p data-slot="desc">CSS <code>@keyframes</code> 기반 애니메이션 유틸리티입니다. <code>data-animate</code> 속성으로 요소에 애니메이션을 적용하고, 클릭하면 다시 재생됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="fade-in 애니메이션 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="fade-in"></span>
+                        </div>
+                        <span class="anim-demo-label">fade-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="slide-in-up 애니메이션 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="slide-in-up"></span>
+                        </div>
+                        <span class="anim-demo-label">slide-in-up</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="zoom-in 애니메이션 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-in"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="bounce-in 애니메이션 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="bounce-in"></span>
+                        </div>
+                        <span class="anim-demo-label">bounce-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="rotate-in 애니메이션 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="rotate-in"></span>
+                        </div>
+                        <span class="anim-demo-label">rotate-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="flip-in-x 애니메이션 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="flip-in-x"></span>
+                        </div>
+                        <span class="anim-demo-label">flip-in-x</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="fade">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Fade</h2>
+            <p data-slot="desc">투명도를 이용한 등장 애니메이션입니다. 방향 없이 fade-in, 또는 상·하·좌·우 방향에서 등장합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="fade-in 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="fade-in"></span>
+                        </div>
+                        <span class="anim-demo-label">fade-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="fade-in-up 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="fade-in-up"></span>
+                        </div>
+                        <span class="anim-demo-label">fade-in-up</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="fade-in-down 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="fade-in-down"></span>
+                        </div>
+                        <span class="anim-demo-label">fade-in-down</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="fade-in-left 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="fade-in-left"></span>
+                        </div>
+                        <span class="anim-demo-label">fade-in-left</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="fade-in-right 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="fade-in-right"></span>
+                        </div>
+                        <span class="anim-demo-label">fade-in-right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="slide">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Slide</h2>
+            <p data-slot="desc">요소가 외부에서 슬라이드해 들어오는 애니메이션입니다. 스테이지 영역을 벗어나 시작하므로 컨테이너가 <code>overflow: hidden</code>으로 클립됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="slide-in-up 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="slide-in-up"></span>
+                        </div>
+                        <span class="anim-demo-label">slide-in-up</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="slide-in-down 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="slide-in-down"></span>
+                        </div>
+                        <span class="anim-demo-label">slide-in-down</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="slide-in-left 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="slide-in-left"></span>
+                        </div>
+                        <span class="anim-demo-label">slide-in-left</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="slide-in-right 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="slide-in-right"></span>
+                        </div>
+                        <span class="anim-demo-label">slide-in-right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="zoom">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Zoom</h2>
+            <p data-slot="desc">크기를 확대·축소하며 등장하는 애니메이션입니다. <code>zoom-in</code>은 작게 시작, <code>zoom-out</code>은 크게 시작합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="zoom-in 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-in"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="zoom-out 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-out"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-out</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="zoom-in-up 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-in-up"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-in-up</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="zoom-in-down 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-in-down"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-in-down</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="zoom-in-left 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-in-left"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-in-left</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="zoom-in-right 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="zoom-in-right"></span>
+                        </div>
+                        <span class="anim-demo-label">zoom-in-right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="bounce">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Bounce</h2>
+            <p data-slot="desc">탄성 있게 튀어 들어오는 애니메이션입니다. 생동감 있는 강조 등장에 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="bounce-in 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="bounce-in"></span>
+                        </div>
+                        <span class="anim-demo-label">bounce-in</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="bounce-in-up 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="bounce-in-up"></span>
+                        </div>
+                        <span class="anim-demo-label">bounce-in-up</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="bounce-in-down 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="bounce-in-down"></span>
+                        </div>
+                        <span class="anim-demo-label">bounce-in-down</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="bounce-in-left 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="bounce-in-left"></span>
+                        </div>
+                        <span class="anim-demo-label">bounce-in-left</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="bounce-in-right 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="bounce-in-right"></span>
+                        </div>
+                        <span class="anim-demo-label">bounce-in-right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="rotate">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Rotate</h2>
+            <p data-slot="desc">회전하며 등장하는 애니메이션입니다. <code>-200deg</code>에서 시작해 <code>0deg</code>로 정착합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="rotate-in 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="rotate-in"></span>
+                        </div>
+                        <span class="anim-demo-label">rotate-in</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="flip">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Flip</h2>
+            <p data-slot="desc">3D 원근법을 이용해 X축 또는 Y축을 중심으로 뒤집히며 등장합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="anim-demo-grid">
+                    <button type="button" class="anim-demo-box" aria-label="flip-in-x 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="flip-in-x"></span>
+                        </div>
+                        <span class="anim-demo-label">flip-in-x</span>
+                    </button>
+                    <button type="button" class="anim-demo-box" aria-label="flip-in-y 재생">
+                        <div class="anim-demo-stage">
+                            <span class="anim-demo-shape" data-animate="flip-in-y"></span>
+                        </div>
+                        <span class="anim-demo-label">flip-in-y</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">data-animate</h3>
+            <p data-slot="desc">요소에 <code>data-animate</code> 속성을 추가하면 해당 키프레임 애니메이션이 즉시 적용됩니다. 클릭 리플레이는 <code>initAnimateDemos()</code>가 처리합니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">값</th>
+                        <th scope="col">분류</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>fade-in</code></td><td>Fade</td><td>투명도 0 → 1</td></tr>
+                    <tr><td><code>fade-in-up</code></td><td>Fade</td><td>아래에서 위로 페이드인</td></tr>
+                    <tr><td><code>fade-in-down</code></td><td>Fade</td><td>위에서 아래로 페이드인</td></tr>
+                    <tr><td><code>fade-in-left</code></td><td>Fade</td><td>왼쪽에서 오른쪽으로 페이드인</td></tr>
+                    <tr><td><code>fade-in-right</code></td><td>Fade</td><td>오른쪽에서 왼쪽으로 페이드인</td></tr>
+                    <tr><td><code>slide-in-up</code></td><td>Slide</td><td>아래 200%에서 슬라이드인</td></tr>
+                    <tr><td><code>slide-in-down</code></td><td>Slide</td><td>위 200%에서 슬라이드인</td></tr>
+                    <tr><td><code>slide-in-left</code></td><td>Slide</td><td>왼쪽 200%에서 슬라이드인</td></tr>
+                    <tr><td><code>slide-in-right</code></td><td>Slide</td><td>오른쪽 200%에서 슬라이드인</td></tr>
+                    <tr><td><code>zoom-in</code></td><td>Zoom</td><td>scale 0.6 → 1 (페이드 포함)</td></tr>
+                    <tr><td><code>zoom-out</code></td><td>Zoom</td><td>scale 1.4 → 1 (페이드 포함)</td></tr>
+                    <tr><td><code>zoom-in-up</code></td><td>Zoom</td><td>줌인 + 위로 이동</td></tr>
+                    <tr><td><code>zoom-in-down</code></td><td>Zoom</td><td>줌인 + 아래로 이동</td></tr>
+                    <tr><td><code>zoom-in-left</code></td><td>Zoom</td><td>줌인 + 왼쪽에서 이동</td></tr>
+                    <tr><td><code>zoom-in-right</code></td><td>Zoom</td><td>줌인 + 오른쪽에서 이동</td></tr>
+                    <tr><td><code>bounce-in</code></td><td>Bounce</td><td>탄성 있게 줌인 등장</td></tr>
+                    <tr><td><code>bounce-in-up</code></td><td>Bounce</td><td>아래에서 탄성 있게 등장</td></tr>
+                    <tr><td><code>bounce-in-down</code></td><td>Bounce</td><td>위에서 탄성 있게 등장</td></tr>
+                    <tr><td><code>bounce-in-left</code></td><td>Bounce</td><td>왼쪽에서 탄성 있게 등장</td></tr>
+                    <tr><td><code>bounce-in-right</code></td><td>Bounce</td><td>오른쪽에서 탄성 있게 등장</td></tr>
+                    <tr><td><code>rotate-in</code></td><td>Rotate</td><td>-200deg 회전하며 등장</td></tr>
+                    <tr><td><code>flip-in-x</code></td><td>Flip</td><td>X축 3D 플립 등장</td></tr>
+                    <tr><td><code>flip-in-y</code></td><td>Flip</td><td>Y축 3D 플립 등장</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area" style="margin-top: calc(var(--spacing) * 6);">
+            <h3 data-slot="typography-h3">CSS Variables</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">변수</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>--animate-duration</code></td><td><code>0.64s</code></td><td>애니메이션 재생 시간</td></tr>
+                    <tr><td><code>--animate-distance</code></td><td><code>calc(var(--spacing) * 6)</code></td><td>Fade/Zoom 이동 거리</td></tr>
+                    <tr><td><code>--animate-distance-slide</code></td><td><code>200%</code></td><td>Slide 이동 거리</td></tr>
+                    <tr><td><code>--animate-ease</code></td><td><code>cubic-bezier(0.43,0.13,0.23,0.96)</code></td><td>기본 이징</td></tr>
+                    <tr><td><code>--animate-ease-bounce</code></td><td><code>cubic-bezier(0.215,0.61,0.355,1)</code></td><td>Bounce 이징</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#fade">Fade</a></li>
+                <li><a href="#slide">Slide</a></li>
+                <li><a href="#zoom">Zoom</a></li>
+                <li><a href="#bounce">Bounce</a></li>
+                <li><a href="#rotate">Rotate</a></li>
+                <li><a href="#flip">Flip</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

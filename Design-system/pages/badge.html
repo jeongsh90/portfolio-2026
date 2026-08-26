@@ -1,0 +1,204 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Badge</h1>
+            <p data-slot="desc">뱃지 형태로 상태·카테고리·라벨을 표시하는 컴포넌트입니다. <code>data-variant</code>로 스타일을 바꿀 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge">Default</span>
+                <span data-slot="badge" data-variant="secondary">Secondary</span>
+                <span data-slot="badge" data-variant="destructive">Destructive</span>
+                <span data-slot="badge" data-variant="outline">Outline</span>
+                <span data-slot="badge" data-variant="ghost">Ghost</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="with-icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">With Icon</h2>
+            <p data-slot="desc">뱃지 안에 아이콘을 넣을 수 있습니다. 왼쪽은 <code>data-icon="inline-start"</code>, 오른쪽은 <code>data-icon="inline-end"</code>를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge" data-variant="secondary">
+                    <i data-lucide="badge-check" data-icon="inline-start" aria-hidden="true"></i>
+                    Verified
+                </span>
+                <span data-slot="badge" data-variant="outline">
+                    Bookmark
+                    <i data-lucide="bookmark" data-icon="inline-end" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="with-spinner">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">With Spinner</h2>
+            <p data-slot="desc">뱃지 안에 스피너를 넣어 진행 중 상태를 표시할 수 있습니다. 스피너에도 <code>data-icon="inline-start"</code> 또는 <code>data-icon="inline-end"</code>를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge" data-variant="destructive">
+                    <span data-slot="spinner" data-icon="inline-start" role="status" aria-label="삭제 중">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                    Deleting
+                </span>
+                <span data-slot="badge" data-variant="secondary">
+                    Generating
+                    <span data-slot="spinner" data-icon="inline-end" role="status" aria-label="생성 중">
+                        <i data-lucide="loader-2" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="link">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Link</h2>
+            <p data-slot="desc"><code>&lt;a&gt;</code> 태그에 <code>data-slot="badge"</code>를 적용해 링크를 뱃지처럼 표시합니다. 링크에 포커스하면 포커스 링이 표시되고, 호버 시 배경색이 변합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <a href="#link" data-slot="badge">
+                    Open Link
+                    <i data-lucide="arrow-up-right" data-icon="inline-end" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="custom-colors">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Custom Colors</h2>
+            <p data-slot="desc"><code>data-color</code>로 커스텀 색상 뱃지를 만들 수 있습니다. 라이트·다크 모드 모두 대응합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge" data-color="blue">Blue</span>
+                <span data-slot="badge" data-color="green">Green</span>
+                <span data-slot="badge" data-color="sky">Sky</span>
+                <span data-slot="badge" data-color="purple">Purple</span>
+                <span data-slot="badge" data-color="red">Red</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="secondary-color">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Secondary Color</h2>
+            <p data-slot="desc"><code>data-variant="secondary"</code>에 <code>data-color</code>를 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge" data-variant="secondary" data-color="blue">Blue</span>
+                <span data-slot="badge" data-variant="secondary" data-color="green">Green</span>
+                <span data-slot="badge" data-variant="secondary" data-color="sky">Sky</span>
+                <span data-slot="badge" data-variant="secondary" data-color="purple">Purple</span>
+                <span data-slot="badge" data-variant="secondary" data-color="red">Red</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="outline-color">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Outline Color</h2>
+            <p data-slot="desc"><code>data-variant="outline"</code>에 <code>data-color</code>를 함께 사용합니다. 보더와 텍스트가 해당 색으로 채색됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge" data-variant="outline" data-color="blue">Blue</span>
+                <span data-slot="badge" data-variant="outline" data-color="green">Green</span>
+                <span data-slot="badge" data-variant="outline" data-color="sky">Sky</span>
+                <span data-slot="badge" data-variant="outline" data-color="purple">Purple</span>
+                <span data-slot="badge" data-variant="outline" data-color="red">Red</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="ghost-color">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Ghost Color</h2>
+            <p data-slot="desc"><code>data-variant="ghost"</code>에 <code>data-color</code>를 함께 사용합니다. 배경 없이 텍스트만 채색됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="badge-row">
+                <span data-slot="badge" data-variant="ghost" data-color="blue">Blue</span>
+                <span data-slot="badge" data-variant="ghost" data-color="green">Green</span>
+                <span data-slot="badge" data-variant="ghost" data-color="sky">Sky</span>
+                <span data-slot="badge" data-variant="ghost" data-color="purple">Purple</span>
+                <span data-slot="badge" data-variant="ghost" data-color="red">Red</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Badge</h3>
+            <p data-slot="desc">뱃지 또는 뱃지처럼 보이는 요소를 표시합니다. <code>data-slot="badge"</code>는 <code>&lt;span&gt;</code> 또는 <code>&lt;a&gt;</code> 태그에 적용할 수 있습니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"secondary"</code> | <code>"destructive"</code> | <code>"outline"</code> | <code>"ghost"</code> | <code>"link"</code></td>
+                        <td><code>"default"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-color</code></td>
+                        <td><code>"blue"</code> | <code>"green"</code> | <code>"sky"</code> | <code>"purple"</code> | <code>"red"</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>asChild</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#with-icon">With Icon</a></li>
+                <li><a href="#with-spinner">With Spinner</a></li>
+                <li><a href="#link">Link</a></li>
+            </ul>
+        </li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Colors</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#custom-colors">Default</a></li>
+                <li><a href="#secondary-color">Secondary</a></li>
+                <li><a href="#outline-color">Outline</a></li>
+                <li><a href="#ghost-color">Ghost</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,268 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Calendar</h1>
+            <p data-slot="desc">날짜 또는 날짜 범위를 선택할 수 있는 캘린더 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="calendar" data-mode="single" data-caption-layout="dropdown" data-bordered="true" data-auto-today="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">기본 캘린더입니다. <code>data-bordered="true"</code>로 테두리를 추가할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="calendar" data-mode="single" data-bordered="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="range-calendar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Range Calendar</h2>
+            <p data-slot="desc"><code>data-mode="range"</code>와 <code>data-months="2"</code>로 범위 선택 캘린더를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="calendar-range">
+                <div data-slot="calendar-card">
+                    <div data-slot="calendar-card-content">
+                        <div data-slot="calendar" data-mode="range" data-months="2" data-compact="true" data-default-month="2026-01" data-range-from="2026-01-12" data-range-to="2026-02-11"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="month-and-year-selector">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Month and Year Selector</h2>
+            <p data-slot="desc"><code>data-caption-layout="dropdown"</code>으로 월·연도 드롭다운을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="calendar" data-mode="single" data-caption-layout="dropdown" data-bordered="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="presets">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Presets</h2>
+            <p data-slot="desc">프리셋 버튼과 함께 사용해 빠르게 날짜를 선택할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="calendar-presets">
+                <div data-slot="calendar-card" data-size="sm">
+                    <div data-slot="calendar-card-content">
+                        <div data-slot="calendar" data-mode="single" data-compact="true" data-fixed-weeks="true" data-cell-size="9.5" data-auto-today="true"></div>
+                    </div>
+                    <div data-slot="calendar-card-footer">
+                        <button type="button" data-slot="button" data-variant="outline" data-size="sm" data-calendar-preset data-preset="today">오늘</button>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="sm" data-calendar-preset data-preset="tomorrow">내일</button>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="sm" data-calendar-preset data-preset="in-3-days">3일 후</button>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="sm" data-calendar-preset data-preset="in-a-week">1주 후</button>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="sm" data-calendar-preset data-preset="in-2-weeks">2주 후</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="date-and-time-picker">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Date and Time Picker</h2>
+            <p data-slot="desc">캘린더와 시간 입력을 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="calendar-datetime">
+                <div data-slot="calendar-card" data-size="sm">
+                    <div data-slot="calendar-card-content">
+                        <div data-slot="calendar" data-mode="single" data-compact="true" data-default-month="2026-06" data-selected="2026-06-12"></div>
+                    </div>
+                    <div data-slot="calendar-card-footer">
+                        <div data-slot="calendar-time-fields">
+                            <div data-slot="calendar-time-field">
+                                <label for="calendar-time-from">시작 시간</label>
+                                <div data-slot="input-group">
+                                    <input type="time" id="calendar-time-from" data-slot="input-group-control" value="10:30">
+                                    <div data-slot="input-group-addon" data-align="inline-end">
+                                        <i data-lucide="clock-2" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-slot="calendar-time-field">
+                                <label for="calendar-time-to">종료 시간</label>
+                                <div data-slot="input-group">
+                                    <input type="time" id="calendar-time-to" data-slot="input-group-control" value="12:30">
+                                    <div data-slot="input-group-addon" data-align="inline-end">
+                                        <i data-lucide="clock-2" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="booked-dates">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Booked dates</h2>
+            <p data-slot="desc">예약된 날짜를 비활성화하고 취소선으로 표시할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="calendar-card">
+                    <div data-slot="calendar-card-content">
+                        <div data-slot="calendar" data-mode="single" data-compact="true" data-default-month="2026-02" data-selected="2026-02-03" data-disabled-fn="booked"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="custom-cell-size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Custom Cell Size</h2>
+            <p data-slot="desc"><code>data-cell-size</code>로 셀 크기를 조절하고, 셀 안에 추가 정보를 표시할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="calendar-card">
+                    <div data-slot="calendar-card-content">
+                        <div data-slot="calendar" data-mode="range" data-compact="true" data-caption-layout="dropdown" data-month-dropdown="long" data-default-month="2026-12" data-range-from="2026-12-08" data-range-to="2026-12-18" data-custom-cells="price" data-cell-size="10" data-cell-size-md="12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="week-numbers">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Week Numbers</h2>
+            <p data-slot="desc"><code>data-show-week-number="true"</code>로 주차 번호를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="calendar-card">
+                    <div data-slot="calendar-card-content">
+                        <div data-slot="calendar" data-mode="single" data-compact="true" data-default-month="2026-02" data-selected="2026-02-03" data-show-week-number="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Calendar</h3>
+            <p data-slot="desc"><code>data-slot="calendar"</code> 루트 요소에 아래 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-mode</code></td>
+                        <td><code>"single"</code> | <code>"range"</code></td>
+                        <td><code>"single"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-months</code></td>
+                        <td>number</td>
+                        <td><code>1</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-show-outside-days</code></td>
+                        <td>boolean</td>
+                        <td><code>true</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-show-week-number</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-fixed-weeks</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-caption-layout</code></td>
+                        <td><code>"label"</code> | <code>"dropdown"</code></td>
+                        <td><code>"label"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-bordered</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-month</code></td>
+                        <td><code>YYYY-MM</code></td>
+                        <td>현재 월</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-selected</code></td>
+                        <td><code>YYYY-MM-DD</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-range-from</code></td>
+                        <td><code>YYYY-MM-DD</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-range-to</code></td>
+                        <td><code>YYYY-MM-DD</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-cell-size</code></td>
+                        <td>number (spacing 배수)</td>
+                        <td><code>8</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#range-calendar">Range Calendar</a></li>
+                <li><a href="#month-and-year-selector">Month and Year Selector</a></li>
+                <li><a href="#presets">Presets</a></li>
+                <li><a href="#date-and-time-picker">Date and Time Picker</a></li>
+                <li><a href="#booked-dates">Booked dates</a></li>
+                <li><a href="#custom-cell-size">Custom Cell Size</a></li>
+                <li><a href="#week-numbers">Week Numbers</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

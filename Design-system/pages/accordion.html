@@ -1,0 +1,390 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Accordion</h1>
+            <p data-slot="desc">헤더를 클릭해 콘텐츠 영역을 펼치거나 접는 수직 스택형 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="accordion">
+                <div data-slot="accordion" data-type="single" data-collapsible data-default-value="item-1" data-size="lg">
+                    <div data-slot="accordion-item" data-value="item-1">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                배송은 얼마나 걸리나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">일반 배송은 5~7일, 빠른 배송은 2~3일, 익일 배송도 제공합니다. 해외 주문에는 무료 배송이 적용됩니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-2">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                반품 정책은 어떻게 되나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">구매일로부터 30일 이내에 반품 가능합니다. 미사용 상태의 원래 포장 그대로 반환해야 하며, 환불은 5~7 영업일 이내에 처리됩니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-3">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                고객 지원에 어떻게 연락하나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">이메일, 라이브 채팅, 전화로 문의하실 수 있습니다. 영업일 기준 24시간 이내에 응답드립니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">한 번에 하나의 항목만 열리는 기본 아코디언입니다. <code>data-collapsible</code>을 추가하면 열린 항목을 다시 닫을 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="accordion">
+                <div data-slot="accordion" data-type="single" data-collapsible data-default-value="item-1" data-size="lg">
+                    <div data-slot="accordion-item" data-value="item-1">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                비밀번호를 어떻게 재설정하나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">로그인 페이지에서 '비밀번호 찾기'를 클릭하고 이메일을 입력하면 재설정 링크가 전송됩니다. 링크는 24시간 후 만료됩니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-2">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                구독 플랜을 변경할 수 있나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">네, 언제든지 계정 설정에서 플랜을 업그레이드하거나 다운그레이드할 수 있습니다. 변경 사항은 다음 결제 주기부터 적용됩니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-3">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                어떤 결제 방법을 지원하나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">주요 신용카드, 페이팔, 계좌이체를 지원합니다. 모든 결제는 파트너사를 통해 안전하게 처리됩니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="multiple">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Multiple</h2>
+            <p data-slot="desc"><code>data-type="multiple"</code>을 사용하면 여러 항목을 동시에 열 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="accordion">
+                <div data-slot="accordion" data-type="multiple" data-default-value="notifications" data-size="lg">
+                    <div data-slot="accordion-item" data-value="notifications">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                알림 설정
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">알림 수신 방식을 관리합니다. 이메일 알림 또는 모바일 푸시 알림을 활성화할 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="privacy">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                개인정보 &amp; 보안
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">개인정보 설정 및 보안 기본값을 제어합니다. 이중 인증 활성화, 연결된 기기 관리, 활성 세션 검토 및 데이터 공유 설정을 구성할 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="billing">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                결제 &amp; 구독
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">현재 플랜, 결제 내역 및 예정된 청구서를 확인합니다. 결제 수단 변경, 구독 등급 조정 또는 구독 해지가 가능합니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>data-disabled</code>를 <code>accordion-item</code>에 추가해 해당 항목을 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="accordion">
+                <div data-slot="accordion" data-type="single" data-collapsible data-size="lg">
+                    <div data-slot="accordion-item" data-value="item-1">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                계정 히스토리를 확인할 수 있나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">네, 대시보드의 계정 히스토리 섹션에서 거래, 플랜 변경, 지원 티켓 등 전체 내역을 확인할 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-2" data-disabled>
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                프리미엄 기능 안내
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">이 섹션은 프리미엄 플랜 전용입니다. 업그레이드하면 접근할 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-3">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                이메일 주소를 어떻게 변경하나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">계정 설정에서 이메일 주소를 변경할 수 있습니다. 변경 사항 확인을 위해 새 주소로 인증 메일이 전송됩니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="borders">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Borders</h2>
+            <p data-slot="desc"><code>data-variant="border"</code>를 추가하면 외곽 테두리와 항목 구분선이 있는 스타일이 적용됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="accordion">
+                <div data-slot="accordion" data-type="single" data-collapsible data-variant="border" data-default-value="item-1" data-size="lg">
+                    <div data-slot="accordion-item" data-value="item-1">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                결제는 어떻게 이루어지나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">월간 및 연간 구독 플랜을 제공합니다. 결제는 각 주기 시작 시 청구되며 언제든지 해지할 수 있습니다. 모든 플랜에는 자동 백업, 24시간 지원이 포함됩니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-2">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                데이터는 안전한가요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">종단간 암호화, SOC 2 Type II 준수 및 정기 보안 감사를 수행합니다. 모든 데이터는 저장 및 전송 시 암호화됩니다.</div>
+                        </div>
+                    </div>
+                    <div data-slot="accordion-item" data-value="item-3">
+                        <h3 data-slot="accordion-header">
+                            <button type="button" data-slot="accordion-trigger">
+                                어떤 연동 서비스를 지원하나요?
+                                <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                            </button>
+                        </h3>
+                        <div data-slot="accordion-content">
+                            <div data-slot="accordion-content-inner">Slack, Zapier, Salesforce, HubSpot 등 500개 이상의 도구와 연동됩니다. REST API와 웹훅으로 커스텀 연동도 구축할 수 있습니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="card">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Card</h2>
+            <p data-slot="desc">Card 컴포넌트 안에 아코디언을 배치한 예시입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="accordion">
+                <div data-slot="card" data-size="sm">
+                    <div data-slot="card-header">
+                        <div data-slot="card-title">구독 &amp; 결제</div>
+                        <div data-slot="card-description">플랜, 결제, 해지에 관한 자주 묻는 질문입니다.</div>
+                    </div>
+                    <div data-slot="card-content">
+                        <div data-slot="accordion" data-type="single" data-collapsible data-default-value="plans">
+                            <div data-slot="accordion-item" data-value="plans">
+                                <h3 data-slot="accordion-header">
+                                    <button type="button" data-slot="accordion-trigger">
+                                        어떤 구독 플랜을 제공하나요?
+                                        <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                                    </button>
+                                </h3>
+                                <div data-slot="accordion-content">
+                                    <div data-slot="accordion-content-inner">스타터(월 $9), 프로(월 $29), 엔터프라이즈(월 $99) 세 가지 플랜을 제공합니다. 각 플랜은 저장 용량, API 접근, 팀 협업 기능이 단계별로 포함됩니다.</div>
+                                </div>
+                            </div>
+                            <div data-slot="accordion-item" data-value="billing">
+                                <h3 data-slot="accordion-header">
+                                    <button type="button" data-slot="accordion-trigger">
+                                        결제는 어떻게 처리되나요?
+                                        <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                                    </button>
+                                </h3>
+                                <div data-slot="accordion-content">
+                                    <div data-slot="accordion-content-inner">결제는 각 결제 주기 시작 시 자동으로 처리됩니다. 신용카드, 페이팔, ACH 이체를 지원하며, 청구서는 이메일로 발송됩니다.</div>
+                                </div>
+                            </div>
+                            <div data-slot="accordion-item" data-value="cancel">
+                                <h3 data-slot="accordion-header">
+                                    <button type="button" data-slot="accordion-trigger">
+                                        구독을 어떻게 해지하나요?
+                                        <span data-slot="accordion-trigger-icon"><i data-lucide="chevron-down"></i></span>
+                                    </button>
+                                </h3>
+                                <div data-slot="accordion-content">
+                                    <div data-slot="accordion-content-inner">계정 설정에서 언제든지 구독을 해지할 수 있습니다. 위약금은 없으며, 현재 결제 기간 종료 시까지 서비스를 계속 이용할 수 있습니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Accordion</h3>
+            <p data-slot="desc">아코디언 루트 요소입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-type</code></td>
+                        <td><code>"single"</code> | <code>"multiple"</code></td>
+                        <td><code>"single"</code></td>
+                        <td>한 번에 열 수 있는 항목 수</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-collapsible</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>열린 항목을 다시 클릭해 닫을 수 있는지 여부 (<code>single</code> 전용)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>초기에 열려 있을 항목의 <code>data-value</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"border"</code></td>
+                        <td>—</td>
+                        <td>외곽 테두리가 있는 스타일</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"sm"</code> | <code>"default"</code> | <code>"lg"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>아코디언 최대 너비</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AccordionItem</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>항목을 식별하는 고유 값 (필수)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>해당 항목 비활성화</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이 페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#multiple">Multiple</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#borders">Borders</a></li>
+                <li><a href="#card">Card</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

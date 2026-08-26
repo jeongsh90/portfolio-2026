@@ -14,7 +14,8 @@
 
   var descGroup = modal.querySelector('.modal__group--description');
   var descEl = modal.querySelector('.modal__desc');
-  var linkEl = modal.querySelector('.modal__link');
+  var linkEl = modal.querySelector('.modal__link:not(.modal__link--publish)');
+  var publishLinkEl = modal.querySelector('.modal__link--publish');
   var whatididGroup = modal.querySelector('.modal__group--whatidid');
   var whatididListEl = modal.querySelector('.modal__whatidid-list');
   var skillsGroup = modal.querySelector('.modal__group--skills');
@@ -141,6 +142,13 @@
     } else {
       linkEl.removeAttribute('href');
       linkEl.style.display = 'none';
+    }
+    if (data.publishLink) {
+      publishLinkEl.href = data.publishLink;
+      publishLinkEl.style.display = '';
+    } else {
+      publishLinkEl.removeAttribute('href');
+      publishLinkEl.style.display = 'none';
     }
 
     whatididGroup.style.display = '';

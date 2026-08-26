@@ -1,0 +1,8 @@
+@import '../fonts/pretendard/pretendard.css?v=17';
+@import './reset.css?v=17';
+@import './globals.css?v=17';
+@import './typography.css?v=17';
+@import './layout.css?v=25';
+@import './components.css?v=45';
+@import './dashboard.css?v=65';
+@import './extra.css?v=9';

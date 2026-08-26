@@ -1,0 +1,379 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Dialog</h1>
+            <p data-slot="desc">모달 오버레이 위에 콘텐츠를 표시하는 다이얼로그입니다. 오버레이 클릭과 <kbd>Esc</kbd> 키로 닫을 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Open Dialog</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-size="sm" role="dialog" aria-modal="true"
+                         aria-labelledby="dialog-overview-title" aria-describedby="dialog-overview-desc" aria-hidden="true">
+                        <div data-slot="dialog-header">
+                            <h2 data-slot="dialog-title" id="dialog-overview-title">Edit profile</h2>
+                            <p data-slot="dialog-description" id="dialog-overview-desc">Make changes to your profile here. Click save when you're done.</p>
+                        </div>
+                        <div data-slot="field-group">
+                            <div data-slot="field" role="group">
+                                <label data-slot="field-label" for="dialog-name-1">Name</label>
+                                <input type="text" data-slot="input" id="dialog-name-1" name="name" value="Pedro Duarte">
+                            </div>
+                            <div data-slot="field" role="group">
+                                <label data-slot="field-label" for="dialog-username-1">Username</label>
+                                <input type="text" data-slot="input" id="dialog-username-1" name="username" value="@peduarte">
+                            </div>
+                        </div>
+                        <div data-slot="dialog-footer">
+                            <button type="button" data-slot="button" data-variant="outline" data-dialog-close>Cancel</button>
+                            <button type="button" data-slot="button">Save changes</button>
+                        </div>
+                        <button type="button" data-slot="dialog-close" data-close-kind="icon" aria-label="Close">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="custom-close-button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Custom Close Button</h2>
+            <p data-slot="desc">우측 상단 기본 닫기 버튼 대신 푸터에 닫기 액션을 배치할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Share</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-size="md" role="dialog" aria-modal="true"
+                         aria-labelledby="dialog-share-title" aria-describedby="dialog-share-desc" aria-hidden="true">
+                        <div data-slot="dialog-header">
+                            <h2 data-slot="dialog-title" id="dialog-share-title">Share link</h2>
+                            <p data-slot="dialog-description" id="dialog-share-desc">Anyone who has this link will be able to view this.</p>
+                        </div>
+                        <div class="dialog-link-row">
+                            <div data-slot="field" role="group">
+                                <input type="text" data-slot="input" id="dialog-link" aria-label="Link" value="https://ui.shadcn.com/docs/installation" readonly>
+                            </div>
+                        </div>
+                        <div data-slot="dialog-footer" data-align="start">
+                            <button type="button" data-slot="button" data-dialog-close>Close</button>
+                        </div>
+                        <button type="button" data-slot="dialog-close" data-close-kind="icon" aria-label="Close">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="no-close-button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">No Close Button</h2>
+            <p data-slot="desc"><code>data-show-close-button="false"</code>로 우측 상단 닫기 버튼을 숨깁니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">No Close Button</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-size="sm" data-show-close-button="false" role="dialog" aria-modal="true"
+                         aria-labelledby="dialog-no-close-title" aria-describedby="dialog-no-close-desc" aria-hidden="true">
+                        <div data-slot="dialog-header">
+                            <h2 data-slot="dialog-title" id="dialog-no-close-title">No Close Button</h2>
+                            <p data-slot="dialog-description" id="dialog-no-close-desc">This dialog doesn't have a close button in the top-right corner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="sticky-footer">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sticky Footer</h2>
+            <p data-slot="desc">콘텐츠가 스크롤되어도 푸터 액션이 하단에 고정됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Sticky Footer</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-size="sm" role="dialog" aria-modal="true"
+                         aria-labelledby="dialog-sticky-title" aria-describedby="dialog-sticky-desc" aria-hidden="true">
+                        <div data-slot="dialog-header">
+                            <h2 data-slot="dialog-title" id="dialog-sticky-title">Sticky Footer</h2>
+                            <p data-slot="dialog-description" id="dialog-sticky-desc">This dialog has a sticky footer that stays visible while the content scrolls.</p>
+                        </div>
+                        <div data-slot="dialog-scroll-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div data-slot="dialog-footer">
+                            <button type="button" data-slot="button" data-variant="outline" data-dialog-close>Close</button>
+                        </div>
+                        <button type="button" data-slot="dialog-close" data-close-kind="icon" aria-label="Close">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="scrollable-content">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Scrollable Content</h2>
+            <p data-slot="desc">긴 콘텐츠는 헤더 아래 영역에서 스크롤됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Scrollable Content</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-size="sm" role="dialog" aria-modal="true"
+                         aria-labelledby="dialog-scroll-title" aria-describedby="dialog-scroll-desc" aria-hidden="true">
+                        <div data-slot="dialog-header">
+                            <h2 data-slot="dialog-title" id="dialog-scroll-title">Scrollable Content</h2>
+                            <p data-slot="dialog-description" id="dialog-scroll-desc">This is a dialog with scrollable content.</p>
+                        </div>
+                        <div data-slot="dialog-scroll-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <button type="button" data-slot="dialog-close" data-close-kind="icon" aria-label="Close">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Dialog</h3>
+            <p data-slot="desc"><code>data-slot="dialog"</code> 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DialogContent</h3>
+            <p data-slot="desc"><code>data-slot="dialog-content"</code> 모달 패널입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"sm"</code> | <code>"md"</code></td>
+                        <td><code>"sm"</code></td>
+                        <td>최대 너비(<code>sm</code>: max-w-sm, <code>md</code>: max-w-md).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-show-close-button</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"true"</code></td>
+                        <td>우측 상단 닫기 버튼 표시.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DialogHeader</h3>
+            <p data-slot="desc"><code>data-slot="dialog-header"</code> 제목·설명 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DialogTitle</h3>
+            <p data-slot="desc"><code>data-slot="dialog-title"</code> 다이얼로그 제목입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DialogDescription</h3>
+            <p data-slot="desc"><code>data-slot="dialog-description"</code> 다이얼로그 설명입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DialogFooter</h3>
+            <p data-slot="desc"><code>data-slot="dialog-footer"</code> 하단 액션 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"start"</code></td>
+                        <td>—</td>
+                        <td>푸터 버튼 좌측 정렬(Custom Close 예시).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DialogClose</h3>
+            <p data-slot="desc"><code>data-slot="dialog-close"</code> 다이얼로그를 닫는 버튼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-close-kind</code></td>
+                        <td><code>"icon"</code></td>
+                        <td>—</td>
+                        <td>우측 상단 아이콘 닫기 버튼.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#custom-close-button">Custom Close Button</a></li>
+                <li><a href="#no-close-button">No Close Button</a></li>
+                <li><a href="#sticky-footer">Sticky Footer</a></li>
+                <li><a href="#scrollable-content">Scrollable Content</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

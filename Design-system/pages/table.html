@@ -1,0 +1,286 @@
+﻿<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Table</h1>
+            <p data-slot="desc">행과 열로 데이터를 정렬해 표시하는 반응형 테이블 컴포넌트입니다. <code>data-slot</code> 기반의 시맨틱 구조로 헤더·바디·푸터·캡션을 조합할 수 있습니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="table">
+                <div data-slot="table-container">
+                    <table data-slot="table">
+                        <caption data-slot="table-caption">최근 청구서 목록입니다.</caption>
+                        <thead data-slot="table-header">
+                            <tr data-slot="table-row">
+                                <th scope="col" data-slot="table-head" data-fixed-width="100">Invoice</th>
+                                <th scope="col" data-slot="table-head">Status</th>
+                                <th scope="col" data-slot="table-head">Method</th>
+                                <th scope="col" data-slot="table-head" data-align="right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody data-slot="table-body">
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV001</td>
+                                <td data-slot="table-cell">Paid</td>
+                                <td data-slot="table-cell">Credit Card</td>
+                                <td data-slot="table-cell" data-align="right">$250.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV002</td>
+                                <td data-slot="table-cell">Pending</td>
+                                <td data-slot="table-cell">PayPal</td>
+                                <td data-slot="table-cell" data-align="right">$150.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV003</td>
+                                <td data-slot="table-cell">Unpaid</td>
+                                <td data-slot="table-cell">Bank Transfer</td>
+                                <td data-slot="table-cell" data-align="right">$350.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV004</td>
+                                <td data-slot="table-cell">Paid</td>
+                                <td data-slot="table-cell">Credit Card</td>
+                                <td data-slot="table-cell" data-align="right">$450.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV005</td>
+                                <td data-slot="table-cell">Paid</td>
+                                <td data-slot="table-cell">PayPal</td>
+                                <td data-slot="table-cell" data-align="right">$550.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV006</td>
+                                <td data-slot="table-cell">Pending</td>
+                                <td data-slot="table-cell">Bank Transfer</td>
+                                <td data-slot="table-cell" data-align="right">$200.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV007</td>
+                                <td data-slot="table-cell">Unpaid</td>
+                                <td data-slot="table-cell">Credit Card</td>
+                                <td data-slot="table-cell" data-align="right">$300.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot data-slot="table-footer">
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" colspan="3">Total</td>
+                                <td data-slot="table-cell" data-align="right">$2,500.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="footer">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Footer</h2>
+            <p data-slot="desc"><code>data-slot="table-footer"</code>를 추가해 테이블 하단에 합계·요약 행을 표시합니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="table">
+                <div data-slot="table-container">
+                    <table data-slot="table">
+                        <caption data-slot="table-caption">A list of your recent invoices.</caption>
+                        <thead data-slot="table-header">
+                            <tr data-slot="table-row">
+                                <th scope="col" data-slot="table-head" data-fixed-width="100">Invoice</th>
+                                <th scope="col" data-slot="table-head">Status</th>
+                                <th scope="col" data-slot="table-head">Method</th>
+                                <th scope="col" data-slot="table-head" data-align="right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody data-slot="table-body">
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV001</td>
+                                <td data-slot="table-cell">Paid</td>
+                                <td data-slot="table-cell">Credit Card</td>
+                                <td data-slot="table-cell" data-align="right">$250.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV002</td>
+                                <td data-slot="table-cell">Pending</td>
+                                <td data-slot="table-cell">PayPal</td>
+                                <td data-slot="table-cell" data-align="right">$150.00</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">INV003</td>
+                                <td data-slot="table-cell">Unpaid</td>
+                                <td data-slot="table-cell">Bank Transfer</td>
+                                <td data-slot="table-cell" data-align="right">$350.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot data-slot="table-footer">
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" colspan="3">Total</td>
+                                <td data-slot="table-cell" data-align="right">$2,500.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="actions">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Actions</h2>
+            <p data-slot="desc">각 행에 <code>DropdownMenu</code>를 결합해 수정·삭제 등 인라인 액션을 제공합니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="table">
+                <div data-slot="table-container">
+                    <table data-slot="table">
+                        <thead data-slot="table-header">
+                            <tr data-slot="table-row">
+                                <th scope="col" data-slot="table-head">Product</th>
+                                <th scope="col" data-slot="table-head">Price</th>
+                                <th scope="col" data-slot="table-head" data-align="right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody data-slot="table-body">
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">Wireless Mouse</td>
+                                <td data-slot="table-cell">$29.99</td>
+                                <td data-slot="table-cell" data-align="right">
+                                    <div data-slot="dropdown-menu">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-haspopup="menu" aria-expanded="false">
+                                            <i data-lucide="more-horizontal" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Open menu</span>
+                                        </button>
+                                        <div data-slot="dropdown-menu-content" data-state="closed" role="menu">
+                                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">Edit</button>
+                                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">Duplicate</button>
+                                            <div data-slot="dropdown-menu-separator"></div>
+                                            <button type="button" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">Mechanical Keyboard</td>
+                                <td data-slot="table-cell">$129.99</td>
+                                <td data-slot="table-cell" data-align="right">
+                                    <div data-slot="dropdown-menu">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-haspopup="menu" aria-expanded="false">
+                                            <i data-lucide="more-horizontal" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Open menu</span>
+                                        </button>
+                                        <div data-slot="dropdown-menu-content" data-state="closed" role="menu">
+                                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">Edit</button>
+                                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">Duplicate</button>
+                                            <div data-slot="dropdown-menu-separator"></div>
+                                            <button type="button" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell" data-variant="medium">USB-C Hub</td>
+                                <td data-slot="table-cell">$49.99</td>
+                                <td data-slot="table-cell" data-align="right">
+                                    <div data-slot="dropdown-menu">
+                                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-haspopup="menu" aria-expanded="false">
+                                            <i data-lucide="more-horizontal" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Open menu</span>
+                                        </button>
+                                        <div data-slot="dropdown-menu-content" data-state="closed" role="menu">
+                                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">Edit</button>
+                                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">Duplicate</button>
+                                            <div data-slot="dropdown-menu-separator"></div>
+                                            <button type="button" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Table</h3>
+            <p data-slot="desc">테이블의 루트 요소입니다. 모든 하위 슬롯을 감쌉니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">엘리먼트</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>table</code></td>
+                        <td><code>&lt;table&gt;</code></td>
+                        <td>테이블 루트</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-header</code></td>
+                        <td><code>&lt;thead&gt;</code></td>
+                        <td>헤더 그룹</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-body</code></td>
+                        <td><code>&lt;tbody&gt;</code></td>
+                        <td>바디 그룹</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-footer</code></td>
+                        <td><code>&lt;tfoot&gt;</code></td>
+                        <td>푸터 그룹</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-row</code></td>
+                        <td><code>&lt;tr&gt;</code></td>
+                        <td>테이블 행. <code>data-state="selected"</code> 지원</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-head</code></td>
+                        <td><code>&lt;th&gt;</code></td>
+                        <td>헤더 셀. <code>data-align="right"</code> 지원</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-cell</code></td>
+                        <td><code>&lt;td&gt;</code></td>
+                        <td>바디 셀. <code>data-align="right"</code> 지원</td>
+                    </tr>
+                    <tr>
+                        <td><code>table-caption</code></td>
+                        <td><code>&lt;caption&gt;</code></td>
+                        <td>테이블 하단에 렌더링되는 캡션</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#footer">Footer</a></li>
+                <li><a href="#actions">Actions</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

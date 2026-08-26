@@ -1,0 +1,359 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Button Group</h1>
+            <p data-slot="desc">관련 버튼을 일관된 스타일로 묶는 컨테이너입니다. 액션 그룹, 스플릿 버튼 등에 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-group">
+                <div data-slot="button-group" role="group" aria-label="메일 액션">
+                    <div data-slot="button-group" data-button-group-hidden-sm>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="뒤로">
+                            <i data-lucide="arrow-left" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="button-group">
+                        <button type="button" data-slot="button" data-variant="outline">보관</button>
+                        <button type="button" data-slot="button" data-variant="outline">신고</button>
+                    </div>
+                    <div data-slot="button-group">
+                        <button type="button" data-slot="button" data-variant="outline">미루기</button>
+                        <div data-slot="dropdown-menu">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-haspopup="menu" aria-expanded="false" aria-label="더 보기">
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div data-slot="dropdown-menu-content" data-state="closed" role="menu" aria-label="추가 액션">
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">라벨로 이동</button>
+                                <button type="button" data-slot="dropdown-menu-item" role="menuitem">스팸 신고</button>
+                                <div data-slot="dropdown-menu-separator"></div>
+                                <button type="button" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="orientation">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Orientation</h2>
+            <p data-slot="desc"><code>data-orientation</code> 속성으로 버튼 그룹의 배치 방향을 변경합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="button-group" data-orientation="vertical" role="group" aria-label="수량 조절">
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="감소">
+                        <i data-lucide="minus" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="증가">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc">각 버튼의 <code>data-size</code> 속성으로 그룹 크기를 조절합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-group-size">
+                <div data-slot="button-group" role="group" aria-label="Small">
+                    <button type="button" data-slot="button" data-variant="outline" data-size="sm">Small</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon-sm" aria-label="추가">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="button-group" role="group" aria-label="Default">
+                    <button type="button" data-slot="button" data-variant="outline">Default</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="추가">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="button-group" role="group" aria-label="Large">
+                    <button type="button" data-slot="button" data-variant="outline" data-size="lg">Large</button>
+                    <button type="button" data-slot="button" data-variant="outline" data-size="icon-lg" aria-label="추가">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="nested">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Nested</h2>
+            <p data-slot="desc"><code>ButtonGroup</code>을 중첩해 간격이 있는 복합 레이아웃을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-group-nested">
+                <div data-slot="button-group" role="group" aria-label="중첩 그룹">
+                    <div data-slot="button-group">
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="오디오">
+                            <i data-lucide="audio-lines" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-label="추가">
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="input" placeholder="메시지를 입력하세요..." aria-label="메시지">
+                        <div data-slot="input-group-addon" data-align="inline-end">
+                            <i data-lucide="search" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="separator">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Separator</h2>
+            <p data-slot="desc"><code>ButtonGroupSeparator</code>로 그룹 내 버튼을 시각적으로 구분합니다. <code>outline</code> variant는 테두리가 있어 구분선이 필요 없습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="button-group" role="group" aria-label="복사·붙여넣기">
+                    <button type="button" data-slot="button" data-variant="secondary">복사</button>
+                    <div data-slot="button-group-separator" data-orientation="vertical" role="separator" aria-orientation="vertical"></div>
+                    <button type="button" data-slot="button" data-variant="secondary">붙여넣기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="split">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Split</h2>
+            <p data-slot="desc"><code>ButtonGroupSeparator</code>로 두 버튼을 나눠 스플릿 버튼 그룹을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="button-group" role="group" aria-label="스플릿 버튼">
+                    <button type="button" data-slot="button" data-variant="secondary">Button</button>
+                    <div data-slot="button-group-separator" data-orientation="vertical" role="separator" aria-orientation="vertical"></div>
+                    <button type="button" data-slot="button" data-variant="secondary" data-size="icon" aria-label="추가">
+                        <i data-lucide="plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="input">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Input</h2>
+            <p data-slot="desc">입력 필드와 버튼을 함께 묶습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-group-input">
+                <div data-slot="button-group" role="group" aria-label="검색">
+                    <input type="search" data-slot="input" placeholder="검색..." aria-label="검색어">
+                    <button type="button" data-slot="button" data-variant="outline" aria-label="검색">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="input-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Input Group</h2>
+            <p data-slot="desc"><code>InputGroup</code>을 <code>ButtonGroup</code>으로 감싸 복합 입력 레이아웃을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="button-group-input">
+                <div data-slot="button-group" role="group" aria-label="입력 그룹">
+                    <div data-slot="button-group-text">https://</div>
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="input" placeholder="example.com" aria-label="URL">
+                    </div>
+                    <button type="button" data-slot="button" data-variant="outline">이동</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="dropdown-menu">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Dropdown Menu</h2>
+            <p data-slot="desc"><code>DropdownMenu</code>와 조합해 스플릿 버튼 그룹을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="button-group" role="group" aria-label="팔로우">
+                    <button type="button" data-slot="button" data-variant="outline">팔로우</button>
+                    <div data-slot="dropdown-menu">
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-haspopup="menu" aria-expanded="false" aria-label="팔로우 옵션">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div data-slot="dropdown-menu-content" data-state="closed" role="menu" aria-label="팔로우 옵션">
+                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">음소거</button>
+                            <button type="button" data-slot="dropdown-menu-item" role="menuitem">차단</button>
+                            <div data-slot="dropdown-menu-separator"></div>
+                            <button type="button" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">신고</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="select">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Select</h2>
+            <p data-slot="desc"><code>Select</code> 컴포넌트와 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="button-group" role="group" aria-label="통화 선택">
+                    <div data-slot="button-group-text">$</div>
+                    <div data-slot="select">
+                        <button type="button" data-slot="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                            <span data-slot="select-value">USD</span>
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div data-slot="select-content" data-state="closed" role="listbox" aria-label="통화">
+                            <button type="button" data-slot="select-item" role="option" data-state="checked">USD</button>
+                            <button type="button" data-slot="select-item" role="option">EUR</button>
+                            <button type="button" data-slot="select-item" role="option">GBP</button>
+                            <button type="button" data-slot="select-item" role="option">JPY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="popover">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Popover</h2>
+            <p data-slot="desc"><code>Popover</code> 컴포넌트와 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="button-group" role="group" aria-label="Copilot">
+                    <button type="button" data-slot="button" data-variant="outline">
+                        <i data-lucide="bot" aria-hidden="true"></i>
+                        Copilot
+                    </button>
+                    <div data-slot="popover">
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon" aria-haspopup="dialog" aria-expanded="false" aria-label="Copilot 옵션">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div data-slot="popover-content" data-state="closed" role="dialog" aria-label="Copilot 설정">
+                            <div data-slot="popover-header">
+                                <div data-slot="popover-title">Copilot</div>
+                                <p data-slot="popover-description">AI 어시스턴트 설정을 변경합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">ButtonGroup</h3>
+            <p data-slot="desc">관련 버튼을 일관된 스타일로 묶는 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"horizontal"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ButtonGroupSeparator</h3>
+            <p data-slot="desc">버튼 그룹 내 버튼을 시각적으로 구분합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"vertical"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ButtonGroupText</h3>
+            <p data-slot="desc">버튼 그룹 내 텍스트를 표시합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>asChild</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#orientation">Orientation</a></li>
+                <li><a href="#size">Size</a></li>
+                <li><a href="#nested">Nested</a></li>
+                <li><a href="#separator">Separator</a></li>
+                <li><a href="#split">Split</a></li>
+                <li><a href="#input">Input</a></li>
+                <li><a href="#input-group">Input Group</a></li>
+                <li><a href="#dropdown-menu">Dropdown Menu</a></li>
+                <li><a href="#select">Select</a></li>
+                <li><a href="#popover">Popover</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

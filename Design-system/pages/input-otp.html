@@ -1,0 +1,436 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Input OTP</h1>
+            <p data-slot="desc">복사·붙여넣기를 지원하는 접근 가능한 일회용 비밀번호(OTP) 입력 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp" data-max-length="6" data-default-value="123456">
+                    <div data-slot="input-otp-container">
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="0"></div>
+                            <div data-slot="input-otp-slot" data-index="1"></div>
+                            <div data-slot="input-otp-slot" data-index="2"></div>
+                            <div data-slot="input-otp-slot" data-index="3"></div>
+                            <div data-slot="input-otp-slot" data-index="4"></div>
+                            <div data-slot="input-otp-slot" data-index="5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="pattern">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Pattern</h2>
+            <p data-slot="desc"><code>pattern</code> prop으로 OTP 입력에 허용할 문자 패턴을 지정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-otp-pattern">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="digits-only">Digits Only</label>
+                    <div data-slot="input-otp" id="digits-only" data-max-length="6" data-pattern="digits">
+                        <div data-slot="input-otp-container">
+                            <div data-slot="input-otp-group">
+                                <div data-slot="input-otp-slot" data-index="0"></div>
+                                <div data-slot="input-otp-slot" data-index="1"></div>
+                                <div data-slot="input-otp-slot" data-index="2"></div>
+                                <div data-slot="input-otp-slot" data-index="3"></div>
+                                <div data-slot="input-otp-slot" data-index="4"></div>
+                                <div data-slot="input-otp-slot" data-index="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="separator">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Separator</h2>
+            <p data-slot="desc"><code>InputOTPSeparator</code>로 입력 그룹 사이에 구분자를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp" data-max-length="6">
+                    <div data-slot="input-otp-container">
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="0"></div>
+                            <div data-slot="input-otp-slot" data-index="1"></div>
+                        </div>
+                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                            <i data-lucide="minus" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="2"></div>
+                            <div data-slot="input-otp-slot" data-index="3"></div>
+                        </div>
+                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                            <i data-lucide="minus" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="4"></div>
+                            <div data-slot="input-otp-slot" data-index="5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> prop으로 입력을 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp" id="disabled" data-max-length="6" data-default-value="123456" disabled>
+                    <div data-slot="input-otp-container">
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="0"></div>
+                            <div data-slot="input-otp-slot" data-index="1"></div>
+                            <div data-slot="input-otp-slot" data-index="2"></div>
+                        </div>
+                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                            <i data-lucide="minus" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="3"></div>
+                            <div data-slot="input-otp-slot" data-index="4"></div>
+                            <div data-slot="input-otp-slot" data-index="5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="controlled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Controlled</h2>
+            <p data-slot="desc"><code>value</code>와 <code>onChange</code> prop으로 입력 값을 제어합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp-controlled">
+                    <div data-slot="input-otp" data-max-length="6">
+                        <div data-slot="input-otp-container">
+                            <div data-slot="input-otp-group">
+                                <div data-slot="input-otp-slot" data-index="0"></div>
+                                <div data-slot="input-otp-slot" data-index="1"></div>
+                                <div data-slot="input-otp-slot" data-index="2"></div>
+                                <div data-slot="input-otp-slot" data-index="3"></div>
+                                <div data-slot="input-otp-slot" data-index="4"></div>
+                                <div data-slot="input-otp-slot" data-index="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="input-otp-hint">Enter your one-time password.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc">슬롯에 <code>aria-invalid</code>를 지정하면 오류 상태를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp" data-max-length="6" data-default-value="000000">
+                    <div data-slot="input-otp-container">
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="0" aria-invalid="true"></div>
+                            <div data-slot="input-otp-slot" data-index="1" aria-invalid="true"></div>
+                        </div>
+                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                            <i data-lucide="minus" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="2" aria-invalid="true"></div>
+                            <div data-slot="input-otp-slot" data-index="3" aria-invalid="true"></div>
+                        </div>
+                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                            <i data-lucide="minus" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="4" aria-invalid="true"></div>
+                            <div data-slot="input-otp-slot" data-index="5" aria-invalid="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="four-digits">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Four Digits</h2>
+            <p data-slot="desc">PIN 코드에 자주 쓰이는 4자리 패턴입니다. <code>pattern={REGEXP_ONLY_DIGITS}</code>를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp" data-max-length="4" data-pattern="digits">
+                    <div data-slot="input-otp-container">
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="0"></div>
+                            <div data-slot="input-otp-slot" data-index="1"></div>
+                            <div data-slot="input-otp-slot" data-index="2"></div>
+                            <div data-slot="input-otp-slot" data-index="3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="alphanumeric">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Alphanumeric</h2>
+            <p data-slot="desc"><code>REGEXP_ONLY_DIGITS_AND_CHARS</code>로 숫자와 문자를 모두 허용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="input-otp" data-max-length="6" data-pattern="alphanumeric">
+                    <div data-slot="input-otp-container">
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="0"></div>
+                            <div data-slot="input-otp-slot" data-index="1"></div>
+                            <div data-slot="input-otp-slot" data-index="2"></div>
+                        </div>
+                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                            <i data-lucide="minus" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="input-otp-group">
+                            <div data-slot="input-otp-slot" data-index="3"></div>
+                            <div data-slot="input-otp-slot" data-index="4"></div>
+                            <div data-slot="input-otp-slot" data-index="5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="form">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Form</h2>
+            <p data-slot="desc">Card·Field·Button과 함께 사용하는 OTP 인증 폼 예시입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-otp-form">
+                <div data-slot="card">
+                    <div data-slot="card-header">
+                        <div data-slot="card-title">Verify your login</div>
+                        <div data-slot="card-description">Enter the verification code we sent to your email address: <span data-weight="medium">m@example.com</span>.</div>
+                    </div>
+                    <div data-slot="card-content">
+                        <form data-slot="input-otp-form">
+                            <div data-slot="field" role="group">
+                                <div data-slot="field-row">
+                                    <label data-slot="field-label" for="otp-verification">Verification code</label>
+                                    <button type="button" data-slot="button" data-variant="outline" data-size="xs">
+                                        <i data-lucide="refresh-cw" aria-hidden="true"></i>
+                                        Resend Code
+                                    </button>
+                                </div>
+                                <div data-slot="input-otp" id="otp-verification" data-max-length="6" required>
+                                    <div data-slot="input-otp-container">
+                                        <div data-slot="input-otp-group" data-size="form">
+                                            <div data-slot="input-otp-slot" data-index="0"></div>
+                                            <div data-slot="input-otp-slot" data-index="1"></div>
+                                            <div data-slot="input-otp-slot" data-index="2"></div>
+                                        </div>
+                                        <div data-slot="input-otp-separator" role="separator" aria-orientation="vertical">
+                                            <i data-lucide="minus" aria-hidden="true"></i>
+                                        </div>
+                                        <div data-slot="input-otp-group" data-size="form">
+                                            <div data-slot="input-otp-slot" data-index="3"></div>
+                                            <div data-slot="input-otp-slot" data-index="4"></div>
+                                            <div data-slot="input-otp-slot" data-index="5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p data-slot="field-description"><a href="#">I no longer have access to this email address.</a></p>
+                            </div>
+                        </form>
+                    </div>
+                    <div data-slot="card-footer" data-orientation="vertical">
+                        <button type="submit" data-slot="button">Verify</button>
+                        <div data-slot="card-footer-note">Having trouble signing in? <a href="#">Contact support</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">InputOTP</h3>
+            <p data-slot="desc"><code>data-slot="input-otp"</code> 루트 요소입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-max-length</code></td>
+                        <td>number</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-pattern</code></td>
+                        <td><code>"digits"</code> | <code>"alphanumeric"</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>required</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputOTPSlot</h3>
+            <p data-slot="desc"><code>data-slot="input-otp-slot"</code> 요소는 각 OTP 자릿수를 표시합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-index</code></td>
+                        <td>number</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-active</code></td>
+                        <td><code>"true"</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputOTPGroup</h3>
+            <p data-slot="desc"><code>data-slot="input-otp-group"</code> 요소는 슬롯을 그룹으로 묶습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"form"</code></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputOTPSeparator</h3>
+            <p data-slot="desc"><code>data-slot="input-otp-separator"</code> 요소는 <code>role="separator"</code>와 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-spacing</code></td>
+                        <td><code>"wide"</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"separator"</code></td>
+                        <td><code>"separator"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-orientation</code></td>
+                        <td><code>"vertical"</code></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#pattern">Pattern</a></li>
+                <li><a href="#separator">Separator</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#controlled">Controlled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+                <li><a href="#four-digits">Four Digits</a></li>
+                <li><a href="#alphanumeric">Alphanumeric</a></li>
+                <li><a href="#form">Form</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

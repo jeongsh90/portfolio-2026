@@ -1,0 +1,314 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Checkbox</h1>
+            <p data-slot="desc">체크와 미체크 상태를 전환할 수 있는 체크박스 컨트롤입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-overview">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="terms-checkbox" aria-checked="false" aria-label="Accept terms and conditions">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <label data-slot="label" for="terms-checkbox">Accept terms and conditions</label>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="terms-checkbox-2" aria-checked="true" data-checked="true" aria-label="Accept terms and conditions">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <div data-slot="field-content">
+                            <label data-slot="field-label" for="terms-checkbox-2">Accept terms and conditions</label>
+                            <p data-slot="field-description">이 체크박스를 선택하면 약관에 동의하게 됩니다.</p>
+                        </div>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal" data-disabled="true">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="toggle-checkbox" aria-checked="false" disabled aria-label="Enable notifications">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <label data-slot="field-label" for="toggle-checkbox">Enable notifications</label>
+                    </div>
+                    <label data-slot="field-label">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="checkbox" data-slot="checkbox" id="toggle-checkbox-2" aria-checked="false" aria-label="Enable notifications">
+                                <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                            </button>
+                            <div data-slot="field-content">
+                                <span data-slot="field-label">Enable notifications</span>
+                                <p data-slot="field-description">언제든지 알림을 켜거나 끌 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid-state">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid State</h2>
+            <p data-slot="desc">체크박스에 <code>aria-invalid</code>을 설정하고, <code>Field</code>에 <code>data-invalid="true"</code>를 추가하면 유효하지 않음 스타일이 적용됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-field-sm">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group" data-orientation="horizontal" data-invalid="true">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="terms-checkbox-invalid" aria-checked="false" aria-invalid="true" aria-label="Accept terms and conditions">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <label data-slot="field-label" for="terms-checkbox-invalid">Accept terms and conditions</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc"><code>Field</code>와 <code>FieldLabel</code>을 함께 사용해 올바른 레이아웃과 라벨을 제공합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-field-sm">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="terms-checkbox-basic" aria-checked="false" aria-label="Accept terms and conditions">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <label data-slot="field-label" for="terms-checkbox-basic">Accept terms and conditions</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="description">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Description</h2>
+            <p data-slot="desc"><code>FieldContent</code>와 <code>FieldDescription</code>으로 보조 설명을 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-field-md">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="terms-checkbox-desc" aria-checked="true" data-checked="true" aria-label="Accept terms and conditions">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <div data-slot="field-content">
+                            <label data-slot="field-label" for="terms-checkbox-desc">Accept terms and conditions</label>
+                            <p data-slot="field-description">이 체크박스를 선택하면 이용 약관에 동의하게 됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> 속성으로 상호작용을 막고, <code>Field</code>에 <code>data-disabled="true"</code>를 추가해 비활성 스타일을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-field-sm">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group" data-orientation="horizontal" data-disabled="true">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="toggle-checkbox-disabled" aria-checked="false" disabled aria-label="Enable notifications">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <label data-slot="field-label" for="toggle-checkbox-disabled">Enable notifications</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Group</h2>
+            <p data-slot="desc">여러 Field를 사용해 체크박스 목록을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-group">
+                <fieldset data-slot="field-set">
+                    <legend data-slot="field-legend" data-variant="label">Show these items on the desktop:</legend>
+                    <p data-slot="field-description">바탕 화면에 표시할 항목을 선택하세요.</p>
+                    <div data-slot="field-group">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="checkbox" data-slot="checkbox" id="finder-hard-disks" aria-checked="true" data-checked="true" aria-label="Hard disks">
+                                <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="finder-hard-disks">Hard disks</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="checkbox" data-slot="checkbox" id="finder-external-disks" aria-checked="true" data-checked="true" aria-label="External disks">
+                                <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="finder-external-disks">External disks</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="checkbox" data-slot="checkbox" id="finder-cds-dvds" aria-checked="false" aria-label="CDs, DVDs, and iPods">
+                                <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="finder-cds-dvds">CDs, DVDs, and iPods</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="checkbox" data-slot="checkbox" id="finder-connected-servers" aria-checked="false" aria-label="Connected servers">
+                                <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="finder-connected-servers">Connected servers</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="table">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Table</h2>
+            <p data-slot="desc">테이블 행 선택에 체크박스를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="checkbox-table">
+                <div data-slot="table-container">
+                    <table data-slot="table" data-checkbox-table="true">
+                        <thead data-slot="table-header">
+                            <tr data-slot="table-row">
+                                <th scope="col" data-slot="table-head" data-checkbox-column="true">
+                                    <button type="button" role="checkbox" data-slot="checkbox" data-checkbox-select-all id="select-all-checkbox" aria-checked="false" aria-label="Select all">
+                                        <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                    </button>
+                                </th>
+                                <th scope="col" data-slot="table-head">Name</th>
+                                <th scope="col" data-slot="table-head">Email</th>
+                                <th scope="col" data-slot="table-head">Role</th>
+                            </tr>
+                        </thead>
+                        <tbody data-slot="table-body">
+                            <tr data-slot="table-row" data-state="selected">
+                                <td data-slot="table-cell">
+                                    <button type="button" role="checkbox" data-slot="checkbox" data-checkbox-row data-row-id="1" id="row-1-checkbox" aria-checked="true" data-checked="true" aria-label="Select Sarah Chen">
+                                        <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                    </button>
+                                </td>
+                                <td data-slot="table-cell" data-variant="medium">Sarah Chen</td>
+                                <td data-slot="table-cell">sarah.chen@example.com</td>
+                                <td data-slot="table-cell">Admin</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell">
+                                    <button type="button" role="checkbox" data-slot="checkbox" data-checkbox-row data-row-id="2" id="row-2-checkbox" aria-checked="false" aria-label="Select Marcus Rodriguez">
+                                        <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                    </button>
+                                </td>
+                                <td data-slot="table-cell" data-variant="medium">Marcus Rodriguez</td>
+                                <td data-slot="table-cell">marcus.rodriguez@example.com</td>
+                                <td data-slot="table-cell">User</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell">
+                                    <button type="button" role="checkbox" data-slot="checkbox" data-checkbox-row data-row-id="3" id="row-3-checkbox" aria-checked="false" aria-label="Select Priya Patel">
+                                        <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                    </button>
+                                </td>
+                                <td data-slot="table-cell" data-variant="medium">Priya Patel</td>
+                                <td data-slot="table-cell">priya.patel@example.com</td>
+                                <td data-slot="table-cell">User</td>
+                            </tr>
+                            <tr data-slot="table-row">
+                                <td data-slot="table-cell">
+                                    <button type="button" role="checkbox" data-slot="checkbox" data-checkbox-row data-row-id="4" id="row-4-checkbox" aria-checked="false" aria-label="Select David Kim">
+                                        <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                    </button>
+                                </td>
+                                <td data-slot="table-cell" data-variant="medium">David Kim</td>
+                                <td data-slot="table-cell">david.kim@example.com</td>
+                                <td data-slot="table-cell">Editor</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Checkbox</h3>
+            <p data-slot="desc"><code>data-slot="checkbox"</code> 요소는 <code>role="checkbox"</code>와 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-checked</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-checkbox-select-all</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-checkbox-row</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-row-id</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#invalid-state">Invalid State</a></li>
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#group">Group</a></li>
+                <li><a href="#table">Table</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

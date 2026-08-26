@@ -1,0 +1,267 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Marker</h1>
+            <p data-slot="desc">대화 스레드 안에서 인라인 상태·시스템 노트·구분선·레이블 구분자를 표시하는 컴포넌트입니다. <code>Message</code>와 함께 사용하도록 설계되었습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-overview">
+                <div class="marker-demo">
+                    <!-- default -->
+                    <div data-slot="marker" data-variant="default">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="info"></i>
+                        </div>
+                        <span data-slot="marker-content">An inline marker for status, notes, and actions.</span>
+                    </div>
+                    <!-- separator -->
+                    <div data-slot="marker" data-variant="separator">
+                        <span data-slot="marker-content">A separator marker</span>
+                    </div>
+                    <!-- border -->
+                    <div data-slot="marker" data-variant="border">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <span data-slot="marker-content">A border marker for row boundaries.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status -->
+    <section class="doc-pattern-1" data-pattern="1" id="status">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Status</h2>
+            <p data-slot="desc">스피너 아이콘으로 진행 중인 작업을 나타냅니다. 스트리밍·로딩 상태에 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-status">
+                <div class="marker-demo">
+                    <div data-slot="marker" data-variant="default">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <div data-slot="spinner" data-size="sm">
+                                <i data-lucide="loader-2"></i>
+                            </div>
+                        </div>
+                        <span data-slot="marker-content" data-shimmer="true">Compacting conversation</span>
+                    </div>
+                    <div data-slot="marker" data-variant="default">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <div data-slot="spinner" data-size="sm">
+                                <i data-lucide="loader-2"></i>
+                            </div>
+                        </div>
+                        <span data-slot="marker-content" data-shimmer="true">Running tests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shimmer -->
+    <section class="doc-pattern-1" data-pattern="1" id="shimmer">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Shimmer</h2>
+            <p data-slot="desc"><code>data-shimmer="true"</code>를 <code>marker-content</code>에 적용하면 스트리밍 텍스트 효과를 나타냅니다. 스피너 없이 텍스트만으로 진행 중임을 표현할 때 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-shimmer">
+                <div class="marker-demo">
+                    <div data-slot="marker" data-variant="default">
+                        <span data-slot="marker-content" data-shimmer="true">Thinking...</span>
+                    </div>
+                    <div data-slot="marker" data-variant="default">
+                        <span data-slot="marker-content" data-shimmer="true">Reading 4 files</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <section class="doc-pattern-1" data-pattern="1" id="separator">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Separator</h2>
+            <p data-slot="desc"><code>data-variant="separator"</code>는 양쪽에 구분선을 그려 날짜·섹션 구분에 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-separator">
+                <div class="marker-demo">
+                    <div data-slot="marker" data-variant="separator">
+                        <span data-slot="marker-content">Today</span>
+                    </div>
+                    <div data-slot="marker" data-variant="separator">
+                        <span data-slot="marker-content">Worked for 42s</span>
+                    </div>
+                    <div data-slot="marker" data-variant="separator">
+                        <span data-slot="marker-content">Conversation compacted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Border -->
+    <section class="doc-pattern-1" data-pattern="1" id="border">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Border</h2>
+            <p data-slot="desc"><code>data-variant="border"</code>는 하단 구분선을 추가해 행 경계를 시각적으로 구분합니다. 도구 호출·파일 열기 등 시스템 이벤트 나열에 적합합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-border">
+                <div class="marker-demo">
+                    <div data-slot="marker" data-variant="border">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <span data-slot="marker-content">Switched to release-candidate</span>
+                    </div>
+                    <div data-slot="marker" data-variant="border">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="search"></i>
+                        </div>
+                        <span data-slot="marker-content">Reviewed 8 related files</span>
+                    </div>
+                    <div data-slot="marker" data-variant="border">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <span data-slot="marker-content">Opened implementation notes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- With Icon -->
+    <section class="doc-pattern-1" data-pattern="1" id="with-icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">With Icon</h2>
+            <p data-slot="desc"><code>MarkerIcon</code>으로 아이콘을 텍스트 왼쪽에 배치합니다. 브랜치 전환·파일 탐색·완료 상태 등 구체적인 시스템 이벤트를 명확히 표현합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-with-icon">
+                <div class="marker-demo">
+                    <div data-slot="marker" data-variant="default">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <span data-slot="marker-content">Switched to a new branch</span>
+                    </div>
+                    <div data-slot="marker" data-variant="default">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="search"></i>
+                        </div>
+                        <span data-slot="marker-content">Explored 4 files</span>
+                    </div>
+                    <div data-slot="marker" data-variant="default">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="book-open-check"></i>
+                        </div>
+                        <span data-slot="marker-content">Syncing completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links and Buttons -->
+    <section class="doc-pattern-1" data-pattern="1" id="links-and-buttons">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Links and Buttons</h2>
+            <p data-slot="desc"><code>data-slot="marker"</code>를 <code>&lt;a&gt;</code> 또는 <code>&lt;button&gt;</code>에 직접 적용하면 클릭 가능한 인터랙티브 마커로 사용할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="marker-interactive">
+                <div class="marker-demo">
+                    <a data-slot="marker" data-variant="default" href="#" onclick="return false;">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <span data-slot="marker-content">View the pull request</span>
+                    </a>
+                    <button data-slot="marker" data-variant="default" type="button">
+                        <div data-slot="marker-icon" aria-hidden="true">
+                            <i data-lucide="rotate-ccw"></i>
+                        </div>
+                        <span data-slot="marker-content">Revert this change</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Reference -->
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Marker</h3>
+            <p data-slot="desc">마커 루트입니다. <code>div</code>, <code>a</code>, <code>button</code> 어느 태그에도 <code>data-slot="marker"</code>를 적용할 수 있습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-variant</code></td><td><code>"default"</code> | <code>"separator"</code> | <code>"border"</code></td><td><code>"default"</code></td><td>마커 스타일 변형.</td></tr>
+                    <tr><td><code>data-layout</code></td><td><code>"col"</code></td><td>—</td><td>아이콘을 텍스트 위에 세로로 쌓는 레이아웃.</td></tr>
+                    <tr><td><code>data-shimmer</code></td><td><code>"true"</code></td><td>—</td><td>마커 전체에 shimmer 애니메이션 적용.</td></tr>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MarkerIcon</h3>
+            <p data-slot="desc">장식용 아이콘 슬롯입니다. 스크린 리더에서 숨겨집니다(<code>aria-hidden="true"</code>).</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>aria-hidden</code></td><td><code>"true"</code></td><td>—</td><td>보조 기술에서 숨김 (필수).</td></tr>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MarkerContent</h3>
+            <p data-slot="desc">마커의 텍스트·콘텐츠 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-shimmer</code></td><td><code>"true"</code></td><td>—</td><td>콘텐츠에만 shimmer 애니메이션 적용 (스피너는 제외).</td></tr>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#status">Status</a></li>
+                <li><a href="#shimmer">Shimmer</a></li>
+                <li><a href="#separator">Separator</a></li>
+                <li><a href="#border">Border</a></li>
+                <li><a href="#with-icon">With Icon</a></li>
+                <li><a href="#links-and-buttons">Links and Buttons</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

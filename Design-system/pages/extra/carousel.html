@@ -1,0 +1,613 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Carousel</h1>
+            <p data-slot="desc">Swiper로 슬라이드 동작을 처리하고, 스타일은 Carousel(<code>data-slot</code>) 마크업·CSS를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="carousel-demo-frame">
+                    <div data-slot="carousel" role="region" aria-roledescription="carousel" tabindex="0">
+                        <div data-slot="carousel-content" class="swiper">
+                            <div data-slot="carousel-track" class="swiper-wrapper">
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" data-slot="carousel-previous" aria-label="Previous slide">
+                            <i data-lucide="chevron-left" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Previous slide</span>
+                        </button>
+                        <button type="button" data-slot="carousel-next" aria-label="Next slide">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Next slide</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="sizes">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sizes</h2>
+            <p data-slot="desc"><code>CarouselItem</code>에 <code>basis</code> 유틸리티를 적용해 슬라이드 크기를 설정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="carousel-demo-frame-wide">
+                    <div data-slot="carousel" role="region" aria-roledescription="carousel" data-align="start" data-basis="half-third" tabindex="0">
+                        <div data-slot="carousel-content" class="swiper">
+                            <div data-slot="carousel-track" class="swiper-wrapper">
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg">
+                                                <span>2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg">
+                                                <span>3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg">
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg">
+                                                <span>5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" data-slot="carousel-previous" aria-label="Previous slide">
+                            <i data-lucide="chevron-left" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Previous slide</span>
+                        </button>
+                        <button type="button" data-slot="carousel-next" aria-label="Next slide">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Next slide</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="spacing">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Spacing</h2>
+            <p data-slot="desc">슬라이드 간격은 <code>CarouselItem</code>의 <code>pl-[VALUE]</code>와 <code>CarouselContent</code>의 <code>-ml-[VALUE]</code>로 조절합니다. 이 프로젝트에서는 <code>data-spacing</code>과 Swiper <code>spaceBetween</code>으로 매핑합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="carousel-demo-frame-wide">
+                    <div data-slot="carousel" role="region" aria-roledescription="carousel" data-spacing="1" data-basis="half-third" tabindex="0">
+                        <div data-slot="carousel-content" class="swiper">
+                            <div data-slot="carousel-track" class="swiper-wrapper">
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="md">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="md">
+                                                <span>2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="md">
+                                                <span>3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="md">
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half-third" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="md">
+                                                <span>5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" data-slot="carousel-previous" aria-label="Previous slide">
+                            <i data-lucide="chevron-left" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Previous slide</span>
+                        </button>
+                        <button type="button" data-slot="carousel-next" aria-label="Next slide">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Next slide</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="orientation">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Orientation</h2>
+            <p data-slot="desc"><code>orientation</code> prop으로 캐러셀 방향을 설정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="carousel-demo-frame-vertical">
+                    <div data-slot="carousel" role="region" aria-roledescription="carousel" data-orientation="vertical" data-align="start" data-spacing="1" data-basis="half" tabindex="0">
+                        <div data-slot="carousel-content" class="swiper">
+                            <div data-slot="carousel-track" class="swiper-wrapper">
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg" data-aspect="none">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg" data-aspect="none">
+                                                <span>2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg" data-aspect="none">
+                                                <span>3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg" data-aspect="none">
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" data-basis="half" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="lg" data-aspect="none">
+                                                <span>5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" data-slot="carousel-previous" aria-label="Previous slide">
+                            <i data-lucide="chevron-left" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Previous slide</span>
+                        </button>
+                        <button type="button" data-slot="carousel-next" aria-label="Next slide">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Next slide</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API</h2>
+            <p data-slot="desc">Swiper 인스턴스 이벤트로 현재 슬라이드 위치를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="carousel-demo-frame-compact">
+                    <div data-slot="carousel" role="region" aria-roledescription="carousel" data-carousel-api="true" tabindex="0">
+                        <div data-slot="carousel-content" class="swiper">
+                            <div data-slot="carousel-track" class="swiper-wrapper">
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div data-slot="card" class="carousel-slide-card-flush">
+                                        <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                            <span>1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div data-slot="card" class="carousel-slide-card-flush">
+                                        <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                            <span>2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div data-slot="card" class="carousel-slide-card-flush">
+                                        <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                            <span>3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div data-slot="card" class="carousel-slide-card-flush">
+                                        <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                            <span>4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div data-slot="card" class="carousel-slide-card-flush">
+                                        <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                            <span>5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" data-slot="carousel-previous" aria-label="Previous slide">
+                            <i data-lucide="chevron-left" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Previous slide</span>
+                        </button>
+                        <button type="button" data-slot="carousel-next" aria-label="Next slide">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Next slide</span>
+                        </button>
+                    </div>
+                    <p data-slot="carousel-status" class="carousel-api-status">Slide 1 of 5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="plugins">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Plugins</h2>
+            <p data-slot="desc">Swiper Autoplay 모듈로 자동 재생합니다. 마우스를 올리면 일시 정지됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div class="carousel-demo-frame-compact">
+                    <div data-slot="carousel" role="region" aria-roledescription="carousel" data-autoplay="true" data-autoplay-delay="2000" tabindex="0">
+                        <div data-slot="carousel-content" class="swiper">
+                            <div data-slot="carousel-track" class="swiper-wrapper">
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="carousel-item" class="swiper-slide" role="group" aria-roledescription="slide">
+                                    <div class="carousel-slide-inner">
+                                        <div data-slot="card">
+                                            <div data-slot="card-content" class="carousel-slide-card" data-size="xl">
+                                                <span>5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" data-slot="carousel-previous" aria-label="Previous slide">
+                            <i data-lucide="chevron-left" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Previous slide</span>
+                        </button>
+                        <button type="button" data-slot="carousel-next" aria-label="Next slide">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Next slide</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Carousel</h3>
+            <p data-slot="desc"><code>data-slot="carousel"</code> 루트 컨테이너입니다. 슬라이드 동작은 Swiper JS가 담당하고, 스타일은 shadcn Carousel CSS를 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"horizontal"</code></td>
+                        <td>스크롤 방향.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"start"</code> | <code>"center"</code></td>
+                        <td><code>"start"</code></td>
+                        <td>슬라이드 정렬.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-spacing</code></td>
+                        <td><code>"1"</code> | <code>"4"</code></td>
+                        <td><code>"4"</code></td>
+                        <td>슬라이드 간격(spacing 단위).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-basis</code></td>
+                        <td><code>"full"</code> | <code>"half"</code> | <code>"third"</code> | <code>"half-third"</code></td>
+                        <td><code>"full"</code></td>
+                        <td>Swiper <code>slidesPerView</code> 매핑. <code>half-third</code>는 lg에서 3열.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-loop</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>무한 루프.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-start-index</code></td>
+                        <td>number</td>
+                        <td><code>0</code></td>
+                        <td>초기 슬라이드 인덱스.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-autoplay</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>자동 재생.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-autoplay-delay</code></td>
+                        <td>number</td>
+                        <td><code>2000</code></td>
+                        <td>자동 재생 간격(ms).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-carousel-api</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>슬라이드 상태 표시 연동.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CarouselContent</h3>
+            <p data-slot="desc"><code>data-slot="carousel-content"</code> Swiper 뷰포트(<code>class="swiper"</code>)입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CarouselItem</h3>
+            <p data-slot="desc"><code>data-slot="carousel-item"</code> 개별 슬라이드(<code>class="swiper-slide"</code>)입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-basis</code></td>
+                        <td><code>"full"</code> | <code>"half"</code> | <code>"third"</code> | <code>"half-third"</code></td>
+                        <td><code>"full"</code></td>
+                        <td>슬라이드 너비(또는 세로 높이) 비율.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CarouselPrevious</h3>
+            <p data-slot="desc"><code>data-slot="carousel-previous"</code> 이전 슬라이드 버튼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">시작 슬라이드에서 disabled.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CarouselNext</h3>
+            <p data-slot="desc"><code>data-slot="carousel-next"</code> 다음 슬라이드 버튼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">마지막 슬라이드에서 disabled.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#sizes">Sizes</a></li>
+                <li><a href="#spacing">Spacing</a></li>
+                <li><a href="#orientation">Orientation</a></li>
+            </ul>
+        </li>
+        <li><a href="#api">API</a></li>
+        <li><a href="#plugins">Plugins</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

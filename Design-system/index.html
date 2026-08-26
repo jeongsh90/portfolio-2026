@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
+    <link rel="stylesheet" href="css/index.css?v=102">
+</head>
+<body>
+    <div class="app-shell" data-slot="sidebar-wrapper" data-state="expanded" data-mobile-open="false">
+        <aside data-slot="sidebar" data-state="expanded" data-variant="sidebar" data-side="left" data-collapsible="">
+            <div data-slot="sidebar-gap"></div>
+            <div data-slot="sidebar-container">
+                <div data-slot="sidebar-inner" data-sidebar="sidebar">
+
+                    <div data-slot="sidebar-header" data-sidebar="header">
+                        <ul data-slot="sidebar-menu">
+                            <li data-slot="sidebar-menu-item">
+                                <a href="#" data-slot="sidebar-menu-button" data-size="lg">
+                                    <span data-slot="sidebar-icon-box">
+                                        <i data-lucide="gallery-vertical-end"></i>
+                                    </span>
+                                    <span data-slot="meta">
+                                        <span data-slot="title">Design System</span>
+                                        <span data-slot="desc">V.0.0.1</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div data-slot="sidebar-content" data-sidebar="content">
+                        <div data-slot="sidebar-group">
+                            <div data-slot="sidebar-group-label">Menu</div>
+
+                            <ul data-slot="sidebar-menu">
+                                <li data-slot="sidebar-menu-item">
+                                    <button type="button" data-slot="sidebar-menu-button" data-page="getting-started">
+                                        <i data-lucide="rocket" aria-hidden="true"></i>
+                                        <span data-slot="label">시작하기</span>
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div data-slot="accordion" data-type="single" data-collapsible data-sidebar="accordion" class="sidebar-nav-expanded">
+                                <div data-slot="accordion-item" data-sidebar-nav-group="foundation">
+                                    <button type="button" data-slot="accordion-trigger" aria-expanded="false">
+                                        <i data-lucide="layers" aria-hidden="true"></i>
+                                        <span data-slot="label">Foundation</span>
+                                        <i data-lucide="chevron-right" data-slot="accordion-trigger-icon" aria-hidden="true"></i>
+                                    </button>
+                                    <div data-slot="accordion-content" data-state="closed">
+                                        <div data-slot="accordion-content-inner">
+                                            <ul data-slot="sidebar-menu-sub">
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="color"><span>Color</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="grid"><span>Grid</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="shadow"><span>Shadow</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="spacing"><span>Spacing</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="typography"><span>Typography</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div data-slot="accordion-item" data-sidebar-nav-group="components">
+                                    <button type="button" data-slot="accordion-trigger" aria-expanded="false">
+                                        <i data-lucide="blocks" aria-hidden="true"></i>
+                                        <span data-slot="label">Components</span>
+                                        <i data-lucide="chevron-right" data-slot="accordion-trigger-icon" aria-hidden="true"></i>
+                                    </button>
+                                    <div data-slot="accordion-content" data-state="closed">
+                                        <div data-slot="accordion-content-inner">
+                                            <ul data-slot="sidebar-menu-sub">
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="accordion"><span>Accordion</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="alert"><span>Alert</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="alert-dialog"><span>Alert Dialog</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="aspect-ratio"><span>Aspect Ratio</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="attachment"><span>Attachment</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="avatar"><span>Avatar</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="breadcrumb"><span>Breadcrumb</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="badge"><span>Badge</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="button"><span>Button</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="button-group"><span>Button Group</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="calendar"><span>Calendar</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="card"><span>Card</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="checkbox"><span>Checkbox</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="collapsible"><span>Collapsible</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="command"><span>Command</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="combobox"><span>Combobox</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="context-menu"><span>Context Menu</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="data-table"><span>Data Table</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="date-picker"><span>Date Picker</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="dialog"><span>Dialog</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="direction"><span>Direction</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="drawer"><span>Drawer</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="empty"><span>Empty</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="field"><span>Field</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="file-tree"><span>File Tree</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="hover-card"><span>Hover Card</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="input"><span>Input</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="input-group"><span>Input Group</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="input-otp"><span>Input OTP</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="item"><span>Item</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="kbd"><span>Kbd</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="marker"><span>Marker</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="menubar"><span>Menubar</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="message"><span>Message</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="message-scroller"><span>Message Scroller</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="navigation-menu"><span>Navigation Menu</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="pagination"><span>Pagination</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="progress"><span>Progress</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="radio-group"><span>Radio Group</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="resizable"><span>Resizable</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="scroll-area"><span>Scroll Area</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="select"><span>Select</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="sheet"><span>Sheet</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="sidebar"><span>Sidebar</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="skeleton"><span>Skeleton</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="slider"><span>Slider</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="sonner"><span>Sonner</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="sortable"><span>Sortable</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="spinner"><span>Spinner</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="switch"><span>Switch</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="table"><span>Table</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="tabs"><span>Tabs</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="textarea"><span>Textarea</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="toggle"><span>Toggle</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="toggle-group"><span>Toggle Group</span></a></li>
+                                                <li><a href="#" data-slot="sidebar-menu-sub-button" data-page="tooltip"><span>Tooltip</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div data-slot="accordion-item" data-sidebar-nav-group="extra">
+                                    <button type="button" data-slot="accordion-trigger" aria-expanded="false">
+                                        <i data-lucide="sparkles" aria-hidden="true"></i>
+                                        <span data-slot="label">Extra</span>
+                                        <i data-lucide="chevron-right" data-slot="accordion-trigger-icon" aria-hidden="true"></i>
+                                    </button>
+                                    <div data-slot="accordion-content" data-state="closed">
+                                        <div data-slot="accordion-content-inner">
+                                            <ul data-slot="sidebar-menu-sub">
+                                                <li><a href="#extra/animate" data-slot="sidebar-menu-sub-button" data-page="extra/animate"><span>Animate</span></a></li>
+                                                <li><a href="#extra/carousel" data-slot="sidebar-menu-sub-button" data-page="extra/carousel"><span>Carousel</span></a></li>
+                                                <li><a href="#extra/chart" data-slot="sidebar-menu-sub-button" data-page="extra/chart"><span>Chart</span></a></li>
+                                                <li><a href="#extra/editor" data-slot="sidebar-menu-sub-button" data-page="extra/editor"><span>Editor</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <ul data-slot="sidebar-menu" class="sidebar-nav-collapsed">
+                                <li data-slot="sidebar-menu-item" data-sidebar-nav-group="foundation">
+                                    <div data-slot="combobox" data-mode="select" data-sidebar-nav class="sidebar-nav-combobox sidebar-nav-combobox--icon">
+                                        <input type="text" data-slot="combobox-input" class="sidebar-nav-combobox-sr-input" tabindex="-1" aria-hidden="true" aria-label="Foundation pages">
+                                        <button type="button" data-slot="sidebar-menu-button" data-combobox-trigger aria-label="Foundation">
+                                            <i data-lucide="layers" aria-hidden="true"></i>
+                                        </button>
+                                        <div data-slot="combobox-content" data-state="closed">
+                                            <div data-slot="combobox-list" role="listbox">
+                                                <div data-slot="combobox-item" data-value="color" data-page="color" role="option">Color</div>
+                                                <div data-slot="combobox-item" data-value="grid" data-page="grid" role="option">Grid</div>
+                                                <div data-slot="combobox-item" data-value="shadow" data-page="shadow" role="option">Shadow</div>
+                                                <div data-slot="combobox-item" data-value="spacing" data-page="spacing" role="option">Spacing</div>
+                                                <div data-slot="combobox-item" data-value="typography" data-page="typography" role="option">Typography</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-slot="sidebar-menu-item" data-sidebar-nav-group="components">
+                                    <div data-slot="combobox" data-mode="select" data-sidebar-nav class="sidebar-nav-combobox sidebar-nav-combobox--icon">
+                                        <input type="text" data-slot="combobox-input" class="sidebar-nav-combobox-sr-input" tabindex="-1" aria-hidden="true" aria-label="Components pages">
+                                        <button type="button" data-slot="sidebar-menu-button" data-combobox-trigger aria-label="Components">
+                                            <i data-lucide="blocks" aria-hidden="true"></i>
+                                        </button>
+                                        <div data-slot="combobox-content" data-state="closed">
+                                            <div data-slot="combobox-list" role="listbox">
+                                                <div data-slot="combobox-item" data-value="accordion" data-page="accordion" role="option">Accordion</div>
+                                                <div data-slot="combobox-item" data-value="alert" data-page="alert" role="option">Alert</div>
+                                                <div data-slot="combobox-item" data-value="alert-dialog" data-page="alert-dialog" role="option">Alert Dialog</div>
+                                                <div data-slot="combobox-item" data-value="aspect-ratio" data-page="aspect-ratio" role="option">Aspect Ratio</div>
+                                                <div data-slot="combobox-item" data-value="avatar" data-page="avatar" role="option">Avatar</div>
+                                                <div data-slot="combobox-item" data-value="breadcrumb" data-page="breadcrumb" role="option">Breadcrumb</div>
+                                                <div data-slot="combobox-item" data-value="badge" data-page="badge" role="option">Badge</div>
+                                                <div data-slot="combobox-item" data-value="button" data-page="button" role="option">Button</div>
+                                                <div data-slot="combobox-item" data-value="button-group" data-page="button-group" role="option">Button Group</div>
+                                                <div data-slot="combobox-item" data-value="calendar" data-page="calendar" role="option">Calendar</div>
+                                                <div data-slot="combobox-item" data-value="card" data-page="card" role="option">Card</div>
+                                                <div data-slot="combobox-item" data-value="checkbox" data-page="checkbox" role="option">Checkbox</div>
+                                                <div data-slot="combobox-item" data-value="collapsible" data-page="collapsible" role="option">Collapsible</div>
+                                                <div data-slot="combobox-item" data-value="command" data-page="command" role="option">Command</div>
+                                                <div data-slot="combobox-item" data-value="combobox" data-page="combobox" role="option">Combobox</div>
+                                                <div data-slot="combobox-item" data-value="context-menu" data-page="context-menu" role="option">Context Menu</div>
+                                                <div data-slot="combobox-item" data-value="data-table" data-page="data-table" role="option">Data Table</div>
+                                                <div data-slot="combobox-item" data-value="date-picker" data-page="date-picker" role="option">Date Picker</div>
+                                                <div data-slot="combobox-item" data-value="dialog" data-page="dialog" role="option">Dialog</div>
+                                                <div data-slot="combobox-item" data-value="direction" data-page="direction" role="option">Direction</div>
+                                                <div data-slot="combobox-item" data-value="drawer" data-page="drawer" role="option">Drawer</div>
+                                                <div data-slot="combobox-item" data-value="empty" data-page="empty" role="option">Empty</div>
+                                                <div data-slot="combobox-item" data-value="field" data-page="field" role="option">Field</div>
+                                                <div data-slot="combobox-item" data-value="file-tree" data-page="file-tree" role="option">File Tree</div>
+                                                <div data-slot="combobox-item" data-value="hover-card" data-page="hover-card" role="option">Hover Card</div>
+                                                <div data-slot="combobox-item" data-value="input" data-page="input" role="option">Input</div>
+                                                <div data-slot="combobox-item" data-value="input-group" data-page="input-group" role="option">Input Group</div>
+                                                <div data-slot="combobox-item" data-value="input-otp" data-page="input-otp" role="option">Input OTP</div>
+                                                <div data-slot="combobox-item" data-value="item" data-page="item" role="option">Item</div>
+                                                <div data-slot="combobox-item" data-value="kbd" data-page="kbd" role="option">Kbd</div>
+                                                <div data-slot="combobox-item" data-value="marker" data-page="marker" role="option">Marker</div>
+                                                <div data-slot="combobox-item" data-value="menubar" data-page="menubar" role="option">Menubar</div>
+                                                <div data-slot="combobox-item" data-value="message" data-page="message" role="option">Message</div>
+                                                <div data-slot="combobox-item" data-value="message-scroller" data-page="message-scroller" role="option">Message Scroller</div>
+                                                <div data-slot="combobox-item" data-value="navigation-menu" data-page="navigation-menu" role="option">Navigation Menu</div>
+                                                <div data-slot="combobox-item" data-value="pagination" data-page="pagination" role="option">Pagination</div>
+                                                <div data-slot="combobox-item" data-value="progress" data-page="progress" role="option">Progress</div>
+                                                <div data-slot="combobox-item" data-value="radio-group" data-page="radio-group" role="option">Radio Group</div>
+                                                <div data-slot="combobox-item" data-value="resizable" data-page="resizable" role="option">Resizable</div>
+                                                <div data-slot="combobox-item" data-value="scroll-area" data-page="scroll-area" role="option">Scroll Area</div>
+                                                <div data-slot="combobox-item" data-value="select" data-page="select" role="option">Select</div>
+                                                <div data-slot="combobox-item" data-value="sheet" data-page="sheet" role="option">Sheet</div>
+                                                <div data-slot="combobox-item" data-value="sidebar" data-page="sidebar" role="option">Sidebar</div>
+                                                <div data-slot="combobox-item" data-value="skeleton" data-page="skeleton" role="option">Skeleton</div>
+                                                <div data-slot="combobox-item" data-value="slider" data-page="slider" role="option">Slider</div>
+                                                <div data-slot="combobox-item" data-value="sonner" data-page="sonner" role="option">Sonner</div>
+                                                <div data-slot="combobox-item" data-value="sortable" data-page="sortable" role="option">Sortable</div>
+                                                <div data-slot="combobox-item" data-value="spinner" data-page="spinner" role="option">Spinner</div>
+                                                <div data-slot="combobox-item" data-value="switch" data-page="switch" role="option">Switch</div>
+                                                <div data-slot="combobox-item" data-value="table" data-page="table" role="option">Table</div>
+                                                <div data-slot="combobox-item" data-value="tabs" data-page="tabs" role="option">Tabs</div>
+                                                <div data-slot="combobox-item" data-value="textarea" data-page="textarea" role="option">Textarea</div>
+                                                <div data-slot="combobox-item" data-value="toggle" data-page="toggle" role="option">Toggle</div>
+                                                <div data-slot="combobox-item" data-value="toggle-group" data-page="toggle-group" role="option">Toggle Group</div>
+                                                <div data-slot="combobox-item" data-value="tooltip" data-page="tooltip" role="option">Tooltip</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-slot="sidebar-menu-item" data-sidebar-nav-group="extra">
+                                    <div data-slot="combobox" data-mode="select" data-sidebar-nav class="sidebar-nav-combobox sidebar-nav-combobox--icon">
+                                        <input type="text" data-slot="combobox-input" class="sidebar-nav-combobox-sr-input" tabindex="-1" aria-hidden="true" aria-label="Extra pages">
+                                        <button type="button" data-slot="sidebar-menu-button" data-combobox-trigger aria-label="Extra">
+                                            <i data-lucide="sparkles" aria-hidden="true"></i>
+                                        </button>
+                                        <div data-slot="combobox-content" data-state="closed">
+                                            <div data-slot="combobox-list" role="listbox">
+                                                <div data-slot="combobox-item" data-value="extra/animate" data-page="extra/animate" role="option">Animate</div>
+                                                <div data-slot="combobox-item" data-value="extra/carousel" data-page="extra/carousel" role="option">Carousel</div>
+                                                <div data-slot="combobox-item" data-value="extra/chart" data-page="extra/chart" role="option">Chart</div>
+                                                <div data-slot="combobox-item" data-value="extra/editor" data-page="extra/editor" role="option">Editor</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <div data-slot="sidebar-group">
+                            <div data-slot="sidebar-group-label">Doc</div>
+                            <ul data-slot="sidebar-menu">
+                                <li data-slot="sidebar-menu-item">
+                                    <button type="button" data-slot="sidebar-menu-button" data-page="doc/guidelines">
+                                        <i data-lucide="book-open" aria-hidden="true"></i>
+                                        <span data-slot="label">Guidelines</span>
+                                    </button>
+                                </li>
+                                <li data-slot="sidebar-menu-item">
+                                    <button type="button" data-slot="sidebar-menu-button" data-page="doc/ai-prompt">
+                                        <i data-lucide="bot" aria-hidden="true"></i>
+                                        <span data-slot="label">AI Prompt</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div data-slot="sidebar-footer" data-sidebar="footer">
+                        <button type="button" data-theme-toggle data-slot="sidebar-menu-button" data-sidebar-theme-toggle aria-label="테마 전환">
+                            <i data-lucide="sun" data-theme-icon-light aria-hidden="true"></i>
+                            <i data-lucide="moon" data-theme-icon-dark aria-hidden="true" style="display:none"></i>
+                            <span data-slot="label" data-theme-label>라이트 모드</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div data-slot="main">
+            <header data-slot="header">
+                <div data-slot="header-inner">
+                    <div data-slot="header-start">
+                        <button type="button" data-slot="button" data-variant="ghost" data-size="icon" data-sidebar-trigger aria-label="Toggle Sidebar">
+                            <i data-lucide="panel-left" aria-hidden="true"></i>
+                        </button>
+                        <nav data-slot="breadcrumb" aria-label="breadcrumb">
+                            <ol data-slot="breadcrumb-list">
+                                <li data-slot="breadcrumb-item" id="header-breadcrumb-group" style="display:none">
+                                    <span data-slot="breadcrumb-link" id="header-breadcrumb-group-text"></span>
+                                </li>
+                                <li data-slot="breadcrumb-separator" id="header-breadcrumb-sep" role="presentation" aria-hidden="true" style="display:none">
+                                    <i data-lucide="chevron-right"></i>
+                                </li>
+                                <li data-slot="breadcrumb-item">
+                                    <span data-slot="breadcrumb-page" id="header-breadcrumb-page" role="link" aria-disabled="true" aria-current="page"></span>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div data-slot="header-actions">
+                        <button type="button" data-theme-toggle data-slot="button" data-variant="ghost" data-size="icon" data-header-theme-toggle aria-label="테마 전환">
+                            <i data-lucide="sun" data-theme-icon-light aria-hidden="true"></i>
+                            <i data-lucide="moon" data-theme-icon-dark aria-hidden="true" style="display:none"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main data-slot="content">
+                <div data-slot="content-layout">
+                    <div data-slot="content-inner"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/typescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/xml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/bash.min.js"></script>
+    <script src="js/extra/animate.js"></script>
+    <script src="js/extra/chart.js"></script>
+    <script src="js/extra/editor.js"></script>
+    <script src="js/extra.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

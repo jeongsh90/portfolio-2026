@@ -1,0 +1,218 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Switch</h1>
+            <p data-slot="desc">체크됨과 체크 해제 사이를 전환할 수 있는 컨트롤입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="switch-overview">
+                <div data-slot="field" data-orientation="horizontal">
+                    <button type="button" role="switch" data-slot="switch" id="switch-airplane" aria-checked="false" data-state="unchecked" aria-label="Airplane Mode">
+                        <span data-slot="switch-thumb"></span>
+                    </button>
+                    <label data-slot="label" for="switch-airplane">Airplane Mode</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="description">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Description</h2>
+            <p data-slot="desc"><code>FieldContent</code>와 <code>FieldDescription</code>으로 보조 설명을 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="switch-description">
+                <div data-slot="field" data-orientation="horizontal">
+                    <div data-slot="field-content">
+                        <label data-slot="field-label" for="switch-share">Share across devices</label>
+                        <p data-slot="field-description">Focus is shared across devices, and turns off when you leave the app.</p>
+                    </div>
+                    <button type="button" role="switch" data-slot="switch" id="switch-share" aria-checked="false" data-state="unchecked" aria-label="Share across devices">
+                        <span data-slot="switch-thumb"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="choice-card">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Choice Card</h2>
+            <p data-slot="desc"><code>FieldLabel</code>이 카드 전체를 감싸 클릭 가능한 카드 패턴을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="switch-choice-card">
+                <div class="switch-choice-card-group">
+                    <label data-slot="switch-choice-card">
+                        <div data-slot="field-content">
+                            <span data-slot="field-label">Share across devices</span>
+                            <p data-slot="field-description">Focus is shared across devices, and turns off when you leave the app.</p>
+                        </div>
+                        <button type="button" role="switch" data-slot="switch" aria-checked="true" data-state="checked" aria-label="Share across devices">
+                            <span data-slot="switch-thumb"></span>
+                        </button>
+                    </label>
+                    <label data-slot="switch-choice-card">
+                        <div data-slot="field-content">
+                            <span data-slot="field-label">Enable notifications</span>
+                            <p data-slot="field-description">Receive notifications when focus mode is enabled or disabled.</p>
+                        </div>
+                        <button type="button" role="switch" data-slot="switch" aria-checked="false" data-state="unchecked" aria-label="Enable notifications">
+                            <span data-slot="switch-thumb"></span>
+                        </button>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> 속성으로 스위치를 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="switch-disabled">
+                <div data-slot="field" data-orientation="horizontal" data-disabled="true">
+                    <button type="button" role="switch" data-slot="switch" id="switch-disabled" aria-checked="false" data-state="unchecked" disabled aria-label="Disabled">
+                        <span data-slot="switch-thumb"></span>
+                    </button>
+                    <label data-slot="field-label" for="switch-disabled">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc"><code>aria-invalid</code> 속성으로 유효하지 않음 상태를 나타냅니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="switch-invalid">
+                <div data-slot="field" data-orientation="horizontal" data-invalid="true">
+                    <button type="button" role="switch" data-slot="switch" id="switch-invalid" aria-checked="false" data-state="unchecked" aria-invalid="true" aria-label="Accept terms and conditions">
+                        <span data-slot="switch-thumb"></span>
+                    </button>
+                    <div data-slot="field-content">
+                        <label data-slot="field-label" for="switch-invalid">Accept terms and conditions</label>
+                        <p data-slot="field-description">You must accept the terms and conditions to continue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc"><code>data-size</code> 속성으로 크기를 조정합니다. <code>sm</code>과 <code>default</code>를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="switch-size">
+                <div class="switch-size-group">
+                    <div data-slot="field" data-orientation="horizontal">
+                        <button type="button" role="switch" data-slot="switch" data-size="sm" id="switch-size-sm" aria-checked="false" data-state="unchecked" aria-label="Small">
+                            <span data-slot="switch-thumb"></span>
+                        </button>
+                        <label data-slot="label" for="switch-size-sm">Small</label>
+                    </div>
+                    <div data-slot="field" data-orientation="horizontal">
+                        <button type="button" role="switch" data-slot="switch" id="switch-size-default" aria-checked="false" data-state="unchecked" aria-label="Default">
+                            <span data-slot="switch-thumb"></span>
+                        </button>
+                        <label data-slot="label" for="switch-size-default">Default</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Switch</h3>
+            <p data-slot="desc"><code>data-slot="switch"</code> 요소는 <code>role="switch"</code>와 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"switch"</code></td>
+                        <td><code>"switch"</code></td>
+                        <td>ARIA 역할. 반드시 명시한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>스위치의 체크 상태.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"checked"</code> | <code>"unchecked"</code></td>
+                        <td><code>"unchecked"</code></td>
+                        <td>CSS 상태 스타일링용 데이터 속성.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>스위치 크기.</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>비활성화 여부. 클릭 및 키보드 인터랙션을 막는다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td>—</td>
+                        <td>유효하지 않음 상태. 파괴적 테두리·링을 표시한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>id</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td><code>&lt;label for&gt;</code>와 연결하기 위한 고유 ID.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#description">Description</a></li>
+                <li><a href="#choice-card">Choice Card</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+                <li><a href="#size">Size</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,470 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Combobox</h1>
+            <p data-slot="desc">입력과 선택을 결합한 컴포넌트입니다. 타이핑으로 옵션을 필터링하고 목록에서 항목을 고를 수 있습니다. 옵션 목록이 열리면 트리거 화살표가 위를 향합니다. 검색 없이 선택만 필요하면 <strong>Select</strong>(<code>data-mode="select"</code>)를 사용하세요.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="combobox-demo">
+                <div data-slot="combobox">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="combobox-overview" placeholder="Select a framework" autocomplete="off" aria-label="Select a framework">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-empty" hidden>No items found.</div>
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="Next.js" role="option">Next.js</div>
+                            <div data-slot="combobox-item" data-value="SvelteKit" role="option">SvelteKit</div>
+                            <div data-slot="combobox-item" data-value="Nuxt.js" role="option">Nuxt.js</div>
+                            <div data-slot="combobox-item" data-value="Remix" role="option">Remix</div>
+                            <div data-slot="combobox-item" data-value="Astro" role="option">Astro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="groups">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Groups</h2>
+            <p data-slot="desc"><code>ComboboxGroup</code>과 <code>ComboboxSeparator</code>로 옵션을 카테고리별로 묶을 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="combobox-demo">
+                <div data-slot="combobox">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="combobox-groups" placeholder="Select a timezone" autocomplete="off" aria-label="Select a timezone">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-empty" hidden>No timezones found.</div>
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-group">
+                                <div data-slot="combobox-label">Americas</div>
+                                <div data-slot="combobox-item" data-value="(GMT-5) New York" role="option">(GMT-5) New York</div>
+                                <div data-slot="combobox-item" data-value="(GMT-8) Los Angeles" role="option">(GMT-8) Los Angeles</div>
+                                <div data-slot="combobox-item" data-value="(GMT-6) Chicago" role="option">(GMT-6) Chicago</div>
+                                <div data-slot="combobox-item" data-value="(GMT-5) Toronto" role="option">(GMT-5) Toronto</div>
+                                <div data-slot="combobox-item" data-value="(GMT-8) Vancouver" role="option">(GMT-8) Vancouver</div>
+                                <div data-slot="combobox-item" data-value="(GMT-3) São Paulo" role="option">(GMT-3) São Paulo</div>
+                            </div>
+                            <div data-slot="combobox-separator"></div>
+                            <div data-slot="combobox-group">
+                                <div data-slot="combobox-label">Europe</div>
+                                <div data-slot="combobox-item" data-value="(GMT+0) London" role="option">(GMT+0) London</div>
+                                <div data-slot="combobox-item" data-value="(GMT+1) Paris" role="option">(GMT+1) Paris</div>
+                                <div data-slot="combobox-item" data-value="(GMT+1) Berlin" role="option">(GMT+1) Berlin</div>
+                                <div data-slot="combobox-item" data-value="(GMT+1) Rome" role="option">(GMT+1) Rome</div>
+                                <div data-slot="combobox-item" data-value="(GMT+1) Madrid" role="option">(GMT+1) Madrid</div>
+                                <div data-slot="combobox-item" data-value="(GMT+1) Amsterdam" role="option">(GMT+1) Amsterdam</div>
+                            </div>
+                            <div data-slot="combobox-separator"></div>
+                            <div data-slot="combobox-group">
+                                <div data-slot="combobox-label">Asia/Pacific</div>
+                                <div data-slot="combobox-item" data-value="(GMT+9) Tokyo" role="option">(GMT+9) Tokyo</div>
+                                <div data-slot="combobox-item" data-value="(GMT+8) Shanghai" role="option">(GMT+8) Shanghai</div>
+                                <div data-slot="combobox-item" data-value="(GMT+8) Singapore" role="option">(GMT+8) Singapore</div>
+                                <div data-slot="combobox-item" data-value="(GMT+4) Dubai" role="option">(GMT+4) Dubai</div>
+                                <div data-slot="combobox-item" data-value="(GMT+11) Sydney" role="option">(GMT+11) Sydney</div>
+                                <div data-slot="combobox-item" data-value="(GMT+9) Seoul" role="option">(GMT+9) Seoul</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="multiple">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Multiple</h2>
+            <p data-slot="desc"><code>multiple</code>과 <code>ComboboxChips</code>로 여러 항목을 선택할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="combobox-demo">
+                <div data-slot="combobox" data-multiple="true" data-auto-highlight="true" data-default-values="Next.js">
+                    <div data-slot="combobox-chips">
+                        <input type="text" data-slot="combobox-chip-input" id="combobox-multiple" placeholder="Add framework" autocomplete="off" aria-label="Add framework">
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-empty" hidden>No items found.</div>
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="Next.js" role="option">Next.js</div>
+                            <div data-slot="combobox-item" data-value="SvelteKit" role="option">SvelteKit</div>
+                            <div data-slot="combobox-item" data-value="Nuxt.js" role="option">Nuxt.js</div>
+                            <div data-slot="combobox-item" data-value="Remix" role="option">Remix</div>
+                            <div data-slot="combobox-item" data-value="Astro" role="option">Astro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="clear-button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Clear Button</h2>
+            <p data-slot="desc"><code>showClear</code> prop으로 선택값을 지우는 버튼을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="combobox-demo">
+                <div data-slot="combobox" data-default-value="Next.js">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="combobox-clear" placeholder="Select a framework" autocomplete="off" aria-label="Select a framework">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" data-variant="ghost" data-size="icon-xs" data-slot="combobox-clear" hidden aria-label="Clear selection">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-empty" hidden>No items found.</div>
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="Next.js" role="option">Next.js</div>
+                            <div data-slot="combobox-item" data-value="SvelteKit" role="option">SvelteKit</div>
+                            <div data-slot="combobox-item" data-value="Nuxt.js" role="option">Nuxt.js</div>
+                            <div data-slot="combobox-item" data-value="Remix" role="option">Remix</div>
+                            <div data-slot="combobox-item" data-value="Astro" role="option">Astro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> prop으로 콤보박스를 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="combobox-demo">
+                <div data-slot="combobox">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="combobox-disabled" placeholder="Select a framework" autocomplete="off" disabled aria-label="Select a framework">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger disabled aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-empty" hidden>No items found.</div>
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="Next.js" role="option">Next.js</div>
+                            <div data-slot="combobox-item" data-value="SvelteKit" role="option">SvelteKit</div>
+                            <div data-slot="combobox-item" data-value="Nuxt.js" role="option">Nuxt.js</div>
+                            <div data-slot="combobox-item" data-value="Remix" role="option">Remix</div>
+                            <div data-slot="combobox-item" data-value="Astro" role="option">Astro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc"><code>aria-invalid</code> prop으로 유효성 검사 오류 상태를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="combobox-demo">
+                <div data-slot="combobox">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="combobox-invalid" placeholder="Select a framework" autocomplete="off" aria-invalid="true" aria-label="Select a framework">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-empty" hidden>No items found.</div>
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="Next.js" role="option">Next.js</div>
+                            <div data-slot="combobox-item" data-value="SvelteKit" role="option">SvelteKit</div>
+                            <div data-slot="combobox-item" data-value="Nuxt.js" role="option">Nuxt.js</div>
+                            <div data-slot="combobox-item" data-value="Remix" role="option">Remix</div>
+                            <div data-slot="combobox-item" data-value="Astro" role="option">Astro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="time-picker">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Time Picker</h2>
+            <p data-slot="desc"><code>Date Picker</code>와 동일하게 <code>Popover</code> 트리거 안에 선택값을 모아 보여줍니다. 다만 옵션은 Select 드롭다운이 아니라, <a href="https://mui.com/x/react-date-pickers/time-picker/" target="_blank" rel="noopener">MUI Time Picker</a>처럼 오전/오후·시·분이 각각 독립적으로 스크롤되는 항상 펼쳐진 목록(<code>data-slot="time-picker-column"</code>) 형태입니다. 여백·폰트 크기는 디자인 시스템 토큰을 그대로 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="time-picker-demo">
+                <div data-slot="time-picker">
+                    <div data-slot="popover">
+                        <button type="button" data-slot="button" data-variant="outline" data-layout="spread" aria-expanded="false" aria-haspopup="dialog">
+                            <span data-slot="time-picker-value" data-placeholder="시간 선택" data-empty="false">오후 08:54</span>
+                            <i data-lucide="clock" aria-hidden="true"></i>
+                        </button>
+                        <div data-slot="popover-content" data-fit="true" data-align="start" data-state="closed">
+                            <div data-slot="time-picker-panel">
+                                <div data-slot="time-picker-column" data-segment="period" role="listbox" aria-label="오전/오후">
+                                    <button type="button" data-slot="time-picker-option" data-value="am">오전</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="pm" data-selected="true">오후</button>
+                                </div>
+                                <div data-slot="time-picker-column" data-segment="hour" role="listbox" aria-label="시">
+                                    <button type="button" data-slot="time-picker-option" data-value="01">01</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="02">02</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="03">03</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="04">04</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="05">05</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="06">06</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="07">07</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="08" data-selected="true">08</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="09">09</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="10">10</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="11">11</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="12">12</button>
+                                </div>
+                                <div data-slot="time-picker-column" data-segment="minute" role="listbox" aria-label="분">
+                                    <button type="button" data-slot="time-picker-option" data-value="00">00</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="01">01</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="02">02</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="03">03</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="04">04</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="05">05</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="06">06</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="07">07</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="08">08</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="09">09</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="10">10</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="11">11</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="12">12</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="13">13</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="14">14</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="15">15</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="16">16</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="17">17</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="18">18</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="19">19</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="20">20</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="21">21</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="22">22</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="23">23</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="24">24</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="25">25</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="26">26</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="27">27</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="28">28</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="29">29</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="30">30</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="31">31</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="32">32</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="33">33</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="34">34</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="35">35</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="36">36</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="37">37</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="38">38</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="39">39</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="40">40</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="41">41</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="42">42</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="43">43</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="44">44</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="45">45</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="46">46</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="47">47</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="48">48</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="49">49</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="50">50</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="51">51</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="52">52</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="53">53</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="54" data-selected="true">54</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="55">55</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="56">56</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="57">57</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="58">58</button>
+                                    <button type="button" data-slot="time-picker-option" data-value="59">59</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Combobox</h3>
+            <p data-slot="desc">입력과 팝업 목록을 결합한 루트 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-multiple</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>다중 선택 모드. <code>ComboboxChips</code>와 함께 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-auto-highlight</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>필터 시 첫 번째 항목을 자동으로 하이라이트합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                        <td><code>ComboboxInput</code>에 적용해 비활성화합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td>—</td>
+                        <td>유효하지 않음 상태. 입력에 파괴적 테두리·링을 표시합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ComboboxItem</h3>
+            <p data-slot="desc">팝업 목록의 개별 옵션입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ComboboxGroup</h3>
+            <p data-slot="desc">관련 옵션을 그룹으로 묶습니다. <code>ComboboxLabel</code>과 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Time Picker</h3>
+            <p data-slot="desc"><code>data-slot="time-picker"</code> 래퍼 안에 <code>data-mode="select"</code> Combobox를 세그먼트별로 배치합니다. 별도 루트 컴포넌트 없이 Combobox 조합으로 구성합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">위치</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slot="time-picker"</code></td>
+                        <td>루트</td>
+                        <td><code>Popover</code>를 감싸는 래퍼. <code>Date Picker</code>와 동일한 구조입니다</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-slot="time-picker-value"</code></td>
+                        <td>트리거 버튼 내부</td>
+                        <td>선택된 "오후 08:54" 형식의 값을 표시하는 텍스트. <code>data-empty</code>로 빈 상태 스타일을 적용합니다</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-slot="time-picker-panel"</code></td>
+                        <td>PopoverContent 내부</td>
+                        <td>오전/오후·시·분 컬럼을 가로로 배열하는 컨테이너. 컬럼 사이에 구분선이 있습니다</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-slot="time-picker-column"</code></td>
+                        <td>Panel 내부</td>
+                        <td>옵션 버튼 목록. <code>overflow-y: auto</code>로 독립적으로 스크롤됩니다. <code>data-segment</code>로 컬럼을 구분합니다</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-slot="time-picker-option"</code></td>
+                        <td>Column 내부</td>
+                        <td>개별 옵션 버튼. <code>data-selected="true"</code>인 항목은 강조 배지로 표시됩니다</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-segment="period"</code></td>
+                        <td>Column 루트</td>
+                        <td>오전/오후 컬럼. 다른 컬럼보다 너비가 약간 넓습니다</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#groups">Groups</a></li>
+                <li><a href="#multiple">Multiple</a></li>
+                <li><a href="#clear-button">Clear Button</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+                <li><a href="#time-picker">Time Picker</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

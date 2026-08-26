@@ -1,0 +1,308 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Spacing</h1>
+            <p data-slot="desc">4px 기본 단위를 배수로 쓰는 간격 시스템입니다. padding · margin · gap은 <code>calc(var(--spacing) * N)</code>만 사용하고, px·rem 하드코딩은 하지 않습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spacing-overview">
+                <div data-slot="spacing-overview-grid">
+                    <div data-slot="spacing-stat">
+                        <span data-slot="spacing-stat-label">Base unit</span>
+                        <span data-slot="spacing-stat-value">4px</span>
+                        <code data-slot="spacing-stat-token">--spacing · 0.25rem</code>
+                    </div>
+                    <div data-slot="spacing-stat">
+                        <span data-slot="spacing-stat-label">Expression</span>
+                        <code data-slot="spacing-stat-token">calc(var(--spacing) * N)</code>
+                        <span data-slot="spacing-stat-hint">N × 4px</span>
+                    </div>
+                    <div data-slot="spacing-stat">
+                        <span data-slot="spacing-stat-label">Example</span>
+                        <code data-slot="spacing-stat-token">× 4 → 16px</code>
+                        <span data-slot="spacing-stat-hint">Card 기본 padding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="scale">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Scale</h2>
+            <p data-slot="desc">Tailwind/shadcn과 동일한 배수 스케일입니다. UI 밀도에 따라 Micro → Layout 티어로 묶어 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spacing-scale">
+                <div data-slot="spacing-scale-groups">
+                    <div data-slot="spacing-scale-group" data-tier="micro">
+                        <p data-slot="spacing-scale-group-label"><span>Micro</span><span>0–4px · 아이콘·라벨·밀집 UI</span></p>
+                        <div data-slot="spacing-scale-list">
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 0);"><span data-slot="spacing-scale-step">0</span><div data-slot="spacing-scale-bar" data-empty="true"></div><span data-slot="spacing-scale-px">0px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 0.5);"><span data-slot="spacing-scale-step">0.5</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">2px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 1);"><span data-slot="spacing-scale-step">1</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">4px</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="spacing-scale-group" data-tier="compact">
+                        <p data-slot="spacing-scale-group-label"><span>Compact</span><span>6–10px · Button Group·Tabs·Select</span></p>
+                        <div data-slot="spacing-scale-list">
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 1.5);"><span data-slot="spacing-scale-step">1.5</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">6px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 2);"><span data-slot="spacing-scale-step">2</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">8px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 2.5);"><span data-slot="spacing-scale-step">2.5</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">10px</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="spacing-scale-group" data-tier="default">
+                        <p data-slot="spacing-scale-group-label"><span>Default</span><span>12–20px · Card·Input·컴포넌트 기본</span></p>
+                        <div data-slot="spacing-scale-list">
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 3);"><span data-slot="spacing-scale-step">3</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">12px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 4);"><span data-slot="spacing-scale-step">4</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">16px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 5);"><span data-slot="spacing-scale-step">5</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">20px</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="spacing-scale-group" data-tier="comfortable">
+                        <p data-slot="spacing-scale-group-label"><span>Comfortable</span><span>24–40px · Field Group·Dialog body</span></p>
+                        <div data-slot="spacing-scale-list">
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 6);"><span data-slot="spacing-scale-step">6</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">24px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 8);"><span data-slot="spacing-scale-step">8</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">32px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 10);"><span data-slot="spacing-scale-step">10</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">40px</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="spacing-scale-group" data-tier="layout">
+                        <p data-slot="spacing-scale-group-label"><span>Layout</span><span>48–96px · 페이지 섹션·Hero·--gap</span></p>
+                        <div data-slot="spacing-scale-list">
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 12);"><span data-slot="spacing-scale-step">12</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">48px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 16);"><span data-slot="spacing-scale-step">16</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">64px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 20);"><span data-slot="spacing-scale-step">20</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">80px</span></div>
+                            <div data-slot="spacing-scale-item" style="--scale-size: calc(var(--spacing) * 24);"><span data-slot="spacing-scale-step">24</span><div data-slot="spacing-scale-bar"></div><span data-slot="spacing-scale-px">96px</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="gap">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Gap</h2>
+            <p data-slot="desc">flex·grid 형제 요소 사이 간격은 <code>gap</code>으로 통제합니다. padding(내부 여백)과 margin(외부 블록)과 역할을 구분해 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spacing-gap">
+                <div data-slot="spacing-gap-layout">
+                    <div data-slot="spacing-principles-row">
+                        <div data-slot="spacing-principle-card" data-type="gap">
+                            <span data-slot="spacing-principle-name">Gap</span>
+                            <div data-slot="spacing-principle-visual"><span>A</span><span>B</span></div>
+                            <span data-slot="spacing-principle-desc">형제 간격</span>
+                        </div>
+                        <div data-slot="spacing-principle-card" data-type="padding">
+                            <span data-slot="spacing-principle-name">Padding</span>
+                            <div data-slot="spacing-principle-visual"><span>In</span></div>
+                            <span data-slot="spacing-principle-desc">내부 여백</span>
+                        </div>
+                        <div data-slot="spacing-principle-card" data-type="margin">
+                            <span data-slot="spacing-principle-name">Margin</span>
+                            <div data-slot="spacing-principle-visual"><span>Out</span></div>
+                            <span data-slot="spacing-principle-desc">블록 외부</span>
+                        </div>
+                    </div>
+                    <div data-slot="spacing-gap-grid">
+                        <div data-slot="spacing-gap-card">
+                            <div data-slot="spacing-gap-card-head"><span>× 2</span><code>8px</code></div>
+                            <div data-slot="spacing-gap-demo" style="--demo-gap: calc(var(--spacing) * 2);">
+                                <div data-slot="spacing-gap-box">A</div>
+                                <div data-slot="spacing-gap-box">B</div>
+                                <div data-slot="spacing-gap-box">C</div>
+                            </div>
+                        </div>
+                        <div data-slot="spacing-gap-card">
+                            <div data-slot="spacing-gap-card-head"><span>× 4</span><code>16px</code></div>
+                            <div data-slot="spacing-gap-demo" style="--demo-gap: calc(var(--spacing) * 4);">
+                                <div data-slot="spacing-gap-box">A</div>
+                                <div data-slot="spacing-gap-box">B</div>
+                                <div data-slot="spacing-gap-box">C</div>
+                            </div>
+                        </div>
+                        <div data-slot="spacing-gap-card">
+                            <div data-slot="spacing-gap-card-head"><span>× 6</span><code>24px</code></div>
+                            <div data-slot="spacing-gap-demo" style="--demo-gap: calc(var(--spacing) * 6);">
+                                <div data-slot="spacing-gap-box">A</div>
+                                <div data-slot="spacing-gap-box">B</div>
+                                <div data-slot="spacing-gap-box">C</div>
+                            </div>
+                        </div>
+                        <div data-slot="spacing-gap-card">
+                            <div data-slot="spacing-gap-card-head"><span>Column × 4</span><code>16px</code></div>
+                            <div data-slot="spacing-gap-demo" data-direction="column" style="--demo-gap: calc(var(--spacing) * 4);">
+                                <div data-slot="spacing-gap-box">A</div>
+                                <div data-slot="spacing-gap-box">B</div>
+                                <div data-slot="spacing-gap-box">C</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="component-spacing">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Component Spacing</h2>
+            <p data-slot="desc">컴포넌트 registry에 정의된 gap·padding 변수를 그대로 따릅니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spacing-component">
+                <div data-slot="spacing-component-list">
+                    <article data-slot="spacing-spec-card">
+                        <p data-slot="spacing-spec-title">Card</p>
+                        <div data-slot="spacing-spec-body">
+                            <div data-slot="spacing-spec-demo">
+                                <div data-slot="card" data-size="sm">
+                                    <div data-slot="card-header">
+                                        <div data-slot="card-title">제목</div>
+                                        <div data-slot="card-description">설명</div>
+                                    </div>
+                                    <div data-slot="card-content"><p>콘텐츠</p></div>
+                                    <div data-slot="card-footer">
+                                        <button type="button" data-slot="button" data-size="sm">Action</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <table data-slot="spacing-spec-table">
+                                <tbody>
+                                    <tr><th scope="row"><code>--card-spacing</code></th><td>× 4 (16px)</td></tr>
+                                    <tr><th scope="row"><code>data-size="sm"</code></th><td>× 3 (12px)</td></tr>
+                                    <tr><th scope="row">Footer vertical</th><td>gap × 2</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article data-slot="spacing-spec-card">
+                        <p data-slot="spacing-spec-title">Field Group</p>
+                        <div data-slot="spacing-spec-body">
+                            <div data-slot="spacing-spec-demo">
+                                <div data-slot="field-group">
+                                    <div data-slot="field">
+                                        <label data-slot="field-label" for="spacing-demo-input">Label</label>
+                                        <input type="text" id="spacing-demo-input" data-slot="input" placeholder="입력">
+                                    </div>
+                                    <div data-slot="field">
+                                        <label data-slot="field-label" for="spacing-demo-input-2">Label</label>
+                                        <input type="text" id="spacing-demo-input-2" data-slot="input" placeholder="입력">
+                                    </div>
+                                </div>
+                            </div>
+                            <table data-slot="spacing-spec-table">
+                                <tbody>
+                                    <tr><th scope="row">Field 내부</th><td>gap × 1</td></tr>
+                                    <tr><th scope="row">Field Group</th><td>gap × 7</td></tr>
+                                    <tr><th scope="row">중첩 Group</th><td>gap × 4</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article data-slot="spacing-spec-card">
+                        <p data-slot="spacing-spec-title">Button Group</p>
+                        <div data-slot="spacing-spec-body">
+                            <div data-slot="spacing-spec-demo">
+                                <div data-slot="button-group" role="group" aria-label="액션">
+                                    <div data-slot="button-group">
+                                        <button type="button" data-slot="button" data-variant="outline" data-size="sm">Left</button>
+                                        <button type="button" data-slot="button" data-variant="outline" data-size="sm">Right</button>
+                                    </div>
+                                    <button type="button" data-slot="button" data-size="sm">Submit</button>
+                                </div>
+                            </div>
+                            <table data-slot="spacing-spec-table">
+                                <tbody>
+                                    <tr><th scope="row">붙은 버튼</th><td>gap 0</td></tr>
+                                    <tr><th scope="row">그룹 간</th><td>gap × 2</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="layout-gap">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Layout Gap</h2>
+            <p data-slot="desc">페이지·섹션 레벨은 <code>--gap</code> 변수로 열 간격과 container padding을 한 번에 제어합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="spacing-layout">
+                <div data-slot="spacing-layout-wrap">
+                    <div data-slot="spacing-layout-demo" style="--gap: calc(var(--spacing) * 8);">
+                        <div data-slot="spacing-layout-column"><div data-slot="spacing-gap-box">Column A</div></div>
+                        <div data-slot="spacing-layout-column"><div data-slot="spacing-gap-box">Column B</div></div>
+                        <div data-slot="spacing-layout-column"><div data-slot="spacing-gap-box">Column C</div></div>
+                    </div>
+                    <p data-slot="spacing-layout-caption"><code>--gap: calc(var(--spacing) * 8)</code> · 32px · 열 사이 간격</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <p data-slot="desc">Foundation·컴포넌트 CSS에서 사용하는 간격 토큰입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">토큰</th>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--spacing</code></td>
+                        <td><code>0.25rem</code> (4px)</td>
+                        <td>기본 단위</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * N)</code></td>
+                        <td><code>N × 4px</code></td>
+                        <td>padding · margin · gap 공통</td>
+                    </tr>
+                    <tr>
+                        <td><code>--card-spacing</code></td>
+                        <td>× 4 (sm: × 3)</td>
+                        <td>Card 내부 gap·padding</td>
+                    </tr>
+                    <tr>
+                        <td><code>--gap</code></td>
+                        <td>× 4–12 (반응형)</td>
+                        <td>페이지·그리드 열 간격</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#scale">Scale</a></li>
+                <li><a href="#gap">Gap</a></li>
+                <li><a href="#component-spacing">Component Spacing</a></li>
+                <li><a href="#layout-gap">Layout Gap</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

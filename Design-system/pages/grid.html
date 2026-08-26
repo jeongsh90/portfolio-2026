@@ -1,0 +1,530 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Grid</h1>
+            <p data-slot="desc">앱 콘텐츠 영역은 <strong>12칼럼</strong> CSS Grid를 기준으로 합니다. 페이지·섹션·칼럼 사이 간격은 <code>margin</code> 대신 <code>gap</code>으로 통제합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-overview">
+                <div data-slot="grid-overview">
+                    <div data-slot="grid-demo" data-columns="12" aria-hidden="true">
+                        <div data-slot="grid-demo-cell" data-span="1"><span>1</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>2</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>3</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>4</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>5</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>6</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>7</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>8</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>9</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>10</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>11</span></div>
+                        <div data-slot="grid-demo-cell" data-span="1"><span>12</span></div>
+                    </div>
+                    <div data-slot="grid-overview-meta">
+                        <div data-slot="grid-stat">
+                            <span data-slot="grid-stat-label">Columns</span>
+                            <span data-slot="grid-stat-value">12</span>
+                            <code data-slot="grid-stat-token">--grid-columns</code>
+                        </div>
+                        <div data-slot="grid-stat">
+                            <span data-slot="grid-stat-label">Gap</span>
+                            <span data-slot="grid-stat-value">16px</span>
+                            <code data-slot="grid-stat-token">calc(var(--spacing) * 4)</code>
+                        </div>
+                        <div data-slot="grid-stat">
+                            <span data-slot="grid-stat-label">Track</span>
+                            <span data-slot="grid-stat-value">fluid</span>
+                            <code data-slot="grid-stat-token">minmax(0, 1fr)</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="content-inner">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Content Inner</h2>
+            <p data-slot="desc"><code>[data-slot="content-inner"]</code>가 페이지 그리드의 루트입니다. 문서 페이지는 보통 <code>doc-page-layout</code>으로 전체 12칼럼을 span하고, 내부에서 다시 12칼럼 nested grid를 씁니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-content-inner">
+                <div data-slot="grid-shell-diagram">
+                    <div data-slot="grid-shell-layer" data-layer="content-layout">
+                        <span data-slot="grid-shell-label">content-layout</span>
+                        <div data-slot="grid-shell-layer" data-layer="content-inner">
+                            <span data-slot="grid-shell-label">content-inner · 12 columns</span>
+                            <div data-slot="grid-shell-slot" data-span="12">doc-page-layout</div>
+                        </div>
+                    </div>
+                </div>
+                <pre data-slot="grid-code"><code>content-layout
+└── content-inner          /* 12-col grid, gap × 4 */
+    └── doc-page-layout    /* grid-column: 1 / -1 */
+        ├── doc-page       /* cols 3–8 (6 spans) */
+        └── page-nav       /* cols 11–12 */</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="column-span">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Column Span</h2>
+            <p data-slot="desc"><code>content-inner</code>의 <strong>직계 자식</strong>에 <code>data-col-span="N"</code> (1–12)을 지정합니다. 한 행의 span 합은 12를 넘기지 않습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-span">
+                <div data-slot="grid-span-examples">
+                    <div data-slot="grid-span-example">
+                        <p data-slot="grid-span-caption">4 + 4 + 4 = 12</p>
+                        <div data-slot="grid-demo" data-columns="12">
+                            <div data-slot="grid-demo-cell" data-span="4" data-accent="true"><span>4</span></div>
+                            <div data-slot="grid-demo-cell" data-span="4"><span>4</span></div>
+                            <div data-slot="grid-demo-cell" data-span="4"><span>4</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="grid-span-example">
+                        <p data-slot="grid-span-caption">3 + 6 + 3 = 12</p>
+                        <div data-slot="grid-demo" data-columns="12">
+                            <div data-slot="grid-demo-cell" data-span="3"><span>3</span></div>
+                            <div data-slot="grid-demo-cell" data-span="6" data-accent="true"><span>6</span></div>
+                            <div data-slot="grid-demo-cell" data-span="3"><span>3</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="grid-span-example">
+                        <p data-slot="grid-span-caption">8 + 4 = 12</p>
+                        <div data-slot="grid-demo" data-columns="12">
+                            <div data-slot="grid-demo-cell" data-span="8" data-accent="true"><span>8</span></div>
+                            <div data-slot="grid-demo-cell" data-span="4"><span>4</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="grid-span-example">
+                        <p data-slot="grid-span-caption">12 (full)</p>
+                        <div data-slot="grid-demo" data-columns="12">
+                            <div data-slot="grid-demo-cell" data-span="12" data-accent="true"><span>12</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="doc-page-layout">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Doc Page Layout</h2>
+            <p data-slot="desc">컴포넌트 문서는 nested 12칼럼 그리드로 본문과 On This Page 네비를 배치합니다. 80rem 미만에서는 본문이 <code>3 / span 8</code>로 넓어집니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-doc-layout">
+                <div data-slot="grid-doc-diagram">
+                    <div data-slot="grid-doc-track" data-empty="true"><span>1</span></div>
+                    <div data-slot="grid-doc-track" data-empty="true"><span>2</span></div>
+                    <div data-slot="grid-doc-track" data-span="6" data-role="doc-page"><span>doc-page · span 6</span></div>
+                    <div data-slot="grid-doc-track" data-empty="true"><span>9</span></div>
+                    <div data-slot="grid-doc-track" data-empty="true"><span>10</span></div>
+                    <div data-slot="grid-doc-track" data-span="2" data-role="page-nav"><span>nav · span 2</span></div>
+                </div>
+                <ul data-slot="grid-rule-list">
+                    <li><code>.doc-page-layout</code> — <code>grid-column: 1 / -1</code>, nested 12 columns</li>
+                    <li><code>.doc-page</code> — default <code>grid-column: 3 / span 6</code></li>
+                    <li><code>[data-slot="page-nav"]</code> — <code>grid-column: 11 / span 2</code></li>
+                    <li><code>.getting-started-page</code> — <code>grid-column: 2 / span 10</code></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="responsive">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Responsive Columns</h2>
+            <p data-slot="desc">Mobile-first로 <code>data-col-span</code>을 기본값으로 두고, breakpoint에서 <code>data-col-span-md</code>, <code>data-col-span-lg</code>, <code>data-col-span-xl</code>로 덮어씁니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-responsive">
+                <div data-slot="grid-breakpoint-legend">
+                    <span data-breakpoint="base">&lt; 48rem · base</span>
+                    <span data-breakpoint="md">≥ 48rem · md</span>
+                    <span data-breakpoint="lg">≥ 64rem · lg</span>
+                    <span data-breakpoint="xl">≥ 80rem · xl</span>
+                </div>
+                <div data-slot="grid-demo" data-columns="12" data-responsive="true">
+                    <div data-slot="grid-demo-cell" data-span="12" data-span-md="6" data-span-lg="4"><span>A · 12 → 6 → 4</span></div>
+                    <div data-slot="grid-demo-cell" data-span="12" data-span-md="6" data-span-lg="4"><span>B · 12 → 6 → 4</span></div>
+                    <div data-slot="grid-demo-cell" data-span="12" data-span-md="12" data-span-lg="4"><span>C · 12 → 12 → 4</span></div>
+                </div>
+                <pre data-slot="grid-code"><code>&lt;div data-col-span="12" data-col-span-md="6" data-col-span-lg="4"&gt;
+  Column A
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="gap">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Gap over Margin</h2>
+            <p data-slot="desc">페이지·섹션·그리드 형제 요소 사이는 <code>gap</code>으로 둡니다. 형제 간격에 <code>margin</code>을 쓰지 않고, 외부 블록 분리·겹침 방지가 필요할 때만 제한적으로 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-gap">
+                <div data-slot="spacing-gap-layout">
+                    <div data-slot="spacing-principles-row">
+                        <div data-slot="spacing-principle-card" data-type="gap">
+                            <span data-slot="spacing-principle-name">Gap</span>
+                            <div data-slot="spacing-principle-visual"><span>A</span><span>B</span></div>
+                            <span data-slot="spacing-principle-desc">그리드·flex 형제 간격</span>
+                        </div>
+                        <div data-slot="spacing-principle-card" data-type="padding">
+                            <span data-slot="spacing-principle-name">Padding</span>
+                            <div data-slot="spacing-principle-visual"><span>In</span></div>
+                            <span data-slot="spacing-principle-desc">칼럼·카드 내부 여백</span>
+                        </div>
+                        <div data-slot="spacing-principle-card" data-type="margin">
+                            <span data-slot="spacing-principle-name">Margin</span>
+                            <div data-slot="spacing-principle-visual"><span>Out</span></div>
+                            <span data-slot="spacing-principle-desc">레이아웃 밖 — 페이지 내 비권장</span>
+                        </div>
+                    </div>
+                    <div data-slot="grid-gap-stack">
+                        <div data-slot="grid-gap-stack-item" data-preferred="true">
+                            <p data-slot="grid-gap-stack-label">권장 · flex/grid + gap</p>
+                            <div data-slot="grid-gap-stack-demo">
+                                <div data-slot="grid-gap-stack-box">Section</div>
+                                <div data-slot="grid-gap-stack-box">Section</div>
+                                <div data-slot="grid-gap-stack-box">Section</div>
+                            </div>
+                        </div>
+                        <div data-slot="grid-gap-stack-item">
+                            <p data-slot="grid-gap-stack-label">비권장 · margin-top</p>
+                            <div data-slot="grid-gap-stack-demo" data-antipattern="true">
+                                <div data-slot="grid-gap-stack-box">Section</div>
+                                <div data-slot="grid-gap-stack-box">Section</div>
+                                <div data-slot="grid-gap-stack-box">Section</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="rules">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Rules</h2>
+            <p data-slot="desc">그리드 사용 시 지켜야 할 규칙입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="grid-rules">
+                <div data-slot="grid-rule-cards">
+
+                    <!-- 01. Gap 우선 -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">01</span>
+                                <span data-slot="grid-rule-card-title">Gap 우선</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc">섹션·칼럼·카드 사이는 <code>display: flex | grid</code> + <code>gap</code>. 페이지 내 형제 간격에 <code>margin</code>을 쓰지 않습니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-rule-gap-vs-margin">
+                                <div data-slot="grid-rule-compare-wrap">
+                                    <span data-slot="grid-rule-compare-label" data-state="good">✓ flex / grid + gap</span>
+                                    <div data-slot="grid-rule-compare-row">
+                                        <div data-slot="grid-rule-compare-box">A</div>
+                                        <div data-slot="grid-rule-compare-spacer" data-type="gap">gap</div>
+                                        <div data-slot="grid-rule-compare-box">B</div>
+                                    </div>
+                                </div>
+                                <div data-slot="grid-rule-compare-wrap">
+                                    <span data-slot="grid-rule-compare-label" data-state="bad">✗ margin</span>
+                                    <div data-slot="grid-rule-compare-row">
+                                        <div data-slot="grid-rule-compare-box">A</div>
+                                        <div data-slot="grid-rule-compare-spacer" data-type="margin">margin</div>
+                                        <div data-slot="grid-rule-compare-box">B</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02. 12칼럼 고정 -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">02</span>
+                                <span data-slot="grid-rule-card-title">12칼럼 고정</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc"><code>repeat(12, minmax(0, 1fr))</code>. 칼럼 수를 페이지마다 바꾸지 않습니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-demo" data-columns="12">
+                                <div data-slot="grid-demo-cell" data-span="1"><span>1</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>2</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>3</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>4</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>5</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>6</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>7</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>8</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>9</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>10</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1"><span>11</span></div>
+                                <div data-slot="grid-demo-cell" data-span="1" data-accent="true"><span>12</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03. 직계 자식만 span -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">03</span>
+                                <span data-slot="grid-rule-card-title">직계 자식만 span</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc"><code>data-col-span</code>은 <code>content-inner</code>의 직계 자식에만 적용합니다. 중첩 요소는 별도 그리드를 구성합니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-rule-direct-wrap">
+                                <span data-slot="grid-rule-direct-label">content-inner</span>
+                                <div data-slot="grid-demo" data-columns="12">
+                                    <div data-slot="grid-demo-cell" data-span="4" data-accent="true"><span>span=4 ✓</span></div>
+                                    <div data-slot="grid-demo-cell" data-span="8">
+                                        <div data-slot="grid-rule-nested-inner">
+                                            <span>nested</span>
+                                            <span data-slot="grid-rule-nested-tag">span 미적용</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 04. 합계 12 -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">04</span>
+                                <span data-slot="grid-rule-card-title">합계 12</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc">같은 행의 span 합이 12를 넘으면 다음 줄로 넘깁니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-span-examples">
+                                <div data-slot="grid-span-example">
+                                    <p data-slot="grid-span-caption">✓ 6 + 6 = 12</p>
+                                    <div data-slot="grid-demo" data-columns="12">
+                                        <div data-slot="grid-demo-cell" data-span="6" data-accent="true"><span>6</span></div>
+                                        <div data-slot="grid-demo-cell" data-span="6"><span>6</span></div>
+                                    </div>
+                                </div>
+                                <div data-slot="grid-span-example">
+                                    <p data-slot="grid-span-caption">✗ 7 + 7 → 다음 줄</p>
+                                    <div data-slot="grid-demo" data-columns="12">
+                                        <div data-slot="grid-demo-cell" data-span="7"><span>7</span></div>
+                                        <div data-slot="grid-demo-cell" data-span="7" data-accent="true"><span>↩ 7</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 05. Gap 통일 -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">05</span>
+                                <span data-slot="grid-rule-card-title">Gap 통일</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc">그리드 gap은 <code>× 4</code> (16px). <code>doc-page</code> 섹션 간격 <code>× 26</code>, 패턴 내부 <code>× 6</code>으로 일관됩니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-rule-gap-tokens">
+                                <div data-slot="grid-rule-gap-token">
+                                    <div data-slot="grid-rule-gap-token-track">
+                                        <span data-slot="grid-rule-gap-token-bar" style="--bar-size: 16px"></span>
+                                        <span data-slot="grid-rule-gap-token-name">Grid gap</span>
+                                    </div>
+                                    <code data-slot="grid-rule-gap-token-val">× 4 · 16px</code>
+                                </div>
+                                <div data-slot="grid-rule-gap-token">
+                                    <div data-slot="grid-rule-gap-token-track">
+                                        <span data-slot="grid-rule-gap-token-bar" style="--bar-size: 24px"></span>
+                                        <span data-slot="grid-rule-gap-token-name">Pattern gap</span>
+                                    </div>
+                                    <code data-slot="grid-rule-gap-token-val">× 6 · 24px</code>
+                                </div>
+                                <div data-slot="grid-rule-gap-token">
+                                    <div data-slot="grid-rule-gap-token-track">
+                                        <span data-slot="grid-rule-gap-token-bar" style="--bar-size: 80px"></span>
+                                        <span data-slot="grid-rule-gap-token-name">Doc page gap</span>
+                                    </div>
+                                    <code data-slot="grid-rule-gap-token-val">× 26 · 104px</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 06. Overflow 방지 -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">06</span>
+                                <span data-slot="grid-rule-card-title">Overflow 방지</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc">track은 <code>minmax(0, 1fr)</code>. flex/grid 자식에는 <code>min-width: 0</code>을 함께 둡니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-rule-overflow-compare">
+                                <div data-slot="grid-rule-overflow-item" data-state="good">
+                                    <span data-slot="grid-rule-overflow-caption">✓ min-width: 0</span>
+                                    <div data-slot="grid-rule-flex-demo">
+                                        <div data-slot="grid-rule-flex-demo-item" data-grow="true">
+                                            <span>very-long-component-name</span>
+                                        </div>
+                                        <div data-slot="grid-rule-flex-demo-item">Sidebar</div>
+                                    </div>
+                                </div>
+                                <div data-slot="grid-rule-overflow-item" data-state="bad">
+                                    <span data-slot="grid-rule-overflow-caption">✗ min-width: auto (기본값)</span>
+                                    <div data-slot="grid-rule-flex-demo">
+                                        <div data-slot="grid-rule-flex-demo-item" data-grow="true">
+                                            <span>very-long-component-name-overflow</span>
+                                        </div>
+                                        <div data-slot="grid-rule-flex-demo-item">Sidebar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 07. 반응형 -->
+                    <div data-slot="grid-rule-card">
+                        <div data-slot="grid-rule-card-info">
+                            <div data-slot="grid-rule-card-header">
+                                <span data-slot="grid-rule-card-num">07</span>
+                                <span data-slot="grid-rule-card-title">반응형</span>
+                            </div>
+                            <p data-slot="grid-rule-card-desc">작은 화면은 <code>data-col-span="12"</code>로 full-width, 큰 화면에서 <code>md / lg / xl</code> breakpoint로 분할합니다.</p>
+                        </div>
+                        <div data-slot="grid-rule-card-example">
+                            <div data-slot="grid-breakpoint-legend">
+                                <span data-breakpoint="base">&lt; 48rem</span>
+                                <span data-breakpoint="md">≥ 48rem</span>
+                                <span data-breakpoint="lg">≥ 64rem</span>
+                            </div>
+                            <div data-slot="grid-demo" data-columns="12" data-responsive="true">
+                                <div data-slot="grid-demo-cell" data-span="12" data-span-md="6" data-span-lg="4" data-accent="true"><span>12→6→4</span></div>
+                                <div data-slot="grid-demo-cell" data-span="12" data-span-md="6" data-span-lg="4"><span>12→6→4</span></div>
+                                <div data-slot="grid-demo-cell" data-span="12" data-span-md="12" data-span-lg="4"><span>12→12→4</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Column Span</h3>
+            <p data-slot="desc"><code>content-inner</code> 직계 자식에 사용하는 칼럼 span 속성입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">Breakpoint</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-col-span="N"</code></td>
+                        <td>All</td>
+                        <td>1–12 칼럼 span (기본)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-col-span-md="N"</code></td>
+                        <td>≥ 48rem</td>
+                        <td>Tablet 이상 override</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-col-span-lg="N"</code></td>
+                        <td>≥ 64rem</td>
+                        <td>Desktop override</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-col-span-xl="N"</code></td>
+                        <td>≥ 80rem</td>
+                        <td>Wide desktop override</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CSS Variables</h3>
+            <p data-slot="desc">그리드 레이아웃을 제어하는 CSS 변수입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">변수</th>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--grid-columns</code></td>
+                        <td><code>12</code></td>
+                        <td><code>content-inner</code> 칼럼 수</td>
+                    </tr>
+                    <tr>
+                        <td><code>gap</code></td>
+                        <td><code>calc(var(--spacing) * 4)</code></td>
+                        <td>그리드 칼럼·행 간격 (<code>content-inner</code>, <code>doc-page-layout</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>.doc-page</code></td>
+                        <td><code>gap: calc(var(--spacing) * 26)</code></td>
+                        <td>문서 섹션 간격 (margin 미사용)</td>
+                    </tr>
+                    <tr>
+                        <td><code>.doc-pattern-1</code></td>
+                        <td><code>gap: calc(var(--spacing) * 6)</code></td>
+                        <td>text-area · component-area 간격</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Guide</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#content-inner">Content Inner</a></li>
+                <li><a href="#column-span">Column Span</a></li>
+                <li><a href="#doc-page-layout">Doc Page Layout</a></li>
+                <li><a href="#responsive">Responsive Columns</a></li>
+                <li><a href="#gap">Gap over Margin</a></li>
+                <li><a href="#rules">Rules</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

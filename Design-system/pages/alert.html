@@ -1,0 +1,229 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Alert</h1>
+            <p data-slot="desc">중요한 정보나 상태를 사용자에게 알리는 콜아웃 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert">
+                    <i data-lucide="terminal"></i>
+                    <div data-slot="alert-title">잠깐만요!</div>
+                    <div data-slot="alert-description">
+                        <p>CLI를 통해 컴포넌트와 의존성을 추가하거나 직접 파일을 복사해 사용할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="default">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Default</h2>
+            <p data-slot="desc">기본 variant. 일반 안내·정보를 전달할 때 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert">
+                    <i data-lucide="terminal"></i>
+                    <div data-slot="alert-title">잠깐만요!</div>
+                    <div data-slot="alert-description">
+                        <p>CLI를 통해 컴포넌트와 의존성을 추가하거나 직접 파일을 복사해 사용할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="destructive">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Destructive</h2>
+            <p data-slot="desc"><code>data-variant="destructive"</code>로 오류·위험 상황을 강조합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert" data-variant="destructive">
+                    <i data-lucide="circle-alert"></i>
+                    <div data-slot="alert-title">오류</div>
+                    <div data-slot="alert-description">
+                        <p>세션이 만료되었습니다. 다시 로그인해 주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="info">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Info</h2>
+            <p data-slot="desc"><code>data-color="info"</code>로 정보성 알림을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert" data-color="info">
+                    <i data-lucide="info"></i>
+                    <div data-slot="alert-title">안내</div>
+                    <div data-slot="alert-description">
+                        <p>새로운 버전이 출시되었습니다. 지금 업데이트하면 최신 기능을 사용할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="success">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Success</h2>
+            <p data-slot="desc"><code>data-color="success"</code>로 성공 상태를 알립니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert" data-color="success">
+                    <i data-lucide="circle-check"></i>
+                    <div data-slot="alert-title">결제 완료</div>
+                    <div data-slot="alert-description">
+                        <p>결제가 정상적으로 처리되었습니다. 주문 내역은 이메일로 전송됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="warning">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Warning</h2>
+            <p data-slot="desc"><code>data-color="warning"</code>로 주의가 필요한 상황을 강조합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert" data-color="warning">
+                    <i data-lucide="triangle-alert"></i>
+                    <div data-slot="alert-title">구독 만료 예정</div>
+                    <div data-slot="alert-description">
+                        <p>구독이 3일 후 만료됩니다. 서비스 중단을 방지하려면 지금 갱신하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="error">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Error</h2>
+            <p data-slot="desc"><code>data-color="error"</code>로 오류 상태를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert" data-color="error">
+                    <i data-lucide="circle-x"></i>
+                    <div data-slot="alert-title">업로드 실패</div>
+                    <div data-slot="alert-description">
+                        <p>파일 크기가 허용 용량(10MB)을 초과했습니다. 파일을 압축한 후 다시 시도해 주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Alert</h3>
+            <p data-slot="desc">알림 루트 요소입니다. <code>role="alert"</code>이 자동으로 적용됩니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"destructive"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>알림의 시각적 스타일을 지정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-color</code></td>
+                        <td><code>"info"</code> | <code>"success"</code> | <code>"warning"</code> | <code>"error"</code></td>
+                        <td>—</td>
+                        <td>시스템 색상을 적용합니다. subtle 배경·테두리·텍스트가 함께 지정됩니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AlertTitle</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">태그</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slot="alert-title"</code></td>
+                        <td><code>div</code></td>
+                        <td>알림의 제목을 표시합니다. 1줄로 잘립니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AlertDescription</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">태그</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slot="alert-description"</code></td>
+                        <td><code>div</code></td>
+                        <td>알림의 본문 설명을 표시합니다. 내부 <code>p</code> 태그에 자동으로 여유 행간이 적용됩니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이 페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#default">Default</a></li>
+                <li><a href="#destructive">Destructive</a></li>
+                <li><a href="#info">Info</a></li>
+                <li><a href="#success">Success</a></li>
+                <li><a href="#warning">Warning</a></li>
+                <li><a href="#error">Error</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

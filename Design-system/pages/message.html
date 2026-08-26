@@ -1,0 +1,509 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Message</h1>
+            <p data-slot="desc">대화 내 단일 메시지를 표시하는 컴포넌트입니다. 아바타·헤더·푸터·정렬을 선택적으로 조합할 수 있으며, AI 응답·추론 단계·툴 호출을 표현하는 데 최적화되어 있습니다. 메시지 표면은 <code>Bubble</code> 컴포넌트로 렌더링합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-overview">
+                <div class="msg-demo">
+                    <!-- AI message -->
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">How can I help you today?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User message -->
+                    <div data-slot="message" data-align="end">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">ME</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">I need help building a design system.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- AI reply -->
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">Great! A design system typically includes tokens, components, and documentation. Where would you like to start?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avatar -->
+    <section class="doc-pattern-1" data-pattern="1" id="avatar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Avatar</h2>
+            <p data-slot="desc"><code>MessageAvatar</code>는 메시지 하단에 앵커링됩니다. <code>data-align="end"</code>일 때 아바타는 오른쪽, <code>data-align="start"</code>일 때 왼쪽에 위치합니다. 슬롯을 비워두면 공간만 예약되어 그룹 내 정렬이 유지됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-avatar">
+                <div class="msg-demo">
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">This message has an avatar on the left.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="message" data-align="end">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">ME</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">This message has an avatar on the right.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Group -->
+    <section class="doc-pattern-1" data-pattern="1" id="group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Group</h2>
+            <p data-slot="desc"><code>MessageGroup</code>으로 같은 발신자의 연속 메시지를 묶습니다. 첫 번째 메시지에만 아바타를 표시하고, 이후 메시지의 <code>MessageAvatar</code>는 비워두어 정렬 공간만 확보합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-group">
+                <div class="msg-demo">
+                    <!-- AI group -->
+                    <div data-slot="message-group">
+                        <div data-slot="message" data-align="start">
+                            <div data-slot="message-avatar">
+                                <div data-slot="avatar">
+                                    <div data-slot="avatar-fallback">AI</div>
+                                </div>
+                            </div>
+                            <div data-slot="message-content">
+                                <div data-slot="bubble">
+                                    <div data-slot="bubble-content">Here are three things to consider.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="message" data-align="start">
+                            <div data-slot="message-avatar"></div>
+                            <div data-slot="message-content">
+                                <div data-slot="bubble">
+                                    <div data-slot="bubble-content">First, define your design tokens clearly.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="message" data-align="start">
+                            <div data-slot="message-avatar"></div>
+                            <div data-slot="message-content">
+                                <div data-slot="bubble">
+                                    <div data-slot="bubble-content">Second, keep component APIs consistent.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User group -->
+                    <div data-slot="message-group">
+                        <div data-slot="message" data-align="end">
+                            <div data-slot="message-avatar">
+                                <div data-slot="avatar">
+                                    <div data-slot="avatar-fallback">ME</div>
+                                </div>
+                            </div>
+                            <div data-slot="message-content">
+                                <div data-slot="bubble">
+                                    <div data-slot="bubble-content">That makes sense!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="message" data-align="end">
+                            <div data-slot="message-avatar"></div>
+                            <div data-slot="message-content">
+                                <div data-slot="bubble">
+                                    <div data-slot="bubble-content">What's the third thing?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header and Footer -->
+    <section class="doc-pattern-1" data-pattern="1" id="header-and-footer">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Header and Footer</h2>
+            <p data-slot="desc"><code>MessageHeader</code>는 발신자 이름을, <code>MessageFooter</code>는 타임스탬프·읽음 상태 등 메타데이터를 표시합니다. 두 슬롯 모두 선택적입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-header-footer">
+                <div class="msg-demo">
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="message-header">Assistant · 2:34 PM</div>
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">This message has both a header and a footer. The header shows the sender name and time.</div>
+                            </div>
+                            <div data-slot="message-footer">
+                                <i data-lucide="check-check" aria-hidden="true" style="width:calc(var(--spacing)*3.5);height:calc(var(--spacing)*3.5);"></i>
+                                Delivered
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="message" data-align="end">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">ME</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="message-header">You · 2:35 PM</div>
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">Thank you! This layout is very clean.</div>
+                            </div>
+                            <div data-slot="message-footer">
+                                <i data-lucide="check-check" aria-hidden="true" style="width:calc(var(--spacing)*3.5);height:calc(var(--spacing)*3.5);color:var(--color-primary);"></i>
+                                Read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="doc-pattern-1" data-pattern="1" id="actions">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Actions</h2>
+            <p data-slot="desc"><code>MessageFooter</code>에 액션 버튼을 배치합니다. 복사·재시도·피드백 등 메시지 레벨의 인터랙션을 제공합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-actions">
+                <div class="msg-demo">
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">Design tokens are the single source of truth for your visual style — colors, spacing, typography, and more.</div>
+                            </div>
+                            <div data-slot="message-footer">
+                                <button data-slot="message-action" type="button" aria-label="Copy message">
+                                    <i data-lucide="copy" aria-hidden="true"></i>
+                                </button>
+                                <button data-slot="message-action" type="button" aria-label="Retry">
+                                    <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                                </button>
+                                <button data-slot="message-action" type="button" aria-label="Thumbs up" data-active="false">
+                                    <i data-lucide="thumbs-up" aria-hidden="true"></i>
+                                </button>
+                                <button data-slot="message-action" type="button" aria-label="Thumbs down" data-active="false">
+                                    <i data-lucide="thumbs-down" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">They help maintain consistency across platforms and teams.</div>
+                            </div>
+                            <div data-slot="message-footer">
+                                <button data-slot="message-action" type="button" aria-label="Copy message">
+                                    <i data-lucide="copy" aria-hidden="true"></i>
+                                </button>
+                                <button data-slot="message-action" type="button" aria-label="Retry">
+                                    <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                                </button>
+                                <button data-slot="message-action" type="button" aria-label="Thumbs up" data-active="true">
+                                    <i data-lucide="thumbs-up" aria-hidden="true"></i>
+                                </button>
+                                <button data-slot="message-action" type="button" aria-label="Thumbs down" data-active="false">
+                                    <i data-lucide="thumbs-down" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attachment -->
+    <section class="doc-pattern-1" data-pattern="1" id="attachment">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Attachment</h2>
+            <p data-slot="desc">이미지·파일 첨부물은 <code>message-content</code> 안에서 <code>bubble</code>과 나란히 배치합니다. <code>bubble-content</code> 밖에 두어야 정렬 색상 상속을 피할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-attachment">
+                <div class="msg-demo">
+                    <!-- Image attachment: user sends image + caption -->
+                    <div data-slot="message" data-align="end">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">ME</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble-attachment-image">
+                                <img src="https://placehold.co/320x180/e2e8f0/94a3b8?text=screenshot.png" alt="screenshot.png" />
+                            </div>
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">Here's the screenshot you asked for.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- File attachment: AI sends text + file card -->
+                    <div data-slot="message" data-align="start">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">AI</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble">
+                                <div data-slot="bubble-content">I've attached the design specification document.</div>
+                            </div>
+                            <div data-slot="bubble-attachment-file">
+                                <div data-slot="bubble-attachment-file-icon">
+                                    <i data-lucide="file-text" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="bubble-attachment-file-info">
+                                    <span data-slot="bubble-attachment-file-name">design-spec-v2.pdf</span>
+                                    <span data-slot="bubble-attachment-file-size">2.4 MB · PDF</span>
+                                </div>
+                                <button data-slot="message-action" type="button" aria-label="Download file">
+                                    <i data-lucide="download" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Multiple file attachments: user sends files only -->
+                    <div data-slot="message" data-align="end">
+                        <div data-slot="message-avatar">
+                            <div data-slot="avatar">
+                                <div data-slot="avatar-fallback">ME</div>
+                            </div>
+                        </div>
+                        <div data-slot="message-content">
+                            <div data-slot="bubble-attachment-file">
+                                <div data-slot="bubble-attachment-file-icon">
+                                    <i data-lucide="file-spreadsheet" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="bubble-attachment-file-info">
+                                    <span data-slot="bubble-attachment-file-name">budget-q3.xlsx</span>
+                                    <span data-slot="bubble-attachment-file-size">840 KB · Excel</span>
+                                </div>
+                                <button data-slot="message-action" type="button" aria-label="Download file">
+                                    <i data-lucide="download" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div data-slot="bubble-attachment-file">
+                                <div data-slot="bubble-attachment-file-icon">
+                                    <i data-lucide="file-image" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="bubble-attachment-file-info">
+                                    <span data-slot="bubble-attachment-file-name">banner.png</span>
+                                    <span data-slot="bubble-attachment-file-size">1.2 MB · PNG</span>
+                                </div>
+                                <button data-slot="message-action" type="button" aria-label="Download file">
+                                    <i data-lucide="download" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Reference -->
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Message</h3>
+            <p data-slot="desc">대화 행 레이아웃 루트입니다. 아바타·정렬·헤더·푸터를 소유합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-align</code></td><td><code>"start"</code> | <code>"end"</code></td><td><code>"start"</code></td><td>메시지 정렬 방향. start = 좌(AI), end = 우(사용자).</td></tr>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageGroup</h3>
+            <p data-slot="desc">같은 발신자의 연속 메시지를 묶는 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageAvatar</h3>
+            <p data-slot="desc">메시지 하단에 앵커링되는 아바타 슬롯입니다. 비워두면 그룹 정렬용 공간만 예약합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageContent</h3>
+            <p data-slot="desc">헤더·Bubble·푸터를 세로로 쌓는 래퍼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageHeader</h3>
+            <p data-slot="desc">발신자 이름·시간 등 메시지 상단 메타데이터를 표시합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageFooter</h3>
+            <p data-slot="desc">타임스탬프·읽음 상태·액션 버튼 등 메시지 하단 콘텐츠를 담습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Bubble</h3>
+            <p data-slot="desc">메시지의 시각적 표면입니다. Message 없이 단독으로도 사용할 수 있습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">BubbleContent</h3>
+            <p data-slot="desc">버블의 실제 콘텐츠 영역입니다. 패딩·배경색·border-radius가 적용됩니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageAction</h3>
+            <p data-slot="desc">MessageFooter 안에 배치하는 icon-sm 크기의 ghost 스타일 액션 버튼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-active</code></td><td><code>"true"</code> | <code>"false"</code></td><td>—</td><td>활성 상태 (thumbs up/down 등). true이면 primary 색상.</td></tr>
+                    <tr><td><code>aria-label</code></td><td><code>string</code></td><td>—</td><td>접근성 레이블 (필수).</td></tr>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#avatar">Avatar</a></li>
+                <li><a href="#group">Group</a></li>
+                <li><a href="#header-and-footer">Header and Footer</a></li>
+                <li><a href="#actions">Actions</a></li>
+                <li><a href="#attachment">Attachment</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

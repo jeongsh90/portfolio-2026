@@ -1,0 +1,339 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Shadow</h1>
+            <p data-slot="desc">UI 깊이(elevation)는 <code>box-shadow</code>와 <code>z-index</code>를 레벨별로 함께 지정합니다. <code>var(--shadow-*)</code> 토큰만 사용하고, px·rgba 하드코딩은 하지 않습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="shadow-overview">
+                <div data-slot="shadow-overview-stack">
+                    <div data-slot="shadow-overview-layer" data-tier="surface" style="--layer-shadow: 0 0 0 1px color-mix(in oklab, var(--color-foreground) 10%, transparent);">
+                        <div data-slot="shadow-overview-layer-body">
+                            <span data-slot="shadow-overview-layer-name">Surface</span>
+                            <span data-slot="shadow-overview-layer-desc">Card · Table</span>
+                        </div>
+                        <div data-slot="shadow-overview-layer-tokens">
+                            <code>ring</code>
+                            <code>z 0</code>
+                        </div>
+                    </div>
+                    <div data-slot="shadow-overview-layer" data-tier="overlay" style="--layer-shadow: var(--shadow-md);">
+                        <div data-slot="shadow-overview-layer-body">
+                            <span data-slot="shadow-overview-layer-name">Overlay</span>
+                            <span data-slot="shadow-overview-layer-desc">Select · Popover</span>
+                        </div>
+                        <div data-slot="shadow-overview-layer-tokens">
+                            <code>--shadow-md</code>
+                            <code>z 50</code>
+                        </div>
+                    </div>
+                    <div data-slot="shadow-overview-layer" data-tier="modal" style="--layer-shadow: var(--shadow-lg);">
+                        <div data-slot="shadow-overview-layer-body">
+                            <span data-slot="shadow-overview-layer-name">Modal</span>
+                            <span data-slot="shadow-overview-layer-desc">Dialog · Sheet</span>
+                        </div>
+                        <div data-slot="shadow-overview-layer-tokens">
+                            <code>--shadow-lg</code>
+                            <code>z 300</code>
+                        </div>
+                    </div>
+                </div>
+                <p data-slot="shadow-overview-caption">아래 → 위로 갈수록 shadow가 커지고 z-index가 높아집니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="scale">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Scale</h2>
+            <p data-slot="desc">Tailwind v4 기본 shadow 스케일입니다. 컴포넌트 elevation에 맞는 단계를 선택합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="shadow-scale">
+                <div data-slot="shadow-scale-grid">
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow-2xs);">
+                        <div data-slot="shadow-swatch-preview"><span>2xs</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow-2xs</code>
+                    </div>
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow-xs);">
+                        <div data-slot="shadow-swatch-preview"><span>xs</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow-xs</code>
+                    </div>
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow-sm);">
+                        <div data-slot="shadow-swatch-preview"><span>sm</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow-sm</code>
+                    </div>
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow);">
+                        <div data-slot="shadow-swatch-preview"><span>base</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow</code>
+                    </div>
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow-md);">
+                        <div data-slot="shadow-swatch-preview"><span>md</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow-md</code>
+                    </div>
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow-lg);">
+                        <div data-slot="shadow-swatch-preview"><span>lg</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow-lg</code>
+                    </div>
+                    <div data-slot="shadow-swatch" style="--swatch-shadow: var(--shadow-xl);">
+                        <div data-slot="shadow-swatch-preview"><span>xl</span></div>
+                        <code data-slot="shadow-swatch-token">--shadow-xl</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="elevation">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Elevation</h2>
+            <p data-slot="desc">[Universal Design System](https://www.figma.com/design/Ha8xNOsgvHrkpv5UKiNMYu/Universal-Design-System-25.05.12-%7C-Preview?node-id=8621-83895) elevation 가이드에 따라, 화면 구성 요소는 아래에서 위로 쌓입니다. 각 단계마다 shadow·z-index를 함께 지정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="shadow-elevation">
+                <div data-slot="shadow-elevation-list">
+                    <div data-slot="shadow-elevation-item" data-level="surface" style="--layer-shadow: 0 0 0 1px color-mix(in oklab, var(--color-foreground) 10%, transparent);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Surface</span>
+                            <span data-slot="shadow-elevation-z">z 0–1</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Card · Table</span></div>
+                        <p data-slot="shadow-elevation-desc">ring 1px — elevation shadow 없음</p>
+                    </div>
+                    <div data-slot="shadow-elevation-item" data-level="control" style="--layer-shadow: var(--shadow-xs);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Control</span>
+                            <span data-slot="shadow-elevation-z">z auto</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Button · Input</span></div>
+                        <p data-slot="shadow-elevation-desc"><code>--shadow-xs</code> — 인터랙션 표면</p>
+                    </div>
+                    <div data-slot="shadow-elevation-item" data-level="raised" style="--layer-shadow: var(--shadow-sm);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Raised</span>
+                            <span data-slot="shadow-elevation-z">z 10</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Header · Sidebar</span></div>
+                        <p data-slot="shadow-elevation-desc"><code>--shadow-sm</code> — 고정 패널</p>
+                    </div>
+                    <div data-slot="shadow-elevation-item" data-level="overlay" style="--layer-shadow: var(--shadow-md);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Overlay</span>
+                            <span data-slot="shadow-elevation-z">z 50–100</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Select · Popover</span></div>
+                        <p data-slot="shadow-elevation-desc"><code>--shadow-md</code> — 플로팅 메뉴</p>
+                    </div>
+                    <div data-slot="shadow-elevation-item" data-level="sheet" style="--layer-shadow: var(--shadow-lg);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Sheet</span>
+                            <span data-slot="shadow-elevation-z">z 300</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Sheet · Drawer</span></div>
+                        <p data-slot="shadow-elevation-desc"><code>--shadow-lg</code> + overlay blur</p>
+                    </div>
+                    <div data-slot="shadow-elevation-item" data-level="modal" style="--layer-shadow: var(--shadow-lg);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Modal</span>
+                            <span data-slot="shadow-elevation-z">z 300–301</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Dialog · Alert Dialog</span></div>
+                        <p data-slot="shadow-elevation-desc"><code>--shadow-lg</code> 또는 ring — 최상위 콘텐츠</p>
+                    </div>
+                    <div data-slot="shadow-elevation-item" data-level="toast" style="--layer-shadow: var(--shadow-lg);">
+                        <div data-slot="shadow-elevation-meta">
+                            <span data-slot="shadow-elevation-name">Toast</span>
+                            <span data-slot="shadow-elevation-z">z 9999</span>
+                        </div>
+                        <div data-slot="shadow-elevation-preview"><span>Sonner</span></div>
+                        <p data-slot="shadow-elevation-desc"><code>--shadow-lg</code> — 항상 최전면</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">레이어</th>
+                        <th scope="col">z-index</th>
+                        <th scope="col">Shadow</th>
+                        <th scope="col">예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Surface</td>
+                        <td>0–1</td>
+                        <td>ring (shadow 없음)</td>
+                        <td>Card, Table cell</td>
+                    </tr>
+                    <tr>
+                        <td>Control</td>
+                        <td>—</td>
+                        <td><code>--shadow-xs</code></td>
+                        <td>Button, Input, Checkbox</td>
+                    </tr>
+                    <tr>
+                        <td>Raised</td>
+                        <td>10</td>
+                        <td><code>--shadow-sm</code></td>
+                        <td>Sticky header, Sidebar rail</td>
+                    </tr>
+                    <tr>
+                        <td>Overlay</td>
+                        <td>50–100</td>
+                        <td><code>--shadow-md</code></td>
+                        <td>Select, Popover, Dropdown Menu</td>
+                    </tr>
+                    <tr>
+                        <td>Sheet</td>
+                        <td>300</td>
+                        <td><code>--shadow-lg</code></td>
+                        <td>Sheet content</td>
+                    </tr>
+                    <tr>
+                        <td>Modal</td>
+                        <td>300–301</td>
+                        <td><code>--shadow-lg</code> / ring</td>
+                        <td>Alert Dialog, Dialog</td>
+                    </tr>
+                    <tr>
+                        <td>Toast</td>
+                        <td>9999</td>
+                        <td><code>--shadow-lg</code></td>
+                        <td>Sonner toast</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="component-shadows">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Component Shadows</h2>
+            <p data-slot="desc">registry·<code>components.css</code>에 적용된 shadow입니다. elevation 레벨보다 낮은 shadow를 쓰지 않습니다.</p>
+            <h3 data-slot="typography-h3">Focus ring</h3>
+            <p data-slot="desc">포커스 링(<code>box-shadow</code> + <code>--color-ring</code>)은 elevation이 아닙니다. 접근성 피드백 전용이며 z-index를 올리지 않습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="shadow-component">
+                <div data-slot="shadow-component-list">
+                    <article data-slot="shadow-spec-card">
+                        <p data-slot="shadow-spec-title">Controls</p>
+                        <div data-slot="shadow-spec-body">
+                            <div data-slot="shadow-spec-demo">
+                                <button type="button" data-slot="button">Primary</button>
+                                <button type="button" data-slot="button" data-variant="outline">Outline</button>
+                            </div>
+                            <table data-slot="shadow-spec-table">
+                                <tbody>
+                                    <tr><th scope="row">Button default</th><td><code>--shadow-xs</code></td></tr>
+                                    <tr><th scope="row">Button outline</th><td><code>--shadow-xs</code></td></tr>
+                                    <tr><th scope="row">Input · Switch</th><td><code>--shadow-xs</code></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article data-slot="shadow-spec-card">
+                        <p data-slot="shadow-spec-title">Floating</p>
+                        <div data-slot="shadow-spec-body">
+                            <div data-slot="shadow-spec-demo">
+                                <div data-slot="shadow-floating-sample" style="--sample-shadow: var(--shadow-md);">
+                                    <span>Popover layer</span>
+                                </div>
+                            </div>
+                            <table data-slot="shadow-spec-table">
+                                <tbody>
+                                    <tr><th scope="row">Select content</th><td><code>--shadow-md</code> · z 50</td></tr>
+                                    <tr><th scope="row">Popover</th><td><code>--shadow-md</code> · z 50</td></tr>
+                                    <tr><th scope="row">Dropdown Menu</th><td><code>--shadow-md</code> · z 50</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article data-slot="shadow-spec-card">
+                        <p data-slot="shadow-spec-title">Modal &amp; Toast</p>
+                        <div data-slot="shadow-spec-body">
+                            <div data-slot="shadow-spec-demo">
+                                <div data-slot="shadow-floating-sample" data-size="lg" style="--sample-shadow: var(--shadow-lg);">
+                                    <span>Modal / Toast</span>
+                                </div>
+                            </div>
+                            <table data-slot="shadow-spec-table">
+                                <tbody>
+                                    <tr><th scope="row">Sheet content</th><td><code>--shadow-lg</code> · z 300</td></tr>
+                                    <tr><th scope="row">Alert Dialog</th><td><code>--shadow-lg</code> · z 300</td></tr>
+                                    <tr><th scope="row">Sonner toast</th><td><code>--shadow-lg</code> · z 9999</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <p data-slot="desc">Foundation·컴포넌트 CSS에서 사용하는 shadow·z-index 토큰입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">토큰</th>
+                        <th scope="col">용도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--shadow-2xs</code> … <code>--shadow-xl</code></td>
+                        <td>깊이별 box-shadow 스케일</td>
+                    </tr>
+                    <tr>
+                        <td><code>var(--shadow-*)</code></td>
+                        <td>컴포넌트 <code>box-shadow</code> — 임의 rgba 금지</td>
+                    </tr>
+                    <tr>
+                        <td><code>z-index: 10</code></td>
+                        <td>Raised — sticky header, sidebar rail</td>
+                    </tr>
+                    <tr>
+                        <td><code>z-index: 50–100</code></td>
+                        <td>Overlay — dropdown, select, popover</td>
+                    </tr>
+                    <tr>
+                        <td><code>z-index: 300–301</code></td>
+                        <td>Modal — dialog, sheet, alert dialog</td>
+                    </tr>
+                    <tr>
+                        <td><code>z-index: 9999</code></td>
+                        <td>Toast — <code>[data-slot="toaster"]</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#scale">Scale</a></li>
+                <li><a href="#elevation">Elevation</a></li>
+                <li><a href="#component-shadows">Component Shadows</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,367 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Input Group</h1>
+            <p data-slot="desc">입력 필드에 아이콘, 텍스트, 버튼 등을 결합하는 Input Group 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-group-single">
+                <div data-slot="input-group" role="group">
+                    <input type="search" data-slot="input-group-control" placeholder="Search...">
+                    <div data-slot="input-group-addon">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <span data-slot="input-group-text">12 results</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Icon</h2>
+            <p data-slot="desc"><code>InputGroupAddon</code>에 아이콘을 배치합니다. <code>data-align</code>으로 시작·끝 위치를 지정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-group-stack">
+                <div data-slot="input-group" role="group">
+                    <input type="search" data-slot="input-group-control" placeholder="Search...">
+                    <div data-slot="input-group-addon">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="email" data-slot="input-group-control" placeholder="Enter your email">
+                    <div data-slot="input-group-addon">
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="Card number">
+                    <div data-slot="input-group-addon">
+                        <i data-lucide="credit-card" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <i data-lucide="check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="Card number">
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <i data-lucide="star" aria-hidden="true"></i>
+                        <i data-lucide="info" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="text">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Text</h2>
+            <p data-slot="desc"><code>InputGroupText</code>로 접두사·접미사 텍스트를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-group-stack">
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="0.00">
+                    <div data-slot="input-group-addon">
+                        <span data-slot="input-group-text">$</span>
+                    </div>
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <span data-slot="input-group-text">USD</span>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="example.com">
+                    <div data-slot="input-group-addon">
+                        <span data-slot="input-group-text">https://</span>
+                    </div>
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <span data-slot="input-group-text">.com</span>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="Enter your username">
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <span data-slot="input-group-text">@company.com</span>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <textarea data-slot="textarea" placeholder="Enter your message"></textarea>
+                    <div data-slot="input-group-addon" data-align="block-end">
+                        <span data-slot="input-group-text">120 characters left</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Button</h2>
+            <p data-slot="desc"><code>InputGroupButton</code>으로 복사, 검색 등 액션 버튼을 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-group-stack">
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" value="https://x.com/shadcn" readonly>
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <button type="button" data-slot="input-group-button" data-size="icon-xs" aria-label="Copy">
+                            <i data-lucide="copy" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="search" data-slot="input-group-control" placeholder="Type to search...">
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <button type="button" data-slot="input-group-button" data-variant="secondary" data-size="xs">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="spinner">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Spinner</h2>
+            <p data-slot="desc">로딩 상태를 <code>Spinner</code> 또는 아이콘으로 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-group-stack">
+                <div data-slot="input-group" role="group">
+                    <input type="search" data-slot="input-group-control" placeholder="Searching...">
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <span data-slot="spinner" role="status" aria-label="Loading"></span>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="Processing...">
+                    <div data-slot="input-group-addon">
+                        <span data-slot="spinner" role="status" aria-label="Loading"></span>
+                    </div>
+                </div>
+                <div data-slot="input-group" role="group">
+                    <input type="text" data-slot="input-group-control" placeholder="Saving changes...">
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <span data-slot="input-group-text">Saving...</span>
+                        <span data-slot="spinner" role="status" aria-label="Loading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="textarea">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Textarea</h2>
+            <p data-slot="desc"><code>data-align="block-start"</code> / <code>block-end</code>로 textarea 위·아래에 헤더·푸터를 배치합니다. addon은 DOM에서 textarea 뒤에 두고 <code>data-align</code>으로 위치를 지정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-group-single">
+                <div data-slot="input-group" role="group" class="input-group-textarea-code">
+                    <textarea data-slot="textarea" placeholder="console.log('Hello, world!');"></textarea>
+                    <div data-slot="input-group-addon" data-align="block-end">
+                        <span data-slot="input-group-text">Line 1, Column 1</span>
+                        <button type="button" data-slot="input-group-button" data-variant="default" data-size="sm">
+                            Run
+                            <i data-lucide="corner-down-left" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="input-group-addon" data-align="block-start">
+                        <span data-slot="input-group-text">
+                            <i data-lucide="file-code" aria-hidden="true"></i>
+                            script.js
+                        </span>
+                        <button type="button" data-slot="input-group-button" data-size="icon-xs" aria-label="Refresh">
+                            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" data-slot="input-group-button" data-variant="ghost" data-size="icon-xs" aria-label="Copy">
+                            <i data-lucide="copy" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">InputGroup</h3>
+            <p data-slot="desc"><code>data-slot="input-group"</code> 루트 컨테이너입니다. input·textarea·addon을 감쌉니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td><code>"true"</code></td>
+                        <td>—</td>
+                        <td>그룹 전체 비활성화.</td>
+                    </tr>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"group"</code></td>
+                        <td>—</td>
+                        <td>접근성 그룹 역할.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputGroupAddon</h3>
+            <p data-slot="desc"><code>data-slot="input-group-addon"</code> 아이콘·텍스트·버튼 등 addon 영역입니다. 포커스 탐색을 위해 input/textarea <strong>뒤</strong>에 배치하고 <code>data-align</code>으로 위치를 지정합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"inline-start"</code> | <code>"inline-end"</code> | <code>"block-start"</code> | <code>"block-end"</code></td>
+                        <td><code>"inline-start"</code></td>
+                        <td>addon 위치. block은 textarea·세로 레이아웃용.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputGroupInput</h3>
+            <p data-slot="desc"><code>data-slot="input-group-control"</code> input 요소입니다. 그룹 내부 테두리·포커스 링은 루트에서 처리합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">네이티브 <code>&lt;input&gt;</code> 속성을 그대로 사용합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputGroupTextarea</h3>
+            <p data-slot="desc"><code>data-slot="textarea"</code> textarea 요소입니다. <code>block-start</code> / <code>block-end</code> addon과 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">네이티브 <code>&lt;textarea&gt;</code> 속성을 그대로 사용합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputGroupButton</h3>
+            <p data-slot="desc"><code>data-slot="input-group-button"</code> addon 내부 버튼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"xs"</code> | <code>"icon-xs"</code> | <code>"sm"</code> | <code>"icon-sm"</code></td>
+                        <td><code>"icon-xs"</code></td>
+                        <td>버튼 크기.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"destructive"</code> | <code>"outline"</code> | <code>"secondary"</code> | <code>"ghost"</code> | <code>"link"</code></td>
+                        <td><code>"ghost"</code></td>
+                        <td>버튼 스타일.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputGroupText</h3>
+            <p data-slot="desc"><code>data-slot="input-group-text"</code> addon 내부 텍스트·라벨입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#icon">Icon</a></li>
+                <li><a href="#text">Text</a></li>
+                <li><a href="#button">Button</a></li>
+                <li><a href="#spinner">Spinner</a></li>
+                <li><a href="#textarea">Textarea</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

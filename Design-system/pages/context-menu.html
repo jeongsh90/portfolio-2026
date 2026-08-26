@@ -1,0 +1,470 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Context Menu</h1>
+            <p data-slot="desc">요소에서 우클릭(또는 길게 누르기)으로 표시되는 메뉴입니다. 단축키, 체크박스, 라디오, 서브메뉴를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu" aria-label="Context menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Back
+                                <span data-slot="context-menu-shortcut">⌘[</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem" disabled>Forward</button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Reload
+                                <span data-slot="context-menu-shortcut">⌘R</span>
+                            </button>
+                            <div data-slot="context-menu-sub">
+                                <button type="button" data-slot="context-menu-sub-trigger" role="menuitem" aria-haspopup="menu" aria-expanded="false">
+                                    More Tools
+                                    <i data-lucide="chevron-right" data-slot="context-menu-sub-trigger-icon" aria-hidden="true"></i>
+                                </button>
+                                <div data-slot="context-menu-sub-content" data-state="closed" role="menu" aria-label="More tools">
+                                    <div data-slot="context-menu-group">
+                                        <button type="button" data-slot="context-menu-item" role="menuitem">Save Page...</button>
+                                        <button type="button" data-slot="context-menu-item" role="menuitem">Create Shortcut...</button>
+                                        <button type="button" data-slot="context-menu-item" role="menuitem">Name Window...</button>
+                                    </div>
+                                    <div data-slot="context-menu-separator"></div>
+                                    <div data-slot="context-menu-group">
+                                        <button type="button" data-slot="context-menu-item" role="menuitem">Developer Tools</button>
+                                    </div>
+                                    <div data-slot="context-menu-separator"></div>
+                                    <div data-slot="context-menu-group">
+                                        <button type="button" data-slot="context-menu-item" role="menuitem" data-variant="destructive">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-checkbox-item" role="menuitemcheckbox" aria-checked="true" data-checked="true">Show Bookmarks</button>
+                            <button type="button" data-slot="context-menu-checkbox-item" role="menuitemcheckbox" aria-checked="false">Show Full URLs</button>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <div data-slot="context-menu-label">People</div>
+                            <div data-slot="context-menu-radio-group" data-value="pedro">
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="pedro" aria-checked="true">Pedro Duarte</button>
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="colm" aria-checked="false">Colm Tuite</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">기본 컨텍스트 메뉴입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">Back</button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem" disabled>Forward</button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">Reload</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="submenu">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Submenu</h2>
+            <p data-slot="desc"><code>context-menu-sub</code>로 중첩 메뉴를 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Copy
+                                <span data-slot="context-menu-shortcut">⌘C</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Cut
+                                <span data-slot="context-menu-shortcut">⌘X</span>
+                            </button>
+                        </div>
+                        <div data-slot="context-menu-sub">
+                            <button type="button" data-slot="context-menu-sub-trigger" role="menuitem" aria-haspopup="menu" aria-expanded="false">
+                                More Tools
+                                <i data-lucide="chevron-right" data-slot="context-menu-sub-trigger-icon" aria-hidden="true"></i>
+                            </button>
+                            <div data-slot="context-menu-sub-content" data-state="closed" role="menu">
+                                <div data-slot="context-menu-group">
+                                    <button type="button" data-slot="context-menu-item" role="menuitem">Save Page...</button>
+                                    <button type="button" data-slot="context-menu-item" role="menuitem">Create Shortcut...</button>
+                                    <button type="button" data-slot="context-menu-item" role="menuitem">Name Window...</button>
+                                </div>
+                                <div data-slot="context-menu-separator"></div>
+                                <div data-slot="context-menu-group">
+                                    <button type="button" data-slot="context-menu-item" role="menuitem">Developer Tools</button>
+                                </div>
+                                <div data-slot="context-menu-separator"></div>
+                                <div data-slot="context-menu-group">
+                                    <button type="button" data-slot="context-menu-item" role="menuitem" data-variant="destructive">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="shortcuts">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Shortcuts</h2>
+            <p data-slot="desc"><code>context-menu-shortcut</code>로 키보드 단축키를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Back
+                                <span data-slot="context-menu-shortcut">⌘[</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem" disabled>
+                                Forward
+                                <span data-slot="context-menu-shortcut">⌘]</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Reload
+                                <span data-slot="context-menu-shortcut">⌘R</span>
+                            </button>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Save
+                                <span data-slot="context-menu-shortcut">⌘S</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Save As...
+                                <span data-slot="context-menu-shortcut">⇧⌘S</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="groups">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Groups</h2>
+            <p data-slot="desc"><code>context-menu-group</code>과 <code>context-menu-label</code>로 항목을 묶습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <div data-slot="context-menu-label">File</div>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                New File
+                                <span data-slot="context-menu-shortcut">⌘N</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Open File
+                                <span data-slot="context-menu-shortcut">⌘O</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Save
+                                <span data-slot="context-menu-shortcut">⌘S</span>
+                            </button>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <div data-slot="context-menu-label">Edit</div>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Undo
+                                <span data-slot="context-menu-shortcut">⌘Z</span>
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                Redo
+                                <span data-slot="context-menu-shortcut">⇧⌘Z</span>
+                            </button>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem" data-variant="destructive">
+                                Delete
+                                <span data-slot="context-menu-shortcut">⌫</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="icons">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Icons</h2>
+            <p data-slot="desc">아이콘과 라벨을 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                <i data-lucide="copy" aria-hidden="true"></i>
+                                Copy
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                <i data-lucide="scissors" aria-hidden="true"></i>
+                                Cut
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                <i data-lucide="clipboard-paste" aria-hidden="true"></i>
+                                Paste
+                            </button>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem" data-variant="destructive">
+                                <i data-lucide="trash-2" aria-hidden="true"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="checkboxes">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Checkboxes</h2>
+            <p data-slot="desc"><code>context-menu-checkbox-item</code>으로 토글 항목을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-checkbox-item" role="menuitemcheckbox" aria-checked="true" data-checked="true">Show Bookmarks Bar</button>
+                            <button type="button" data-slot="context-menu-checkbox-item" role="menuitemcheckbox" aria-checked="false">Show Full URLs</button>
+                            <button type="button" data-slot="context-menu-checkbox-item" role="menuitemcheckbox" aria-checked="true" data-checked="true">Show Developer Tools</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="radio">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Radio</h2>
+            <p data-slot="desc"><code>context-menu-radio-group</code>과 <code>context-menu-radio-item</code>으로 단일 선택 항목을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <div data-slot="context-menu-label">People</div>
+                            <div data-slot="context-menu-radio-group" data-value="pedro">
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="pedro" aria-checked="true">Pedro Duarte</button>
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="colm" aria-checked="false">Colm Tuite</button>
+                            </div>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <div data-slot="context-menu-label">Theme</div>
+                            <div data-slot="context-menu-radio-group" data-value="light">
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="light" aria-checked="true">Light</button>
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="dark" aria-checked="false">Dark</button>
+                                <button type="button" data-slot="context-menu-radio-item" role="menuitemradio" data-value="system" aria-checked="false">System</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="destructive">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Destructive</h2>
+            <p data-slot="desc"><code>data-variant="destructive"</code>로 위험한 액션을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="context-menu-demo">
+                <div data-slot="context-menu">
+                    <div data-slot="context-menu-trigger" tabindex="0">
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--fine">Right click here</span>
+                        <span class="context-menu-trigger-hint context-menu-trigger-hint--coarse">Long press here</span>
+                    </div>
+                    <div data-slot="context-menu-content" data-state="closed" role="menu">
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                <i data-lucide="pencil" aria-hidden="true"></i>
+                                Edit
+                            </button>
+                            <button type="button" data-slot="context-menu-item" role="menuitem">
+                                <i data-lucide="share-2" aria-hidden="true"></i>
+                                Share
+                            </button>
+                        </div>
+                        <div data-slot="context-menu-separator"></div>
+                        <div data-slot="context-menu-group">
+                            <button type="button" data-slot="context-menu-item" role="menuitem" data-variant="destructive">
+                                <i data-lucide="trash-2" aria-hidden="true"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">ContextMenuItem</h3>
+            <p data-slot="desc"><code>data-slot="context-menu-item"</code> 속성입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"destructive"</code></td>
+                        <td>항목 스타일</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-inset</code></td>
+                        <td>boolean</td>
+                        <td>왼쪽 여백 확대</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td>항목 비활성화</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 data-slot="typography-h3">ContextMenuCheckboxItem</h3>
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td>체크 상태 (<code>"true"</code> | <code>"false"</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-checked</code></td>
+                        <td>초기 체크 상태</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 data-slot="typography-h3">ContextMenuRadioItem</h3>
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>라디오 항목 값</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td>선택 상태</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#submenu">Submenu</a></li>
+                <li><a href="#shortcuts">Shortcuts</a></li>
+                <li><a href="#groups">Groups</a></li>
+                <li><a href="#icons">Icons</a></li>
+                <li><a href="#checkboxes">Checkboxes</a></li>
+                <li><a href="#radio">Radio</a></li>
+                <li><a href="#destructive">Destructive</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,308 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Drawer</h1>
+            <p data-slot="desc">화면 가장자리에서 슬라이드되는 패널입니다. 모바일 친화적인 보조 UI에 적합하며, 기본 방향은 <code>bottom</code>입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="drawer">
+                    <div data-slot="drawer-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Open Drawer</button>
+                    </div>
+                    <div data-slot="drawer-overlay" aria-hidden="true"></div>
+                    <div data-slot="drawer-content" role="dialog" aria-modal="true"
+                         aria-labelledby="drawer-overview-title" aria-describedby="drawer-overview-desc">
+                        <div data-slot="drawer-handle" aria-hidden="true"></div>
+                        <div class="drawer-demo-sm" data-drawer-goal>
+                            <div data-slot="drawer-header">
+                                <h2 data-slot="drawer-title" id="drawer-overview-title">Move Goal</h2>
+                                <p data-slot="drawer-description" id="drawer-overview-desc">Set your daily activity goal.</p>
+                            </div>
+                            <div class="drawer-goal-panel">
+                                <div class="drawer-goal-controls">
+                                    <button type="button" data-slot="button" data-variant="outline" data-size="icon" class="drawer-goal-step" data-drawer-goal-decrease aria-label="Decrease">
+                                        <i data-lucide="minus" aria-hidden="true"></i>
+                                        <span data-slot="sr-only">Decrease</span>
+                                    </button>
+                                    <div class="drawer-goal-value">
+                                        <div class="drawer-goal-number" data-drawer-goal-value>350</div>
+                                        <div class="drawer-goal-label">Calories/day</div>
+                                    </div>
+                                    <button type="button" data-slot="button" data-variant="outline" data-size="icon" class="drawer-goal-step" data-drawer-goal-increase aria-label="Increase">
+                                        <i data-lucide="plus" aria-hidden="true"></i>
+                                        <span data-slot="sr-only">Increase</span>
+                                    </button>
+                                </div>
+                                <div class="drawer-goal-chart" aria-hidden="true">
+                                    <span style="height: 72%"></span>
+                                    <span style="height: 54%"></span>
+                                    <span style="height: 36%"></span>
+                                    <span style="height: 54%"></span>
+                                    <span style="height: 36%"></span>
+                                    <span style="height: 50%"></span>
+                                    <span style="height: 34%"></span>
+                                    <span style="height: 43%"></span>
+                                    <span style="height: 54%"></span>
+                                    <span style="height: 36%"></span>
+                                    <span style="height: 50%"></span>
+                                    <span style="height: 34%"></span>
+                                    <span style="height: 63%"></span>
+                                </div>
+                            </div>
+                            <div data-slot="drawer-footer">
+                                <button type="button" data-slot="button">Submit</button>
+                                <button type="button" data-slot="button" data-variant="outline" data-drawer-close>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="scrollable">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Scrollable Content</h2>
+            <p data-slot="desc">콘텐츠가 길 때 <code>drawer-body</code> 영역만 스크롤하고 헤더·푸터 액션은 고정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="drawer-scrollable">
+                <div data-slot="drawer">
+                    <div data-slot="drawer-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Scrollable Content</button>
+                    </div>
+                    <div data-slot="drawer-overlay" aria-hidden="true"></div>
+                    <div data-slot="drawer-content" data-direction="right" role="dialog" aria-modal="true"
+                         aria-labelledby="drawer-scroll-title" aria-describedby="drawer-scroll-desc">
+                        <div data-slot="drawer-header">
+                            <h2 data-slot="drawer-title" id="drawer-scroll-title">Move Goal</h2>
+                            <p data-slot="drawer-description" id="drawer-scroll-desc">Set your daily activity goal.</p>
+                        </div>
+                        <div data-slot="drawer-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div data-slot="drawer-footer">
+                            <button type="button" data-slot="button">Submit</button>
+                            <button type="button" data-slot="button" data-variant="outline" data-drawer-close>Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="sides">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sides</h2>
+            <p data-slot="desc"><code>data-direction</code>으로 drawer가 나타날 방향을 지정합니다. <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="drawer-sides">
+                <div data-slot="drawer-side-group">
+                    <div data-slot="drawer">
+                        <div data-slot="drawer-trigger">
+                            <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">top</button>
+                        </div>
+                        <div data-slot="drawer-overlay" aria-hidden="true"></div>
+                        <div data-slot="drawer-content" data-direction="top" role="dialog" aria-modal="true"
+                             aria-labelledby="drawer-side-top-title" aria-describedby="drawer-side-top-desc">
+                            <div data-slot="drawer-handle" aria-hidden="true"></div>
+                            <div data-slot="drawer-header">
+                                <h2 data-slot="drawer-title" id="drawer-side-top-title">Move Goal</h2>
+                                <p data-slot="drawer-description" id="drawer-side-top-desc">Set your daily activity goal.</p>
+                            </div>
+                            <div data-slot="drawer-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div data-slot="drawer-footer">
+                                <button type="button" data-slot="button">Submit</button>
+                                <button type="button" data-slot="button" data-variant="outline" data-drawer-close>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="drawer">
+                        <div data-slot="drawer-trigger">
+                            <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">right</button>
+                        </div>
+                        <div data-slot="drawer-overlay" aria-hidden="true"></div>
+                        <div data-slot="drawer-content" data-direction="right" role="dialog" aria-modal="true"
+                             aria-labelledby="drawer-side-right-title" aria-describedby="drawer-side-right-desc">
+                            <div data-slot="drawer-header">
+                                <h2 data-slot="drawer-title" id="drawer-side-right-title">Move Goal</h2>
+                                <p data-slot="drawer-description" id="drawer-side-right-desc">Set your daily activity goal.</p>
+                            </div>
+                            <div data-slot="drawer-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div data-slot="drawer-footer">
+                                <button type="button" data-slot="button">Submit</button>
+                                <button type="button" data-slot="button" data-variant="outline" data-drawer-close>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="drawer">
+                        <div data-slot="drawer-trigger">
+                            <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">bottom</button>
+                        </div>
+                        <div data-slot="drawer-overlay" aria-hidden="true"></div>
+                        <div data-slot="drawer-content" data-direction="bottom" role="dialog" aria-modal="true"
+                             aria-labelledby="drawer-side-bottom-title" aria-describedby="drawer-side-bottom-desc">
+                            <div data-slot="drawer-handle" aria-hidden="true"></div>
+                            <div data-slot="drawer-header">
+                                <h2 data-slot="drawer-title" id="drawer-side-bottom-title">Move Goal</h2>
+                                <p data-slot="drawer-description" id="drawer-side-bottom-desc">Set your daily activity goal.</p>
+                            </div>
+                            <div data-slot="drawer-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div data-slot="drawer-footer">
+                                <button type="button" data-slot="button">Submit</button>
+                                <button type="button" data-slot="button" data-variant="outline" data-drawer-close>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="drawer">
+                        <div data-slot="drawer-trigger">
+                            <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">left</button>
+                        </div>
+                        <div data-slot="drawer-overlay" aria-hidden="true"></div>
+                        <div data-slot="drawer-content" data-direction="left" role="dialog" aria-modal="true"
+                             aria-labelledby="drawer-side-left-title" aria-describedby="drawer-side-left-desc">
+                            <div data-slot="drawer-header">
+                                <h2 data-slot="drawer-title" id="drawer-side-left-title">Move Goal</h2>
+                                <p data-slot="drawer-description" id="drawer-side-left-desc">Set your daily activity goal.</p>
+                            </div>
+                            <div data-slot="drawer-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div data-slot="drawer-footer">
+                                <button type="button" data-slot="button">Submit</button>
+                                <button type="button" data-slot="button" data-variant="outline" data-drawer-close>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">DrawerContent</h3>
+            <p data-slot="desc"><code>data-slot="drawer-content"</code> 요소는 <code>role="dialog"</code>과 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-direction</code></td>
+                        <td><code>"top"</code> | <code>"right"</code> | <code>"bottom"</code> | <code>"left"</code></td>
+                        <td><code>"bottom"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"dialog"</code></td>
+                        <td><code>"dialog"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-modal</code></td>
+                        <td><code>"true"</code></td>
+                        <td><code>"true"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-labelledby</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-describedby</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">DrawerClose</h3>
+            <p data-slot="desc"><code>data-drawer-close</code> 속성이 있는 요소를 클릭하면 drawer가 닫힙니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-drawer-close</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-slot="drawer-close"</code></td>
+                        <td><code>"drawer-close"</code></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#scrollable">Scrollable Content</a></li>
+                <li><a href="#sides">Sides</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

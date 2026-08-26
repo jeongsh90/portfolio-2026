@@ -1,0 +1,257 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Menubar</h1>
+            <p data-slot="desc">데스크톱 앱 스타일의 가로 메뉴 바입니다. 클릭으로 메뉴를 열고 서브메뉴, 체크박스, 라디오, 단축키를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="menubar-overview">
+                <div data-slot="menubar">
+                    <div data-slot="menubar-menu">
+                        <button type="button" data-slot="menubar-trigger">File</button>
+                        <div data-slot="menubar-content" data-state="closed" role="menu" aria-label="File">
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem">
+                                    New Tab
+                                    <span data-slot="menubar-shortcut">⌘T</span>
+                                </button>
+                                <button type="button" data-slot="menubar-item" role="menuitem">
+                                    New Window
+                                    <span data-slot="menubar-shortcut">⌘N</span>
+                                </button>
+                                <button type="button" data-slot="menubar-item" role="menuitem" disabled>New Incognito Window</button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <div data-slot="menubar-sub">
+                                    <button type="button" data-slot="menubar-sub-trigger" role="menuitem" aria-haspopup="menu" aria-expanded="false">Share</button>
+                                    <div data-slot="menubar-sub-content" data-state="closed" role="menu" aria-label="Share">
+                                        <div data-slot="menubar-group">
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Email link</button>
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Messages</button>
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Notes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem">
+                                    Print...
+                                    <span data-slot="menubar-shortcut">⌘P</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="menubar-menu">
+                        <button type="button" data-slot="menubar-trigger">Edit</button>
+                        <div data-slot="menubar-content" data-state="closed" role="menu" aria-label="Edit">
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem">
+                                    Undo
+                                    <span data-slot="menubar-shortcut">⌘Z</span>
+                                </button>
+                                <button type="button" data-slot="menubar-item" role="menuitem">
+                                    Redo
+                                    <span data-slot="menubar-shortcut">⇧⌘Z</span>
+                                </button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <div data-slot="menubar-sub">
+                                    <button type="button" data-slot="menubar-sub-trigger" role="menuitem" aria-haspopup="menu" aria-expanded="false">Find</button>
+                                    <div data-slot="menubar-sub-content" data-state="closed" role="menu" aria-label="Find">
+                                        <div data-slot="menubar-group">
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Search the web</button>
+                                        </div>
+                                        <div data-slot="menubar-separator"></div>
+                                        <div data-slot="menubar-group">
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Find...</button>
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Find Next</button>
+                                            <button type="button" data-slot="menubar-item" role="menuitem">Find Previous</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem">Cut</button>
+                                <button type="button" data-slot="menubar-item" role="menuitem">Copy</button>
+                                <button type="button" data-slot="menubar-item" role="menuitem">Paste</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="menubar-menu">
+                        <button type="button" data-slot="menubar-trigger">View</button>
+                        <div data-slot="menubar-content" data-state="closed" data-size="sm" role="menu" aria-label="View">
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-checkbox-item" role="menuitemcheckbox" aria-checked="false">Bookmarks Bar</button>
+                                <button type="button" data-slot="menubar-checkbox-item" role="menuitemcheckbox" aria-checked="true">Full URLs</button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem" data-inset="true">
+                                    Reload
+                                    <span data-slot="menubar-shortcut">⌘R</span>
+                                </button>
+                                <button type="button" data-slot="menubar-item" role="menuitem" data-inset="true" disabled>
+                                    Force Reload
+                                    <span data-slot="menubar-shortcut">⇧⌘R</span>
+                                </button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem" data-inset="true">Toggle Fullscreen</button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem" data-inset="true">Hide Sidebar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="menubar-menu">
+                        <button type="button" data-slot="menubar-trigger">Profiles</button>
+                        <div data-slot="menubar-content" data-state="closed" role="menu" aria-label="Profiles">
+                            <div data-slot="menubar-radio-group" data-value="benoit">
+                                <button type="button" data-slot="menubar-radio-item" role="menuitemradio" data-value="andy" aria-checked="false">Andy</button>
+                                <button type="button" data-slot="menubar-radio-item" role="menuitemradio" data-value="benoit" aria-checked="true">Benoit</button>
+                                <button type="button" data-slot="menubar-radio-item" role="menuitemradio" data-value="luis" aria-checked="false">Luis</button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem" data-inset="true">Edit...</button>
+                            </div>
+                            <div data-slot="menubar-separator"></div>
+                            <div data-slot="menubar-group">
+                                <button type="button" data-slot="menubar-item" role="menuitem" data-inset="true">Add Profile...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">MenubarContent</h3>
+            <p data-slot="desc"><code>data-slot="menubar-content"</code> 드롭다운 패널입니다. <code>data-state</code>로 열림 상태를 제어합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"open"</code> | <code>"closed"</code></td>
+                        <td><code>"closed"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"sm"</code></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MenubarItem</h3>
+            <p data-slot="desc"><code>data-slot="menubar-item"</code> 일반 메뉴 항목입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-inset</code></td>
+                        <td><code>"true"</code></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MenubarCheckboxItem</h3>
+            <p data-slot="desc"><code>data-slot="menubar-checkbox-item"</code> 토글 가능한 체크 항목입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MenubarRadioItem</h3>
+            <p data-slot="desc"><code>menubar-radio-group</code> 안에서 단일 선택 항목을 표시합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

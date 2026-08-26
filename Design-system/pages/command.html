@@ -1,0 +1,350 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Command</h1>
+            <p data-slot="desc">키보드 우선 명령 팔레트입니다. 검색 입력으로 항목을 필터링하고 <kbd>↑</kbd> <kbd>↓</kbd> <kbd>Enter</kbd>로 선택할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="command-overview">
+                <div data-slot="command" data-bordered="true">
+                    <div data-slot="command-input-wrapper">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                        <input type="text" data-slot="command-input" placeholder="Type a command or search..." autocomplete="off" aria-label="Search commands">
+                    </div>
+                    <div data-slot="command-list" role="listbox" aria-label="Suggestions">
+                        <div data-slot="command-empty" hidden>No results found.</div>
+                        <div data-slot="command-group">
+                            <div data-slot="command-group-heading">Suggestions</div>
+                            <button type="button" data-slot="command-item">
+                                <i data-lucide="calendar" aria-hidden="true"></i>
+                                Calendar
+                            </button>
+                            <button type="button" data-slot="command-item">
+                                <i data-lucide="smile" aria-hidden="true"></i>
+                                Search Emoji
+                            </button>
+                            <button type="button" data-slot="command-item">
+                                <i data-lucide="calculator" aria-hidden="true"></i>
+                                Calculator
+                            </button>
+                        </div>
+                        <div data-slot="command-separator"></div>
+                        <div data-slot="command-group">
+                            <div data-slot="command-group-heading">Settings</div>
+                            <button type="button" data-slot="command-item">
+                                <i data-lucide="user" aria-hidden="true"></i>
+                                Profile
+                            </button>
+                            <button type="button" data-slot="command-item">
+                                <i data-lucide="credit-card" aria-hidden="true"></i>
+                                Billing
+                            </button>
+                            <button type="button" data-slot="command-item">
+                                <i data-lucide="settings" aria-hidden="true"></i>
+                                Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">아이콘 없이 텍스트 항목만 사용하는 기본 형태입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="command-basic">
+                <div data-slot="command" data-bordered="true">
+                    <div data-slot="command-input-wrapper">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                        <input type="text" data-slot="command-input" placeholder="Search..." autocomplete="off" aria-label="Search">
+                    </div>
+                    <div data-slot="command-list" role="listbox">
+                        <div data-slot="command-empty" hidden>No results found.</div>
+                        <div data-slot="command-group">
+                            <button type="button" data-slot="command-item">Calendar</button>
+                            <button type="button" data-slot="command-item">Search Emoji</button>
+                            <button type="button" data-slot="command-item">Calculator</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="shortcuts">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Shortcuts</h2>
+            <p data-slot="desc"><code>command-shortcut</code> 슬롯으로 키보드 단축키를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="command-shortcuts">
+                <div data-slot="command" data-bordered="true">
+                    <div data-slot="command-input-wrapper">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                        <input type="text" data-slot="command-input" placeholder="Type a command or search..." autocomplete="off" aria-label="Search commands">
+                    </div>
+                    <div data-slot="command-list" role="listbox">
+                        <div data-slot="command-empty" hidden>No results found.</div>
+                        <div data-slot="command-group">
+                            <div data-slot="command-group-heading">Suggestions</div>
+                            <button type="button" data-slot="command-item">
+                                Calendar
+                                <span data-slot="command-shortcut">⌘K</span>
+                            </button>
+                            <button type="button" data-slot="command-item">
+                                Search Emoji
+                                <span data-slot="command-shortcut">⌘E</span>
+                            </button>
+                            <button type="button" data-slot="command-item">
+                                Calculator
+                                <span data-slot="command-shortcut">⌘C</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="groups">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Groups</h2>
+            <p data-slot="desc"><code>command-group</code>, <code>command-separator</code>로 항목을 묶습니다. <code>data-disabled="true"</code> 항목은 선택할 수 없습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="command-groups">
+                <div data-slot="command" data-bordered="true">
+                    <div data-slot="command-input-wrapper">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                        <input type="text" data-slot="command-input" placeholder="Search..." autocomplete="off" aria-label="Search">
+                    </div>
+                    <div data-slot="command-list" role="listbox">
+                        <div data-slot="command-empty" hidden>No results found.</div>
+                        <div data-slot="command-group">
+                            <div data-slot="command-group-heading">Fruits</div>
+                            <button type="button" data-slot="command-item">Apple</button>
+                            <button type="button" data-slot="command-item">Banana</button>
+                            <button type="button" data-slot="command-item" data-disabled="true">Orange</button>
+                        </div>
+                        <div data-slot="command-separator"></div>
+                        <div data-slot="command-group">
+                            <div data-slot="command-group-heading">Vegetables</div>
+                            <button type="button" data-slot="command-item">Carrot</button>
+                            <button type="button" data-slot="command-item">Broccoli</button>
+                            <button type="button" data-slot="command-item">Spinach</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="dialog">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Dialog</h2>
+            <p data-slot="desc"><code>Dialog</code> 안에 Command를 배치해 전역 명령 메뉴를 구성합니다. 다이얼로그가 열리면 검색 입력에 포커스가 이동합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="command-dialog">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Open Menu</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-command="true" role="dialog" aria-modal="true"
+                         aria-label="Command menu" aria-hidden="true">
+                        <div data-slot="command">
+                            <div data-slot="command-input-wrapper">
+                                <i data-lucide="search" aria-hidden="true"></i>
+                                <input type="text" data-slot="command-input" placeholder="Type a command or search..." autocomplete="off" aria-label="Search commands">
+                            </div>
+                            <div data-slot="command-list" role="listbox">
+                                <div data-slot="command-empty" hidden>No results found.</div>
+                                <div data-slot="command-group">
+                                    <div data-slot="command-group-heading">Suggestions</div>
+                                    <button type="button" data-slot="command-item">
+                                        <i data-lucide="calendar" aria-hidden="true"></i>
+                                        Calendar
+                                    </button>
+                                    <button type="button" data-slot="command-item">
+                                        <i data-lucide="smile" aria-hidden="true"></i>
+                                        Search Emoji
+                                    </button>
+                                    <button type="button" data-slot="command-item">
+                                        <i data-lucide="calculator" aria-hidden="true"></i>
+                                        Calculator
+                                    </button>
+                                </div>
+                                <div data-slot="command-separator"></div>
+                                <div data-slot="command-group">
+                                    <div data-slot="command-group-heading">Settings</div>
+                                    <button type="button" data-slot="command-item">
+                                        <i data-lucide="user" aria-hidden="true"></i>
+                                        Profile
+                                    </button>
+                                    <button type="button" data-slot="command-item">
+                                        <i data-lucide="credit-card" aria-hidden="true"></i>
+                                        Billing
+                                    </button>
+                                    <button type="button" data-slot="command-item">
+                                        <i data-lucide="settings" aria-hidden="true"></i>
+                                        Settings
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="scrollable">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Scrollable</h2>
+            <p data-slot="desc">항목이 많을 때 <code>command-list</code>가 스크롤됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="command-scrollable">
+                <div data-slot="dialog">
+                    <div data-slot="dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" aria-haspopup="dialog" aria-expanded="false">Open Scrollable Menu</button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-command="true" role="dialog" aria-modal="true"
+                         aria-label="Scrollable command menu" aria-hidden="true">
+                        <div data-slot="command">
+                            <div data-slot="command-input-wrapper">
+                                <i data-lucide="search" aria-hidden="true"></i>
+                                <input type="text" data-slot="command-input" placeholder="Type a command or search..." autocomplete="off" aria-label="Search commands">
+                            </div>
+                            <div data-slot="command-list" role="listbox">
+                                <div data-slot="command-empty" hidden>No results found.</div>
+                                <div data-slot="command-group">
+                                    <div data-slot="command-group-heading">Suggestions</div>
+                                    <button type="button" data-slot="command-item"><i data-lucide="calendar" aria-hidden="true"></i> Calendar</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="smile" aria-hidden="true"></i> Search Emoji</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="calculator" aria-hidden="true"></i> Calculator</button>
+                                </div>
+                                <div data-slot="command-separator"></div>
+                                <div data-slot="command-group">
+                                    <div data-slot="command-group-heading">Settings</div>
+                                    <button type="button" data-slot="command-item"><i data-lucide="user" aria-hidden="true"></i> Profile</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="credit-card" aria-hidden="true"></i> Billing</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="settings" aria-hidden="true"></i> Settings</button>
+                                </div>
+                                <div data-slot="command-separator"></div>
+                                <div data-slot="command-group">
+                                    <div data-slot="command-group-heading">Navigation</div>
+                                    <button type="button" data-slot="command-item"><i data-lucide="home" aria-hidden="true"></i> Home</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="inbox" aria-hidden="true"></i> Inbox</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="file-text" aria-hidden="true"></i> Documents</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="folder" aria-hidden="true"></i> Projects</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="users" aria-hidden="true"></i> Team</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="bar-chart-3" aria-hidden="true"></i> Analytics</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="bell" aria-hidden="true"></i> Notifications</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="help-circle" aria-hidden="true"></i> Help</button>
+                                </div>
+                                <div data-slot="command-separator"></div>
+                                <div data-slot="command-group">
+                                    <div data-slot="command-group-heading">Actions</div>
+                                    <button type="button" data-slot="command-item"><i data-lucide="plus" aria-hidden="true"></i> New File</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="upload" aria-hidden="true"></i> Upload</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="download" aria-hidden="true"></i> Download</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="share-2" aria-hidden="true"></i> Share</button>
+                                    <button type="button" data-slot="command-item"><i data-lucide="trash-2" aria-hidden="true"></i> Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Command</h3>
+            <p data-slot="desc"><code>data-slot="command"</code> 루트에 아래 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-bordered="true"</code></td>
+                        <td>boolean</td>
+                        <td>테두리 표시 (인라인 팔레트용)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 data-slot="typography-h3">CommandItem</h3>
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-disabled="true"</code></td>
+                        <td>항목 비활성화 (선택·키보드 탐색 제외)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-selected="true"</code></td>
+                        <td>키보드/마우스로 강조된 항목 (JS가 설정)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 data-slot="typography-h3">Dialog (Command Dialog)</h3>
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-command="true"</code></td>
+                        <td><code>dialog-content</code>에 적용 — 패딩 제거, 닫기 버튼 숨김</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#shortcuts">Shortcuts</a></li>
+                <li><a href="#groups">Groups</a></li>
+                <li><a href="#dialog">Dialog</a></li>
+                <li><a href="#scrollable">Scrollable</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

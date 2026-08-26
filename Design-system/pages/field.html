@@ -1,0 +1,553 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Field</h1>
+            <p data-slot="desc">라벨·설명·검증·레이아웃을 일관되게 묶는 폼 필드 컴포넌트입니다. <code>FieldSet</code>, <code>FieldGroup</code>, <code>Field</code> 슬롯으로 입력·선택·액션을 조합합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-overview">
+                <form>
+                    <div data-slot="field-group">
+                        <fieldset data-slot="field-set">
+                            <legend data-slot="field-legend">Payment Method</legend>
+                            <p data-slot="field-description">All transactions are secure and encrypted.</p>
+                            <div data-slot="field-group">
+                                <div data-slot="field" role="group">
+                                    <label data-slot="field-label" for="field-overview-card-name">Name on Card</label>
+                                    <input type="text" id="field-overview-card-name" data-slot="input" placeholder="Evil Rabbit" required>
+                                </div>
+                                <div data-slot="field" role="group">
+                                    <label data-slot="field-label" for="field-overview-card-number">Card Number</label>
+                                    <input type="text" id="field-overview-card-number" data-slot="input" placeholder="1234 5678 9012 3456" required>
+                                    <p data-slot="field-description">Enter your 16-digit card number.</p>
+                                </div>
+                                <div class="field-form-grid-3">
+                                    <div data-slot="field" role="group">
+                                        <label data-slot="field-label" for="field-overview-exp-month">Month</label>
+                                        <div data-slot="select">
+                                            <button type="button" id="field-overview-exp-month" data-slot="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                                <span data-slot="select-value">MM</span>
+                                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                                            </button>
+                                            <div data-slot="select-content" data-state="closed" role="listbox" aria-label="Month">
+                                                <button type="button" data-slot="select-item" role="option">01</button>
+                                                <button type="button" data-slot="select-item" role="option">06</button>
+                                                <button type="button" data-slot="select-item" role="option">12</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="field" role="group">
+                                        <label data-slot="field-label" for="field-overview-exp-year">Year</label>
+                                        <div data-slot="select">
+                                            <button type="button" id="field-overview-exp-year" data-slot="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                                <span data-slot="select-value">YYYY</span>
+                                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                                            </button>
+                                            <div data-slot="select-content" data-state="closed" role="listbox" aria-label="Year">
+                                                <button type="button" data-slot="select-item" role="option">2025</button>
+                                                <button type="button" data-slot="select-item" role="option">2026</button>
+                                                <button type="button" data-slot="select-item" role="option">2027</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="field" role="group">
+                                        <label data-slot="field-label" for="field-overview-cvv">CVV</label>
+                                        <input type="text" id="field-overview-cvv" data-slot="input" placeholder="123" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div data-slot="field-separator"><div data-slot="separator"></div></div>
+                        <fieldset data-slot="field-set">
+                            <legend data-slot="field-legend">Billing Address</legend>
+                            <p data-slot="field-description">The billing address associated with your payment method.</p>
+                            <div data-slot="field-group">
+                                <div data-slot="field" role="group" data-orientation="horizontal">
+                                    <button type="button" role="checkbox" data-slot="checkbox" id="field-overview-same-shipping" aria-checked="true" data-checked="true" aria-label="Same as shipping address">
+                                        <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                    </button>
+                                    <label data-slot="field-label" data-weight="normal" for="field-overview-same-shipping">Same as shipping address</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset data-slot="field-set">
+                            <div data-slot="field-group">
+                                <div data-slot="field" role="group">
+                                    <label data-slot="field-label" for="field-overview-comments">Comments</label>
+                                    <textarea id="field-overview-comments" data-slot="textarea" placeholder="Add any additional comments" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="submit" data-slot="button">Submit</button>
+                            <button type="button" data-slot="button" data-variant="outline">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="input">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Input</h2>
+            <p data-slot="desc"><code>FieldLabel</code>, <code>Input</code>, <code>FieldDescription</code>으로 텍스트 입력 필드를 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-input">
+                <fieldset data-slot="field-set">
+                    <div data-slot="field-group">
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="field-input-username">Username</label>
+                            <input type="text" id="field-input-username" data-slot="input" placeholder="Max Leiter">
+                            <p data-slot="field-description">Choose a unique username for your account.</p>
+                        </div>
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="field-input-password">Password</label>
+                            <p data-slot="field-description">Must be at least 8 characters long.</p>
+                            <input type="password" id="field-input-password" data-slot="input" placeholder="••••••••">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="textarea">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Textarea</h2>
+            <p data-slot="desc">여러 줄 입력에도 동일한 Field 패턴을 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-textarea">
+                <fieldset data-slot="field-set">
+                    <div data-slot="field-group">
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="field-textarea-feedback">Feedback</label>
+                            <textarea id="field-textarea-feedback" data-slot="textarea" placeholder="Your feedback helps us improve..." rows="4"></textarea>
+                            <p data-slot="field-description">Share your thoughts about our service.</p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="select">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Select</h2>
+            <p data-slot="desc"><code>Select</code> 트리거를 Field 안에 배치해 라벨·설명과 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-select">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="field-select-dept">Department</label>
+                    <div data-slot="select">
+                        <button type="button" id="field-select-dept" data-slot="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                            <span data-slot="select-value">Choose department</span>
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div data-slot="select-content" data-state="closed" role="listbox" aria-label="Department">
+                            <button type="button" data-slot="select-item" role="option">Engineering</button>
+                            <button type="button" data-slot="select-item" role="option">Design</button>
+                            <button type="button" data-slot="select-item" role="option">Marketing</button>
+                            <button type="button" data-slot="select-item" role="option">Sales</button>
+                        </div>
+                    </div>
+                    <p data-slot="field-description">Select your department or area of work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="fieldset">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Fieldset</h2>
+            <p data-slot="desc"><code>FieldSet</code>과 <code>FieldLegend</code>으로 관련 필드를 시맨틱하게 그룹화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-fieldset">
+                <fieldset data-slot="field-set">
+                    <legend data-slot="field-legend">Address Information</legend>
+                    <p data-slot="field-description">We need your address to deliver your order.</p>
+                    <div data-slot="field-group">
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="field-fieldset-street">Street Address</label>
+                            <input type="text" id="field-fieldset-street" data-slot="input" placeholder="123 Main St">
+                        </div>
+                        <div class="field-form-grid-2">
+                            <div data-slot="field" role="group">
+                                <label data-slot="field-label" for="field-fieldset-city">City</label>
+                                <input type="text" id="field-fieldset-city" data-slot="input" placeholder="New York">
+                            </div>
+                            <div data-slot="field" role="group">
+                                <label data-slot="field-label" for="field-fieldset-zip">Postal Code</label>
+                                <input type="text" id="field-fieldset-zip" data-slot="input" placeholder="90502">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="checkbox">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Checkbox</h2>
+            <p data-slot="desc">가로 <code>Field</code>와 <code>FieldSeparator</code>로 체크박스 목록을 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-checkbox">
+                <div data-slot="field-group">
+                    <fieldset data-slot="field-set">
+                        <legend data-slot="field-legend" data-variant="label">Show these items on the desktop</legend>
+                        <p data-slot="field-description">Select the items you want to show on the desktop.</p>
+                        <div data-slot="checkbox-group">
+                            <div data-slot="field" role="group" data-orientation="horizontal">
+                                <button type="button" role="checkbox" data-slot="checkbox" id="field-cb-hard-disks" aria-checked="false" aria-label="Hard disks">
+                                    <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                </button>
+                                <label data-slot="field-label" data-weight="normal" for="field-cb-hard-disks">Hard disks</label>
+                            </div>
+                            <div data-slot="field" role="group" data-orientation="horizontal">
+                                <button type="button" role="checkbox" data-slot="checkbox" id="field-cb-external-disks" aria-checked="false" aria-label="External disks">
+                                    <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                </button>
+                                <label data-slot="field-label" data-weight="normal" for="field-cb-external-disks">External disks</label>
+                            </div>
+                            <div data-slot="field" role="group" data-orientation="horizontal">
+                                <button type="button" role="checkbox" data-slot="checkbox" id="field-cb-cds" aria-checked="false" aria-label="CDs, DVDs, and iPods">
+                                    <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                </button>
+                                <label data-slot="field-label" data-weight="normal" for="field-cb-cds">CDs, DVDs, and iPods</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div data-slot="field-separator"><div data-slot="separator"></div></div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="checkbox" data-slot="checkbox" id="field-cb-sync" aria-checked="true" data-checked="true" aria-label="Sync Desktop and Documents folders">
+                            <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                        </button>
+                        <div data-slot="field-content">
+                            <label data-slot="field-label" for="field-cb-sync">Sync Desktop &amp; Documents folders</label>
+                            <p data-slot="field-description">Your Desktop &amp; Documents folders are being synced with iCloud Drive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="radio">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Radio</h2>
+            <p data-slot="desc"><code>RadioGroup</code> 항목을 가로 <code>Field</code>로 감싸 라벨과 정렬합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-radio">
+                <fieldset data-slot="field-set">
+                    <legend data-slot="field-legend" data-variant="label">Subscription Plan</legend>
+                    <p data-slot="field-description">Yearly and lifetime plans offer significant savings.</p>
+                    <div data-slot="radio-group" role="radiogroup" data-default-value="monthly" aria-label="Subscription Plan">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="monthly" id="field-radio-monthly" aria-checked="false" aria-label="Monthly">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="field-radio-monthly">Monthly ($9.99/month)</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="yearly" id="field-radio-yearly" aria-checked="false" aria-label="Yearly">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="field-radio-yearly">Yearly ($99.99/year)</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="lifetime" id="field-radio-lifetime" aria-checked="false" aria-label="Lifetime">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="field-radio-lifetime">Lifetime ($299.99)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="switch">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Switch</h2>
+            <p data-slot="desc"><code>data-orientation="horizontal"</code>으로 라벨과 스위치를 한 줄에 배치합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-switch">
+                <div data-slot="field" role="group" data-orientation="horizontal">
+                    <label data-slot="field-label" for="field-switch-2fa">Multi-factor authentication</label>
+                    <button type="button" role="switch" data-slot="switch" id="field-switch-2fa" aria-checked="false" data-state="unchecked" aria-label="Multi-factor authentication">
+                        <span data-slot="switch-thumb"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="choice-card">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Choice Card</h2>
+            <p data-slot="desc"><code>FieldLabel</code>이 <code>Field</code> 전체를 감싸 선택 가능한 카드 UI를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-choice-card">
+                <div data-slot="field-group">
+                    <fieldset data-slot="field-set">
+                        <legend data-slot="field-legend" data-variant="label">Compute Environment</legend>
+                        <p data-slot="field-description">Select the compute environment for your cluster.</p>
+                        <div data-slot="radio-group" role="radiogroup" data-default-value="kubernetes" aria-label="Compute Environment">
+                            <label data-slot="field-label" data-choice-card="true" for="field-choice-k8s">
+                                <div data-slot="field" role="group" data-orientation="horizontal">
+                                    <div data-slot="field-content">
+                                        <span data-slot="field-label">Kubernetes</span>
+                                        <p data-slot="field-description">Run GPU workloads on a K8s cluster.</p>
+                                    </div>
+                                    <button type="button" role="radio" data-slot="radio-group-item" data-value="kubernetes" id="field-choice-k8s" aria-checked="false" aria-label="Kubernetes">
+                                        <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                                    </button>
+                                </div>
+                            </label>
+                            <label data-slot="field-label" data-choice-card="true" for="field-choice-vm">
+                                <div data-slot="field" role="group" data-orientation="horizontal">
+                                    <div data-slot="field-content">
+                                        <span data-slot="field-label">Virtual Machine</span>
+                                        <p data-slot="field-description">Access a cluster to run GPU workloads.</p>
+                                    </div>
+                                    <button type="button" role="radio" data-slot="radio-group-item" data-value="vm" id="field-choice-vm" aria-checked="false" aria-label="Virtual Machine">
+                                        <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                                    </button>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="field-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Field Group</h2>
+            <p data-slot="desc"><code>FieldGroup</code>으로 여러 섹션을 쌓고, <code>FieldSeparator</code>로 구분합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-group-example">
+                <div data-slot="field-group">
+                    <fieldset data-slot="field-set">
+                        <label data-slot="field-label">Responses</label>
+                        <p data-slot="field-description">Get notified when ChatGPT responds to requests that take time.</p>
+                        <div data-slot="checkbox-group">
+                            <div data-slot="field" role="group" data-orientation="horizontal" data-disabled="true">
+                                <button type="button" role="checkbox" data-slot="checkbox" id="field-group-push" aria-checked="true" data-checked="true" disabled aria-label="Push notifications">
+                                    <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                </button>
+                                <label data-slot="field-label" data-weight="normal" for="field-group-push">Push notifications</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div data-slot="field-separator"><div data-slot="separator"></div></div>
+                    <fieldset data-slot="field-set">
+                        <label data-slot="field-label">Tasks</label>
+                        <p data-slot="field-description">Get notified when tasks you&apos;ve created have updates. <a href="#">Manage tasks</a></p>
+                        <div data-slot="checkbox-group">
+                            <div data-slot="field" role="group" data-orientation="horizontal">
+                                <button type="button" role="checkbox" data-slot="checkbox" id="field-group-push-tasks" aria-checked="false" aria-label="Push notifications for tasks">
+                                    <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                </button>
+                                <label data-slot="field-label" data-weight="normal" for="field-group-push-tasks">Push notifications</label>
+                            </div>
+                            <div data-slot="field" role="group" data-orientation="horizontal">
+                                <button type="button" role="checkbox" data-slot="checkbox" id="field-group-email-tasks" aria-checked="false" aria-label="Email notifications for tasks">
+                                    <span data-slot="checkbox-indicator" aria-hidden="true"><i data-lucide="check"></i></span>
+                                </button>
+                                <label data-slot="field-label" data-weight="normal" for="field-group-email-tasks">Email notifications</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="responsive">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Responsive Layout</h2>
+            <p data-slot="desc"><code>data-orientation="responsive"</code>와 <code>FieldGroup</code> container query로 뷰포트에 따라 세로·가로 레이아웃이 전환됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-responsive">
+                <form>
+                    <fieldset data-slot="field-set">
+                        <legend data-slot="field-legend">Profile</legend>
+                        <p data-slot="field-description">Fill in your profile information.</p>
+                        <div data-slot="field-group">
+                            <div data-slot="field" role="group" data-orientation="responsive">
+                                <div data-slot="field-content">
+                                    <label data-slot="field-label" for="field-responsive-name">Name</label>
+                                    <p data-slot="field-description">Provide your full name for identification.</p>
+                                </div>
+                                <input type="text" id="field-responsive-name" data-slot="input" placeholder="Evil Rabbit" required>
+                            </div>
+                            <div data-slot="field" role="group" data-orientation="responsive">
+                                <button type="submit" data-slot="button">Submit</button>
+                                <button type="button" data-slot="button" data-variant="outline">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="validation">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Validation and Errors</h2>
+            <p data-slot="desc"><code>data-invalid="true"</code>와 <code>FieldError</code>로 검증 오류를 표시합니다. 입력에는 <code>aria-invalid</code>을 함께 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="field-validation">
+                <div data-slot="field" role="group" data-invalid="true">
+                    <label data-slot="field-label" for="field-validation-email">Email</label>
+                    <input type="email" id="field-validation-email" data-slot="input" placeholder="name@example.com" aria-invalid="true">
+                    <p data-slot="field-error" role="alert">Enter a valid email address.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Field</h3>
+            <p data-slot="desc">단일 필드 래퍼. <code>role="group"</code>과 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"vertical"</code> | <code>"horizontal"</code> | <code>"responsive"</code></td>
+                        <td><code>"vertical"</code></td>
+                        <td>라벨·컨트롤 배치 방향</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>전체 필드 오류 스타일</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>비활성 스타일 (자식 <code>:disabled</code>와 함께 사용)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">FieldSet</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">엘리먼트</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>field-set</code></td>
+                        <td><code>&lt;fieldset&gt;</code></td>
+                        <td>관련 필드 그룹 컨테이너</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-legend</code></td>
+                        <td><code>&lt;legend&gt;</code></td>
+                        <td><code>data-variant="label"</code>로 라벨 크기 정렬</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-group</code></td>
+                        <td><code>&lt;div&gt;</code></td>
+                        <td>Field 스택·container query 부모</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-label</code></td>
+                        <td><code>&lt;label&gt;</code></td>
+                        <td>필드 라벨. <code>data-weight="normal"</code>, <code>data-choice-card="true"</code> 지원</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-content</code></td>
+                        <td><code>&lt;div&gt;</code></td>
+                        <td>가로 레이아웃에서 라벨·설명 묶음</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-description</code></td>
+                        <td><code>&lt;p&gt;</code></td>
+                        <td>보조 설명 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-error</code></td>
+                        <td><code>&lt;p&gt;</code></td>
+                        <td>검증 오류 메시지 (<code>role="alert"</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-separator</code></td>
+                        <td><code>&lt;div&gt;</code></td>
+                        <td>FieldGroup 내 섹션 구분선</td>
+                    </tr>
+                    <tr>
+                        <td><code>field-row</code></td>
+                        <td><code>&lt;div&gt;</code></td>
+                        <td>라벨·부가 UI를 양쪽 정렬</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#input">Input</a></li>
+                <li><a href="#textarea">Textarea</a></li>
+                <li><a href="#select">Select</a></li>
+                <li><a href="#fieldset">Fieldset</a></li>
+                <li><a href="#checkbox">Checkbox</a></li>
+                <li><a href="#radio">Radio</a></li>
+                <li><a href="#switch">Switch</a></li>
+                <li><a href="#choice-card">Choice Card</a></li>
+                <li><a href="#field-group">Field Group</a></li>
+                <li><a href="#responsive">Responsive Layout</a></li>
+                <li><a href="#validation">Validation and Errors</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

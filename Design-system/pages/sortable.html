@@ -1,0 +1,460 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Sortable</h1>
+            <p data-slot="desc">드래그 앤 드롭으로 리스트 순서를 변경하는 Sortable 컴포넌트입니다. SortableJS로 동작하고, 스타일은 shadcn <code>Item</code> 마크업을 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sortable-overview">
+                <div class="sortable-demo-md">
+                    <div data-slot="sortable" data-handle="true">
+                        <div data-slot="sortable-item" data-value="product-demo">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="image" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Product Demo</div>
+                                    <p data-slot="item-description">Main product image · 2.4 MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="product-spec">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="file-text" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Product Specification</div>
+                                    <p data-slot="item-description">Technical details document · 1.2 MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="demo-video">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="video" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Product Demo Video</div>
+                                    <p data-slot="item-description">How to use the product · 15.7 MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="audio-guide">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="music" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Product Audio Guide</div>
+                                    <p data-slot="item-description">Audio instructions · 8.3 MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="gallery-photo">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="image" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Gallery Photo 1</div>
+                                    <p data-slot="item-description">Product view 1 · 3.1 MB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="handle">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Handle</h2>
+            <p data-slot="desc"><code>SortableItemHandle</code>로 드래그 핸들만 잡아 순서를 변경합니다. <code>grip-vertical</code> 아이콘을 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sortable-handle">
+                <div class="sortable-demo-md">
+                    <div data-slot="sortable" data-handle="true">
+                        <div data-slot="sortable-item" data-value="task-1">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Review pull request</div>
+                                    <p data-slot="item-description">Design system documentation updates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="task-2">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Update component tokens</div>
+                                    <p data-slot="item-description">Sync spacing variables with registry</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="task-3">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Ship sortable demo</div>
+                                    <p data-slot="item-description">Add drag-and-drop examples to docs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="without-handle">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Without Handle</h2>
+            <p data-slot="desc"><code>data-handle="false"</code>로 항목 전체를 드래그해 순서를 변경합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sortable-without-handle">
+                <div class="sortable-demo-md">
+                    <div data-slot="sortable" data-handle="false">
+                        <div data-slot="sortable-item" data-value="inbox">
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="inbox" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Inbox</div>
+                                    <p data-slot="item-description">12 unread messages</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="drafts">
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="file-text" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Drafts</div>
+                                    <p data-slot="item-description">3 saved drafts</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="sent">
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-media" data-variant="icon">
+                                    <i data-lucide="send" aria-hidden="true"></i>
+                                </div>
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Sent</div>
+                                    <p data-slot="item-description">Recently sent mail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="grid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Grid</h2>
+            <p data-slot="desc"><code>data-layout="grid"</code>로 그리드 레이아웃에서 항목을 재정렬합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sortable-grid">
+                <div class="sortable-demo-grid">
+                    <div data-slot="sortable" data-layout="grid" data-handle="false">
+                        <div data-slot="sortable-item" data-value="white">
+                            <div class="sortable-grid-tile">White</div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="black">
+                            <div class="sortable-grid-tile">Black</div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="grey">
+                            <div class="sortable-grid-tile">Grey</div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="green">
+                            <div class="sortable-grid-tile">Green</div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="small">
+                            <div class="sortable-grid-tile">Small</div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="medium">
+                            <div class="sortable-grid-tile">Medium</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="nested">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Nested</h2>
+            <p data-slot="desc"><code>data-layout="nested"</code>와 <code>data-group</code>으로 중첩 리스트를 재정렬합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sortable-nested">
+                <div class="sortable-demo-md">
+                    <div data-slot="sortable" data-layout="nested" data-group="sortable-panels" data-handle="true">
+                        <div data-slot="sortable-item" data-value="colors">
+                            <div class="sortable-nested-panel">
+                                <p class="sortable-nested-label">Colors</p>
+                                <div data-slot="sortable" data-group="sortable-items" data-handle="true">
+                                    <div data-slot="sortable-item" data-value="white">
+                                        <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                            <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Drag to reorder</span>
+                                        </button>
+                                        <div class="sortable-nested-chip"><span>White</span></div>
+                                    </div>
+                                    <div data-slot="sortable-item" data-value="black">
+                                        <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                            <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Drag to reorder</span>
+                                        </button>
+                                        <div class="sortable-nested-chip"><span>Black</span></div>
+                                    </div>
+                                    <div data-slot="sortable-item" data-value="grey">
+                                        <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                            <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Drag to reorder</span>
+                                        </button>
+                                        <div class="sortable-nested-chip"><span>Grey</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="sizes">
+                            <div class="sortable-nested-panel">
+                                <p class="sortable-nested-label">Sizes</p>
+                                <div data-slot="sortable" data-group="sortable-items" data-handle="true">
+                                    <div data-slot="sortable-item" data-value="small">
+                                        <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                            <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Drag to reorder</span>
+                                        </button>
+                                        <div class="sortable-nested-chip"><span>Small</span></div>
+                                    </div>
+                                    <div data-slot="sortable-item" data-value="medium">
+                                        <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                            <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Drag to reorder</span>
+                                        </button>
+                                        <div class="sortable-nested-chip"><span>Medium</span></div>
+                                    </div>
+                                    <div data-slot="sortable-item" data-value="large">
+                                        <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                            <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                            <span data-slot="sr-only">Drag to reorder</span>
+                                        </button>
+                                        <div class="sortable-nested-chip"><span>Large</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>data-disabled="true"</code>로 특정 항목의 드래그를 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sortable-disabled">
+                <div class="sortable-demo-md">
+                    <div data-slot="sortable" data-handle="true">
+                        <div data-slot="sortable-item" data-value="active-1">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Active item</div>
+                                    <p data-slot="item-description">This item can be reordered.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="locked" data-disabled="true">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder" disabled>
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Locked item</div>
+                                    <p data-slot="item-description">This item cannot be moved.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="sortable-item" data-value="active-2">
+                            <button type="button" data-slot="sortable-item-handle" aria-label="Drag to reorder">
+                                <i data-lucide="grip-vertical" aria-hidden="true"></i>
+                                <span data-slot="sr-only">Drag to reorder</span>
+                            </button>
+                            <div data-slot="item" data-variant="outline" data-size="sm">
+                                <div data-slot="item-content">
+                                    <div data-slot="item-title">Another active item</div>
+                                    <p data-slot="item-description">Drag using the handle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Sortable</h3>
+            <p data-slot="desc"><code>data-slot="sortable"</code> 루트 컨테이너입니다. SortableJS로 드래그 정렬을 처리합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-layout</code></td>
+                        <td><code>"vertical"</code> | <code>"grid"</code> | <code>"nested"</code></td>
+                        <td><code>"vertical"</code></td>
+                        <td>리스트 레이아웃.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-handle</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"true"</code></td>
+                        <td>핸들로만 드래그할지 여부.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-group</code></td>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>중첩·공유 그룹 이름.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">SortableItem</h3>
+            <p data-slot="desc"><code>data-slot="sortable-item"</code> 드래그 가능한 항목입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>항목 고유 ID.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>드래그 비활성화.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">SortableItemHandle</h3>
+            <p data-slot="desc"><code>data-slot="sortable-item-handle"</code> 드래그 핸들 버튼입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty"><code>aria-label="Drag to reorder"</code> 권장.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#handle">Handle</a></li>
+                <li><a href="#without-handle">Without Handle</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#nested">Nested</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

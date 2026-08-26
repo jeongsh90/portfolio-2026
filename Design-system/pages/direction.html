@@ -1,0 +1,118 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Direction</h1>
+            <p data-slot="desc">앱의 텍스트 방향(<code>ltr</code> 또는 <code>rtl</code>)을 설정하는 프로바이더입니다. <code>data-slot="direction-provider"</code>로 콘텐츠를 감싸고 <code>dir</code> 또는 <code>data-direction</code>으로 방향을 지정합니다. 자식 컴포넌트는 논리 속성(<code>margin-inline-start</code>, <code>padding-inline</code> 등)을 사용하면 LTR·RTL 모두에서 올바르게 배치됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="direction-overview" data-direction-demo>
+                <div class="direction-demo">
+                    <div class="direction-lang-toolbar">
+                        <div data-slot="combobox" data-mode="select" data-direction-lang data-default-value="ar">
+                            <div data-slot="input-group">
+                                <input type="text" data-slot="combobox-input" id="direction-lang" placeholder="Select language" readonly autocomplete="off" aria-label="Select language">
+                                <button type="button" data-slot="input-group-button" data-combobox-trigger aria-expanded="false" aria-label="Open options">
+                                    <i data-lucide="chevron-down" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div data-slot="combobox-content" data-state="closed">
+                                <div data-slot="combobox-list" role="listbox">
+                                    <div data-slot="combobox-item" data-value="en" role="option">English</div>
+                                    <div data-slot="combobox-item" data-value="ar" role="option">العربية</div>
+                                    <div data-slot="combobox-item" data-value="he" role="option">עברית</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="direction-provider" dir="rtl" data-direction="rtl">
+                        <div class="card-demo-sm">
+                            <div data-slot="card">
+                                <div data-slot="card-header">
+                                    <div data-slot="card-title" data-direction-key="title">تسجيل الدخول إلى حسابك</div>
+                                    <div data-slot="card-description" data-direction-key="description">أدخل بريدك الإلكتروني أدناه لتسجيل الدخول إلى حسابك</div>
+                                    <div data-slot="card-action">
+                                        <button type="button" data-slot="button" data-variant="link" data-direction-key="signUp">إنشاء حساب</button>
+                                    </div>
+                                </div>
+                                <div data-slot="card-content">
+                                    <form>
+                                        <div class="card-form-fields">
+                                            <div data-slot="field" role="group">
+                                                <label data-slot="field-label" for="direction-email" data-direction-key="email">البريد الإلكتروني</label>
+                                                <input type="email" id="direction-email" data-slot="input" data-direction-key="emailPlaceholder" placeholder="m@example.com" required>
+                                            </div>
+                                            <div data-slot="field" role="group">
+                                                <div data-slot="field-row">
+                                                    <label data-slot="field-label" for="direction-password" data-direction-key="password">كلمة المرور</label>
+                                                    <a href="#" class="card-forgot-link" data-direction-key="forgotPassword">نسيت كلمة المرور؟</a>
+                                                </div>
+                                                <input type="password" id="direction-password" data-slot="input" required>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div data-slot="card-footer" data-orientation="vertical">
+                                    <button type="button" data-slot="button" data-direction-key="login">تسجيل الدخول</button>
+                                    <button type="button" data-slot="button" data-variant="outline" data-direction-key="loginWithGoogle">تسجيل الدخول باستخدام Google</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">DirectionProvider</h3>
+            <p data-slot="desc"><code>data-slot="direction-provider"</code> 래퍼에 텍스트 방향을 지정합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slot</code></td>
+                        <td><code>"direction-provider"</code></td>
+                        <td>—</td>
+                        <td>DirectionProvider 래퍼를 식별합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>dir</code></td>
+                        <td><code>"ltr"</code> | <code>"rtl"</code></td>
+                        <td><code>"ltr"</code></td>
+                        <td>HTML 방향 속성. 자식 요소에 상속됩니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-direction</code></td>
+                        <td><code>"ltr"</code> | <code>"rtl"</code></td>
+                        <td><code>"ltr"</code></td>
+                        <td><code>dir</code>과 동기화되는 데이터 속성. CSS·JS 상태 참조용.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

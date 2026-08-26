@@ -1,0 +1,149 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Hover Card</h1>
+            <p data-slot="desc">트리거에 마우스를 올리거나 포커스할 때 추가 정보를 카드 형태로 표시하는 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="hover-card-overview">
+                <div data-slot="hover-card" data-open-delay="10" data-close-delay="100">
+                    <span data-slot="hover-card-trigger">
+                        <button type="button" data-slot="button" data-variant="link">Hover Here</button>
+                    </span>
+                    <div data-slot="hover-card-content" data-state="closed" data-side="bottom" role="dialog" aria-labelledby="hover-card-overview-title">
+                        <div data-slot="hover-card-title" id="hover-card-overview-title">@nextjs</div>
+                        <div>The React Framework – created and maintained by @vercel.</div>
+                        <div data-slot="hover-card-meta">Joined December 2021</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="sides">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sides</h2>
+            <p data-slot="desc"><code>data-side</code>으로 카드가 나타날 방향을 지정합니다. <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="hover-card-sides">
+                <div data-slot="hover-card-side-group">
+                    <div data-slot="hover-card" data-open-delay="100" data-close-delay="100">
+                        <span data-slot="hover-card-trigger">
+                            <button type="button" data-slot="button" data-variant="outline">left</button>
+                        </span>
+                        <div data-slot="hover-card-content" data-state="closed" data-side="left" role="dialog" aria-labelledby="hover-card-left-title">
+                            <div data-slot="hover-card-title" id="hover-card-left-title">Hover Card</div>
+                            <div>This hover card appears on the left side of the trigger.</div>
+                        </div>
+                    </div>
+                    <div data-slot="hover-card" data-open-delay="100" data-close-delay="100">
+                        <span data-slot="hover-card-trigger">
+                            <button type="button" data-slot="button" data-variant="outline">top</button>
+                        </span>
+                        <div data-slot="hover-card-content" data-state="closed" data-side="top" role="dialog" aria-labelledby="hover-card-top-title">
+                            <div data-slot="hover-card-title" id="hover-card-top-title">Hover Card</div>
+                            <div>This hover card appears on the top side of the trigger.</div>
+                        </div>
+                    </div>
+                    <div data-slot="hover-card" data-open-delay="100" data-close-delay="100">
+                        <span data-slot="hover-card-trigger">
+                            <button type="button" data-slot="button" data-variant="outline">bottom</button>
+                        </span>
+                        <div data-slot="hover-card-content" data-state="closed" data-side="bottom" role="dialog" aria-labelledby="hover-card-bottom-title">
+                            <div data-slot="hover-card-title" id="hover-card-bottom-title">Hover Card</div>
+                            <div>This hover card appears on the bottom side of the trigger.</div>
+                        </div>
+                    </div>
+                    <div data-slot="hover-card" data-open-delay="100" data-close-delay="100">
+                        <span data-slot="hover-card-trigger">
+                            <button type="button" data-slot="button" data-variant="outline">right</button>
+                        </span>
+                        <div data-slot="hover-card-content" data-state="closed" data-side="right" role="dialog" aria-labelledby="hover-card-right-title">
+                            <div data-slot="hover-card-title" id="hover-card-right-title">Hover Card</div>
+                            <div>This hover card appears on the right side of the trigger.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">HoverCard</h3>
+            <p data-slot="desc"><code>data-slot="hover-card"</code> 루트에 열림·닫힘 지연을 지정합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-open-delay</code></td>
+                        <td>number</td>
+                        <td><code>700</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-close-delay</code></td>
+                        <td>number</td>
+                        <td><code>300</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">HoverCardContent</h3>
+            <p data-slot="desc"><code>data-slot="hover-card-content"</code> 카드 본문입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-side</code></td>
+                        <td><code>"top"</code> | <code>"right"</code> | <code>"bottom"</code> | <code>"left"</code></td>
+                        <td><code>"bottom"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"start"</code> | <code>"center"</code> | <code>"end"</code></td>
+                        <td><code>"center"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-side-offset</code></td>
+                        <td>number</td>
+                        <td><code>4</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#sides">Sides</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

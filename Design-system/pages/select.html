@@ -1,0 +1,173 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Select</h1>
+            <p data-slot="desc">드롭다운에서 항목을 고르는 컴포넌트입니다. 옵션 목록은 <strong>Combobox</strong>와 동일한 스타일을 사용하며, <code>data-mode="select"</code>로 검색 없이 선택만 가능합니다. 타이핑·필터가 필요하면 Combobox를 사용하세요.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="select-demo">
+                <div data-slot="combobox" data-mode="select">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="select-overview" placeholder="Select status" readonly autocomplete="off" aria-label="Select status">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger aria-expanded="false" aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="todo" role="option">Todo</div>
+                            <div data-slot="combobox-item" data-value="in-progress" role="option">In Progress</div>
+                            <div data-slot="combobox-item" data-value="done" role="option">Done</div>
+                            <div data-slot="combobox-item" data-value="cancelled" role="option">Cancelled</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> 속성으로 선택을 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="select-demo">
+                <div data-slot="combobox" data-mode="select">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="select-disabled" placeholder="Disabled" readonly disabled autocomplete="off" aria-label="Disabled select">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger disabled aria-expanded="false" aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="apple" role="option">Apple</div>
+                            <div data-slot="combobox-item" data-value="banana" role="option">Banana</div>
+                            <div data-slot="combobox-item" data-value="blueberry" role="option">Blueberry</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc"><code>aria-invalid</code>로 유효성 검사 오류 상태를 표시합니다. <code>Field</code>에 <code>data-invalid="true"</code>를 추가해 폼 레이아웃 스타일을 적용할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="select-demo">
+                <div data-slot="combobox" data-mode="select">
+                    <div data-slot="input-group">
+                        <input type="text" data-slot="combobox-input" id="select-invalid" placeholder="Error state" readonly autocomplete="off" aria-invalid="true" aria-label="Invalid select">
+                        <button type="button" data-slot="input-group-button" data-combobox-trigger aria-expanded="false" aria-label="Open options">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="combobox-content" data-state="closed">
+                        <div data-slot="combobox-list" role="listbox">
+                            <div data-slot="combobox-item" data-value="apple" role="option">Apple</div>
+                            <div data-slot="combobox-item" data-value="banana" role="option">Banana</div>
+                            <div data-slot="combobox-item" data-value="blueberry" role="option">Blueberry</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Select</h3>
+            <p data-slot="desc"><code>data-slot="combobox"</code>에 <code>data-mode="select"</code>를 지정한 루트입니다. Combobox와 동일한 마크업·옵션 스타일을 쓰며 입력은 <code>readonly</code>로 고정합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-mode</code></td>
+                        <td><code>"select"</code></td>
+                        <td>—</td>
+                        <td>검색 없이 선택만 허용하는 Select 모드. 필수입니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>초기 선택값. <code>ComboboxItem</code>의 <code>data-value</code>와 일치해야 합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                        <td><code>ComboboxInput</code>·트리거 버튼에 적용해 비활성화합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td>—</td>
+                        <td>유효하지 않음 상태. 입력에 파괴적 테두리·링을 표시합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ComboboxItem</h3>
+            <p data-slot="desc">드롭다운 목록의 개별 옵션입니다. Combobox와 동일한 <code>data-slot="combobox-item"</code>·체크 표시 스타일을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

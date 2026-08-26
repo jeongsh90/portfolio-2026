@@ -1,0 +1,737 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Color</h1>
+            <p data-slot="desc">디자인 시스템의 시맨틱·시스템·차트·사이드바 색상 토큰입니다. 컴포넌트는 <code>var(--color-*)</code> 또는 <code>var(--primary)</code> 등 CSS 변수를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="color-overview">
+                <div data-slot="color-overview">
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--background); --swatch-fg: var(--foreground); --swatch-border: var(--border);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Background</span>
+                            <code data-slot="color-swatch-token">--background</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--primary); --swatch-fg: var(--primary-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Primary</span>
+                            <code data-slot="color-swatch-token">--primary</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--secondary); --swatch-fg: var(--secondary-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Secondary</span>
+                            <code data-slot="color-swatch-token">--secondary</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--muted); --swatch-fg: var(--muted-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Muted</span>
+                            <code data-slot="color-swatch-token">--muted</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--accent); --swatch-fg: var(--accent-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Accent</span>
+                            <code data-slot="color-swatch-token">--accent</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--destructive); --swatch-fg: var(--destructive-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Destructive</span>
+                            <code data-slot="color-swatch-token">--destructive</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="semantic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Semantic</h2>
+            <p data-slot="desc">UI 역할별 시맨틱 토큰입니다. 라이트·다크 모드에 따라 값이 바뀝니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="color-semantic">
+                <div data-slot="color-grid">
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--background); --swatch-fg: var(--foreground); --swatch-border: var(--border);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Background</span>
+                            <code data-slot="color-swatch-token">--background</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--foreground); --swatch-fg: var(--background);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Foreground</span>
+                            <code data-slot="color-swatch-token">--foreground</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--card); --swatch-fg: var(--card-foreground); --swatch-border: var(--border);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Card</span>
+                            <code data-slot="color-swatch-token">--card</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--popover); --swatch-fg: var(--popover-foreground); --swatch-border: var(--border);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Popover</span>
+                            <code data-slot="color-swatch-token">--popover</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--primary); --swatch-fg: var(--primary-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Primary</span>
+                            <code data-slot="color-swatch-token">--primary</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--secondary); --swatch-fg: var(--secondary-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Secondary</span>
+                            <code data-slot="color-swatch-token">--secondary</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--muted); --swatch-fg: var(--muted-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Muted</span>
+                            <code data-slot="color-swatch-token">--muted</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--accent); --swatch-fg: var(--accent-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Accent</span>
+                            <code data-slot="color-swatch-token">--accent</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--destructive); --swatch-fg: var(--destructive-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Destructive</span>
+                            <code data-slot="color-swatch-token">--destructive</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--background); --swatch-fg: var(--foreground); --swatch-border: var(--border);">
+                        <div data-slot="color-swatch-preview" data-variant="border"><span>Border</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Border</span>
+                            <code data-slot="color-swatch-token">--border</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--background); --swatch-fg: var(--foreground); --swatch-border: var(--input);">
+                        <div data-slot="color-swatch-preview" data-variant="border"><span>Input</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Input</span>
+                            <code data-slot="color-swatch-token">--input</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--background); --swatch-fg: var(--foreground); --swatch-border: var(--ring);">
+                        <div data-slot="color-swatch-preview" data-variant="border"><span>Ring</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Ring</span>
+                            <code data-slot="color-swatch-token">--ring</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="system">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">System</h2>
+            <p data-slot="desc">Info·Success·Warning·Error 상태 색상입니다. Button <code>data-color</code> 등에서 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="color-system">
+                <div data-slot="color-system-grid">
+                    <div data-slot="color-system-group">
+                        <p data-slot="color-system-label">Info</p>
+                        <div data-slot="color-system-row">
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-info-bg); --swatch-fg: var(--sys-info-fg);">
+                                <div data-slot="color-swatch-preview"><span>Bg</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-info-bg</code></div>
+                            </div>
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-info-subtle); --swatch-fg: var(--sys-info-subtle-fg); --swatch-border: var(--sys-info-border);">
+                                <div data-slot="color-swatch-preview"><span>Subtle</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-info-subtle</code></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="color-system-group">
+                        <p data-slot="color-system-label">Success</p>
+                        <div data-slot="color-system-row">
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-success-bg); --swatch-fg: var(--sys-success-fg);">
+                                <div data-slot="color-swatch-preview"><span>Bg</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-success-bg</code></div>
+                            </div>
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-success-subtle); --swatch-fg: var(--sys-success-subtle-fg); --swatch-border: var(--sys-success-border);">
+                                <div data-slot="color-swatch-preview"><span>Subtle</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-success-subtle</code></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="color-system-group">
+                        <p data-slot="color-system-label">Warning</p>
+                        <div data-slot="color-system-row">
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-warning-bg); --swatch-fg: var(--sys-warning-fg);">
+                                <div data-slot="color-swatch-preview"><span>Bg</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-warning-bg</code></div>
+                            </div>
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-warning-subtle); --swatch-fg: var(--sys-warning-subtle-fg); --swatch-border: var(--sys-warning-border);">
+                                <div data-slot="color-swatch-preview"><span>Subtle</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-warning-subtle</code></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-slot="color-system-group">
+                        <p data-slot="color-system-label">Error</p>
+                        <div data-slot="color-system-row">
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-error-bg); --swatch-fg: var(--sys-error-fg);">
+                                <div data-slot="color-swatch-preview"><span>Bg</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-error-bg</code></div>
+                            </div>
+                            <div data-slot="color-swatch" style="--swatch-bg: var(--sys-error-subtle); --swatch-fg: var(--sys-error-subtle-fg); --swatch-border: var(--sys-error-border);">
+                                <div data-slot="color-swatch-preview"><span>Subtle</span></div>
+                                <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--sys-error-subtle</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="chart">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Chart</h2>
+            <p data-slot="desc">차트·데이터 시각화용 <code>--chart-*</code> 토큰입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="color-chart">
+                <div data-slot="color-chart-row">
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--chart-1); --swatch-fg: var(--foreground);">
+                        <div data-slot="color-swatch-preview"><span>1</span></div>
+                        <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--chart-1</code></div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--chart-2); --swatch-fg: var(--foreground);">
+                        <div data-slot="color-swatch-preview"><span>2</span></div>
+                        <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--chart-2</code></div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--chart-3); --swatch-fg: var(--foreground);">
+                        <div data-slot="color-swatch-preview"><span>3</span></div>
+                        <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--chart-3</code></div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--chart-4); --swatch-fg: var(--foreground);">
+                        <div data-slot="color-swatch-preview"><span>4</span></div>
+                        <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--chart-4</code></div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--chart-5); --swatch-fg: var(--foreground);">
+                        <div data-slot="color-swatch-preview"><span>5</span></div>
+                        <div data-slot="color-swatch-meta"><code data-slot="color-swatch-token">--chart-5</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="sidebar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sidebar</h2>
+            <p data-slot="desc">사이드바 전용 <code>--sidebar-*</code> 토큰입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="color-sidebar">
+                <div data-slot="color-grid">
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--sidebar); --swatch-fg: var(--sidebar-foreground); --swatch-border: var(--sidebar-border);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Sidebar</span>
+                            <code data-slot="color-swatch-token">--sidebar</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--sidebar-primary); --swatch-fg: var(--sidebar-primary-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Primary</span>
+                            <code data-slot="color-swatch-token">--sidebar-primary</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--sidebar-accent); --swatch-fg: var(--sidebar-accent-foreground);">
+                        <div data-slot="color-swatch-preview"><span>Aa</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Accent</span>
+                            <code data-slot="color-swatch-token">--sidebar-accent</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--sidebar); --swatch-fg: var(--sidebar-foreground); --swatch-border: var(--sidebar-border);">
+                        <div data-slot="color-swatch-preview" data-variant="border"><span>Border</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Border</span>
+                            <code data-slot="color-swatch-token">--sidebar-border</code>
+                        </div>
+                    </div>
+                    <div data-slot="color-swatch" style="--swatch-bg: var(--sidebar); --swatch-fg: var(--sidebar-foreground); --swatch-border: var(--sidebar-ring);">
+                        <div data-slot="color-swatch-preview" data-variant="border"><span>Ring</span></div>
+                        <div data-slot="color-swatch-meta">
+                            <span data-slot="color-swatch-label">Ring</span>
+                            <code data-slot="color-swatch-token">--sidebar-ring</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="palette">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Palette</h2>
+            <p data-slot="desc"><code>globals.css</code>에 정의된 전체 Tailwind 팔레트(22 hue × 50–950)입니다. 시맨틱 토큰은 이 값들을 참조합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="color-palette">
+                <div data-slot="color-palette-list">
+                    <div data-slot="color-scale" data-hue="red">
+                        <p data-slot="color-scale-label">Red</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-red-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="orange">
+                        <p data-slot="color-scale-label">Orange</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-orange-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="amber">
+                        <p data-slot="color-scale-label">Amber</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-amber-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="yellow">
+                        <p data-slot="color-scale-label">Yellow</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-yellow-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="lime">
+                        <p data-slot="color-scale-label">Lime</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-lime-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="green">
+                        <p data-slot="color-scale-label">Green</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-green-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="emerald">
+                        <p data-slot="color-scale-label">Emerald</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-emerald-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="teal">
+                        <p data-slot="color-scale-label">Teal</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-teal-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="cyan">
+                        <p data-slot="color-scale-label">Cyan</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-cyan-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="sky">
+                        <p data-slot="color-scale-label">Sky</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-sky-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="blue">
+                        <p data-slot="color-scale-label">Blue</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-blue-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="indigo">
+                        <p data-slot="color-scale-label">Indigo</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-indigo-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="violet">
+                        <p data-slot="color-scale-label">Violet</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-violet-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="purple">
+                        <p data-slot="color-scale-label">Purple</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-purple-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="fuchsia">
+                        <p data-slot="color-scale-label">Fuchsia</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-fuchsia-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="pink">
+                        <p data-slot="color-scale-label">Pink</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-pink-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="rose">
+                        <p data-slot="color-scale-label">Rose</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-rose-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="slate">
+                        <p data-slot="color-scale-label">Slate</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-slate-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="gray">
+                        <p data-slot="color-scale-label">Gray</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-gray-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="zinc">
+                        <p data-slot="color-scale-label">Zinc</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-zinc-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="neutral">
+                        <p data-slot="color-scale-label">Neutral</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-neutral-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                    <div data-slot="color-scale" data-hue="stone">
+                        <p data-slot="color-scale-label">Stone</p>
+                        <div data-slot="color-scale-row">
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-50);"><span>50</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-100);"><span>100</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-200);"><span>200</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-300);"><span>300</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-400);"><span>400</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-500);"><span>500</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-600); --step-fg: #fff;"><span>600</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-700); --step-fg: #fff;"><span>700</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-800); --step-fg: #fff;"><span>800</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-900); --step-fg: #fff;"><span>900</span></div>
+                            <div data-slot="color-scale-step" style="--step-bg: var(--color-stone-950); --step-fg: #fff;"><span>950</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Color tokens</h3>
+            <p data-slot="desc">컴포넌트 CSS에서는 <code>--color-*</code> 별칭 또는 시맨틱 변수를 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">별칭</th>
+                        <th scope="col">시맨틱 변수</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--color-background</code></td>
+                        <td><code>--background</code></td>
+                        <td>페이지 배경</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-foreground</code></td>
+                        <td><code>--foreground</code></td>
+                        <td>기본 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-primary</code></td>
+                        <td><code>--primary</code></td>
+                        <td>주요 액션·강조</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-muted</code></td>
+                        <td><code>--muted</code></td>
+                        <td>보조 배경</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-border</code></td>
+                        <td><code>--border</code></td>
+                        <td>테두리</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-ring</code></td>
+                        <td><code>--ring</code></td>
+                        <td>포커스 링</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#semantic">Semantic</a></li>
+                <li><a href="#system">System</a></li>
+                <li><a href="#chart">Chart</a></li>
+                <li><a href="#sidebar">Sidebar</a></li>
+                <li><a href="#palette">Palette</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,969 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <!-- 1. Overview / New Chat -->
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Message Scroller</h1>
+            <p data-slot="desc">채팅·피드 등 대화형 목록을 위한 스크롤 컨테이너입니다. 스트리밍 출력을 자동 추적하고, 히스토리를 점프 없이 로드하며, 임의 메시지로 빠르게 이동할 수 있습니다. <code>content-visibility: auto</code>로 렌더링 성능을 최적화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-overview">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">New Chat</span>
+                            <span class="chat-demo__subtitle">How can I help you today?</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="새 대화 시작" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-overview">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-empty">
+                                    <div class="chat-empty-icon">
+                                        <i data-lucide="loader-circle" aria-hidden="true"></i>
+                                    </div>
+                                    <p class="chat-empty-heading">Morning, shadcn!</p>
+                                    <p class="chat-empty-sub">What are we working on today? Press<br>send to start a new conversation</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input>I'm building a chat for our app and the scroll behavior is driving me nuts. Every time the AI...</textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Demo is read only. Press send to send messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Anchoring Turns -->
+    <section class="doc-pattern-1" data-pattern="1" id="anchoring-turns">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Anchoring Turns</h2>
+            <p data-slot="desc">새 대화가 시작될 때 <strong>사용자 메시지</strong>를 뷰포트 상단 가장자리에 앵커링합니다. AI 응답이 길어도 사용자 메시지 맥락을 잃지 않습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-anchoring">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Anchoring Turns</span>
+                            <span class="chat-demo__subtitle">User messages anchor near the top</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-anchoring">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">What is the capital of France?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">The capital of France is Paris. It is the largest city in France and serves as the country's political, economic, and cultural center. Paris has been the capital since the late 10th century and is home to many iconic landmarks including the Eiffel Tower, the Louvre, and Notre-Dame Cathedral.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">Tell me more about the Eiffel Tower.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">The Eiffel Tower was built between 1887 and 1889 as the entrance arch to the 1889 World's Fair. Designed by Gustave Eiffel, it stands 330 meters tall and was the world's tallest structure for 41 years. Initially criticized by artists, it has since become a global cultural icon of France. About 7 million people visit it each year, making it the most-visited paid monument in the world.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Send a message to see anchoring in action.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Group Chat -->
+    <section class="doc-pattern-1" data-pattern="1" id="group-chat">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Group Chat</h2>
+            <p data-slot="desc">다수 참여자의 대화와 입장·퇴장 마커를 표시합니다. 각 메시지에 발신자 이름과 아바타를 함께 렌더링합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-group">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Design Team</span>
+                            <span class="chat-demo__subtitle">Alice, Bob, Carol · 3 members</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-group">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-marker">Carol joined the conversation</div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--group">
+                                        <div class="ms-avatar ms-avatar--alice">A</div>
+                                        <div class="ms-group-content">
+                                            <span class="ms-sender">Alice</span>
+                                            <div class="ms-text">Hey team! Let's finalize the component library structure today.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--group">
+                                        <div class="ms-avatar ms-avatar--bob">B</div>
+                                        <div class="ms-group-content">
+                                            <span class="ms-sender">Bob</span>
+                                            <div class="ms-text">Sounds good! I've been working on the Button and Input components.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--group">
+                                        <div class="ms-avatar ms-avatar--carol">C</div>
+                                        <div class="ms-group-content">
+                                            <span class="ms-sender">Carol</span>
+                                            <div class="ms-text">I can handle the Dialog and Sheet components. Should we follow the shadcn/ui API pattern?</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--group">
+                                        <div class="ms-avatar ms-avatar--alice">A</div>
+                                        <div class="ms-group-content">
+                                            <span class="ms-sender">Alice</span>
+                                            <div class="ms-text">Yes, let's stick to the data-slot attribute pattern. It makes theming much easier.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--group">
+                                        <div class="ms-avatar ms-avatar--bob">B</div>
+                                        <div class="ms-group-content">
+                                            <span class="ms-sender">Bob</span>
+                                            <div class="ms-text">Agreed. I'll also look into the Message Scroller component for our chat feature!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Message Design Team..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Demo is read only. Press send to send messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Keeping Context Visible -->
+    <section class="doc-pattern-1" data-pattern="1" id="keeping-context">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Keeping Context Visible</h2>
+            <p data-slot="desc"><code>scrollPreviousItemPeek</code>로 새 턴이 앵커링될 때 이전 메시지가 뷰포트 위쪽에 얼마나 보일지 픽셀 단위로 조정합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-context">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Context Peek</span>
+                            <span class="chat-demo__subtitle" id="peek-label">scrollPreviousItemPeek: 80px</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__toolbar">
+                        <label class="ms-toolbar-label" for="peek-slider">Peek: <span id="peek-value">80</span>px</label>
+                        <input class="ms-toolbar-range" type="range" id="peek-slider" min="0" max="160" value="80" step="8" data-ms-peek>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-context" data-peek="80">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">Can you explain how scroll anchoring works?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">Scroll anchoring keeps the user's reading position stable when content is prepended or inserted above the current scroll position. The browser maintains the visual position of the anchored element even when new content shifts the DOM. This is especially useful for infinite scroll patterns in chat applications.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">How does the peek value affect the UX?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">The peek value controls how many pixels of the previous message remain visible above the newly anchored user message. A higher value gives more context, while a lower value maximizes space for the AI response. Try adjusting the slider above to see the difference in real time!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Adjust the slider then send a message.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Streaming Messages -->
+    <section class="doc-pattern-1" data-pattern="1" id="streaming">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Streaming Messages</h2>
+            <p data-slot="desc">AI가 응답을 토큰 단위로 전송할 때 <code>autoScroll</code>이 활성화되어 스크롤이 자동으로 최신 내용을 추적합니다. 사용자가 위로 스크롤하면 자동 추적이 해제됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-streaming">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Streaming</span>
+                            <span class="chat-demo__subtitle" id="stream-status">Ready to Stream</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-streaming">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-empty">
+                                    <div class="chat-empty-icon">
+                                        <i data-lucide="zap" aria-hidden="true"></i>
+                                    </div>
+                                    <p class="chat-empty-heading">Ready to Stream</p>
+                                    <p class="chat-empty-sub">Press Stream to simulate<br>a streaming AI response</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="스트리밍 시작" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Send a message to start streaming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Opening Position -->
+    <section class="doc-pattern-1" data-pattern="1" id="opening-position">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Opening Position</h2>
+            <p data-slot="desc"><code>defaultScrollPosition</code>으로 저장된 대화를 열 때 초기 스크롤 위치를 제어합니다. <code>"start"</code>, <code>"end"</code>, <code>"last-anchor"</code> 세 가지를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-position">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Opening Position</span>
+                            <span class="chat-demo__subtitle">Choose where the transcript opens</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__toolbar">
+                        <div class="ms-toolbar-tabs" role="group" aria-label="Opening position">
+                            <button class="ms-toolbar-tab" data-ms-position="start" type="button">start</button>
+                            <button class="ms-toolbar-tab ms-toolbar-tab--active" data-ms-position="last-anchor" type="button">last-anchor</button>
+                            <button class="ms-toolbar-tab" data-ms-position="end" type="button">end</button>
+                        </div>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-position" data-open-position="last-anchor">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">First question from yesterday</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">This is the first answer. The conversation continues from here with more context being built.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">Follow-up question about the topic</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">Here is the follow-up answer with additional details that help build on the previous response.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true" data-ms-last-anchor>
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">Most recent question (last anchor)</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">Most recent answer. This is where "last-anchor" position will place you when opening the conversation.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Toggle position then scroll to observe the difference.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Load History -->
+    <section class="doc-pattern-1" data-pattern="1" id="load-history">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Load History</h2>
+            <p data-slot="desc">이전 메시지를 목록 상단에 prepend할 때 현재 읽는 위치가 이동하지 않습니다. 스크롤 위치를 유지한 채 히스토리를 로드합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-history">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Load History</span>
+                            <span class="chat-demo__subtitle">Prepend without position jump</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-history">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div class="ms-load-trigger">
+                                    <button class="ms-load-btn" type="button" data-ms-load-history>
+                                        <i data-lucide="history" aria-hidden="true"></i>
+                                        Load older messages
+                                    </button>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">What did we discuss earlier?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">We discussed the design system architecture. Try loading older messages above to see how the scroller preserves your reading position without jumping.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">Can you show me how load history works?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">Click "Load older messages" above. New items are prepended at the top and the scroll position is adjusted to keep your current view stable — no jump!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Scroll up and click "Load older messages".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Animation -->
+    <section class="doc-pattern-1" data-pattern="1" id="animation">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Animation</h2>
+            <p data-slot="desc">새 메시지가 추가될 때 적용할 입장 애니메이션을 선택합니다. <code>fade</code>는 opacity만, <code>slide</code>는 위에서 슬라이드인 효과를 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-animation">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Animation</span>
+                            <span class="chat-demo__subtitle">Message entrance effects</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__toolbar">
+                        <div class="ms-toolbar-tabs" role="group" aria-label="Animation type">
+                            <button class="ms-toolbar-tab ms-toolbar-tab--active" data-ms-anim="none" type="button">None</button>
+                            <button class="ms-toolbar-tab" data-ms-anim="fade" type="button">Fade</button>
+                            <button class="ms-toolbar-tab" data-ms-anim="slide" type="button">Slide</button>
+                        </div>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-animation" data-anim="none">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-empty">
+                                    <div class="chat-empty-icon">
+                                        <i data-lucide="sparkles" aria-hidden="true"></i>
+                                    </div>
+                                    <p class="chat-empty-heading">Choose an animation</p>
+                                    <p class="chat-empty-sub">Then send a message to see<br>the entrance effect</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Select animation type then send a message.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Commands -->
+    <section class="doc-pattern-1" data-pattern="1" id="commands">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Commands</h2>
+            <p data-slot="desc"><code>scrollToMessage()</code>·<code>scrollToEnd()</code>·<code>scrollToStart()</code> 명령으로 특정 메시지로 즉시 이동합니다. 긴 대화에서 빠른 탐색을 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-commands">
+                <div class="chat-demo chat-demo--with-panel">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Commands</span>
+                            <span class="chat-demo__subtitle">Jump to any message instantly</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__body-row">
+                        <div data-slot="message-scroller" id="ms-commands">
+                            <div data-slot="message-scroller-viewport">
+                                <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="msg-cmd-1">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Message #1 — Design system overview</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">A design system is a collection of reusable components, guided by clear standards, that can be assembled to build applications.</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="msg-cmd-2">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Message #2 — Component architecture</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">Components should be atomic, composable, and follow a consistent API pattern using data-slot attributes for flexible theming.</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="msg-cmd-3">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Message #3 — Token system</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">Design tokens are named entities that store visual design attributes. They abstract CSS values into semantic names like --color-primary and --spacing.</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="msg-cmd-4">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Message #4 — Accessibility</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">Accessibility means building inclusive interfaces for all users. Use semantic HTML, ARIA attributes, and keyboard navigation patterns.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="ms-cmd-panel">
+                            <p class="ms-cmd-panel-title">Jump to</p>
+                            <button class="ms-cmd-btn" type="button" data-ms-jump="msg-cmd-1">
+                                <i data-lucide="message-circle" aria-hidden="true"></i>
+                                Message #1
+                            </button>
+                            <button class="ms-cmd-btn" type="button" data-ms-jump="msg-cmd-2">
+                                <i data-lucide="message-circle" aria-hidden="true"></i>
+                                Message #2
+                            </button>
+                            <button class="ms-cmd-btn" type="button" data-ms-jump="msg-cmd-3">
+                                <i data-lucide="message-circle" aria-hidden="true"></i>
+                                Message #3
+                            </button>
+                            <button class="ms-cmd-btn" type="button" data-ms-jump="msg-cmd-4">
+                                <i data-lucide="message-circle" aria-hidden="true"></i>
+                                Message #4
+                            </button>
+                            <hr class="ms-cmd-divider">
+                            <button class="ms-cmd-btn" type="button" data-ms-jump-pos="start">
+                                <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                Scroll to top
+                            </button>
+                            <button class="ms-cmd-btn" type="button" data-ms-jump-pos="end">
+                                <i data-lucide="arrow-down" aria-hidden="true"></i>
+                                Scroll to end
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Transcript Outline -->
+    <section class="doc-pattern-1" data-pattern="1" id="transcript-outline">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Transcript Outline</h2>
+            <p data-slot="desc">대화 목차(TOC)를 사이드바로 제공합니다. <code>useMessageScrollerVisibility()</code>로 현재 화면에 보이는 앵커 메시지를 하이라이트합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-outline">
+                <div class="chat-demo chat-demo--with-panel">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Transcript Outline</span>
+                            <span class="chat-demo__subtitle">TOC highlights current position</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__body-row">
+                        <div data-slot="message-scroller" id="ms-outline">
+                            <div data-slot="message-scroller-viewport">
+                                <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="toc-1">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Introduction to Components</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">Components are the building blocks of modern UI. Each component encapsulates structure, style, and behavior into a reusable unit.</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="toc-2">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Button Component Details</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">The Button component supports multiple variants: default, destructive, outline, secondary, ghost, and link. Each has distinct visual treatment for different contexts.</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="toc-3">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Dialog Component Details</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">Dialog provides modal overlays for focused interactions. It includes an overlay backdrop, a content panel, header, body, and footer sections.</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item" data-anchor="true" id="toc-4">
+                                        <div class="ms-bubble ms-bubble--outgoing">
+                                            <div class="ms-text">Message Scroller Details</div>
+                                        </div>
+                                    </div>
+                                    <div data-slot="message-scroller-item">
+                                        <div class="ms-bubble ms-bubble--incoming">
+                                            <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                            <div class="ms-text">Message Scroller is optimized for chat UIs with content-visibility: auto for performance, scroll anchoring for history loading, and auto-scroll for live streaming.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="ms-toc-panel" data-ms-toc="ms-outline">
+                            <p class="ms-cmd-panel-title">Outline</p>
+                            <a class="ms-toc-item" href="#toc-1" data-toc-target="toc-1">Introduction to Components</a>
+                            <a class="ms-toc-item" href="#toc-2" data-toc-target="toc-2">Button Component Details</a>
+                            <a class="ms-toc-item" href="#toc-3" data-toc-target="toc-3">Dialog Component Details</a>
+                            <a class="ms-toc-item" href="#toc-4" data-toc-target="toc-4">Message Scroller Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Scroll Status -->
+    <section class="doc-pattern-1" data-pattern="1" id="scroll-status">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Scroll Status</h2>
+            <p data-slot="desc">현재 스크롤 가능 방향에 따라 상태 텍스트를 동적으로 표시합니다. 상단·하단·양방향·불가 각 상태를 구분합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="message-scroller-status">
+                <div class="chat-demo">
+                    <div class="chat-demo__header">
+                        <div class="chat-demo__header-text">
+                            <span class="chat-demo__title">Scroll Status</span>
+                            <span class="chat-demo__subtitle" id="scroll-status-text">Scroll up to see earlier messages</span>
+                        </div>
+                        <button class="chat-demo__reset" type="button" aria-label="초기화" data-ms-reset>
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div data-slot="message-scroller" id="ms-status">
+                        <div data-slot="message-scroller-viewport">
+                            <div data-slot="message-scroller-content" role="log" aria-live="polite">
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">Can you explain scroll status tracking?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">The component tracks whether the user can scroll up, down, both, or neither and exposes this state via data attributes and hooks.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">How is this useful for the UI?</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">You can update footer status text, show/hide navigation buttons, and provide context about the conversation length. Scroll up and down to watch the header text change above.</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item" data-anchor="true">
+                                    <div class="ms-bubble ms-bubble--outgoing">
+                                        <div class="ms-text">That's really useful for accessibility too!</div>
+                                    </div>
+                                </div>
+                                <div data-slot="message-scroller-item">
+                                    <div class="ms-bubble ms-bubble--incoming">
+                                        <div class="ms-avatar"><i data-lucide="bot" aria-hidden="true"></i></div>
+                                        <div class="ms-text">Exactly! Screen readers can announce when the user reaches the top or bottom of the conversation, improving the experience for keyboard and assistive technology users.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-slot="message-scroller-button" data-direction="end" data-active="false" type="button" aria-label="최신 메시지로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <button data-slot="message-scroller-button" data-direction="start" data-active="false" type="button" aria-label="처음으로 이동">
+                            <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="chat-demo__footer">
+                        <div class="chat-demo__input-wrap">
+                            <textarea class="chat-demo__input" rows="2" placeholder="Ask anything..." data-ms-input></textarea>
+                            <div class="chat-demo__actions">
+                                <button class="chat-demo__attach" type="button" aria-label="파일 첨부">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="chat-demo__send" type="button" aria-label="메시지 전송" data-ms-send>
+                                    <i data-lucide="arrow-up" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="chat-demo__hint">Scroll to see status text update in the header.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Reference -->
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">MessageScroller</h3>
+            <p data-slot="desc">스크롤 뷰포트·콘텐츠·버튼을 담는 스타일 프레임입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageScrollerViewport</h3>
+            <p data-slot="desc">스크롤이 발생하는 뷰포트. 하단 fade·scrollbar를 관리합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-scroll-edge</code></td><td><code>"top"</code> | <code>"bottom"</code> | —</td><td>—</td><td>JS 자동 설정. 가장자리 도달 시 fade 제거.</td></tr>
+                    <tr><td><code>data-autoscrolling</code></td><td><code>""</code> | —</td><td>—</td><td>프로그래매틱 스크롤 중 scrollbar 숨김.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageScrollerContent</h3>
+            <p data-slot="desc">메시지 목록 컨테이너. <code>role="log"</code> 라이브 리전을 적용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>role</code></td><td><code>"log"</code></td><td><code>"log"</code></td><td>스크린 리더에 라이브 리전으로 공지.</td></tr>
+                    <tr><td><code>aria-live</code></td><td><code>"polite"</code></td><td><code>"polite"</code></td><td>새 메시지를 부드럽게 공지.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageScrollerItem</h3>
+            <p data-slot="desc">개별 메시지 항목. <code>content-visibility: auto</code>로 성능 최적화.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-anchor</code></td><td><code>"true"</code> | —</td><td>—</td><td>사용자 턴 경계 마킹. Opening position과 anchoring에 활용.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageScrollerEmpty</h3>
+            <p data-slot="desc">메시지가 없을 때의 빈 상태 영역. 세로 중앙 정렬.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>추가 스타일 클래스.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">MessageScrollerButton</h3>
+            <p data-slot="desc">스크롤 위치에 따라 나타나는 이동 버튼. translate·scale·opacity 전환.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead><tr><th scope="col">속성</th><th scope="col">타입</th><th scope="col">기본값</th><th scope="col">설명</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-direction</code></td><td><code>"end"</code> | <code>"start"</code></td><td><code>"end"</code></td><td>하단/상단 고정 위치.</td></tr>
+                    <tr><td><code>data-active</code></td><td><code>"true"</code> | <code>"false"</code></td><td><code>"false"</code></td><td>JS 자동 설정. true이면 표시·클릭 가능.</td></tr>
+                    <tr><td><code>aria-label</code></td><td><code>string</code></td><td>—</td><td>접근성 레이블 (필수).</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#anchoring-turns">Anchoring Turns</a></li>
+                <li><a href="#group-chat">Group Chat</a></li>
+                <li><a href="#keeping-context">Keeping Context Visible</a></li>
+                <li><a href="#streaming">Streaming Messages</a></li>
+                <li><a href="#opening-position">Opening Position</a></li>
+                <li><a href="#load-history">Load History</a></li>
+                <li><a href="#animation">Animation</a></li>
+                <li><a href="#commands">Commands</a></li>
+                <li><a href="#transcript-outline">Transcript Outline</a></li>
+                <li><a href="#scroll-status">Scroll Status</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

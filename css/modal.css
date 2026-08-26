@@ -143,6 +143,11 @@
 	text-underline-offset: 0.2em;
 }
 
+.modal__link--publish {
+	display: block;
+	margin-top: 0.5rem;
+}
+
 
 .modal__group-title {
 	margin: 0 0 0.75rem;
@@ -215,7 +220,10 @@
 }
 
 .modal__section--links {
-	padding: 4rem 8vw;
+	height: auto;
+	min-height: 100vh;
+	padding: 6rem 8vw;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .modal__component-links {

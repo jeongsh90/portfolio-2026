@@ -1,0 +1,266 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">File Tree</h1>
+            <p data-slot="desc">중첩된 <code>Collapsible</code>로 폴더·파일 탐색기 UI를 구성합니다. 폴더는 닫힘·열림 상태에 따라 <code>folder</code> / <code>folder-open</code> 아이콘이 전환됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="file-tree-explorer">
+                <div class="file-tree-demo">
+                    <div data-slot="card" data-size="sm">
+                        <div data-slot="card-header">
+                            <div data-slot="tabs" data-default-value="explorer">
+                                <div data-slot="tabs-list">
+                                    <button type="button" data-slot="tabs-trigger" data-value="explorer">Explorer</button>
+                                    <button type="button" data-slot="tabs-trigger" data-value="outline">Outline</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="card-content">
+                            <div data-slot="file-tree">
+                                <div data-slot="collapsible" data-variant="tree">
+                                    <button type="button" data-slot="collapsible-trigger" data-variant="tree" aria-expanded="false">
+                                        <span data-slot="collapsible-trigger-icon"><i data-lucide="chevron-right" aria-hidden="true"></i></span>
+                                        <span data-slot="file-tree-folder-icon">
+                                            <span data-slot="file-tree-folder-closed"><i data-lucide="folder" aria-hidden="true"></i></span>
+                                            <span data-slot="file-tree-folder-open"><i data-lucide="folder-open" aria-hidden="true"></i></span>
+                                        </span>
+                                        <span data-slot="file-tree-label">components</span>
+                                    </button>
+                                    <div data-slot="collapsible-content" data-state="closed">
+                                        <div data-slot="collapsible-content-inner">
+                                            <div data-slot="collapsible" data-variant="tree">
+                                                <button type="button" data-slot="collapsible-trigger" data-variant="tree" aria-expanded="false">
+                                                    <span data-slot="collapsible-trigger-icon"><i data-lucide="chevron-right" aria-hidden="true"></i></span>
+                                                    <span data-slot="file-tree-folder-icon">
+                                                        <span data-slot="file-tree-folder-closed"><i data-lucide="folder" aria-hidden="true"></i></span>
+                                                        <span data-slot="file-tree-folder-open"><i data-lucide="folder-open" aria-hidden="true"></i></span>
+                                                    </span>
+                                                    <span data-slot="file-tree-label">ui</span>
+                                                </button>
+                                                <div data-slot="collapsible-content" data-state="closed">
+                                                    <div data-slot="collapsible-content-inner">
+                                                        <button type="button" data-slot="file-tree-file">
+                                                            <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                            <span data-slot="file-tree-label">button.tsx</span>
+                                                        </button>
+                                                        <button type="button" data-slot="file-tree-file">
+                                                            <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                            <span data-slot="file-tree-label">card.tsx</span>
+                                                        </button>
+                                                        <button type="button" data-slot="file-tree-file">
+                                                            <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                            <span data-slot="file-tree-label">dialog.tsx</span>
+                                                        </button>
+                                                        <button type="button" data-slot="file-tree-file">
+                                                            <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                            <span data-slot="file-tree-label">input.tsx</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" data-slot="file-tree-file">
+                                                <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                <span data-slot="file-tree-label">login-form.tsx</span>
+                                            </button>
+                                            <button type="button" data-slot="file-tree-file">
+                                                <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                <span data-slot="file-tree-label">register-form.tsx</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="collapsible" data-variant="tree">
+                                    <button type="button" data-slot="collapsible-trigger" data-variant="tree" aria-expanded="false">
+                                        <span data-slot="collapsible-trigger-icon"><i data-lucide="chevron-right" aria-hidden="true"></i></span>
+                                        <span data-slot="file-tree-folder-icon">
+                                            <span data-slot="file-tree-folder-closed"><i data-lucide="folder" aria-hidden="true"></i></span>
+                                            <span data-slot="file-tree-folder-open"><i data-lucide="folder-open" aria-hidden="true"></i></span>
+                                        </span>
+                                        <span data-slot="file-tree-label">lib</span>
+                                    </button>
+                                    <div data-slot="collapsible-content" data-state="closed">
+                                        <div data-slot="collapsible-content-inner">
+                                            <button type="button" data-slot="file-tree-file">
+                                                <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                <span data-slot="file-tree-label">utils.ts</span>
+                                            </button>
+                                            <button type="button" data-slot="file-tree-file">
+                                                <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                <span data-slot="file-tree-label">cn.ts</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slot="collapsible" data-variant="tree">
+                                    <button type="button" data-slot="collapsible-trigger" data-variant="tree" aria-expanded="false">
+                                        <span data-slot="collapsible-trigger-icon"><i data-lucide="chevron-right" aria-hidden="true"></i></span>
+                                        <span data-slot="file-tree-folder-icon">
+                                            <span data-slot="file-tree-folder-closed"><i data-lucide="folder" aria-hidden="true"></i></span>
+                                            <span data-slot="file-tree-folder-open"><i data-lucide="folder-open" aria-hidden="true"></i></span>
+                                        </span>
+                                        <span data-slot="file-tree-label">hooks</span>
+                                    </button>
+                                    <div data-slot="collapsible-content" data-state="closed">
+                                        <div data-slot="collapsible-content-inner">
+                                            <button type="button" data-slot="file-tree-file">
+                                                <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                <span data-slot="file-tree-label">use-debounce.ts</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" data-slot="file-tree-file">
+                                    <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                    <span data-slot="file-tree-label">app.tsx</span>
+                                </button>
+                                <button type="button" data-slot="file-tree-file">
+                                    <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                    <span data-slot="file-tree-label">package.json</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">카드 없이 <code>data-slot="file-tree"</code>만 사용하는 최소 예시입니다. chevron·폴더·파일 아이콘은 모두 <code>size-4</code>(16px)로 맞춥니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="file-tree-basic">
+                <div class="file-tree-demo">
+                    <div data-slot="file-tree">
+                        <div data-slot="collapsible" data-variant="tree" data-default-open>
+                            <button type="button" data-slot="collapsible-trigger" data-variant="tree" aria-expanded="true">
+                                <span data-slot="collapsible-trigger-icon"><i data-lucide="chevron-right" aria-hidden="true"></i></span>
+                                <span data-slot="file-tree-folder-icon">
+                                    <span data-slot="file-tree-folder-closed"><i data-lucide="folder" aria-hidden="true"></i></span>
+                                    <span data-slot="file-tree-folder-open"><i data-lucide="folder-open" aria-hidden="true"></i></span>
+                                </span>
+                                <span data-slot="file-tree-label">src</span>
+                            </button>
+                            <div data-slot="collapsible-content" data-state="open">
+                                <div data-slot="collapsible-content-inner">
+                                    <div data-slot="collapsible" data-variant="tree">
+                                        <button type="button" data-slot="collapsible-trigger" data-variant="tree" aria-expanded="false">
+                                            <span data-slot="collapsible-trigger-icon"><i data-lucide="chevron-right" aria-hidden="true"></i></span>
+                                            <span data-slot="file-tree-folder-icon">
+                                                <span data-slot="file-tree-folder-closed"><i data-lucide="folder" aria-hidden="true"></i></span>
+                                                <span data-slot="file-tree-folder-open"><i data-lucide="folder-open" aria-hidden="true"></i></span>
+                                            </span>
+                                            <span data-slot="file-tree-label">components</span>
+                                        </button>
+                                        <div data-slot="collapsible-content" data-state="closed">
+                                            <div data-slot="collapsible-content-inner">
+                                                <button type="button" data-slot="file-tree-file">
+                                                    <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                    <span data-slot="file-tree-label">button.tsx</span>
+                                                </button>
+                                                <button type="button" data-slot="file-tree-file">
+                                                    <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                                    <span data-slot="file-tree-label">card.tsx</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-slot="file-tree-file">
+                                        <span data-slot="file-tree-file-icon"><i data-lucide="file" aria-hidden="true"></i></span>
+                                        <span data-slot="file-tree-label">index.ts</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">FileTree</h3>
+            <p data-slot="desc">파일 트리 루트 컨테이너입니다. 폴더는 <code>Collapsible</code>(<code>data-variant="tree"</code>), 파일은 <code>file-tree-file</code>로 구성합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>file-tree</code></td>
+                        <td>트리 루트. 세로 <code>gap-1</code> 스택</td>
+                    </tr>
+                    <tr>
+                        <td><code>file-tree-folder-icon</code></td>
+                        <td>폴더 아이콘 래퍼. <code>folder</code>(닫힘) / <code>folder-open</code>(열림) 전환</td>
+                    </tr>
+                    <tr>
+                        <td><code>file-tree-file-icon</code></td>
+                        <td>파일 아이콘 래퍼 (<code>file</code>, 16px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>file-tree-file</code></td>
+                        <td>리프 파일 행 버튼</td>
+                    </tr>
+                    <tr>
+                        <td><code>file-tree-label</code></td>
+                        <td>폴더·파일 이름 텍스트</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Folder (Collapsible)</h3>
+            <p data-slot="desc">폴더 노드는 <code>collapsible-trigger</code>(<code>data-variant="tree"</code>) + <code>collapsible-content</code> 조합입니다. <code>initCollapsibles()</code>가 토글을 처리합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant="tree"</code></td>
+                        <td>트리 트리거·들여쓰기 스타일</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-open</code></td>
+                        <td>초기 펼침 상태</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>open</code>일 때 chevron 90° 회전 + <code>folder-open</code> 표시</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="페이지 목차">
+    <p data-slot="page-nav-label">On this page</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#basic">Basic</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

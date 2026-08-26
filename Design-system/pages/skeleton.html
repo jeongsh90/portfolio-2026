@@ -1,0 +1,183 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Skeleton</h1>
+            <p data-slot="desc">콘텐츠 로딩 중 자리 표시자(placeholder)를 표시하는 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="skeleton-profile">
+                <div class="skeleton-profile">
+                    <div data-slot="skeleton"></div>
+                    <div class="skeleton-profile-lines">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="avatar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Avatar</h2>
+            <p data-slot="desc">아바타와 텍스트 줄을 함께 표시하는 스켈레톤입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="skeleton-avatar">
+                <div class="skeleton-profile skeleton-profile-sm">
+                    <div data-slot="skeleton"></div>
+                    <div class="skeleton-profile-lines">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="card">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Card</h2>
+            <p data-slot="desc">카드 레이아웃 안에 스켈레톤을 배치합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="skeleton-card">
+                <div data-slot="card">
+                    <div data-slot="card-header">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div data-slot="card-content">
+                        <div data-slot="skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="text">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Text</h2>
+            <p data-slot="desc">여러 줄 텍스트 로딩 상태를 표현합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="skeleton-text">
+                <div class="skeleton-text">
+                    <div data-slot="skeleton"></div>
+                    <div data-slot="skeleton"></div>
+                    <div data-slot="skeleton"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="form">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Form</h2>
+            <p data-slot="desc">폼 필드와 버튼 자리 표시자를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="skeleton-form">
+                <div class="skeleton-form">
+                    <div class="skeleton-form-field">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div class="skeleton-form-field">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div data-slot="skeleton"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="table">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Table</h2>
+            <p data-slot="desc">테이블 행 형태의 스켈레톤을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="skeleton-table">
+                <div class="skeleton-table">
+                    <div class="skeleton-table-row">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div class="skeleton-table-row">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div class="skeleton-table-row">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div class="skeleton-table-row">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                    <div class="skeleton-table-row">
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                        <div data-slot="skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Skeleton</h3>
+            <p data-slot="desc"><code>data-slot="skeleton"</code> 로딩 placeholder 블록입니다. 크기·모양은 <code>className</code> 또는 레이아웃 래퍼로 지정합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>className</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>너비·높이·모서리 등 추가 스타일.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#avatar">Avatar</a></li>
+                <li><a href="#card">Card</a></li>
+                <li><a href="#text">Text</a></li>
+                <li><a href="#form">Form</a></li>
+                <li><a href="#table">Table</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

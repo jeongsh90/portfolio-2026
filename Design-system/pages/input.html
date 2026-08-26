@@ -1,0 +1,465 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Input</h1>
+            <p data-slot="desc">폼과 사용자 데이터 입력에 사용하는 텍스트 입력 컴포넌트입니다. 기본 스타일과 접근성 속성이 포함되어 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-demo-api-key">API Key</label>
+                    <input type="password" id="input-demo-api-key" data-slot="input" placeholder="sk-...">
+                    <p data-slot="field-description">API 키는 암호화되어 안전하게 저장됩니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">가장 단순한 입력 필드입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <input type="text" data-slot="input" placeholder="텍스트 입력">
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="field">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Field</h2>
+            <p data-slot="desc"><code>Field</code>, <code>FieldLabel</code>, <code>FieldDescription</code>으로 라벨과 설명이 있는 입력 필드를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-field-username">Username</label>
+                    <input type="text" id="input-field-username" data-slot="input" placeholder="사용자 이름을 입력하세요">
+                    <p data-slot="field-description">계정에 사용할 고유한 사용자 이름을 입력하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="field-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Field Group</h2>
+            <p data-slot="desc"><code>FieldGroup</code>으로 여러 <code>Field</code> 블록을 묶어 폼을 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group">
+                        <label data-slot="field-label" for="fieldgroup-name">Name</label>
+                        <input type="text" id="fieldgroup-name" data-slot="input" placeholder="Jordan Lee">
+                    </div>
+                    <div data-slot="field" role="group">
+                        <label data-slot="field-label" for="fieldgroup-email">Email</label>
+                        <input type="email" id="fieldgroup-email" data-slot="input" placeholder="name@example.com">
+                        <p data-slot="field-description">이 주소로 업데이트를 보내드립니다.</p>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="reset" data-slot="button" data-variant="outline">Reset</button>
+                        <button type="submit" data-slot="button">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>disabled</code> 속성으로 입력을 비활성화합니다. 비활성 스타일을 적용하려면 <code>Field</code>에 <code>data-disabled="true"</code>를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group" data-disabled="true">
+                    <label data-slot="field-label" for="input-demo-disabled">Email</label>
+                    <input type="email" id="input-demo-disabled" data-slot="input" placeholder="Email" disabled>
+                    <p data-slot="field-description">이 필드는 현재 비활성화되어 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc"><code>aria-invalid</code> 속성으로 입력을 유효하지 않음으로 표시합니다. <code>Field</code>에 <code>data-invalid="true"</code>를 추가해 스타일을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group" data-invalid="true">
+                    <label data-slot="field-label" for="input-invalid">Invalid Input</label>
+                    <input type="text" id="input-invalid" data-slot="input" placeholder="Error" aria-invalid="true">
+                    <p data-slot="field-description">이 필드에 유효성 검사 오류가 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="file">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">File</h2>
+            <p data-slot="desc"><code>type="file"</code> 속성으로 파일 입력을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-picture">Picture</label>
+                    <input type="file" id="input-picture" data-slot="input">
+                    <p data-slot="field-description">업로드할 사진을 선택하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="inline">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Inline</h2>
+            <p data-slot="desc"><code>Field</code>에 <code>data-orientation="horizontal"</code>을 사용해 인라인 입력을 만듭니다. <code>Button</code>과 함께 검색 입력을 구성할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group" data-orientation="horizontal">
+                    <input type="search" data-slot="input" placeholder="검색...">
+                    <button type="button" data-slot="button">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="grid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Grid</h2>
+            <p data-slot="desc">그리드 레이아웃으로 여러 입력 필드를 나란히 배치합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-grid">
+                <div data-slot="field-group">
+                    <div data-slot="field" role="group">
+                        <label data-slot="field-label" for="input-first-name">First Name</label>
+                        <input type="text" id="input-first-name" data-slot="input" placeholder="Jordan">
+                    </div>
+                    <div data-slot="field" role="group">
+                        <label data-slot="field-label" for="input-last-name">Last Name</label>
+                        <input type="text" id="input-last-name" data-slot="input" placeholder="Lee">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="required">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Required</h2>
+            <p data-slot="desc"><code>required</code> 속성으로 필수 입력을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-required">
+                        Required Field <span data-slot="input-required-mark">*</span>
+                    </label>
+                    <input type="text" id="input-required" data-slot="input" placeholder="이 필드는 필수입니다" required>
+                    <p data-slot="field-description">이 필드를 반드시 입력해야 합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="badge">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Badge</h2>
+            <p data-slot="desc">라벨에 <code>Badge</code>를 넣어 추천 필드 등을 강조합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-badge">
+                        Webhook URL
+                        <span data-slot="badge" data-variant="secondary" data-input-badge>Beta</span>
+                    </label>
+                    <input type="url" id="input-badge" data-slot="input" placeholder="https://api.example.com/webhook">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="input-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Input Group</h2>
+            <p data-slot="desc">입력 안에 아이콘, 텍스트, 버튼을 추가하려면 <code>InputGroup</code> 컴포넌트를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-group-url">Website URL</label>
+                    <div data-slot="input-group" role="group">
+                        <input type="text" id="input-group-url" data-slot="input-group-control" placeholder="example.com">
+                        <div data-slot="input-group-addon" data-align="inline-start">
+                            <span data-slot="input-group-text">https://</span>
+                        </div>
+                        <div data-slot="input-group-addon" data-align="inline-end">
+                            <i data-lucide="info" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="button-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Button Group</h2>
+            <p data-slot="desc">입력에 버튼을 추가하려면 <code>ButtonGroup</code> 컴포넌트를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-field">
+                <div data-slot="field" role="group">
+                    <label data-slot="field-label" for="input-button-group">Search</label>
+                    <div data-slot="button-group" role="group" aria-label="검색">
+                        <input type="search" id="input-button-group" data-slot="input" placeholder="검색어를 입력하세요...">
+                        <button type="button" data-slot="button" data-variant="outline">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="form">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Form</h2>
+            <p data-slot="desc">여러 입력, Select, 버튼으로 구성된 전체 폼 예시입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="input-form">
+                <form data-slot="input-form">
+                    <div data-slot="field-group">
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="form-name">Name</label>
+                            <input type="text" id="form-name" data-slot="input" placeholder="Evil Rabbit" required>
+                        </div>
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="form-email">Email</label>
+                            <input type="email" id="form-email" data-slot="input" placeholder="john@example.com">
+                            <p data-slot="field-description">이메일은 절대 공유하지 않습니다.</p>
+                        </div>
+                        <div data-slot="input-form-grid">
+                            <div data-slot="field" role="group">
+                                <label data-slot="field-label" for="form-phone">Phone</label>
+                                <input type="tel" id="form-phone" data-slot="input" placeholder="+1 (555) 123-4567">
+                            </div>
+                            <div data-slot="field" role="group">
+                                <label data-slot="field-label" for="form-country">Country</label>
+                                <div data-slot="select">
+                                    <button type="button" id="form-country" data-slot="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                        <span data-slot="select-value">United States</span>
+                                        <i data-lucide="chevron-down" aria-hidden="true"></i>
+                                    </button>
+                                    <div data-slot="select-content" data-state="closed" role="listbox" aria-label="Country">
+                                        <button type="button" data-slot="select-item" role="option" data-state="checked">United States</button>
+                                        <button type="button" data-slot="select-item" role="option">United Kingdom</button>
+                                        <button type="button" data-slot="select-item" role="option">Canada</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="field" role="group">
+                            <label data-slot="field-label" for="form-address">Address</label>
+                            <input type="text" id="form-address" data-slot="input" placeholder="123 Main St">
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" data-slot="button" data-variant="outline">Cancel</button>
+                            <button type="submit" data-slot="button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Input</h3>
+            <p data-slot="desc"><code>data-slot="input"</code> 또는 <code>data-slot="input-group-control"</code> 요소에 네이티브 input 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>type</code></td>
+                        <td><code>"button"</code> | <code>"checkbox"</code> | <code>"color"</code> | <code>"date"</code> | <code>"datetime-local"</code> | <code>"email"</code> | <code>"file"</code> | <code>"hidden"</code> | <code>"image"</code> | <code>"month"</code> | <code>"number"</code> | <code>"password"</code> | <code>"radio"</code> | <code>"range"</code> | <code>"reset"</code> | <code>"search"</code> | <code>"submit"</code> | <code>"tel"</code> | <code>"text"</code> | <code>"time"</code> | <code>"url"</code> | <code>"week"</code></td>
+                        <td><code>"text"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>placeholder</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>required</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Field</h3>
+            <p data-slot="desc"><code>data-slot="field"</code> 루트 요소에 아래 속성을 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"vertical"</code> | <code>"horizontal"</code> | <code>"responsive"</code></td>
+                        <td><code>"vertical"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">FieldGroup</h3>
+            <p data-slot="desc"><code>data-slot="field-group"</code>으로 여러 Field 블록을 묶습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3">별도 속성 없음. 자식 <code>Field</code>를 세로로 배치합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">InputGroup</h3>
+            <p data-slot="desc"><code>data-slot="input-group"</code>과 <code>data-slot="input-group-addon"</code>에 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-disabled</code> (<code>input-group</code> / <code>input-group-addon</code>)</td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align</code> (<code>input-group-addon</code>)</td>
+                        <td><code>"inline-start"</code> | <code>"inline-end"</code> | <code>"block-start"</code> | <code>"block-end"</code></td>
+                        <td><code>"inline-start"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">FieldLabel</h3>
+            <p data-slot="desc"><code>data-slot="field-label"</code> 또는 <code>data-slot="label"</code> 요소에 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>for</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#field">Field</a></li>
+                <li><a href="#field-group">Field Group</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+                <li><a href="#file">File</a></li>
+                <li><a href="#inline">Inline</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#required">Required</a></li>
+                <li><a href="#badge">Badge</a></li>
+                <li><a href="#input-group">Input Group</a></li>
+                <li><a href="#button-group">Button Group</a></li>
+                <li><a href="#form">Form</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

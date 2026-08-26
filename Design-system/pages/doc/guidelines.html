@@ -1,0 +1,712 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Guidelines</h1>
+            <p data-slot="desc">이 디자인 시스템의 CSS 변수·컴포넌트 속성·레이아웃 규칙 사용법을 안내합니다. 모든 컴포넌트는 아래 규칙을 따릅니다.</p>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="css-tokens">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">CSS Tokens</h2>
+            <p data-slot="desc">하드코딩된 색상·크기 값 대신 시맨틱 CSS 변수를 사용합니다. 라이트/다크 테마 전환이 자동으로 반영됩니다.</p>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Color</h3>
+            <p data-slot="desc">배경·텍스트·인터랙션 색상 토큰입니다. 직접 팔레트 값(<code>--color-blue-500</code>)을 쓰지 않고 시맨틱 토큰을 참조합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">변수</th>
+                        <th scope="col">용도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--color-background</code></td>
+                        <td>페이지 기본 배경</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-foreground</code></td>
+                        <td>기본 본문 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-card</code></td>
+                        <td>카드·패널 배경</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-card-foreground</code></td>
+                        <td>카드 위 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-primary</code></td>
+                        <td>주요 액션 색상 (버튼 default, 링크)</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-primary-foreground</code></td>
+                        <td>primary 배경 위 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-muted</code></td>
+                        <td>보조 배경, 비활성 영역</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-muted-foreground</code></td>
+                        <td>보조 텍스트, 플레이스홀더, 힌트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-accent</code></td>
+                        <td>hover 강조 배경</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-accent-foreground</code></td>
+                        <td>accent 배경 위 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-border</code></td>
+                        <td>테두리 기본값</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-input</code></td>
+                        <td>인풋 필드 테두리</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-ring</code></td>
+                        <td>포커스 아웃라인(링)</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-destructive</code></td>
+                        <td>삭제·위험 액션 색상</td>
+                    </tr>
+                    <tr>
+                        <td><code>--color-destructive-foreground</code></td>
+                        <td>destructive 배경 위 텍스트</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Spacing</h3>
+            <p data-slot="desc">기본 단위는 <code>--spacing = 0.25rem (4px)</code>. <code>calc(var(--spacing) * N)</code> 형태만 사용하고 임의의 픽셀 값은 쓰지 않습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">표현식</th>
+                        <th scope="col">값</th>
+                        <th scope="col">주요 용도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 1)</code></td>
+                        <td>4px</td>
+                        <td>아이콘 보조 여백, 미세 간격</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 2)</code></td>
+                        <td>8px</td>
+                        <td>패딩 sm, 인라인 gap</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 3)</code></td>
+                        <td>12px</td>
+                        <td>패딩 기본, 컴팩트 간격</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 4)</code></td>
+                        <td>16px</td>
+                        <td>그리드 gap, 패딩 default</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 6)</code></td>
+                        <td>24px</td>
+                        <td>doc-pattern-1 내부 gap</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 8)</code></td>
+                        <td>32px</td>
+                        <td>컴포넌트 높이 기본 (버튼, 메뉴)</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 14)</code></td>
+                        <td>56px</td>
+                        <td>헤더·사이드바 헤더 높이</td>
+                    </tr>
+                    <tr>
+                        <td><code>calc(var(--spacing) * 26)</code></td>
+                        <td>104px</td>
+                        <td>doc-page 섹션 간 gap</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Typography</h3>
+            <p data-slot="desc">폰트 크기·굵기·행간·자간은 변수 조합으로 지정합니다. <code>font</code> shorthand를 사용하면 간결하게 쓸 수 있습니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">카테고리</th>
+                        <th scope="col">변수</th>
+                        <th scope="col">값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Font family</td>
+                        <td><code>--font-sans</code></td>
+                        <td>Pretendard (기본 본문)</td>
+                    </tr>
+                    <tr>
+                        <td>Font family</td>
+                        <td><code>--font-mono</code></td>
+                        <td>코드·데이터 표시</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td><code>--text-xs</code></td>
+                        <td>0.75rem · 12px</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td><code>--text-sm</code></td>
+                        <td>0.875rem · 14px</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td><code>--text-base</code></td>
+                        <td>1rem · 16px</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td><code>--text-lg</code></td>
+                        <td>1.125rem · 18px</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td><code>--text-xl</code> ~ <code>--text-5xl</code></td>
+                        <td>1.25rem ~ 3rem (헤딩)</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td><code>--font-weight-normal</code></td>
+                        <td>400 · 본문</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td><code>--font-weight-medium</code></td>
+                        <td>500 · 레이블, 코드</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td><code>--font-weight-semibold</code></td>
+                        <td>600 · 소제목, 버튼</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td><code>--font-weight-bold</code></td>
+                        <td>700 · 헤딩</td>
+                    </tr>
+                    <tr>
+                        <td>Line height</td>
+                        <td><code>--leading-normal</code></td>
+                        <td>1.5 · 일반 본문</td>
+                    </tr>
+                    <tr>
+                        <td>Line height</td>
+                        <td><code>--leading-normal-lg</code></td>
+                        <td>1.75rem · 서술형 문장</td>
+                    </tr>
+                    <tr>
+                        <td>Letter spacing</td>
+                        <td><code>--tracking-sm</code></td>
+                        <td>-0.008em · 소제목</td>
+                    </tr>
+                    <tr>
+                        <td>Letter spacing</td>
+                        <td><code>--tracking-base</code></td>
+                        <td>-0.01em · 본문 (Pretendard 권장)</td>
+                    </tr>
+                    <tr>
+                        <td>Letter spacing</td>
+                        <td><code>--tracking-normal</code></td>
+                        <td>0em · 코드, 영문</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Border Radius</h3>
+            <p data-slot="desc"><code>--radius</code> 기본값을 기준으로 배수로 계산됩니다. 컴포넌트 크기에 따라 적합한 단계를 선택합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">변수</th>
+                        <th scope="col">계산식</th>
+                        <th scope="col">용도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--radius-sm</code></td>
+                        <td><code>calc(var(--radius) * .6)</code></td>
+                        <td>배지, 태그, 보조 요소</td>
+                    </tr>
+                    <tr>
+                        <td><code>--radius-md</code></td>
+                        <td><code>calc(var(--radius) * .8)</code></td>
+                        <td>버튼, 인풋, 셀렉트</td>
+                    </tr>
+                    <tr>
+                        <td><code>--radius-lg</code></td>
+                        <td><code>var(--radius)</code></td>
+                        <td>카드, 드롭다운, 팝오버</td>
+                    </tr>
+                    <tr>
+                        <td><code>--radius-xl</code></td>
+                        <td><code>calc(var(--radius) * 1.4)</code></td>
+                        <td>모달, 시트, 사이드바 컨테이너</td>
+                    </tr>
+                    <tr>
+                        <td><code>--radius-2xl</code></td>
+                        <td><code>calc(var(--radius) * 1.8)</code></td>
+                        <td>대형 카드, 전체 섹션</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Transition</h3>
+            <p data-slot="desc">애니메이션은 공통 변수를 사용해 속도·이징을 통일합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">변수</th>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--default-transition-duration</code></td>
+                        <td><code>.15s</code></td>
+                        <td>기본 전환 시간</td>
+                    </tr>
+                    <tr>
+                        <td><code>--default-transition-timing-function</code></td>
+                        <td><code>cubic-bezier(.4, 0, .2, 1)</code></td>
+                        <td>기본 이징 (ease-in-out 계열)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="component-attributes">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Component Attributes</h2>
+            <p data-slot="desc">컴포넌트는 <code>data-slot</code>으로 역할을 선언하고 <code>data-variant</code> · <code>data-size</code> · <code>data-state</code>로 상태를 제어합니다.</p>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">data-slot</h3>
+            <p data-slot="desc">모든 컴포넌트 요소는 <code>data-slot</code>으로 의미를 선언합니다. CSS는 이 속성을 선택자로 사용해 스타일을 적용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">값</th>
+                        <th scope="col">역할</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"button"</code></td>
+                        <td>버튼 루트 요소</td>
+                    </tr>
+                    <tr>
+                        <td><code>"card"</code></td>
+                        <td>카드 컨테이너</td>
+                    </tr>
+                    <tr>
+                        <td><code>"card-header"</code> / <code>"card-content"</code> / <code>"card-footer"</code></td>
+                        <td>카드 구역 분리</td>
+                    </tr>
+                    <tr>
+                        <td><code>"label"</code></td>
+                        <td>폼 레이블</td>
+                    </tr>
+                    <tr>
+                        <td><code>"icon"</code></td>
+                        <td>아이콘 래퍼</td>
+                    </tr>
+                    <tr>
+                        <td><code>"badge"</code></td>
+                        <td>배지</td>
+                    </tr>
+                    <tr>
+                        <td><code>"separator"</code></td>
+                        <td>구분선</td>
+                    </tr>
+                    <tr>
+                        <td><code>"tooltip"</code></td>
+                        <td>툴팁 컨테이너</td>
+                    </tr>
+                    <tr>
+                        <td><code>"tooltip-content"</code></td>
+                        <td>툴팁 내용</td>
+                    </tr>
+                    <tr>
+                        <td><code>"dialog"</code> / <code>"dialog-content"</code></td>
+                        <td>다이얼로그 루트 / 패널</td>
+                    </tr>
+                    <tr>
+                        <td><code>"sheet"</code> / <code>"sheet-content"</code></td>
+                        <td>시트 루트 / 패널</td>
+                    </tr>
+                    <tr>
+                        <td><code>"accordion"</code> / <code>"accordion-item"</code></td>
+                        <td>아코디언 루트 / 항목</td>
+                    </tr>
+                    <tr>
+                        <td><code>"accordion-trigger"</code> / <code>"accordion-content"</code></td>
+                        <td>아코디언 토글 버튼 / 패널</td>
+                    </tr>
+                    <tr>
+                        <td><code>"tabs"</code> / <code>"tabs-list"</code> / <code>"tabs-trigger"</code> / <code>"tabs-content"</code></td>
+                        <td>탭 구조</td>
+                    </tr>
+                    <tr>
+                        <td><code>"sidebar"</code> / <code>"sidebar-wrapper"</code></td>
+                        <td>사이드바 패널 / 전체 래퍼</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">data-variant</h3>
+            <p data-slot="desc">시각적 스타일 변형을 선택합니다. 컴포넌트마다 지원 variant가 다릅니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                        <th scope="col">주요 사용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"default"</code></td>
+                        <td>채운 스타일 (primary 배경)</td>
+                        <td>Button, Badge</td>
+                    </tr>
+                    <tr>
+                        <td><code>"outline"</code></td>
+                        <td>테두리만 있는 스타일</td>
+                        <td>Button, Badge, Input</td>
+                    </tr>
+                    <tr>
+                        <td><code>"ghost"</code></td>
+                        <td>투명 배경, hover 시 강조</td>
+                        <td>Button, Toggle</td>
+                    </tr>
+                    <tr>
+                        <td><code>"secondary"</code></td>
+                        <td>muted 배경의 보조 스타일</td>
+                        <td>Button, Badge</td>
+                    </tr>
+                    <tr>
+                        <td><code>"destructive"</code></td>
+                        <td>위험·삭제 액션</td>
+                        <td>Button, Alert</td>
+                    </tr>
+                    <tr>
+                        <td><code>"link"</code></td>
+                        <td>텍스트 링크 스타일</td>
+                        <td>Button</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">data-size</h3>
+            <p data-slot="desc">컴포넌트의 크기를 조절합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"xs"</code></td>
+                        <td>Extra small — 최소 크기</td>
+                    </tr>
+                    <tr>
+                        <td><code>"sm"</code></td>
+                        <td>Small — 컴팩트 UI</td>
+                    </tr>
+                    <tr>
+                        <td><code>"default"</code></td>
+                        <td>기본 크기 (생략 가능)</td>
+                    </tr>
+                    <tr>
+                        <td><code>"lg"</code></td>
+                        <td>Large — 강조 액션</td>
+                    </tr>
+                    <tr>
+                        <td><code>"icon"</code></td>
+                        <td>정방형 아이콘 버튼</td>
+                    </tr>
+                    <tr>
+                        <td><code>"icon-sm"</code> / <code>"icon-lg"</code></td>
+                        <td>작은/큰 아이콘 버튼</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">data-state</h3>
+            <p data-slot="desc">컴포넌트의 현재 상태를 나타냅니다. JavaScript가 자동으로 토글하며 CSS 선택자로 스타일링에 사용됩니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                        <th scope="col">주요 사용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"open"</code> / <code>"closed"</code></td>
+                        <td>열림/닫힘</td>
+                        <td>Accordion, Collapsible, Dialog, Sheet, Tooltip</td>
+                    </tr>
+                    <tr>
+                        <td><code>"expanded"</code> / <code>"collapsed"</code></td>
+                        <td>펼침/접힘</td>
+                        <td>Sidebar</td>
+                    </tr>
+                    <tr>
+                        <td><code>"checked"</code> / <code>"unchecked"</code></td>
+                        <td>선택됨/해제됨</td>
+                        <td>Checkbox, Switch, Toggle</td>
+                    </tr>
+                    <tr>
+                        <td><code>"active"</code></td>
+                        <td>현재 활성 항목</td>
+                        <td>Tabs, Nav</td>
+                    </tr>
+                    <tr>
+                        <td><code>"loading"</code></td>
+                        <td>로딩 중</td>
+                        <td>Button, Skeleton</td>
+                    </tr>
+                    <tr>
+                        <td><code>"disabled"</code></td>
+                        <td>비활성</td>
+                        <td>Button, Input, Select</td>
+                    </tr>
+                    <tr>
+                        <td><code>"error"</code></td>
+                        <td>유효성 오류</td>
+                        <td>Input, Field</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">data-color</h3>
+            <p data-slot="desc">시스템 색상을 적용합니다. <code>data-variant</code>와 조합해 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">값</th>
+                        <th scope="col">설명</th>
+                        <th scope="col">토큰 접두사</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"info"</code></td>
+                        <td>정보·안내</td>
+                        <td><code>--sys-info-*</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"success"</code></td>
+                        <td>성공·완료</td>
+                        <td><code>--sys-success-*</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"warning"</code></td>
+                        <td>경고·주의</td>
+                        <td><code>--sys-warning-*</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"error"</code></td>
+                        <td>오류·실패</td>
+                        <td><code>--sys-error-*</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="layout">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Layout</h2>
+            <p data-slot="desc">페이지는 12칼럼 그리드를 기반으로 구성됩니다. 문서 페이지는 <code>doc-page-layout</code> → <code>doc-page</code> → <code>doc-pattern-1</code> 구조를 따릅니다.</p>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Page Structure</h3>
+            <p data-slot="desc">문서 페이지를 구성하는 래퍼 계층입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">클래스 / 속성</th>
+                        <th scope="col">역할</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>.doc-page-layout</code></td>
+                        <td>페이지 + 우측 page-nav를 나란히 배치하는 최외곽 래퍼</td>
+                    </tr>
+                    <tr>
+                        <td><code>.doc-page</code></td>
+                        <td>섹션들을 세로로 나열하는 <code>gap: calc(var(--spacing) * 26)</code> flex 컬럼</td>
+                    </tr>
+                    <tr>
+                        <td><code>.doc-pattern-1</code></td>
+                        <td>text-area + component-area(또는 reference-area)를 <code>gap: calc(var(--spacing) * 6)</code>으로 배치</td>
+                    </tr>
+                    <tr>
+                        <td><code>[data-slot="text-area"]</code></td>
+                        <td>h2/h3 + desc 텍스트 블록</td>
+                    </tr>
+                    <tr>
+                        <td><code>[data-slot="component-area"]</code></td>
+                        <td>인터랙티브 컴포넌트 프리뷰 영역</td>
+                    </tr>
+                    <tr>
+                        <td><code>[data-slot="reference-area"]</code></td>
+                        <td>API 테이블 래퍼 (border + border-radius)</td>
+                    </tr>
+                    <tr>
+                        <td><code>[data-slot="page-nav"]</code></td>
+                        <td>우측 온페이지 네비게이션</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">Column Span</h3>
+            <p data-slot="desc"><code>content-inner</code>의 직계 자식에 적용하는 12칼럼 span 속성입니다. 합이 12를 넘으면 다음 줄로 내려갑니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">Breakpoint</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-col-span="N"</code></td>
+                        <td>All</td>
+                        <td>1–12 칼럼 span (기본)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-col-span-md="N"</code></td>
+                        <td>≥ 48rem</td>
+                        <td>Tablet 이상 override</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-col-span-lg="N"</code></td>
+                        <td>≥ 64rem</td>
+                        <td>Desktop override</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-col-span-xl="N"</code></td>
+                        <td>≥ 80rem</td>
+                        <td>Wide desktop override</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">CSS Tokens</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#css-tokens">Color</a></li>
+                <li><a href="#css-tokens">Spacing</a></li>
+                <li><a href="#css-tokens">Typography</a></li>
+                <li><a href="#css-tokens">Border Radius</a></li>
+                <li><a href="#css-tokens">Transition</a></li>
+            </ul>
+        </li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Component Attributes</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#component-attributes">data-slot</a></li>
+                <li><a href="#component-attributes">data-variant</a></li>
+                <li><a href="#component-attributes">data-size</a></li>
+                <li><a href="#component-attributes">data-state</a></li>
+                <li><a href="#component-attributes">data-color</a></li>
+            </ul>
+        </li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Layout</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#layout">Page Structure</a></li>
+                <li><a href="#layout">Column Span</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</div>

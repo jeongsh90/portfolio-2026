@@ -1,0 +1,315 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Alert Dialog</h1>
+            <p data-slot="desc">사용자의 명시적인 확인이 필요한 중요한 작업에 사용하는 모달 다이얼로그입니다. 오버레이 클릭이나 <kbd>Esc</kbd> 키로 닫히지 않아 의도치 않은 파괴적 액션을 방지합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert-dialog">
+                    <div data-slot="alert-dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">다이얼로그 열기</button>
+                    </div>
+                    <div data-slot="alert-dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="alert-dialog-content" data-size="default"
+                         role="alertdialog" aria-modal="true"
+                         aria-labelledby="overview-title" aria-describedby="overview-desc">
+                        <div data-slot="alert-dialog-header">
+                            <h2 data-slot="alert-dialog-title" id="overview-title">정말 계속하시겠습니까?</h2>
+                            <p data-slot="alert-dialog-description" id="overview-desc">이 작업은 되돌릴 수 없습니다. 계정이 영구적으로 삭제되며 서버에서 모든 데이터가 제거됩니다.</p>
+                        </div>
+                        <div data-slot="alert-dialog-footer">
+                            <button type="button" data-slot="alert-dialog-cancel" data-variant="outline">취소</button>
+                            <button type="button" data-slot="alert-dialog-action">계속</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">제목, 설명, 취소·확인 버튼으로 구성된 기본 Alert Dialog입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert-dialog">
+                    <div data-slot="alert-dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">다이얼로그 열기</button>
+                    </div>
+                    <div data-slot="alert-dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="alert-dialog-content" data-size="default"
+                         role="alertdialog" aria-modal="true"
+                         aria-labelledby="basic-title" aria-describedby="basic-desc">
+                        <div data-slot="alert-dialog-header">
+                            <h2 data-slot="alert-dialog-title" id="basic-title">정말 계속하시겠습니까?</h2>
+                            <p data-slot="alert-dialog-description" id="basic-desc">이 작업은 되돌릴 수 없습니다. 계정이 영구적으로 삭제되며 서버에서 모든 데이터가 제거됩니다.</p>
+                        </div>
+                        <div data-slot="alert-dialog-footer">
+                            <button type="button" data-slot="alert-dialog-cancel" data-variant="outline">취소</button>
+                            <button type="button" data-slot="alert-dialog-action">계속</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="small">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Small</h2>
+            <p data-slot="desc"><code>data-size="sm"</code>으로 너비를 줄인 소형 다이얼로그입니다. 푸터 버튼이 자동으로 2열 그리드로 배치됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert-dialog">
+                    <div data-slot="alert-dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">다이얼로그 열기</button>
+                    </div>
+                    <div data-slot="alert-dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="alert-dialog-content" data-size="sm"
+                         role="alertdialog" aria-modal="true"
+                         aria-labelledby="small-title" aria-describedby="small-desc">
+                        <div data-slot="alert-dialog-header">
+                            <h2 data-slot="alert-dialog-title" id="small-title">정말 계속하시겠습니까?</h2>
+                            <p data-slot="alert-dialog-description" id="small-desc">이 작업은 되돌릴 수 없습니다. 계정이 영구적으로 삭제되며 서버에서 모든 데이터가 제거됩니다.</p>
+                        </div>
+                        <div data-slot="alert-dialog-footer">
+                            <button type="button" data-slot="alert-dialog-cancel" data-variant="outline">취소</button>
+                            <button type="button" data-slot="alert-dialog-action">계속</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="media">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Media</h2>
+            <p data-slot="desc"><code>data-slot="alert-dialog-media"</code>로 헤더에 아이콘·이미지를 추가합니다. 대형 화면에서 미디어가 제목·설명 옆에 나란히 배치됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert-dialog">
+                    <div data-slot="alert-dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">프로젝트 공유</button>
+                    </div>
+                    <div data-slot="alert-dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="alert-dialog-content" data-size="default"
+                         role="alertdialog" aria-modal="true"
+                         aria-labelledby="media-title" aria-describedby="media-desc">
+                        <div data-slot="alert-dialog-header">
+                            <div data-slot="alert-dialog-media">
+                                <i data-lucide="circle-fading-plus"></i>
+                            </div>
+                            <h2 data-slot="alert-dialog-title" id="media-title">프로젝트를 공유하시겠습니까?</h2>
+                            <p data-slot="alert-dialog-description" id="media-desc">팀원들이 이 프로젝트를 열람하고 편집할 수 있게 됩니다. 언제든지 공유 설정을 변경할 수 있습니다.</p>
+                        </div>
+                        <div data-slot="alert-dialog-footer">
+                            <button type="button" data-slot="alert-dialog-cancel" data-variant="outline">취소</button>
+                            <button type="button" data-slot="alert-dialog-action">공유</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="small-with-media">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Small with Media</h2>
+            <p data-slot="desc"><code>data-size="sm"</code>과 미디어를 함께 사용한 예시입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert-dialog">
+                    <div data-slot="alert-dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">다이얼로그 열기</button>
+                    </div>
+                    <div data-slot="alert-dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="alert-dialog-content" data-size="sm"
+                         role="alertdialog" aria-modal="true"
+                         aria-labelledby="small-media-title" aria-describedby="small-media-desc">
+                        <div data-slot="alert-dialog-header">
+                            <div data-slot="alert-dialog-media">
+                                <i data-lucide="bluetooth"></i>
+                            </div>
+                            <h2 data-slot="alert-dialog-title" id="small-media-title">Bluetooth 활성화</h2>
+                            <p data-slot="alert-dialog-description" id="small-media-desc">주변 기기와 연결하려면 Bluetooth를 켜야 합니다.</p>
+                        </div>
+                        <div data-slot="alert-dialog-footer">
+                            <button type="button" data-slot="alert-dialog-cancel" data-variant="outline">취소</button>
+                            <button type="button" data-slot="alert-dialog-action">활성화</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="destructive">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Destructive</h2>
+            <p data-slot="desc">삭제 등 되돌릴 수 없는 작업에 사용합니다. 확인 버튼을 <code>data-variant="destructive"</code>로 강조합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="alert-dialog">
+                    <div data-slot="alert-dialog-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">채팅 삭제</button>
+                    </div>
+                    <div data-slot="alert-dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="alert-dialog-content" data-size="sm"
+                         role="alertdialog" aria-modal="true"
+                         aria-labelledby="destructive-title" aria-describedby="destructive-desc">
+                        <div data-slot="alert-dialog-header">
+                            <div data-slot="alert-dialog-media">
+                                <i data-lucide="trash-2"></i>
+                            </div>
+                            <h2 data-slot="alert-dialog-title" id="destructive-title">채팅을 삭제하시겠습니까?</h2>
+                            <p data-slot="alert-dialog-description" id="destructive-desc">이 채팅 기록은 영구적으로 삭제되며 복구할 수 없습니다.</p>
+                        </div>
+                        <div data-slot="alert-dialog-footer">
+                            <button type="button" data-slot="alert-dialog-cancel" data-variant="outline">취소</button>
+                            <button type="button" data-slot="alert-dialog-action" data-variant="destructive">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">AlertDialog</h3>
+            <p data-slot="desc">Alert Dialog 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slot="alert-dialog"</code></td>
+                        <td>루트 컨테이너. 트리거·오버레이·콘텐츠를 감쌉니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AlertDialogContent</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>다이얼로그 최대 너비. <code>sm</code>은 320px, <code>default</code>는 512px(sm 브레이크포인트 이상).</td>
+                    </tr>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"alertdialog"</code></td>
+                        <td><code>"alertdialog"</code></td>
+                        <td>스크린 리더에 경고 다이얼로그임을 알립니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-modal</code></td>
+                        <td><code>"true"</code></td>
+                        <td><code>"true"</code></td>
+                        <td>모달 영역 외부 콘텐츠를 보조 기술에서 숨깁니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-labelledby</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td><code>alert-dialog-title</code> 요소의 <code>id</code>와 연결합니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-describedby</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td><code>alert-dialog-description</code> 요소의 <code>id</code>와 연결합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AlertDialogAction / AlertDialogCancel</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-slot="alert-dialog-action"</code></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>확인 버튼. 클릭 시 다이얼로그가 닫힙니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-slot="alert-dialog-cancel"</code></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>취소 버튼(<code>data-variant="outline"</code> 기본). 클릭 시 다이얼로그가 닫힙니다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"outline"</code> | <code>"ghost"</code> | <code>"destructive"</code> | <code>"secondary"</code> | <code>"link"</code></td>
+                        <td>action: <code>"default"</code> / cancel: <code>"outline"</code></td>
+                        <td>버튼 스타일을 지정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이 페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#small">Small</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#small-with-media">Small with Media</a></li>
+                <li><a href="#destructive">Destructive</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

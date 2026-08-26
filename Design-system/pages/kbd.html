@@ -1,0 +1,177 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Kbd</h1>
+            <p data-slot="desc">키보드 키·단축키를 표시하는 컴포넌트입니다. 버튼, 툴팁, 입력 그룹 등과 함께 사용할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="kbd-stack">
+                <kbd data-slot="kbd-group">
+                    <kbd data-slot="kbd"><i data-lucide="arrow-up" aria-hidden="true"></i></kbd>
+                    <kbd data-slot="kbd"><i data-lucide="arrow-down" aria-hidden="true"></i></kbd>
+                    <kbd data-slot="kbd"><i data-lucide="arrow-left" aria-hidden="true"></i></kbd>
+                    <kbd data-slot="kbd"><i data-lucide="arrow-right" aria-hidden="true"></i></kbd>
+                </kbd>
+                <kbd data-slot="kbd-group">
+                    <kbd data-slot="kbd">Ctrl</kbd>
+                    <span>+</span>
+                    <kbd data-slot="kbd">B</kbd>
+                </kbd>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Group</h2>
+            <p data-slot="desc"><code>kbd-group</code>으로 여러 키를 묶어 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="kbd-inline">
+                <p data-slot="typography-p">
+                    Use
+                    <kbd data-slot="kbd-group">
+                        <kbd data-slot="kbd">Ctrl + B</kbd>
+                        <kbd data-slot="kbd">Ctrl + K</kbd>
+                    </kbd>
+                    to open the command palette
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Button</h2>
+            <p data-slot="desc">버튼 안에 <code>Kbd</code>를 넣어 단축키를 함께 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="kbd-row">
+                <button type="button" data-slot="button" data-variant="outline" data-size="sm">
+                    Accept
+                    <kbd data-slot="kbd"><i data-lucide="corner-down-left" aria-hidden="true"></i></kbd>
+                </button>
+                <button type="button" data-slot="button" data-variant="outline" data-size="sm">
+                    Cancel
+                    <kbd data-slot="kbd">Esc</kbd>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="tooltip">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Tooltip</h2>
+            <p data-slot="desc">툴팁 안에 단축키를 표시합니다. 툴팁 배경에 맞게 <code>Kbd</code> 색상이 자동 조정됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="kbd-row">
+                <div data-slot="button-group">
+                    <div data-slot="tooltip">
+                        <span data-slot="tooltip-trigger">
+                            <button type="button" data-slot="button" data-size="sm" data-variant="outline">Save</button>
+                        </span>
+                        <div data-slot="tooltip-content" data-state="closed" data-side="top" role="tooltip">
+                            Save Changes <kbd data-slot="kbd">S</kbd>
+                        </div>
+                    </div>
+                    <div data-slot="tooltip">
+                        <span data-slot="tooltip-trigger">
+                            <button type="button" data-slot="button" data-size="sm" data-variant="outline">Print</button>
+                        </span>
+                        <div data-slot="tooltip-content" data-state="closed" data-side="top" role="tooltip">
+                            Print Document
+                            <kbd data-slot="kbd-group">
+                                <kbd data-slot="kbd">Ctrl</kbd>
+                                <kbd data-slot="kbd">P</kbd>
+                            </kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="input-group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Input Group</h2>
+            <p data-slot="desc"><code>input-group-addon</code>에 <code>Kbd</code>를 배치해 검색 단축키를 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="kbd-input-group">
+                <div data-slot="input-group" role="group">
+                    <input type="search" data-slot="input-group-control" placeholder="Search...">
+                    <div data-slot="input-group-addon">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="input-group-addon" data-align="inline-end">
+                        <kbd data-slot="kbd">⌘</kbd>
+                        <kbd data-slot="kbd">K</kbd>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Kbd</h3>
+            <p data-slot="desc"><code>data-slot="kbd"</code>는 <code>&lt;kbd&gt;</code> 요소에 적용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">요소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>kbd</code></td>
+                        <td><code>&lt;kbd&gt;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">KbdGroup</h3>
+            <p data-slot="desc"><code>data-slot="kbd-group"</code>으로 여러 <code>Kbd</code>를 그룹화합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">요소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>kbd-group</code></td>
+                        <td><code>&lt;kbd&gt;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#group">Group</a></li>
+        <li><a href="#button">Button</a></li>
+        <li><a href="#tooltip">Tooltip</a></li>
+        <li><a href="#input-group">Input Group</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

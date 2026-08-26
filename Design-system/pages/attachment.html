@@ -1,0 +1,621 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Attachment</h1>
+            <p data-slot="desc">파일 또는 이미지 첨부물을 미디어·메타데이터·업로드 상태·액션과 함께 표시하는 컴포넌트입니다. 업로드 생명주기 전 상태와 가로 스크롤 그룹을 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="attachment-overview">
+                <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="file-text" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Document.pdf</span>
+                        <span data-slot="attachment-description">1.2 MB</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="image">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Image</h2>
+            <p data-slot="desc"><code>data-variant="image"</code>를 사용해 파일 아이콘 대신 이미지 썸네일을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="attachment-image">
+                <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                    <div data-slot="attachment-media" data-variant="image">
+                        <img src="https://placehold.co/40x40" alt="photo.jpg preview" />
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">photo.jpg</span>
+                        <span data-slot="attachment-description">2.4 MB</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="states">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">States</h2>
+            <p data-slot="desc">업로드 생명주기 5가지 상태를 지원합니다. <code>uploading</code>과 <code>processing</code>은 제목에 shimmer 애니메이션이 적용됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="attachment-states">
+                <!-- idle -->
+                <div data-slot="attachment" data-orientation="horizontal" data-state="idle">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="upload" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Drop files here</span>
+                        <span data-slot="attachment-description">PNG, JPG up to 10 MB</span>
+                    </div>
+                </div>
+                <!-- uploading -->
+                <div data-slot="attachment" data-orientation="horizontal" data-state="uploading">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <div data-slot="spinner"><i data-lucide="loader-circle" aria-hidden="true"></i></div>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Uploading...</span>
+                        <span data-slot="attachment-description">45%</span>
+                    </div>
+                </div>
+                <!-- processing -->
+                <div data-slot="attachment" data-orientation="horizontal" data-state="processing">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <div data-slot="spinner"><i data-lucide="loader-circle" aria-hidden="true"></i></div>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Processing</span>
+                        <span data-slot="attachment-description">Please wait...</span>
+                    </div>
+                </div>
+                <!-- error -->
+                <div data-slot="attachment" data-orientation="horizontal" data-state="error">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="alert-circle" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Upload failed</span>
+                        <span data-slot="attachment-description">File size too large</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Retry upload">
+                            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- done -->
+                <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="file-text" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Document.pdf</span>
+                        <span data-slot="attachment-description">Upload complete</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="sizes">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Sizes</h2>
+            <p data-slot="desc"><code>data-size</code>로 크기를 조절합니다. <code>default</code>, <code>sm</code>, <code>xs</code> 세 가지를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="attachment-sizes">
+                <!-- default -->
+                <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="file-text" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Default size</span>
+                        <span data-slot="attachment-description">1.2 MB</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- sm -->
+                <div data-slot="attachment" data-size="sm" data-orientation="horizontal" data-state="done">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="file-text" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Small size</span>
+                        <span data-slot="attachment-description">1.2 MB</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- xs -->
+                <div data-slot="attachment" data-size="xs" data-orientation="horizontal" data-state="done">
+                    <div data-slot="attachment-media" data-variant="icon">
+                        <i data-lucide="file-text" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="attachment-content">
+                        <span data-slot="attachment-title">Extra small</span>
+                        <span data-slot="attachment-description">1.2 MB</span>
+                    </div>
+                    <div data-slot="attachment-actions">
+                        <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Group</h2>
+            <p data-slot="desc"><code>AttachmentGroup</code>으로 여러 첨부파일을 가로 스크롤 영역에 나열합니다. 양쪽 끝에 fade-out 효과가 적용됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="attachment-group">
+                <div data-slot="attachment-group">
+                    <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                        <div data-slot="attachment-media" data-variant="icon">
+                            <i data-lucide="file-text" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="attachment-content">
+                            <span data-slot="attachment-title">Document.pdf</span>
+                            <span data-slot="attachment-description">1.2 MB</span>
+                        </div>
+                        <div data-slot="attachment-actions">
+                            <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                        <div data-slot="attachment-media" data-variant="image">
+                            <img src="https://placehold.co/40x40" alt="photo.jpg preview" />
+                        </div>
+                        <div data-slot="attachment-content">
+                            <span data-slot="attachment-title">photo.jpg</span>
+                            <span data-slot="attachment-description">2.4 MB</span>
+                        </div>
+                        <div data-slot="attachment-actions">
+                            <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-slot="attachment" data-orientation="horizontal" data-state="uploading">
+                        <div data-slot="attachment-media" data-variant="icon">
+                            <div data-slot="spinner"><i data-lucide="loader-circle" aria-hidden="true"></i></div>
+                        </div>
+                        <div data-slot="attachment-content">
+                            <span data-slot="attachment-title">Uploading...</span>
+                            <span data-slot="attachment-description">45%</span>
+                        </div>
+                    </div>
+                    <div data-slot="attachment" data-orientation="horizontal" data-state="error">
+                        <div data-slot="attachment-media" data-variant="icon">
+                            <i data-lucide="alert-circle" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="attachment-content">
+                            <span data-slot="attachment-title">Upload failed</span>
+                            <span data-slot="attachment-description">File size too large</span>
+                        </div>
+                        <div data-slot="attachment-actions">
+                            <button data-slot="attachment-action" type="button" aria-label="Retry upload">
+                                <i data-lucide="refresh-cw" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                        <div data-slot="attachment-media" data-variant="icon">
+                            <i data-lucide="music" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="attachment-content">
+                            <span data-slot="attachment-title">audio.mp3</span>
+                            <span data-slot="attachment-description">4.8 MB</span>
+                        </div>
+                        <div data-slot="attachment-actions">
+                            <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="trigger">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Trigger</h2>
+            <p data-slot="desc"><code>AttachmentTrigger</code>와 <code>Dialog</code>를 결합해 카드 전체를 클릭하면 미리보기 대화상자가 열립니다. 액션 버튼은 <code>z-index: 20</code>으로 트리거 위에서 독립적으로 동작합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="attachment-trigger">
+                <div data-slot="dialog">
+                    <div data-slot="attachment" data-orientation="horizontal" data-state="done">
+                        <div data-slot="attachment-media" data-variant="icon">
+                            <i data-lucide="file-text" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="attachment-content">
+                            <span data-slot="attachment-title">research-summary.pdf</span>
+                            <span data-slot="attachment-description">Click to preview</span>
+                        </div>
+                        <div data-slot="attachment-actions">
+                            <button data-slot="attachment-action" type="button" aria-label="Remove attachment">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <button data-slot="attachment-trigger" type="button"
+                                data-dialog-trigger
+                                aria-label="Preview research-summary.pdf"
+                                aria-haspopup="dialog" aria-expanded="false"></button>
+                    </div>
+                    <div data-slot="dialog-overlay" aria-hidden="true"></div>
+                    <div data-slot="dialog-content" data-size="sm" role="dialog" aria-modal="true"
+                         aria-labelledby="dialog-attachment-title" aria-describedby="dialog-attachment-desc" aria-hidden="true">
+                        <div data-slot="dialog-header">
+                            <h2 data-slot="dialog-title" id="dialog-attachment-title">research-summary.pdf</h2>
+                            <p data-slot="dialog-description" id="dialog-attachment-desc">File preview</p>
+                        </div>
+                        <div data-slot="dialog-body">
+                            <div data-slot="attachment-dialog-preview">
+                                <img src="https://placehold.co/400x300" alt="research-summary.pdf preview" style="width:100%;border-radius:var(--radius-md);" />
+                            </div>
+                            <div data-slot="field-group" style="margin-top:calc(var(--spacing)*4)">
+                                <div style="display:flex;justify-content:space-between;font:var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);color:var(--color-muted-foreground);">
+                                    <span>Size</span><span style="color:var(--color-foreground)">1.2 MB</span>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;font:var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);color:var(--color-muted-foreground);">
+                                    <span>Type</span><span style="color:var(--color-foreground)">PDF Document</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-slot="dialog-footer">
+                            <button type="button" data-slot="button" data-variant="outline" data-dialog-close>Close</button>
+                            <button type="button" data-slot="button">
+                                <i data-lucide="download" aria-hidden="true"></i>
+                                Download
+                            </button>
+                        </div>
+                        <button type="button" data-slot="dialog-close" data-close-kind="icon" aria-label="Close">
+                            <i data-lucide="x" aria-hidden="true"></i>
+                            <span data-slot="sr-only">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Attachment</h3>
+            <p data-slot="desc">첨부파일 루트 컴포넌트입니다. 미디어·콘텐츠·액션·트리거를 감쌉니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"idle"</code> | <code>"uploading"</code> | <code>"processing"</code> | <code>"error"</code> | <code>"done"</code></td>
+                        <td><code>"done"</code></td>
+                        <td>업로드 생명주기 상태.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code> | <code>"xs"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>컴포넌트 크기.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"horizontal"</code></td>
+                        <td>미디어와 콘텐츠의 배치 방향.</td>
+                    </tr>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentMedia</h3>
+            <p data-slot="desc">파일 아이콘 또는 이미지 썸네일을 표시하는 미디어 영역입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"icon"</code> | <code>"image"</code></td>
+                        <td><code>"icon"</code></td>
+                        <td>아이콘 또는 이미지 표시 모드.</td>
+                    </tr>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentContent</h3>
+            <p data-slot="desc">제목과 설명을 담는 콘텐츠 영역입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentTitle</h3>
+            <p data-slot="desc">파일 이름 또는 제목 텍스트입니다. <code>uploading</code>·<code>processing</code> 상태에서 shimmer 애니메이션이 적용됩니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentDescription</h3>
+            <p data-slot="desc">파일 크기, 진행률 등 보조 정보를 표시합니다. <code>error</code> 상태에서 destructive 색상이 적용됩니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentActions</h3>
+            <p data-slot="desc">삭제·재시도 등의 액션 버튼 컨테이너입니다. <code>z-index: 20</code>으로 트리거 위에 위치합니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentAction</h3>
+            <p data-slot="desc">icon-xs 크기의 ghost 스타일 액션 버튼입니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"icon-xs"</code></td>
+                        <td><code>"icon-xs"</code></td>
+                        <td>버튼 크기 (항상 icon-xs).</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-label</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>접근성 레이블 (필수).</td>
+                    </tr>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentTrigger</h3>
+            <p data-slot="desc">카드 전체를 클릭 가능하게 만드는 절대 위치 트리거입니다. <code>z-index: 10</code>으로 미디어·콘텐츠 위에 위치하며 액션(z-20)은 그 위에 렌더됩니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aria-label</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>접근성 레이블 (필수).</td>
+                    </tr>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">AttachmentGroup</h3>
+            <p data-slot="desc">여러 첨부파일을 가로 스크롤 영역에 나열하는 컨테이너입니다. scroll-snap과 양쪽 끝 fade 효과가 포함됩니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>class</code></td>
+                        <td><code>string</code></td>
+                        <td>—</td>
+                        <td>추가 스타일 클래스.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#image">Image</a></li>
+                <li><a href="#states">States</a></li>
+                <li><a href="#sizes">Sizes</a></li>
+                <li><a href="#group">Group</a></li>
+                <li><a href="#trigger">Trigger</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

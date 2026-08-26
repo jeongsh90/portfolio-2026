@@ -1,0 +1,315 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Radio Group</h1>
+            <p data-slot="desc">한 번에 하나만 선택할 수 있는 라디오 버튼 그룹입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="radio-group-fit">
+                <div data-slot="radio-group" role="radiogroup" data-default-value="comfortable" aria-label="Spacing">
+                    <div data-slot="radio-group-option">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="default" id="radio-r1" aria-checked="false">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <label data-slot="label" for="radio-r1">Default</label>
+                    </div>
+                    <div data-slot="radio-group-option">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="comfortable" id="radio-r2" aria-checked="false">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <label data-slot="label" for="radio-r2">Comfortable</label>
+                    </div>
+                    <div data-slot="radio-group-option">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="compact" id="radio-r3" aria-checked="false">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <label data-slot="label" for="radio-r3">Compact</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="description">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Description</h2>
+            <p data-slot="desc"><code>Field</code> 컴포넌트와 함께 설명 텍스트가 있는 라디오 항목을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="radio-group-fit">
+                <div data-slot="radio-group" role="radiogroup" data-default-value="comfortable" aria-label="Spacing with description">
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="default" id="radio-desc-r1" aria-checked="false" aria-label="Default">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <div data-slot="field-content">
+                            <label data-slot="field-label" for="radio-desc-r1">Default</label>
+                            <p data-slot="field-description">대부분의 경우에 적합한 기본 간격입니다.</p>
+                        </div>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="comfortable" id="radio-desc-r2" aria-checked="false" aria-label="Comfortable">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <div data-slot="field-content">
+                            <label data-slot="field-label" for="radio-desc-r2">Comfortable</label>
+                            <p data-slot="field-description">요소 사이에 더 넓은 간격을 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="compact" id="radio-desc-r3" aria-checked="false" aria-label="Compact">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <div data-slot="field-content">
+                            <label data-slot="field-label" for="radio-desc-r3">Compact</label>
+                            <p data-slot="field-description">밀집 레이아웃을 위한 최소 간격입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="choice-card">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Choice Card</h2>
+            <p data-slot="desc"><code>FieldLabel</code>로 전체 <code>Field</code>를 감싸 카드 형태의 선택 UI를 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="radio-group-sm">
+                <div data-slot="radio-group" role="radiogroup" data-default-value="plus" aria-label="Plan">
+                    <label data-slot="field-label" data-choice-card="true" for="plus-plan">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <div data-slot="field-content">
+                                <span data-slot="field-label">Plus</span>
+                                <p data-slot="field-description">개인 및 소규모 팀을 위한 플랜입니다.</p>
+                            </div>
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="plus" id="plus-plan" aria-checked="false" aria-label="Plus">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                        </div>
+                    </label>
+                    <label data-slot="field-label" data-choice-card="true" for="pro-plan">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <div data-slot="field-content">
+                                <span data-slot="field-label">Pro</span>
+                                <p data-slot="field-description">성장하는 비즈니스를 위한 플랜입니다.</p>
+                            </div>
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="pro" id="pro-plan" aria-checked="false" aria-label="Pro">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                        </div>
+                    </label>
+                    <label data-slot="field-label" data-choice-card="true" for="enterprise-plan">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <div data-slot="field-content">
+                                <span data-slot="field-label">Enterprise</span>
+                                <p data-slot="field-description">대규모 팀과 기업을 위한 플랜입니다.</p>
+                            </div>
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="enterprise" id="enterprise-plan" aria-checked="false" aria-label="Enterprise">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="fieldset">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Fieldset</h2>
+            <p data-slot="desc"><code>FieldSet</code>과 <code>FieldLegend</code>으로 라벨과 설명이 있는 라디오 그룹을 구성합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="radio-group-xs">
+                <fieldset data-slot="field-set">
+                    <legend data-slot="field-legend" data-variant="label">Subscription Plan</legend>
+                    <p data-slot="field-description">연간·평생 플랜은 상당한 할인을 제공합니다.</p>
+                    <div data-slot="radio-group" role="radiogroup" data-default-value="monthly" aria-label="Subscription Plan">
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="monthly" id="plan-monthly" aria-checked="false" aria-label="Monthly">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="plan-monthly">Monthly ($9.99/month)</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="yearly" id="plan-yearly" aria-checked="false" aria-label="Yearly">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="plan-yearly">Yearly ($99.99/year)</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="lifetime" id="plan-lifetime" aria-checked="false" aria-label="Lifetime">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="plan-lifetime">Lifetime ($299.99)</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>RadioGroupItem</code>에 <code>disabled</code>를 설정해 개별 항목을 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="radio-group-fit">
+                <div data-slot="radio-group" role="radiogroup" data-default-value="option2" aria-label="Disabled options">
+                    <div data-slot="field" role="group" data-orientation="horizontal" data-disabled="true">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="option1" id="radio-disabled-1" aria-checked="false" disabled aria-label="Disabled">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <label data-slot="field-label" data-weight="normal" for="radio-disabled-1">Disabled</label>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="option2" id="radio-disabled-2" aria-checked="false" aria-label="Option 2">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <label data-slot="field-label" data-weight="normal" for="radio-disabled-2">Option 2</label>
+                    </div>
+                    <div data-slot="field" role="group" data-orientation="horizontal">
+                        <button type="button" role="radio" data-slot="radio-group-item" data-value="option3" id="radio-disabled-3" aria-checked="false" aria-label="Option 3">
+                            <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                        </button>
+                        <label data-slot="field-label" data-weight="normal" for="radio-disabled-3">Option 3</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="invalid">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Invalid</h2>
+            <p data-slot="desc"><code>RadioGroupItem</code>에 <code>aria-invalid</code>을 설정하고 <code>Field</code>에 <code>data-invalid="true"</code>를 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="radio-group-xs">
+                <fieldset data-slot="field-set">
+                    <legend data-slot="field-legend" data-variant="label">Notification Preferences</legend>
+                    <p data-slot="field-description">알림 수신 방법을 선택하세요.</p>
+                    <div data-slot="radio-group" role="radiogroup" data-default-value="email" aria-label="Notification Preferences">
+                        <div data-slot="field" role="group" data-orientation="horizontal" data-invalid="true">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="email" id="invalid-email" aria-checked="false" aria-invalid="true" aria-label="Email only">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="invalid-email">Email only</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal" data-invalid="true">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="sms" id="invalid-sms" aria-checked="false" aria-invalid="true" aria-label="SMS only">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="invalid-sms">SMS only</label>
+                        </div>
+                        <div data-slot="field" role="group" data-orientation="horizontal" data-invalid="true">
+                            <button type="button" role="radio" data-slot="radio-group-item" data-value="both" id="invalid-both" aria-checked="false" aria-invalid="true" aria-label="Both Email and SMS">
+                                <span data-slot="radio-group-indicator" aria-hidden="true"><span></span></span>
+                            </button>
+                            <label data-slot="field-label" data-weight="normal" for="invalid-both">Both Email &amp; SMS</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">RadioGroup</h3>
+            <p data-slot="desc"><code>data-slot="radio-group"</code> 루트 요소는 <code>role="radiogroup"</code>과 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-default-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-label</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">RadioGroupItem</h3>
+            <p data-slot="desc"><code>data-slot="radio-group-item"</code> 요소는 <code>role="radio"</code>와 함께 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-checked</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-checked</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-invalid</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#description">Description</a></li>
+                <li><a href="#choice-card">Choice Card</a></li>
+                <li><a href="#fieldset">Fieldset</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+                <li><a href="#invalid">Invalid</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

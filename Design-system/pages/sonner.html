@@ -1,0 +1,361 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Sonner</h1>
+            <p data-slot="desc">화면 가장자리에 짧은 알림 메시지를 띄우는 토스트 컴포넌트입니다. 위치·유형·설명을 조합해 다양한 알림을 표현할 수 있습니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button
+                    type="button"
+                    data-slot="button"
+                    data-variant="outline"
+                    data-sonner-trigger
+                    data-sonner-message="일정이 등록되었습니다"
+                    data-sonner-description="2023년 12월 3일 일요일 오전 9시"
+                    data-sonner-action-label="취소"
+                >토스트 보기</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="types">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Types</h2>
+            <p data-slot="desc"><code>data-sonner-type</code>으로 토스트 유형을 지정합니다. 유형에 따라 아이콘 색상이 달라집니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sonner-types">
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다">기본</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-type="success" data-sonner-message="일정이 등록되었습니다">Success</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-type="info" data-sonner-message="행사 시작 10분 전에 장소에 도착해 주세요">Info</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-type="warning" data-sonner-message="행사 시작 시간은 오전 8시 이후로 설정해야 합니다">Warning</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-type="error" data-sonner-message="일정 등록에 실패했습니다">Error</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-type="promise">Promise</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="description">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Description</h2>
+            <p data-slot="desc"><code>data-sonner-description</code>으로 제목 아래 부가 설명을 추가합니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <button
+                    type="button"
+                    data-slot="button"
+                    data-variant="outline"
+                    data-sonner-trigger
+                    data-sonner-message="일정이 등록되었습니다"
+                    data-sonner-description="1월 3일 월요일 오후 6시"
+                >토스트 보기</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="position">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Position</h2>
+            <p data-slot="desc"><code>data-sonner-position</code>으로 토스트가 나타날 위치를 지정합니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sonner-position">
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다" data-sonner-position="top-left">좌측 상단</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다" data-sonner-position="top-center">상단 중앙</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다" data-sonner-position="top-right">우측 상단</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다" data-sonner-position="bottom-left">좌측 하단</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다" data-sonner-position="bottom-center">하단 중앙</button>
+                <button type="button" data-slot="button" data-variant="outline" data-sonner-trigger data-sonner-message="일정이 등록되었습니다" data-sonner-position="bottom-right">우측 하단</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="toast">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Toast</h2>
+            <p data-slot="desc">토스트 카드 컴포넌트입니다. <code>data-type</code>에 따라 아이콘 색상이 달라집니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sonner-toast">
+                <!-- Default -->
+                <div data-slot="sonner-toast" data-static>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">일정이 등록되었습니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-action">취소</button>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- Description -->
+                <div data-slot="sonner-toast" data-static>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">일정이 등록되었습니다</div>
+                        <div data-slot="sonner-description">2023년 12월 3일 일요일 오전 9시</div>
+                    </div>
+                    <button type="button" data-slot="sonner-action">취소</button>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- Success -->
+                <div data-slot="sonner-toast" data-type="success" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="circle-check" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">일정이 등록되었습니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- Info -->
+                <div data-slot="sonner-toast" data-type="info" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="info" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">행사 시작 10분 전에 장소에 도착해 주세요</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- Warning -->
+                <div data-slot="sonner-toast" data-type="warning" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="triangle-alert" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">행사 시작 시간은 오전 8시 이후로 설정해야 합니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- Error -->
+                <div data-slot="sonner-toast" data-type="error" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="circle-x" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">일정 등록에 실패했습니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="soft">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Soft</h2>
+            <p data-slot="desc"><code>data-variant="soft"</code>와 <code>data-type</code>을 함께 사용하면 시스템 색상의 은은한 배경과 테두리가 적용됩니다.</p>
+        </div>
+
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="sonner-toast">
+                <div data-slot="sonner-toast" data-type="info" data-variant="soft" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="info" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">행사 시작 10분 전에 장소에 도착해 주세요</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="sonner-toast" data-type="success" data-variant="soft" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="circle-check" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">일정이 등록되었습니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="sonner-toast" data-type="warning" data-variant="soft" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="triangle-alert" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">행사 시작 시간은 오전 8시 이후로 설정해야 합니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div data-slot="sonner-toast" data-type="error" data-variant="soft" data-static>
+                    <div data-slot="sonner-icon">
+                        <i data-lucide="circle-x" aria-hidden="true"></i>
+                    </div>
+                    <div data-slot="sonner-content">
+                        <div data-slot="sonner-title">일정 등록에 실패했습니다</div>
+                    </div>
+                    <button type="button" data-slot="sonner-close" aria-label="닫기">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Toaster</h3>
+            <p data-slot="desc">토스트를 렌더링하는 루트 컨테이너입니다. 레이아웃에 한 번만 배치합니다.</p>
+        </div>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-position</code></td>
+                        <td><code>"top-left"</code> | <code>"top-center"</code> | <code>"top-right"</code> | <code>"bottom-left"</code> | <code>"bottom-center"</code> | <code>"bottom-right"</code></td>
+                        <td><code>"bottom-right"</code></td>
+                        <td>토스트가 나타날 화면 위치</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 data-slot="typography-h3">Toast trigger</h3>
+        <p data-slot="desc"><code>data-sonner-trigger</code>를 가진 버튼에 추가하는 속성입니다.</p>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-sonner-trigger</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>토스트 트리거 요소로 지정</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-sonner-message</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>토스트 제목 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-sonner-description</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>제목 아래 부가 설명 텍스트</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-sonner-type</code></td>
+                        <td><code>"success"</code> | <code>"info"</code> | <code>"warning"</code> | <code>"error"</code> | <code>"promise"</code></td>
+                        <td>—</td>
+                        <td>토스트 유형 — 아이콘 색상에 반영됨</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-sonner-position</code></td>
+                        <td><code>"top-left"</code> | <code>"top-center"</code> | <code>"top-right"</code> | <code>"bottom-left"</code> | <code>"bottom-center"</code> | <code>"bottom-right"</code></td>
+                        <td>Toaster 기본값</td>
+                        <td>해당 토스트의 위치만 개별 지정</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-sonner-action-label</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>토스트 내 액션 버튼 레이블</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 data-slot="typography-h3">Toast</h3>
+        <p data-slot="desc">렌더링되는 토스트 카드 요소입니다.</p>
+
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-type</code></td>
+                        <td><code>"success"</code> | <code>"info"</code> | <code>"warning"</code> | <code>"error"</code> | <code>"loading"</code></td>
+                        <td>—</td>
+                        <td>유형별 아이콘 색상 적용</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"soft"</code></td>
+                        <td>—</td>
+                        <td>시스템 색상의 은은한 배경 + 테두리 (<code>data-type</code> 필요)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"closed"</code></td>
+                        <td>—</td>
+                        <td>닫힘 애니메이션 트리거</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-static</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>애니메이션 없이 정적으로 표시 (미리보기용)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#types">Types</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#position">Position</a></li>
+                <li><a href="#toast">Toast</a></li>
+                <li><a href="#soft">Soft</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

@@ -1,0 +1,188 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Tooltip</h1>
+            <p data-slot="desc">요소에 마우스를 올리거나 포커스할 때 추가 정보를 표시하는 팝업 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="tooltip-demo">
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">Hover</button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="top" role="tooltip">
+                        Add to library
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="side">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Side</h2>
+            <p data-slot="desc"><code>data-side</code> prop으로 툴팁 위치를 변경합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="tooltip-sides">
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">Left</button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="left" role="tooltip">
+                        Add to library
+                    </div>
+                </div>
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">Top</button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="top" role="tooltip">
+                        Add to library
+                    </div>
+                </div>
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">Bottom</button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="bottom" role="tooltip">
+                        Add to library
+                    </div>
+                </div>
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger">
+                        <button type="button" data-slot="button" data-variant="outline">Right</button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">
+                        Add to library
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="with-keyboard-shortcut">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">With Keyboard Shortcut</h2>
+            <p data-slot="desc">툴팁 안에 <code>Kbd</code> 컴포넌트로 키보드 단축키를 표시할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="tooltip-demo">
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger">
+                        <button type="button" data-slot="button" data-variant="outline" data-size="icon-sm" aria-label="Save">
+                            <i data-lucide="save" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="top" role="tooltip">
+                        Save Changes <kbd data-slot="kbd">S</kbd>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled-button">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled Button</h2>
+            <p data-slot="desc">비활성화된 버튼에는 <code>span</code>으로 감싼 <code>TooltipTrigger</code>를 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="tooltip-demo">
+                <div data-slot="tooltip">
+                    <span data-slot="tooltip-trigger" tabindex="0">
+                        <button type="button" data-slot="button" data-variant="outline" disabled>Disabled</button>
+                    </span>
+                    <div data-slot="tooltip-content" data-state="closed" data-side="top" role="tooltip">
+                        This feature is currently unavailable
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">TooltipProvider</h3>
+            <p data-slot="desc">앱 루트에 배치해 툴팁 지연 시간 등 전역 설정을 제공합니다. 이 프로젝트에서는 <code>data-delay-duration</code>으로 개별 툴팁에 지정합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>delayDuration</code></td>
+                        <td>number</td>
+                        <td><code>0</code></td>
+                        <td>툴팁이 열리기까지의 지연(ms). HTML: <code>data-delay-duration</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">TooltipContent</h3>
+            <p data-slot="desc">툴팁 본문 콘텐츠입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>side</code></td>
+                        <td><code>"top"</code> | <code>"right"</code> | <code>"bottom"</code> | <code>"left"</code></td>
+                        <td><code>"top"</code></td>
+                        <td>HTML: <code>data-side</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>sideOffset</code></td>
+                        <td>number</td>
+                        <td><code>0</code></td>
+                        <td>트리거와의 간격(px). HTML: <code>data-side-offset</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>align</code></td>
+                        <td><code>"start"</code> | <code>"center"</code> | <code>"end"</code></td>
+                        <td><code>"center"</code></td>
+                        <td>트리거 기준 정렬</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#side">Side</a></li>
+                <li><a href="#with-keyboard-shortcut">With Keyboard Shortcut</a></li>
+                <li><a href="#disabled-button">Disabled Button</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

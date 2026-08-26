@@ -1,0 +1,230 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Collapsible</h1>
+            <p data-slot="desc">트리거를 클릭해 콘텐츠 영역을 펼치거나 접는 인터랙티브 컴포넌트입니다. 아코디언과 달리 단일 패널을 독립적으로 토글합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="collapsible">
+                <div data-slot="collapsible" data-size="lg" data-variant="muted">
+                    <div data-slot="collapsible-header">
+                        <div>
+                            <div data-slot="collapsible-title">주문 #4189</div>
+                            <div data-slot="collapsible-description">배송 준비 중</div>
+                        </div>
+                        <button type="button" data-slot="collapsible-trigger" data-variant="link" aria-expanded="false">상세 보기</button>
+                    </div>
+                    <div data-slot="collapsible-content" data-state="closed">
+                        <div data-slot="collapsible-content-inner">
+                            <p>2024년 6월 20일 주문 · 2개 품목 · ₩128,000</p>
+                            <p>배송 예정: 6월 24일 (화) · 서울특별시 강남구</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="basic">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Basic</h2>
+            <p data-slot="desc">카드 헤더에 접기 트리거를 배치한 예시입니다. 아이콘 버튼으로 상세 정보를 토글합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="collapsible-card">
+                <div class="collapsible-card-demo">
+                    <div data-slot="card" data-size="sm">
+                        <div data-slot="collapsible">
+                            <div data-slot="card-header">
+                                <div data-slot="card-title">무선 헤드폰 Pro</div>
+                                <div data-slot="card-description">₩349,000 · 재고 있음</div>
+                                <div data-slot="card-action">
+                                    <button type="button" data-slot="collapsible-trigger" data-variant="ghost" aria-label="Toggle details" aria-expanded="false">
+                                        <i data-lucide="chevrons-up-down" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div data-slot="collapsible-content" data-state="closed">
+                                <div data-slot="collapsible-content-inner">
+                                    <div data-slot="card-content">
+                                        <p>노이즈 캔슬링, 30시간 배터리, USB-C 충전. 2년 보증 포함.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="settings">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Settings</h2>
+            <p data-slot="desc">설정 패널처럼 기본 접힌 상태로 두고, 필요할 때만 폼을 펼칩니다. <code>data-default-open</code>으로 초기 열림 상태를 지정할 수 있습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="collapsible-settings">
+                <div data-slot="collapsible" data-size="md">
+                    <div data-slot="collapsible-header">
+                        <div>
+                            <div data-slot="collapsible-title">알림 설정</div>
+                            <div data-slot="collapsible-description">이메일 및 푸시 알림을 관리합니다.</div>
+                        </div>
+                        <button type="button" data-slot="collapsible-trigger" data-variant="link" aria-expanded="false">편집</button>
+                    </div>
+                    <div data-slot="collapsible-content" data-state="closed">
+                        <div data-slot="collapsible-content-inner">
+                            <div data-slot="field-group">
+                                <div data-slot="field" role="group">
+                                    <label data-slot="field-label" for="collapsible-notify-email">이메일 알림</label>
+                                    <input type="email" id="collapsible-notify-email" data-slot="input" placeholder="you@example.com">
+                                </div>
+                                <div data-slot="field" role="group">
+                                    <label data-slot="field-label" for="collapsible-notify-frequency">빈도</label>
+                                    <select id="collapsible-notify-frequency" data-slot="select" data-mode="select">
+                                        <option value="instant">즉시</option>
+                                        <option value="daily">매일 요약</option>
+                                        <option value="weekly">주간 요약</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Collapsible</h3>
+            <p data-slot="desc">접기/펼치기 루트 요소입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"open"</code> | <code>"closed"</code></td>
+                        <td><code>"closed"</code></td>
+                        <td>현재 열림/닫힘 상태 (JS가 설정)</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-open</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>마운트 시 열린 상태로 시작</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-open</code></td>
+                        <td><code>"true"</code></td>
+                        <td>—</td>
+                        <td><code>data-default-open</code>과 동일한 초기 열림 효과</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>트리거 비활성화</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"muted"</code></td>
+                        <td>—</td>
+                        <td>배경 강조 스타일</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"sm"</code> | <code>"md"</code> | <code>"lg"</code></td>
+                        <td>—</td>
+                        <td>최대 너비 프리셋</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CollapsibleTrigger</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"link"</code> | <code>"ghost"</code></td>
+                        <td>—</td>
+                        <td>트리거 버튼 스타일</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-expanded</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>접근성: 패널 열림 여부</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">CollapsibleContent</h3>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">슬롯</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>collapsible-content</code></td>
+                        <td>애니메이션 래퍼. <code>data-state</code>로 표시/숨김</td>
+                    </tr>
+                    <tr>
+                        <td><code>collapsible-content-inner</code></td>
+                        <td>실제 콘텐츠. 높이 측정에 사용</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>
+
+<nav data-slot="page-nav" aria-label="페이지 목차">
+    <p data-slot="page-nav-title">On this page</p>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li>
+            <a href="#basic">Examples</a>
+            <ul>
+                <li><a href="#basic">Basic</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

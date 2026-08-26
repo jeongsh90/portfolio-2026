@@ -1,0 +1,676 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Item</h1>
+            <p data-slot="desc">제목·설명·액션·미디어를 함께 표시하는 flex 컨테이너입니다. 폼 입력이 필요하면 <code>Field</code>, 콘텐츠 나열에는 <code>Item</code>을 사용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-overview">
+                <div class="item-demo-md">
+                    <div data-slot="item" data-variant="outline">
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Basic Item</div>
+                            <p data-slot="item-description">A simple item with title and description.</p>
+                        </div>
+                        <div data-slot="item-actions">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="sm">Action</button>
+                        </div>
+                    </div>
+                    <a href="#" data-slot="item" data-variant="outline" data-size="sm">
+                        <div data-slot="item-media">
+                            <i data-lucide="badge-check" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Your profile has been verified.</div>
+                        </div>
+                        <div data-slot="item-actions">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="variant">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Variant</h2>
+            <p data-slot="desc"><code>data-variant</code>으로 배경·테두리 스타일을 변경합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-variant">
+                <div class="item-demo-md">
+                    <div data-slot="item">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="inbox" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Default Variant</div>
+                            <p data-slot="item-description">Transparent background with no border.</p>
+                        </div>
+                    </div>
+                    <div data-slot="item" data-variant="outline">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="inbox" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Outline Variant</div>
+                            <p data-slot="item-description">Outlined style with a visible border.</p>
+                        </div>
+                    </div>
+                    <div data-slot="item" data-variant="muted">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="inbox" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Muted Variant</div>
+                            <p data-slot="item-description">Muted background for secondary content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc"><code>data-size</code>으로 패딩·간격을 조절합니다. <code>default</code>, <code>sm</code>, <code>xs</code>를 지원합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-size">
+                <div class="item-demo-md">
+                    <div data-slot="item" data-variant="outline">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="inbox" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Default Size</div>
+                            <p data-slot="item-description">The standard size for most use cases.</p>
+                        </div>
+                    </div>
+                    <div data-slot="item" data-variant="outline" data-size="sm">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="inbox" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Small Size</div>
+                            <p data-slot="item-description">A compact size for dense layouts.</p>
+                        </div>
+                    </div>
+                    <div data-slot="item" data-variant="outline" data-size="xs">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="inbox" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Extra Small Size</div>
+                            <p data-slot="item-description">The most compact size available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="icon">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Icon</h2>
+            <p data-slot="desc"><code>ItemMedia</code>에 <code>data-variant="icon"</code>을 지정해 아이콘을 표시합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-icon">
+                <div class="item-demo-lg">
+                    <div data-slot="item" data-variant="outline">
+                        <div data-slot="item-media" data-variant="icon">
+                            <i data-lucide="shield-alert" aria-hidden="true"></i>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Security Alert</div>
+                            <p data-slot="item-description">New login detected from unknown device.</p>
+                        </div>
+                        <div data-slot="item-actions">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="sm">Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="avatar">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Avatar</h2>
+            <p data-slot="desc"><code>ItemMedia</code>에 <code>Avatar</code>를 배치합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-avatar">
+                <div class="item-demo-lg">
+                    <div data-slot="item" data-variant="outline">
+                        <div data-slot="item-media">
+                            <span data-slot="avatar" data-size="lg">
+                                <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="40" height="40">
+                                <span data-slot="avatar-fallback">ER</span>
+                            </span>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Evil Rabbit</div>
+                            <p data-slot="item-description">Last seen 5 months ago</p>
+                        </div>
+                        <div data-slot="item-actions">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="icon-sm" class="item-button-round" aria-label="Invite">
+                                <i data-lucide="plus" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-slot="item" data-variant="outline">
+                        <div data-slot="item-media">
+                            <div class="item-media-avatar-stack">
+                                <span data-slot="avatar" data-size="default">
+                                    <img data-slot="avatar-image" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                                    <span data-slot="avatar-fallback">CN</span>
+                                </span>
+                                <span data-slot="avatar" data-size="default">
+                                    <img data-slot="avatar-image" src="https://github.com/maxleiter.png" alt="@maxleiter" width="32" height="32">
+                                    <span data-slot="avatar-fallback">LR</span>
+                                </span>
+                                <span data-slot="avatar" data-size="default">
+                                    <img data-slot="avatar-image" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                                    <span data-slot="avatar-fallback">ER</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">No Team Members</div>
+                            <p data-slot="item-description">Invite your team to collaborate on this project.</p>
+                        </div>
+                        <div data-slot="item-actions">
+                            <button type="button" data-slot="button" data-variant="outline" data-size="sm">Invite</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="image">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Image</h2>
+            <p data-slot="desc"><code>ItemMedia</code>에 <code>data-variant="image"</code>을 지정해 썸네일을 표시합니다. <code>ItemGroup</code>으로 목록을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-image">
+                <div class="item-demo-md">
+                    <div data-slot="item-group" data-gap="4" role="list">
+                        <a href="#" data-slot="item" data-variant="outline" role="listitem">
+                            <div data-slot="item-media" data-variant="image">
+                                <img src="https://avatar.vercel.sh/Midnight%20City%20Lights" alt="Midnight City Lights" width="32" height="32">
+                            </div>
+                            <div data-slot="item-content">
+                                <div data-slot="item-title" data-clamp="1">Midnight City Lights - <span class="item-text-muted">Electric Nights</span></div>
+                                <p data-slot="item-description">Neon Dreams</p>
+                            </div>
+                            <div data-slot="item-content" data-align="center">
+                                <p data-slot="item-description">3:45</p>
+                            </div>
+                        </a>
+                        <a href="#" data-slot="item" data-variant="outline" role="listitem">
+                            <div data-slot="item-media" data-variant="image">
+                                <img src="https://avatar.vercel.sh/Coffee%20Shop%20Conversations" alt="Coffee Shop Conversations" width="32" height="32">
+                            </div>
+                            <div data-slot="item-content">
+                                <div data-slot="item-title" data-clamp="1">Coffee Shop Conversations - <span class="item-text-muted">Urban Stories</span></div>
+                                <p data-slot="item-description">The Morning Brew</p>
+                            </div>
+                            <div data-slot="item-content" data-align="center">
+                                <p data-slot="item-description">4:05</p>
+                            </div>
+                        </a>
+                        <a href="#" data-slot="item" data-variant="outline" role="listitem">
+                            <div data-slot="item-media" data-variant="image">
+                                <img src="https://avatar.vercel.sh/Digital%20Rain" alt="Digital Rain" width="32" height="32">
+                            </div>
+                            <div data-slot="item-content">
+                                <div data-slot="item-title" data-clamp="1">Digital Rain - <span class="item-text-muted">Binary Beats</span></div>
+                                <p data-slot="item-description">Cyber Symphony</p>
+                            </div>
+                            <div data-slot="item-content" data-align="center">
+                                <p data-slot="item-description">3:30</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="group">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Group</h2>
+            <p data-slot="desc"><code>ItemGroup</code>으로 관련 item을 묶습니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-group">
+                <div class="item-demo-sm">
+                    <div data-slot="item-group" data-layout="connected" role="list">
+                        <div data-slot="item" data-variant="outline">
+                            <div data-slot="item-media">
+                                <span data-slot="avatar" data-size="default">
+                                    <img data-slot="avatar-image" class="item-avatar-grayscale" src="https://github.com/shadcn.png" alt="@shadcn" width="32" height="32">
+                                    <span data-slot="avatar-fallback">CN</span>
+                                </span>
+                            </div>
+                            <div data-slot="item-content" data-gap="1">
+                                <div data-slot="item-title">shadcn</div>
+                                <p data-slot="item-description">shadcn@vercel.com</p>
+                            </div>
+                            <div data-slot="item-actions">
+                                <button type="button" data-slot="button" data-variant="ghost" data-size="icon" class="item-button-round" aria-label="Add">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div data-slot="item-separator" role="separator"></div>
+                        <div data-slot="item" data-variant="outline">
+                            <div data-slot="item-media">
+                                <span data-slot="avatar" data-size="default">
+                                    <img data-slot="avatar-image" class="item-avatar-grayscale" src="https://github.com/maxleiter.png" alt="@maxleiter" width="32" height="32">
+                                    <span data-slot="avatar-fallback">LR</span>
+                                </span>
+                            </div>
+                            <div data-slot="item-content" data-gap="1">
+                                <div data-slot="item-title">maxleiter</div>
+                                <p data-slot="item-description">maxleiter@vercel.com</p>
+                            </div>
+                            <div data-slot="item-actions">
+                                <button type="button" data-slot="button" data-variant="ghost" data-size="icon" class="item-button-round" aria-label="Add">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div data-slot="item-separator" role="separator"></div>
+                        <div data-slot="item" data-variant="outline">
+                            <div data-slot="item-media">
+                                <span data-slot="avatar" data-size="default">
+                                    <img data-slot="avatar-image" class="item-avatar-grayscale" src="https://github.com/evilrabbit.png" alt="@evilrabbit" width="32" height="32">
+                                    <span data-slot="avatar-fallback">ER</span>
+                                </span>
+                            </div>
+                            <div data-slot="item-content" data-gap="1">
+                                <div data-slot="item-title">evilrabbit</div>
+                                <p data-slot="item-description">evilrabbit@vercel.com</p>
+                            </div>
+                            <div data-slot="item-actions">
+                                <button type="button" data-slot="button" data-variant="ghost" data-size="icon" class="item-button-round" aria-label="Add">
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="header">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Header</h2>
+            <p data-slot="desc"><code>ItemHeader</code>로 콘텐츠 위에 헤더 영역을 추가합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-header">
+                <div class="item-demo-xl">
+                    <div data-slot="item-group" data-layout="grid" role="list">
+                        <div data-slot="item" data-variant="outline">
+                            <div data-slot="item-header">
+                                <img src="https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?q=80&amp;w=640&amp;auto=format&amp;fit=crop" alt="v0-1.5-sm" width="128" height="128">
+                            </div>
+                            <div data-slot="item-content">
+                                <div data-slot="item-title">v0-1.5-sm</div>
+                                <p data-slot="item-description">Everyday tasks and UI generation.</p>
+                            </div>
+                        </div>
+                        <div data-slot="item" data-variant="outline">
+                            <div data-slot="item-header">
+                                <img src="https://images.unsplash.com/photo-1610280777472-54133d004c8c?q=80&amp;w=640&amp;auto=format&amp;fit=crop" alt="v0-1.5-lg" width="128" height="128">
+                            </div>
+                            <div data-slot="item-content">
+                                <div data-slot="item-title">v0-1.5-lg</div>
+                                <p data-slot="item-description">Advanced thinking or reasoning.</p>
+                            </div>
+                        </div>
+                        <div data-slot="item" data-variant="outline">
+                            <div data-slot="item-header">
+                                <img src="https://images.unsplash.com/photo-1602146057681-08560aee8cde?q=80&amp;w=640&amp;auto=format&amp;fit=crop" alt="v0-2.0-mini" width="128" height="128">
+                            </div>
+                            <div data-slot="item-content">
+                                <div data-slot="item-title">v0-2.0-mini</div>
+                                <p data-slot="item-description">Open Source model for everyone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="link">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Link</h2>
+            <p data-slot="desc"><code>data-slot="item"</code>인 <code>&lt;a&gt;</code>를 사용하면 hover·focus 상태가 링크에 적용됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="item-link">
+                <div class="item-demo-md item-demo-gap-4">
+                    <a href="#" data-slot="item">
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">Visit our documentation</div>
+                            <p data-slot="item-description">Learn how to get started with our components.</p>
+                        </div>
+                        <div data-slot="item-actions">
+                            <i data-lucide="chevron-right" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a href="#" data-slot="item" data-variant="outline" target="_blank" rel="noopener noreferrer">
+                        <div data-slot="item-content">
+                            <div data-slot="item-title">External resource</div>
+                            <p data-slot="item-description">Opens in a new tab with security attributes.</p>
+                        </div>
+                        <div data-slot="item-actions">
+                            <i data-lucide="external-link" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">Item</h3>
+            <p data-slot="desc"><code>data-slot="item"</code> 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"outline"</code> | <code>"muted"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>배경·테두리 스타일.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code> | <code>"xs"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>패딩·간격.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemGroup</h3>
+            <p data-slot="desc"><code>data-slot="item-group"</code> 관련 item 목록 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"list"</code></td>
+                        <td><code>"list"</code></td>
+                        <td>목록 접근성 역할.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-gap</code></td>
+                        <td><code>"4"</code></td>
+                        <td>—</td>
+                        <td>항목 간격(Image 예시).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-layout</code></td>
+                        <td><code>"grid"</code></td>
+                        <td>—</td>
+                        <td>3열 그리드(Header 예시).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemSeparator</h3>
+            <p data-slot="desc"><code>data-slot="item-separator"</code> 그룹 내 구분선입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>role</code></td>
+                        <td><code>"separator"</code></td>
+                        <td>—</td>
+                        <td>구분선 접근성 역할.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemMedia</h3>
+            <p data-slot="desc"><code>data-slot="item-media"</code> 아이콘·이미지·아바타 미디어 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"icon"</code> | <code>"image"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>미디어 레이아웃.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemContent</h3>
+            <p data-slot="desc"><code>data-slot="item-content"</code> 제목·설명을 감싸는 flex 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-gap</code></td>
+                        <td><code>"1"</code></td>
+                        <td>—</td>
+                        <td>내부 간격(Group 예시).</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-align</code></td>
+                        <td><code>"center"</code></td>
+                        <td>—</td>
+                        <td>텍스트 정렬(Image duration).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemTitle</h3>
+            <p data-slot="desc"><code>data-slot="item-title"</code> item 제목입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-clamp</code></td>
+                        <td><code>"1"</code></td>
+                        <td>—</td>
+                        <td>한 줄 말줄임(Image 예시).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemDescription</h3>
+            <p data-slot="desc"><code>data-slot="item-description"</code> item 설명(<code>p</code>)입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemActions</h3>
+            <p data-slot="desc"><code>data-slot="item-actions"</code> 버튼·아이콘 등 액션 영역입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemHeader</h3>
+            <p data-slot="desc"><code>data-slot="item-header"</code> 콘텐츠 위 전체 너비 헤더입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ItemFooter</h3>
+            <p data-slot="desc"><code>data-slot="item-footer"</code> 콘텐츠 아래 전체 너비 푸터입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" data-slot="api-table-empty">추가 속성 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#variant">Variant</a></li>
+                <li><a href="#size">Size</a></li>
+                <li><a href="#icon">Icon</a></li>
+                <li><a href="#avatar">Avatar</a></li>
+                <li><a href="#image">Image</a></li>
+                <li><a href="#group">Group</a></li>
+                <li><a href="#header">Header</a></li>
+                <li><a href="#link">Link</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>

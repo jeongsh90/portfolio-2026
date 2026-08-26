@@ -1,0 +1,249 @@
+<!-- content-inner 내부에 삽입 -->
+<div class="doc-page-layout">
+<article class="doc-page">
+
+    <section class="doc-pattern-1" data-pattern="1" id="overview">
+        <div data-slot="text-area">
+            <h1 data-slot="typography-h1">Toggle Group</h1>
+            <p data-slot="desc">여러 Toggle을 하나의 그룹으로 묶어 단일 또는 다중 선택을 제공하는 컴포넌트입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="toggle-group" role="group" data-type="multiple" data-variant="outline">
+                    <button type="button" data-slot="toggle-group-item" data-value="bold" aria-pressed="false" data-state="off" aria-label="Toggle bold">
+                        <i data-lucide="bold" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="toggle-group-item" data-value="italic" aria-pressed="false" data-state="off" aria-label="Toggle italic">
+                        <i data-lucide="italic" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="toggle-group-item" data-value="strikethrough" aria-pressed="false" data-state="off" aria-label="Toggle strikethrough">
+                        <i data-lucide="underline" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="outline">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Outline</h2>
+            <p data-slot="desc"><code>data-variant="outline"</code>으로 테두리 스타일을 적용합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="toggle-group" role="group" data-type="single" data-variant="outline" data-default-value="all">
+                    <button type="button" data-slot="toggle-group-item" data-value="all" aria-pressed="true" data-state="on" aria-label="Toggle all">All</button>
+                    <button type="button" data-slot="toggle-group-item" data-value="missed" aria-pressed="false" data-state="off" aria-label="Toggle missed">Missed</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="size">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Size</h2>
+            <p data-slot="desc"><code>data-size</code> prop으로 토글 그룹 크기를 변경합니다. 그룹에 지정하면 하위 항목에 자동 적용됩니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview" data-preview="toggle-group-sizes">
+                <div class="toggle-group-size-stack">
+                    <div data-slot="toggle-group" role="group" data-type="single" data-variant="outline" data-size="sm" data-default-value="top">
+                        <button type="button" data-slot="toggle-group-item" data-value="top" aria-pressed="true" data-state="on" aria-label="Toggle top">Top</button>
+                        <button type="button" data-slot="toggle-group-item" data-value="bottom" aria-pressed="false" data-state="off" aria-label="Toggle bottom">Bottom</button>
+                        <button type="button" data-slot="toggle-group-item" data-value="left" aria-pressed="false" data-state="off" aria-label="Toggle left">Left</button>
+                        <button type="button" data-slot="toggle-group-item" data-value="right" aria-pressed="false" data-state="off" aria-label="Toggle right">Right</button>
+                    </div>
+                    <div data-slot="toggle-group" role="group" data-type="single" data-variant="outline" data-default-value="top">
+                        <button type="button" data-slot="toggle-group-item" data-value="top" aria-pressed="true" data-state="on" aria-label="Toggle top">Top</button>
+                        <button type="button" data-slot="toggle-group-item" data-value="bottom" aria-pressed="false" data-state="off" aria-label="Toggle bottom">Bottom</button>
+                        <button type="button" data-slot="toggle-group-item" data-value="left" aria-pressed="false" data-state="off" aria-label="Toggle left">Left</button>
+                        <button type="button" data-slot="toggle-group-item" data-value="right" aria-pressed="false" data-state="off" aria-label="Toggle right">Right</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="spacing">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Spacing</h2>
+            <p data-slot="desc"><code>data-spacing</code>으로 항목 사이 간격을 조정합니다. 기본값은 <code>2</code>이며, <code>0</code>이면 연결된 그룹 스타일입니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="toggle-group" role="group" data-type="single" data-variant="outline" data-size="sm" data-spacing="2" data-default-value="top">
+                    <button type="button" data-slot="toggle-group-item" data-value="top" aria-pressed="true" data-state="on" aria-label="Toggle top">Top</button>
+                    <button type="button" data-slot="toggle-group-item" data-value="bottom" aria-pressed="false" data-state="off" aria-label="Toggle bottom">Bottom</button>
+                    <button type="button" data-slot="toggle-group-item" data-value="left" aria-pressed="false" data-state="off" aria-label="Toggle left">Left</button>
+                    <button type="button" data-slot="toggle-group-item" data-value="right" aria-pressed="false" data-state="off" aria-label="Toggle right">Right</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="vertical">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Vertical</h2>
+            <p data-slot="desc"><code>data-orientation="vertical"</code>로 세로 배치 토글 그룹을 만듭니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="toggle-group" role="group" data-type="multiple" data-orientation="vertical" data-spacing="1" data-default-values="bold|italic">
+                    <button type="button" data-slot="toggle-group-item" data-value="bold" aria-pressed="true" data-state="on" aria-label="Toggle bold">
+                        <i data-lucide="bold" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="toggle-group-item" data-value="italic" aria-pressed="true" data-state="on" aria-label="Toggle italic">
+                        <i data-lucide="italic" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="toggle-group-item" data-value="underline" aria-pressed="false" data-state="off" aria-label="Toggle underline">
+                        <i data-lucide="underline" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="disabled">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">Disabled</h2>
+            <p data-slot="desc"><code>data-disabled="true"</code>로 그룹 전체를 비활성화합니다.</p>
+        </div>
+        <div data-slot="component-area">
+            <div data-slot="preview">
+                <div data-slot="toggle-group" role="group" data-type="multiple" data-disabled="true">
+                    <button type="button" data-slot="toggle-group-item" data-value="bold" aria-pressed="false" data-state="off" aria-label="Toggle bold">
+                        <i data-lucide="bold" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="toggle-group-item" data-value="italic" aria-pressed="false" data-state="off" aria-label="Toggle italic">
+                        <i data-lucide="italic" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" data-slot="toggle-group-item" data-value="strikethrough" aria-pressed="false" data-state="off" aria-label="Toggle strikethrough">
+                        <i data-lucide="underline" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-pattern-1" data-pattern="1" id="api-reference">
+        <div data-slot="text-area">
+            <h2 data-slot="typography-h2">API Reference</h2>
+            <h3 data-slot="typography-h3">ToggleGroup</h3>
+            <p data-slot="desc">Radix Toggle Group 기반 루트 컨테이너입니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-type</code></td>
+                        <td><code>"single"</code> | <code>"multiple"</code></td>
+                        <td><code>"single"</code></td>
+                        <td>단일 또는 다중 선택 모드.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-variant</code></td>
+                        <td><code>"default"</code> | <code>"outline"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>하위 <code>ToggleGroupItem</code>에 전달되는 variant.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-size</code></td>
+                        <td><code>"default"</code> | <code>"sm"</code> | <code>"lg"</code></td>
+                        <td><code>"default"</code></td>
+                        <td>하위 항목 크기.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-spacing</code></td>
+                        <td><code>"0"</code> | <code>"1"</code> | <code>"2"</code></td>
+                        <td><code>"2"</code></td>
+                        <td>항목 간격. <code>0</code>이면 연결된 그룹 스타일.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-orientation</code></td>
+                        <td><code>"horizontal"</code> | <code>"vertical"</code></td>
+                        <td><code>"horizontal"</code></td>
+                        <td>배치 방향.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-disabled</code></td>
+                        <td><code>"true"</code> | <code>"false"</code></td>
+                        <td><code>"false"</code></td>
+                        <td>그룹 전체 비활성화.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td><code>data-type="single"</code>일 때 초기 선택값.</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-default-values</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td><code>data-type="multiple"</code>일 때 초기 선택값. <code>|</code>로 구분.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-slot="text-area">
+            <h3 data-slot="typography-h3">ToggleGroupItem</h3>
+            <p data-slot="desc">그룹 내 개별 토글 버튼입니다. Toggle과 동일한 <code>data-state</code>·<code>aria-pressed</code>를 사용합니다.</p>
+        </div>
+        <div data-slot="reference-area">
+            <table data-slot="api-table">
+                <thead>
+                    <tr>
+                        <th scope="col">속성</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">기본값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-value</code></td>
+                        <td>string</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><code>data-state</code></td>
+                        <td><code>"on"</code> | <code>"off"</code></td>
+                        <td><code>"off"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+
+<nav data-slot="page-nav" aria-label="On this page">
+    <p data-slot="page-nav-label">이페이지 구성</p>
+    <ul data-slot="page-nav-list">
+        <li><a href="#overview">Overview</a></li>
+        <li data-slot="page-nav-group">
+            <span data-slot="page-nav-group-label">Examples</span>
+            <ul data-slot="page-nav-list">
+                <li><a href="#outline">Outline</a></li>
+                <li><a href="#size">Size</a></li>
+                <li><a href="#spacing">Spacing</a></li>
+                <li><a href="#vertical">Vertical</a></li>
+                <li><a href="#disabled">Disabled</a></li>
+            </ul>
+        </li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+</nav>
+</div>
