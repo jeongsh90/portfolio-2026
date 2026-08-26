@@ -133,21 +133,22 @@
 	margin-top: 1.25rem;
 }
 
+.modal__links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
 .modal__link {
 	display: inline-block;
-	margin-top: 1rem;
 	font-family: 'Pretendard', sans-serif;
 	font-size: 1.5rem;
 	color: var(--color-link, var(--color-text));
 	text-decoration: underline;
 	text-underline-offset: 0.2em;
 }
-
-.modal__link--publish {
-	display: block;
-	margin-top: 0.5rem;
-}
-
 
 .modal__group-title {
 	margin: 0 0 0.75rem;

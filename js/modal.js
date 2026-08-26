@@ -14,8 +14,7 @@
 
   var descGroup = modal.querySelector('.modal__group--description');
   var descEl = modal.querySelector('.modal__desc');
-  var linkEl = modal.querySelector('.modal__link:not(.modal__link--publish)');
-  var publishLinkEl = modal.querySelector('.modal__link--publish');
+  var linksEl = modal.querySelector('.modal__links');
   var whatididGroup = modal.querySelector('.modal__group--whatidid');
   var whatididListEl = modal.querySelector('.modal__whatidid-list');
   var skillsGroup = modal.querySelector('.modal__group--skills');
@@ -136,20 +135,21 @@
       p.textContent = text;
       descEl.appendChild(p);
     });
-    if (data.link) {
-      linkEl.href = data.link;
-      linkEl.style.display = '';
-    } else {
-      linkEl.removeAttribute('href');
-      linkEl.style.display = 'none';
-    }
-    if (data.publishLink) {
-      publishLinkEl.href = data.publishLink;
-      publishLinkEl.style.display = '';
-    } else {
-      publishLinkEl.removeAttribute('href');
-      publishLinkEl.style.display = 'none';
-    }
+    var links = Array.isArray(data.links) && data.links.length
+      ? data.links
+      : (data.link ? [{ href: data.link, label: data.linkLabel || '사이트 보기' }] : []);
+    linksEl.innerHTML = '';
+    links.forEach(function (item) {
+      if (!item || !item.href) return;
+      var a = document.createElement('a');
+      a.className = 'modal__link';
+      a.href = item.href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = item.label || '사이트 보기';
+      linksEl.appendChild(a);
+    });
+    linksEl.style.display = links.length ? '' : 'none';
 
     whatididGroup.style.display = '';
     var whatidid = Array.isArray(data.whatidid) && data.whatidid.length ? data.whatidid : ['[담당 업무를 입력하세요]'];
