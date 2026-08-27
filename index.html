@@ -19,7 +19,7 @@
 		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="https://use.typekit.net/vxy2fer.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css?v=1">
-		<link rel="stylesheet" type="text/css" href="css/gallery.css?v=11">
+		<link rel="stylesheet" type="text/css" href="css/gallery.css?v=12">
 		<link rel="stylesheet" type="text/css" href="css/modal.css?v=4">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 		<script>document.documentElement.className = "js";
@@ -1016,6 +1016,20 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 			</button>
 		</nav>
 		<nav class="line-nav" id="lineNav" aria-label="프로젝트 목차"></nav>
+		<div class="mobile-alert" id="mobileAlert" role="alertdialog" aria-modal="true" aria-hidden="true" aria-labelledby="mobileAlertTitle">
+			<div class="mobile-alert__backdrop"></div>
+			<div class="mobile-alert__box">
+				<p class="mobile-alert__title" id="mobileAlertTitle">안내</p>
+				<p class="mobile-alert__desc">모바일 환경에서는 일부 브라우저에서 스크립트가 정상적으로 작동하지 않을 수 있습니다.</p>
+				<div class="mobile-alert__bottom">
+					<label class="mobile-alert__check">
+						<input type="checkbox" id="mobileAlertDontShow">
+						<span>오늘 하루 보지 않기</span>
+					</label>
+					<button class="mobile-alert__confirm" type="button" id="mobileAlertConfirm">확인</button>
+				</div>
+			</div>
+		</div>
 		<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
 			<div class="modal__backdrop" data-modal-close></div>
 			<button class="modal__close" type="button" aria-label="닫기" data-modal-close>
@@ -1064,5 +1078,6 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 		<script src="js/site-brand.js?v=1"></script>
 		<script src="js/edge-fade.js?v=1"></script>
 		<script src="js/modal.js?v=5"></script>
+		<script src="js/mobile-alert.js?v=1"></script>
 	</body>
 </html>
