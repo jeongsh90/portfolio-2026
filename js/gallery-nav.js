@@ -114,4 +114,7 @@
   homeBtn.addEventListener('click', function () {
     goTo(0);
   });
+
+  // line-nav.js(좌측 세로 프로젝트 목차)에서 동일한 이동 로직을 재사용할 수 있게 노출.
+  window.__galleryGoTo = goTo;
 })();

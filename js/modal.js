@@ -143,6 +143,10 @@
       }
     }
 
+    // 갤러리 캡션(썸네일)에는 짧은 제목을 걸어두고, 모달에서는 실제 프로젝트명을
+    // 보여주고 싶을 때 데이터에 "title"을 지정하면 캡션 h2 대신 이걸 쓴다.
+    if (data.title) titleEl.textContent = data.title;
+
     descGroup.style.display = '';
     var description = data.description;
     var paragraphs = Array.isArray(description) ? description.filter(Boolean) : (description ? [description] : []);

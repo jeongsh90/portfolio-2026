@@ -9356,7 +9356,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var lscroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true,
-  direction: 'horizontal'
+  direction: 'horizontal',
+  lerp: 0.07 // 스크롤/버튼 이동 시 목표 위치로 수렴하는 속도. 기본값 0.1보다
+  // 낮출수록(0에 가까울수록) 느리고 부드럽게, 높일수록(1에 가까울수록)
+  // 즉각적으로 움직인다. 휠·드래그·화살표 버튼 이동 전부 이 값을 같이 쓴다.
 });
 window.__lscroll = lscroll; // let's skew the images when scrolling. The faster we scroll the higher the skew value
 // skew interval from -15 to 15
