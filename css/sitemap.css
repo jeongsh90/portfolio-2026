@@ -44,6 +44,8 @@ html.sitemap-open .sitemap-toggle {
 	.sitemap-toggle__label {
 		display: none;
 	}
+
+	.sitemap-toggle svg{width:3rem; height:3rem;}
 }
 
 .sitemap {
@@ -206,7 +208,8 @@ html.sitemap-open .sitemap-toggle {
 		border-top: 1px solid rgba(255, 255, 255, 0.12);
 	}
 
-	.sitemap__col:hover {
+	.sitemap__col:hover,
+	.sitemap__col.is-active {
 		flex-basis: auto;
 	}
 

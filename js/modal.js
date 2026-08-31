@@ -24,6 +24,7 @@
   var section2El = modal.querySelector('#modalSection2');
   var section3El = modal.querySelector('#modalSection3');
   var sectionReveals = [];
+  var sectionVideos = [];
 
   var startRect = null;
   var lastTrigger = null;
@@ -82,6 +83,88 @@
           iframe.allowFullscreen = true;
           embedWrap.appendChild(iframe);
           imagesWrap.appendChild(embedWrap);
+          return;
+        }
+        if (entry && typeof entry === 'object' && entry.video) {
+          var videoWrap = document.createElement('div');
+          videoWrap.className = 'modal__gallery-video';
+          var video = document.createElement('video');
+          video.className = 'modal__gallery-video-el';
+          video.src = 'images/' + entry.video;
+
+          video.muted = true;
+          video.defaultMuted = true;
+          video.playsInline = true;
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+          video.loop = true;
+          video.controls = true;
+          video.preload = 'metadata';
+          videoWrap.appendChild(video);
+
+          var toggleBtn = document.createElement('button');
+          toggleBtn.type = 'button';
+          toggleBtn.className = 'modal__gallery-video-toggle';
+          toggleBtn.setAttribute('aria-label', '재생/일시정지');
+          toggleBtn.innerHTML =
+            '<svg class="modal__gallery-video-icon modal__gallery-video-icon--play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+            '<svg class="modal__gallery-video-icon modal__gallery-video-icon--pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+          toggleBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (video.paused) {
+              var playResult = video.play();
+              if (playResult && typeof playResult.catch === 'function') {
+                playResult.catch(function () {});
+              }
+            } else {
+              video.pause();
+            }
+          });
+
+          var hideTimer = null;
+          var HIDE_DELAY = 2200;
+
+          function showToggleBtn() {
+            toggleBtn.classList.remove('is-hidden');
+          }
+
+          function scheduleHideToggleBtn() {
+            clearTimeout(hideTimer);
+            if (video.paused) return;
+            hideTimer = setTimeout(function () {
+              toggleBtn.classList.add('is-hidden');
+            }, HIDE_DELAY);
+          }
+
+          videoWrap.addEventListener('mousemove', function () {
+            showToggleBtn();
+            scheduleHideToggleBtn();
+          });
+          videoWrap.addEventListener('mouseenter', function () {
+            showToggleBtn();
+            scheduleHideToggleBtn();
+          });
+          videoWrap.addEventListener('mouseleave', function () {
+            scheduleHideToggleBtn();
+          });
+          videoWrap.addEventListener('touchstart', function () {
+            showToggleBtn();
+            scheduleHideToggleBtn();
+          }, { passive: true });
+
+          video.addEventListener('play', function () {
+            toggleBtn.classList.add('is-playing');
+            scheduleHideToggleBtn();
+          });
+          video.addEventListener('pause', function () {
+            toggleBtn.classList.remove('is-playing');
+            clearTimeout(hideTimer);
+            showToggleBtn();
+          });
+          videoWrap.appendChild(toggleBtn);
+
+          imagesWrap.appendChild(videoWrap);
+          sectionVideos.push(video);
           return;
         }
         var img = document.createElement('img');
@@ -199,6 +282,7 @@
       skillsListEl.appendChild(li);
     });
 
+    sectionVideos = [];
     sectionReveals = [
       renderSection(section2El, data.section2),
       renderSection(section3El, data.section3)
@@ -349,6 +433,45 @@
     });
   }
 
+  var videoObserver = null;
+
+  function setupVideoAutoplay() {
+    if (videoObserver) videoObserver.disconnect();
+    if (!sectionVideos.length) return;
+
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    videoObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var video = entry.target;
+          if (entry.intersectionRatio >= 0.98) {
+            var playResult = video.play();
+            if (playResult && typeof playResult.catch === 'function') {
+              playResult.catch(function () {});
+            }
+          } else if (entry.intersectionRatio <= 0) {
+            video.pause();
+          }
+        });
+      },
+      { root: viewport, threshold: [0, 0.98] }
+    );
+    sectionVideos.forEach(function (video) {
+      videoObserver.observe(video);
+    });
+  }
+
+  function pauseAllVideos() {
+    if (videoObserver) {
+      videoObserver.disconnect();
+      videoObserver = null;
+    }
+    sectionVideos.forEach(function (video) {
+      video.pause();
+    });
+  }
+
   function pinScroll(lscroll) {
     if (!lscroll.scroll || !lscroll.scroll.instance) return;
     var current = lscroll.scroll.instance.scroll;
@@ -394,6 +517,7 @@
     populate(item);
     lockScroll();
     setupSectionReveals();
+    setupVideoAutoplay();
 
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -468,6 +592,7 @@
         gsap.set(fixedLinksEl, { clearProps: 'all' });
         gsap.set(viewport, { clearProps: 'all' });
         smoothScroll.reset();
+        pauseAllVideos();
         unlockScroll();
         if (lastTrigger && lastTrigger.focus) lastTrigger.focus();
         startRect = null;
