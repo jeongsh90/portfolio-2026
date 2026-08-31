@@ -35,6 +35,12 @@ body {
 	transform: rotate(-4deg);
 }
 
+@media (max-width: 1024px) {
+	.rotate {
+		transform: none;
+	}
+}
+
 [data-scroll-container] {}
 
 html.is-dragging,
