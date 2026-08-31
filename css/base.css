@@ -124,6 +124,18 @@ a:focus {
 
 html {
 	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 }
 
 html.has-scroll-smooth {

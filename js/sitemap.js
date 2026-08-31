@@ -7,7 +7,6 @@
   if (!toggleBtn || !sitemap || !columnsWrap) return;
 
   var items = Array.prototype.slice.call(document.querySelectorAll('.gallery__item'));
-  var columns = [];
 
   items.forEach(function (item, index) {
     var titleEl = item.querySelector('.gallery__item-title');
@@ -55,35 +54,11 @@
     col.appendChild(labelRow);
 
     col.addEventListener('click', function () {
-      handleColumnClick(col, index);
+      openProject(index);
     });
 
     columnsWrap.appendChild(col);
-    columns.push(col);
   });
-
-  function isHoverCapable() {
-    return window.matchMedia('(hover: hover)').matches;
-  }
-
-  function clearActive() {
-    columns.forEach(function (c) {
-      c.classList.remove('is-active');
-    });
-  }
-
-  function handleColumnClick(col, index) {
-    if (isHoverCapable()) {
-      openProject(index);
-      return;
-    }
-    if (col.classList.contains('is-active')) {
-      openProject(index);
-    } else {
-      clearActive();
-      col.classList.add('is-active');
-    }
-  }
 
   function openProject(index) {
     closeSitemap();
@@ -124,7 +99,6 @@
   }
 
   function openSitemap() {
-    clearActive();
     sitemap.classList.add('is-open');
     sitemap.setAttribute('aria-hidden', 'false');
     document.documentElement.classList.add('sitemap-open');
