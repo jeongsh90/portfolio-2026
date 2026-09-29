@@ -553,12 +553,12 @@ html.sitemap-open .gallery-nav {
 
 .category-nav {
 	position: fixed;
-	right: 2rem;
-	bottom: 2rem;
+	left: 2rem;
+	bottom: 3rem;
 	z-index: 500;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: flex-start;
 	gap: 0.5rem;
 }
 
@@ -567,12 +567,26 @@ html.sitemap-open .category-nav {
 	display: none;
 }
 
+.category-nav__label {
+	font-family: 'Pretendard', sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.05em;
+	color: var(--color-text);
+	opacity: 0.6;
+	padding: 1rem 0.25rem;
+}
+
 .category-nav__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
 	font-family: 'Pretendard', sans-serif;
 	font-size: 1.425rem;
 	letter-spacing: 0.05em;
 	color: var(--color-text);
 	background: transparent;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 	border: 1px solid currentColor;
 	border-radius: 999px;
 	padding: 0.9rem 1.875rem;
@@ -580,6 +594,11 @@ html.sitemap-open .category-nav {
 	opacity: 0.85;
 	transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 	outline: none;
+}
+
+.category-nav__arrow {
+	display: inline-block;
+	transition: transform 0.2s ease;
 }
 
 .category-nav__btn:hover,
@@ -590,11 +609,20 @@ html.sitemap-open .category-nav {
 	border-color: transparent;
 }
 
+.category-nav__btn:hover .category-nav__arrow,
+.category-nav__btn:focus-visible .category-nav__arrow {
+	transform: translateX(0.25rem);
+}
+
 @media (max-width: 700px) {
 	.category-nav {
-		right: 1.25rem;
+		left: 1.25rem;
 		bottom: 5rem;
 		gap: 0.4rem;
+	}
+
+	.category-nav__label {
+		font-size: 0.8rem;
 	}
 
 	.category-nav__btn {

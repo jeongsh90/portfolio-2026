@@ -18,7 +18,7 @@
 		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="https://use.typekit.net/vxy2fer.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css?v=3">
-		<link rel="stylesheet" type="text/css" href="css/gallery.css?v=29">
+		<link rel="stylesheet" type="text/css" href="css/gallery.css?v=30">
 		<link rel="stylesheet" type="text/css" href="css/modal.css?v=15">
 		<link rel="stylesheet" type="text/css" href="css/sitemap.css?v=6">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -1171,8 +1171,9 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 			</button>
 		</nav>
 		<nav class="category-nav" id="categoryNav" aria-label="카테고리 이동">
-			<button class="category-nav__btn" id="categoryNavWeb" type="button">Web Design</button>
-			<button class="category-nav__btn" id="categoryNavGraphic" type="button">Graphic Design</button>
+			<span class="category-nav__label">카테고리</span>
+			<button class="category-nav__btn" id="categoryNavWeb" type="button">Web Design<span class="category-nav__arrow">→</span></button>
+			<button class="category-nav__btn" id="categoryNavGraphic" type="button">Graphic Design<span class="category-nav__arrow">→</span></button>
 		</nav>
 		<nav class="line-nav" id="lineNav" aria-label="프로젝트 목차"></nav>
 		<button class="sitemap-toggle" id="sitemapToggle" type="button" aria-label="사이트맵 보기">
