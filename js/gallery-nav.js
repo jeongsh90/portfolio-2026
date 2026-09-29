@@ -36,6 +36,12 @@
     );
   }
 
+  var activeRaf = null;
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
   function goToSmooth(item) {
     var lscroll = window.__lscroll;
     var axis = lscroll.scroll.directionAxis || 'x';
@@ -45,10 +51,34 @@
     var contentPos = rect.left + currentScroll;
     var limit = lscroll.scroll.instance.limit[axis];
     var target = Math.max(0, Math.min(contentPos - desiredLeft, limit));
+    var start = currentScroll;
+    var diff = target - start;
 
-    lscroll.scroll.instance.scroll[axis] = target;
-    lscroll.scroll.instance.delta[axis] = target;
-    lscroll.scroll.update();
+    if (activeRaf) {
+      cancelAnimationFrame(activeRaf);
+      activeRaf = null;
+    }
+
+    if (Math.abs(diff) < 1) return;
+
+    var duration = 900;
+    var startTime = null;
+
+    function frame(now) {
+      if (startTime === null) startTime = now;
+      var p = Math.min((now - startTime) / duration, 1);
+      var value = start + diff * easeOutCubic(p);
+      lscroll.scroll.instance.scroll[axis] = value;
+      lscroll.scroll.instance.delta[axis] = value;
+      lscroll.scroll.update();
+      if (p < 1) {
+        activeRaf = requestAnimationFrame(frame);
+      } else {
+        activeRaf = null;
+      }
+    }
+
+    activeRaf = requestAnimationFrame(frame);
   }
 
   function goToNative(item) {
