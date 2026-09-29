@@ -36,42 +36,19 @@
     );
   }
 
-  function forceScrollTo(lscroll, axis, value) {
-    lscroll.scroll.instance.scroll[axis] = value;
-    lscroll.scroll.instance.delta[axis] = value;
-    lscroll.scroll.update();
-  }
-
   function goToSmooth(item) {
     var lscroll = window.__lscroll;
-    var axis = lscroll.scroll.directionAxis || 'y';
+    var axis = lscroll.scroll.directionAxis || 'x';
+    var rect = item.getBoundingClientRect();
+    var currentScroll = lscroll.scroll.instance.scroll[axis];
+    var desiredLeft = (window.innerWidth - rect.width) / 2;
+    var contentPos = rect.left + currentScroll;
     var limit = lscroll.scroll.instance.limit[axis];
-    var start = lscroll.scroll.instance.scroll[axis];
+    var target = Math.max(0, Math.min(contentPos - desiredLeft, limit));
 
-    var targetCenter = window.innerWidth / 2;
-    var x0 = itemCenterX(item);
-    if (Math.abs(x0 - targetCenter) < 1) return;
-
-    var probe = 80;
-    var probeTarget = Math.max(0, Math.min(start + probe, limit));
-    var appliedProbe = probeTarget - start;
-    if (Math.abs(appliedProbe) < 1) {
-      probeTarget = Math.max(0, Math.min(start - probe, limit));
-      appliedProbe = probeTarget - start;
-    }
-    if (Math.abs(appliedProbe) < 1) return;
-
-    forceScrollTo(lscroll, axis, probeTarget);
-    var x1 = itemCenterX(item);
-    var scale = (x1 - x0) / appliedProbe;
-
-    var remainingScreen = targetCenter - x1;
-    var neededDelta = scale !== 0 ? remainingScreen / scale : 0;
-    var finalTarget = Math.max(0, Math.min(probeTarget + neededDelta, limit));
-
-    forceScrollTo(lscroll, axis, start);
-    lscroll.scroll.instance.delta[axis] = finalTarget;
-    lscroll.scroll.startScrolling();
+    lscroll.scroll.instance.scroll[axis] = target;
+    lscroll.scroll.instance.delta[axis] = target;
+    lscroll.scroll.update();
   }
 
   function goToNative(item) {

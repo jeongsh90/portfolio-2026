@@ -547,8 +547,60 @@ html.sitemap-open .gallery-nav {
 		height: 3rem;
 	}
 
-	
 
+
+}
+
+.category-nav {
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+	z-index: 500;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0.5rem;
+}
+
+html.modal-open .category-nav,
+html.sitemap-open .category-nav {
+	display: none;
+}
+
+.category-nav__btn {
+	font-family: 'Pretendard', sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.05em;
+	color: var(--color-text);
+	background: transparent;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	padding: 0.6rem 1.25rem;
+	cursor: pointer;
+	opacity: 0.85;
+	transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	outline: none;
+}
+
+.category-nav__btn:hover,
+.category-nav__btn:focus-visible {
+	opacity: 1;
+	background: var(--color-gallery-link-bg);
+	color: var(--color-gallery-link);
+	border-color: transparent;
+}
+
+@media (max-width: 700px) {
+	.category-nav {
+		right: 1.25rem;
+		bottom: 5rem;
+		gap: 0.4rem;
+	}
+
+	.category-nav__btn {
+		font-size: 0.8rem;
+		padding: 0.45rem 0.9rem;
+	}
 }
 
 .line-nav {
