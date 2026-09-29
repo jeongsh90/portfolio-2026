@@ -568,6 +568,7 @@ html.sitemap-open .category-nav {
 }
 
 .category-nav__label {
+	display: none;
 	font-family: 'Pretendard', sans-serif;
 	font-size: 0.95rem;
 	letter-spacing: 0.05em;
