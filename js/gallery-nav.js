@@ -38,8 +38,8 @@
 
   var activeRaf = null;
 
-  function easeOutCubic(t) {
-    return 1 - Math.pow(1 - t, 3);
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
   function goToSmooth(item) {
@@ -61,13 +61,16 @@
 
     if (Math.abs(diff) < 1) return;
 
-    var duration = 900;
+    // Scale duration with distance so a long category jump still reads as a
+    // visible glide instead of a near-instant snap (easeInOut alone isn't
+    // enough once the distance spans many items).
+    var duration = Math.max(600, Math.min(2200, Math.abs(diff) * 0.15));
     var startTime = null;
 
     function frame(now) {
       if (startTime === null) startTime = now;
       var p = Math.min((now - startTime) / duration, 1);
-      var value = start + diff * easeOutCubic(p);
+      var value = start + diff * easeInOutCubic(p);
       lscroll.scroll.instance.scroll[axis] = value;
       lscroll.scroll.instance.delta[axis] = value;
       lscroll.scroll.update();
