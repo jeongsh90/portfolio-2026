@@ -41,15 +41,6 @@
 
     nav.appendChild(a);
     links.push(a);
-
-    if (index < items.length - 1) {
-      var d1 = document.createElement('span');
-      d1.className = 'line-nav__divider';
-      nav.appendChild(d1);
-      var d2 = document.createElement('span');
-      d2.className = 'line-nav__divider';
-      nav.appendChild(d2);
-    }
   });
 
   if (typeof IntersectionObserver !== 'undefined') {
